@@ -36,6 +36,28 @@
     .nav-links a:hover { color: var(--dark); background: var(--gray-light); }
     .btn-primary { padding: 10px 22px; border-radius: 100px; background: var(--pink); color: white; font-size: .85rem; font-weight: 700; text-decoration: none; transition: background .2s, transform .15s; }
     .btn-primary:hover { background: #e0224f; transform: scale(1.03); }
+
+    /* NAV STATS */
+    .nav-stats {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .nav-stat {
+      display: flex; flex-direction: column; align-items: center;
+      line-height: 1.1;
+    }
+    .nav-stat-val {
+      font-size: 1.15rem; font-weight: 800; letter-spacing: -.03em; color: var(--dark);
+    }
+    .nav-stat-val .counter { display: inline; }
+    .nav-stat-label {
+      font-size: .62rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--gray);
+    }
+    .nav-stat-divider {
+      width: 1px; height: 28px; background: var(--border);
+    }
+    @media (max-width: 900px) { .nav-stats { display: none; } }
+
     @media (max-width: 700px) { .nav-links { display: none; } }
 
     /* HERO */
@@ -287,6 +309,17 @@
     <li><a href="#hizmetler">Hizmetler</a></li>
     <li><a href="#hazel">Hazel Hoca</a></li>
   </ul>
+  <div class="nav-stats">
+    <div class="nav-stat">
+      <div class="nav-stat-val"><span class="counter" data-target="9">0</span> Yıl</div>
+      <div class="nav-stat-label">Tecrübe</div>
+    </div>
+    <div class="nav-stat-divider"></div>
+    <div class="nav-stat">
+      <div class="nav-stat-val">+<span class="counter" data-target="2000">0</span></div>
+      <div class="nav-stat-label">Mutlu Öğrenci</div>
+    </div>
+  </div>
   <a href="#" onclick="event.preventDefault();openLevelModal()" class="btn-primary">Kayıt Ol →</a>
 </nav>
 
@@ -648,5 +681,29 @@
   track.addEventListener('touchstart', e => sx = e.touches[0].clientX);
   track.addEventListener('touchend',   e => { const d = sx - e.changedTouches[0].clientX; if (Math.abs(d) > 50) moveSlide(d > 0 ? 1 : -1); });
 </script>
+
+<script>
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1200;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current).toLocaleString('tr-TR');
+    }, 16);
+  }
+
+  // Run when nav is visible (on page load)
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.counter').forEach(el => animateCounter(el));
+  });
+</script>
+
 </body>
 </html>
