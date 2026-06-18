@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İDA — 2026 Yaz Dönemi İspanyolca Grupları</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:      #F83564;
+      --pink-soft: #FFF0F3;
+      --pink-mid:  #FFD6DF;
+      --amber:     #FFB713;
+      --amber-soft:#FFF8E6;
+      --dark:      #1A1A2E;
+      --gray:      #6B7280;
+      --gray-light:#F5F5F7;
+      --white:     #FFFFFF;
+      --border:    #E8E8EE;
+      --radius:    14px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--pink), #c0204a);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; color: white;
+    }
+    .logo-text { font-weight: 800; font-size: 1.15rem; color: var(--dark); }
+    .logo-text span { color: var(--pink); }
+
+    .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--gray);
+      padding: 8px 14px; border-radius: 8px; transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color: var(--dark); background: var(--gray-light); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .btn-primary {
+      padding: 10px 22px; border-radius: 100px;
+      background: var(--pink); color: white;
+      font-size: .85rem; font-weight: 700;
+      text-decoration: none; transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: #e0224f; transform: scale(1.03); }
+
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* ── HERO ── */
+    .hero-wrap { background: var(--gray-light); }
+    .hero {
+      padding: 80px 5vw 72px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding: 56px 5vw; }
+      .hero-visual { display: none; }
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--amber-soft); border: 1px solid #FFD76B; color: #9A6800;
+      font-size: .78rem; font-weight: 700; letter-spacing: .04em;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800;
+      line-height: 1.12; letter-spacing: -.03em; margin-bottom: 20px;
+    }
+    .hero h1 em { color: var(--pink); font-style: normal; }
+    .hero-desc { font-size: 1rem; color: var(--gray); line-height: 1.7; max-width: 440px; margin-bottom: 32px; }
+
+    .hero-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-bottom: 36px; }
+    .feat { display: flex; align-items: center; gap: 8px; font-size: .88rem; font-weight: 600; }
+    .feat-icon {
+      width: 32px; height: 32px; border-radius: 8px; background: var(--pink-soft);
+      display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0;
+    }
+
+    .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .btn-hero {
+      padding: 14px 28px; border-radius: 100px;
+      background: var(--pink); color: white;
+      font-size: 1rem; font-weight: 700; text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-hero:hover { background: #e0224f; transform: scale(1.03); }
+    .btn-hero-ghost {
+      padding: 14px 28px; border-radius: 100px;
+      border: 1.5px solid var(--border); color: var(--dark);
+      font-size: .95rem; font-weight: 600; text-decoration: none; background: transparent;
+      transition: border-color .2s;
+    }
+    .btn-hero-ghost:hover { border-color: var(--dark); }
+
+    /* hero visual cards */
+    .hero-visual { display: flex; justify-content: flex-end; align-items: center; }
+    .hero-card-stack { position: relative; width: 380px; height: 360px; }
+    .hc { position: absolute; border-radius: 20px; padding: 24px; }
+    .hc-1 {
+      background: var(--pink); color: white;
+      top: 0; left: 0; right: 40px; padding: 32px;
+    }
+    .hc-1 .hc-big { font-size: 2rem; font-weight: 800; letter-spacing: -.04em; margin-bottom: 6px; }
+    .hc-1 .hc-sub { opacity: .75; font-size: .8rem; }
+    .hc-2 {
+      background: var(--amber); color: var(--dark);
+      bottom: 0; right: 0; width: 210px; padding: 24px;
+    }
+    .hc-2 .hc-num { font-size: 1.7rem; font-weight: 800; }
+    .hc-3 {
+      background: white; border: 1.5px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,.08);
+      bottom: 40px; left: 0; width: 175px; padding: 20px;
+    }
+
+    /* ── DÖNEMLER ── */
+    .donemler-wrap { background: var(--gray-light); padding: 0 0 64px; }
+    .donemler-inner { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
+    .donem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .donem-card {
+      background: var(--pink); border-radius: var(--radius); padding: 28px; color: white;
+      transition: transform .2s;
+    }
+    .donem-card:hover { transform: translateY(-4px); }
+    .donem-card .dc-icon { font-size: 1.2rem; margin-bottom: 10px; }
+    .donem-card .dc-name { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin-bottom: 6px; }
+    .donem-card .dc-dates { font-size: 1.05rem; font-weight: 700; }
+    .dc-amber { background: var(--amber) !important; color: var(--dark) !important; }
+    .dc-dark  { background: var(--dark)  !important; }
+
+    /* ── SECTION ── */
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 80px 5vw; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--amber-soft); border: 1px solid #FFD76B; color: #9A6800;
+      font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .section-tag.pink-tag { background: var(--pink-soft); border-color: var(--pink-mid); color: var(--pink); }
+    .section-title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.2; }
+    .section-sub { margin-top: 10px; font-size: 1rem; color: var(--gray); max-width: 520px; }
+
+    /* ── GRUPLAR ── */
+    #gruplar { background: white; }
+    .groups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; margin-top: 40px; }
+    .group-card {
+      border: 1.5px solid var(--border); border-radius: 18px; padding: 28px;
+      display: flex; flex-direction: column; gap: 18px; background: white;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .group-card:hover { border-color: var(--pink); box-shadow: 0 8px 32px rgba(248,53,100,.1); transform: translateY(-4px); }
+    .gc-top { display: flex; align-items: flex-start; justify-content: space-between; }
+    .gc-level { font-size: 1.9rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+    .gc-badge { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+    .badge-pink  { background: var(--pink-soft);  color: var(--pink); }
+    .badge-amber { background: var(--amber-soft); color: #9A6800; }
+    .gc-divider { height: 1px; background: var(--border); }
+    .gc-rows { display: flex; flex-direction: column; gap: 10px; }
+    .gc-row { display: flex; align-items: flex-start; gap: 10px; }
+    .gc-row-icon {
+      width: 30px; height: 30px; border-radius: 8px; background: var(--gray-light);
+      display: flex; align-items: center; justify-content: center; font-size: .82rem; flex-shrink: 0;
+    }
+    .gc-row-text { font-size: .88rem; line-height: 1.45; }
+    .gc-row-text b { display: block; font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; color: var(--gray); margin-bottom: 1px; }
+    .gc-price-wrap { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    /* 32 ders vurgusu */
+    .gc-lesson-count {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--amber-soft); border: 1px solid #FFD76B;
+      color: #9A6800; font-size: .72rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 100px; margin-bottom: 8px;
+    }
+    .gc-price { font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; }
+    .gc-price-sub { font-size: .78rem; color: var(--gray); margin-top: 3px; }
+    .gc-seats { margin-top: 12px; }
+    .gc-seats-label { font-size: .74rem; font-weight: 700; color: var(--gray); margin-bottom: 6px; }
+    .seats-track { height: 5px; background: var(--border); border-radius: 100px; overflow: hidden; }
+    .seats-fill { height: 100%; background: var(--pink); border-radius: 100px; }
+    .gc-cta {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; border-radius: 10px; background: var(--pink-soft); color: var(--pink);
+      font-weight: 700; font-size: .88rem; text-decoration: none; transition: background .2s;
+    }
+    .gc-cta:hover { background: var(--pink-mid); }
+
+    /* ── SLIDER ── */
+    #slider-section { background: var(--gray-light); }
+    .slider-outer { margin-top: 40px; position: relative; }
+    .slider-track-wrap { overflow: hidden; border-radius: 20px; }
+    .slider-track {
+      display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1);
+    }
+    .slide {
+      min-width: 100%; display: flex; align-items: center; justify-content: center;
+    }
+    .slide img {
+      width: 100%; max-height: 600px; object-fit: contain;
+      border-radius: 20px;
+    }
+    .slider-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: white; border: 1.5px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; color: var(--dark);
+      transition: background .2s, border-color .2s;
+      z-index: 10;
+    }
+    .slider-btn:hover { background: var(--pink); color: white; border-color: var(--pink); }
+    .slider-btn.prev { left: -18px; }
+    .slider-btn.next { right: -18px; }
+    .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer; transition: background .2s, width .2s;
+    }
+    .dot.active { background: var(--pink); width: 22px; border-radius: 4px; }
+
+    /* ── HİZMETLER ── */
+    #hizmetler { background: white; }
+    .hizmet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 40px; }
+    @media (max-width: 600px) { .hizmet-grid { grid-template-columns: 1fr; } }
+    .hizmet-item {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--gray-light); border-radius: 12px; padding: 18px 20px;
+      border: 1px solid var(--border);
+    }
+    .hizmet-icon {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--pink-soft);
+      display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0;
+    }
+    .hizmet-text { font-size: .9rem; font-weight: 600; }
+
+    /* ── ÖNEMLİ BİLGİLER ── */
+    .bilgiler-card {
+      margin-top: 40px; background: white;
+      border: 1.5px solid var(--border); border-radius: 18px; padding: 36px;
+    }
+    .bilgiler-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 24px; }
+    .bilgiler-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+    @media (max-width: 600px) { .bilgiler-grid { grid-template-columns: 1fr; } }
+    .bilgi-row { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 500; }
+    .bilgi-icon {
+      width: 32px; height: 32px; border-radius: 8px; background: var(--pink-soft);
+      display: flex; align-items: center; justify-content: center; font-size: .82rem; flex-shrink: 0;
+    }
+    .whatsapp-row {
+      margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .whatsapp-row p { font-size: .9rem; color: var(--gray); max-width: 360px; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25D366; color: white; padding: 12px 22px; border-radius: 100px;
+      font-weight: 700; font-size: .88rem; text-decoration: none; transition: background .2s, transform .15s;
+    }
+    .btn-wa:hover { background: #1ebe5d; transform: scale(1.03); }
+    .uyari-text { margin-top: 20px; font-size: .8rem; color: var(--pink); font-style: italic; line-height: 1.6; }
+
+    /* ── HAZEL HOCA ── */
+    #hazel { background: var(--gray-light); }
+    .hazel-wrap { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: flex-start; }
+    @media (max-width: 780px) { .hazel-wrap { grid-template-columns: 1fr; gap: 32px; } }
+    .hazel-photo-box { position: relative; }
+    .hazel-photo {
+      width: 100%; aspect-ratio: 3/4; border-radius: 24px; overflow: hidden;
+      background: linear-gradient(135deg, var(--pink-soft), var(--pink-mid));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hazel-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hazel-insta {
+      position: absolute; bottom: -16px; right: -16px;
+      background: white; border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 12px 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; font-weight: 700; color: var(--dark);
+    }
+    .hazel-insta span { color: var(--pink); font-size: 1rem; }
+
+    .hazel-stat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .hchip {
+      padding: 7px 14px; border-radius: 100px; font-size: .78rem; font-weight: 700;
+      border: 1.5px solid var(--border); color: var(--dark);
+    }
+    .hchip.pink  { background: var(--pink-soft);  border-color: var(--pink-mid); color: var(--pink); }
+    .hchip.amber { background: var(--amber-soft); border-color: #FFD76B; color: #9A6800; }
+
+    .hazel-name { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: 4px; }
+    .hazel-title-tag { font-size: .92rem; font-weight: 600; color: var(--pink); margin-bottom: 20px; }
+
+    .hazel-highlights { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .hl-row { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; line-height: 1.5; }
+    .hl-icon {
+      width: 28px; height: 28px; border-radius: 7px; background: var(--amber-soft);
+      display: flex; align-items: center; justify-content: center; font-size: .8rem; flex-shrink: 0; margin-top: 1px;
+    }
+
+    .hazel-bio-text { font-size: .93rem; color: var(--gray); line-height: 1.8; }
+    .hazel-bio-text + .hazel-bio-text { margin-top: 14px; }
+
+    /* ── LANGS ── */
+    .lang-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .lang-chip {
+      padding: 6px 14px; border-radius: 100px; font-size: .78rem; font-weight: 700;
+      background: var(--gray-light); border: 1px solid var(--border); color: var(--dark);
+    }
+
+    /* ── CTA ── */
+    #iletisim {
+      background: linear-gradient(135deg, var(--pink) 0%, #c0204a 100%);
+      padding: 80px 5vw; text-align: center;
+    }
+    #iletisim .section-tag { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.3); color: white; }
+    #iletisim .section-title { color: white; }
+    #iletisim .section-sub { color: rgba(255,255,255,.75); margin: 10px auto 36px; }
+    .btn-wa-large {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: white; color: var(--pink); padding: 16px 36px; border-radius: 100px;
+      font-size: 1rem; font-weight: 800; text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18); transition: transform .2s;
+    }
+    .btn-wa-large:hover { transform: scale(1.05); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,.5);
+      padding: 36px 5vw; display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; font-size: .82rem;
+    }
+    .footer-logo { font-weight: 800; color: white; font-size: 1rem; }
+    .footer-logo span { color: var(--amber); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">İ</div>
+    <div class="logo-text">İ<span>D</span>A</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#gruplar">Eğitimler</a></li>
+    <li><a href="#slider-section">Neler Yapıyoruz?</a></li>
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#hazel">Hazel Hoca</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#iletisim" class="btn-primary">Kayıt Ol →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">✦ Kayıtlar Açık — 2026 Yaz Dönemi</div>
+      <h1>İspanyolca<br><em>Grup Dersleri</em></h1>
+      <p class="hero-desc">
+        Zoom üzerinden canlı, küçük gruplarla yoğun yaz dönemi. A1.1'den A2.2'ye dört seviye açılıyor — 17 Ağustos'ta başla, 8 Ekim'de bir üst seviyede bitir.
+      </p>
+      <div class="hero-features">
+        <div class="feat"><span class="feat-icon">👥</span> 10–15 kişilik gruplar</div>
+        <div class="feat"><span class="feat-icon">📹</span> Zoom · Online</div>
+        <div class="feat"><span class="feat-icon">📅</span> Haftada 4 ders</div>
+        <div class="feat"><span class="feat-icon">⏱</span> 1 ders = 40 dakika</div>
+      </div>
+      <div class="hero-actions">
+        <a href="#gruplar" class="btn-hero">Gruplara Bak →</a>
+        <a href="#hazel" class="btn-hero-ghost">Hazel Hoca Kimdir?</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hc hc-1">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;opacity:.7;text-transform:uppercase;margin-bottom:8px;">Açık Seviyeler</div>
+          <div class="hc-big">A1.1 → A2.2</div>
+          <div class="hc-sub">4 farklı seviye · Tüm yerler açık</div>
+        </div>
+        <div class="hc hc-2">
+          <div style="font-size:.68rem;font-weight:700;opacity:.65;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;">Toplam Ders</div>
+          <div class="hc-num">32 Ders</div>
+          <div style="font-size:.75rem;margin-top:4px;opacity:.7;">16.000 TL / dönem</div>
+        </div>
+        <div class="hc hc-3">
+          <div style="font-size:.68rem;font-weight:700;color:var(--gray);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Başlangıç</div>
+          <div style="font-size:1rem;font-weight:800;color:var(--dark);">17 Ağustos</div>
+          <div style="font-size:.8rem;color:var(--gray);margin-top:2px;">2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DÖNEMLER -->
+<div class="donemler-wrap">
+  <div class="donemler-inner">
+    <div class="donem-grid">
+      <div class="donem-card">
+        <div class="dc-icon">📅</div>
+        <div class="dc-name">Yaz Dönemi · Şu an kayıt açık</div>
+        <div class="dc-dates">17 Ağustos — 8 Ekim 2026</div>
+      </div>
+      <div class="donem-card dc-amber">
+        <div class="dc-icon">📅</div>
+        <div class="dc-name">Güz Dönemi</div>
+        <div class="dc-dates">Yakında duyurulacak</div>
+      </div>
+      <div class="donem-card dc-dark">
+        <div class="dc-icon">📅</div>
+        <div class="dc-name" style="color:rgba(255,255,255,.5)">Kış Dönemi</div>
+        <div class="dc-dates">Yakında duyurulacak</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GRUPLAR -->
+<section id="gruplar">
+  <div class="section-wrap">
+    <div class="section-tag">✦ Açık Gruplar</div>
+    <h2 class="section-title">Hangi seviyedeyim?</h2>
+    <p class="section-sub">Daha önce İspanyolca aldıysan hangi seviyede kaldığını seç. Hiç almadıysan A1.1'den başla.</p>
+
+    <div class="groups-grid">
+      <!-- A1.1 -->
+      <div class="group-card">
+        <div class="gc-top">
+          <div class="gc-level">A1.1</div>
+          <span class="gc-badge badge-pink">Başlangıç</span>
+        </div>
+        <div class="gc-divider"></div>
+        <div class="gc-rows">
+          <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>18 Ağ — 8 Eki 2026</div></div>
+          <div class="gc-row"><div class="gc-row-icon">⏰</div><div class="gc-row-text"><b>Saat & Gün</b>Salı · Perşembe · 19:00–20:25</div></div>
+          <div class="gc-row"><div class="gc-row-icon">💻</div><div class="gc-row-text"><b>Platform</b>Zoom</div></div>
+        </div>
+        <div class="gc-price-wrap">
+          <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
+          <div class="gc-price">16.000 TL</div>
+          <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
+          <div class="gc-seats">
+            <div class="gc-seats-label">15 / 15 yer müsait</div>
+            <div class="seats-track"><div class="seats-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/905306882206?text=Merhaba%2C%20A1.1%20grubu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="gc-cta" target="_blank">Yer Ayırt →</a>
+      </div>
+
+      <!-- A1.2 -->
+      <div class="group-card">
+        <div class="gc-top">
+          <div class="gc-level">A1.2</div>
+          <span class="gc-badge badge-pink">Temel</span>
+        </div>
+        <div class="gc-divider"></div>
+        <div class="gc-rows">
+          <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>18 Ağ — 8 Eki 2026</div></div>
+          <div class="gc-row"><div class="gc-row-icon">⏰</div><div class="gc-row-text"><b>Saat & Gün</b>Salı · Perşembe · 22:00–23:25</div></div>
+          <div class="gc-row"><div class="gc-row-icon">💻</div><div class="gc-row-text"><b>Platform</b>Zoom</div></div>
+        </div>
+        <div class="gc-price-wrap">
+          <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
+          <div class="gc-price">16.000 TL</div>
+          <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
+          <div class="gc-seats">
+            <div class="gc-seats-label">15 / 15 yer müsait</div>
+            <div class="seats-track"><div class="seats-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/905306882206?text=Merhaba%2C%20A1.2%20grubu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="gc-cta" target="_blank">Yer Ayırt →</a>
+      </div>
+
+      <!-- A2.1 -->
+      <div class="group-card">
+        <div class="gc-top">
+          <div class="gc-level">A2.1</div>
+          <span class="gc-badge badge-amber">Orta-Alt</span>
+        </div>
+        <div class="gc-divider"></div>
+        <div class="gc-rows">
+          <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>17 Ağ — 7 Eki 2026</div></div>
+          <div class="gc-row"><div class="gc-row-icon">⏰</div><div class="gc-row-text"><b>Saat & Gün</b>Pzt · Çarş · 19:00–20:25</div></div>
+          <div class="gc-row"><div class="gc-row-icon">💻</div><div class="gc-row-text"><b>Platform</b>Zoom</div></div>
+        </div>
+        <div class="gc-price-wrap">
+          <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
+          <div class="gc-price">16.000 TL</div>
+          <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
+          <div class="gc-seats">
+            <div class="gc-seats-label">15 / 15 yer müsait</div>
+            <div class="seats-track"><div class="seats-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/905306882206?text=Merhaba%2C%20A2.1%20grubu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="gc-cta" target="_blank">Yer Ayırt →</a>
+      </div>
+
+      <!-- A2.2 -->
+      <div class="group-card">
+        <div class="gc-top">
+          <div class="gc-level">A2.2</div>
+          <span class="gc-badge badge-amber">Orta</span>
+        </div>
+        <div class="gc-divider"></div>
+        <div class="gc-rows">
+          <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>17 Ağ — 7 Eki 2026</div></div>
+          <div class="gc-row"><div class="gc-row-icon">⏰</div><div class="gc-row-text"><b>Saat & Gün</b>Pzt · Çarş · 20:30–21:55</div></div>
+          <div class="gc-row"><div class="gc-row-icon">💻</div><div class="gc-row-text"><b>Platform</b>Zoom</div></div>
+        </div>
+        <div class="gc-price-wrap">
+          <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
+          <div class="gc-price">16.000 TL</div>
+          <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
+          <div class="gc-seats">
+            <div class="gc-seats-label">15 / 15 yer müsait</div>
+            <div class="seats-track"><div class="seats-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/905306882206?text=Merhaba%2C%20A2.2%20grubu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="gc-cta" target="_blank">Yer Ayırt →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDER -->
+<section id="slider-section">
+  <div class="section-wrap">
+    <div class="section-tag pink-tag">✦ Grup Derslerimde</div>
+    <h2 class="section-title">Neler yapıyoruz?</h2>
+    <p class="section-sub">Derslerimizin içeriğine bir göz at.</p>
+
+    <div class="slider-outer">
+      <button class="slider-btn prev" onclick="moveSlide(-1)">&#8592;</button>
+      <div class="slider-track-wrap">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide"><img src="slide1.png" alt="Grup derslerinde neler yapıyoruz" /></div>
+          <div class="slide"><img src="slide2.png" alt="Ders içerikleri" /></div>
+          <div class="slide"><img src="slide3.png" alt="Bugün ne çalışacağım kaygısına son" /></div>
+          <div class="slide"><img src="slide4.png" alt="7/24 yaşayan ispanyolca grubu" /></div>
+          <div class="slide"><img src="slide5.png" alt="İspanyolca ve ötesi" /></div>
+          <div class="slide"><img src="slide6.png" alt="Aradığın eğitim tam burada" /></div>
+        </div>
+      </div>
+      <button class="slider-btn next" onclick="moveSlide(1)">&#8594;</button>
+      <div class="slider-dots" id="sliderDots">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+        <div class="dot" onclick="goToSlide(3)"></div>
+        <div class="dot" onclick="goToSlide(4)"></div>
+        <div class="dot" onclick="goToSlide(5)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section id="hizmetler">
+  <div class="section-wrap">
+    <div class="section-tag">✦ Neler Dahil?</div>
+    <h2 class="section-title">Eğitime Dahil Olan<br>Hizmetler</h2>
+    <p class="section-sub">Öğrenme deneyiminizi desteklemek için tasarlanmış kapsamlı hizmetler</p>
+    <div class="hizmet-grid">
+      <div class="hizmet-item"><div class="hizmet-icon">📚</div><div class="hizmet-text">Dijital Ders Materyalleri</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">🎧</div><div class="hizmet-text">Listening & Speaking Aktiviteleri</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">🎮</div><div class="hizmet-text">Dijitalleştirilmiş Oyunsal Ödevler</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">🃏</div><div class="hizmet-text">Haftalık Flash Kart & Çalışma Programı</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">✅</div><div class="hizmet-text">Ödev Takip Sistemi</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">👥</div><div class="hizmet-text">İnteraktif Grup Çalışmaları</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">💬</div><div class="hizmet-text">Bireysel Geri Bildirim</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">🎬</div><div class="hizmet-text">Ders Kayıtlarına Erişim</div></div>
+      <div class="hizmet-item"><div class="hizmet-icon">💚</div><div class="hizmet-text">WhatsApp Destek Grubu</div></div>
+    </div>
+
+    <div class="bilgiler-card">
+      <div class="bilgiler-title">Dersler Hakkında Önemli Bilgiler</div>
+      <div class="bilgiler-grid">
+        <div class="bilgi-row"><div class="bilgi-icon">⏱</div>1 ders = 40 dakika</div>
+        <div class="bilgi-row"><div class="bilgi-icon">📅</div>Haftada 4 ders</div>
+        <div class="bilgi-row"><div class="bilgi-icon">👥</div>10–15 kişilik sınıflar</div>
+        <div class="bilgi-row"><div class="bilgi-icon">🎬</div>Dersler kaydedilir ve sonradan erişilebilir</div>
+      </div>
+      <div class="whatsapp-row">
+        <p>Daha fazla bilgi için bize WhatsApp üzerinden ulaşabilirsiniz.</p>
+        <a href="https://api.whatsapp.com/send/?phone=905419064522&text&type=phone_number&app_absent=0" class="btn-wa" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Canlı Destek Al
+        </a>
+      </div>
+      <p class="uyari-text">
+        *Kayıt sonrası gün ve saat seçimi değiştirilemez.<br>
+        *Lütfen yalnızca kendi seviyenize uygun gruba kayıt olun.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- HAZEL HOCA -->
+<section id="hazel">
+  <div class="section-wrap">
+    <div class="hazel-wrap">
+      <div class="hazel-photo-box">
+        <div class="hazel-photo">
+          <img src="slide6.png" alt="Hazel Hoca" />
+        </div>
+        <div class="hazel-insta">
+          <span>📸</span> @ispanyolcacim
+        </div>
+      </div>
+      <div class="hazel-content">
+        <div class="section-tag pink-tag">✦ Eğitmen</div>
+        <div class="hazel-name">Profe Hazel</div>
+        <div class="hazel-title-tag">İspanyolca Eğitmeni · İDA Kurucusu</div>
+
+        <div class="hazel-stat-chips">
+          <span class="hchip pink">9 Yıllık Deneyim</span>
+          <span class="hchip amber">DELE C2 Sertifikalı</span>
+          <span class="hchip">Ankara Üniversitesi</span>
+          <span class="hchip">Córdoba Üniversitesi</span>
+        </div>
+
+        <div class="hazel-highlights">
+          <div class="hl-row">
+            <div class="hl-icon">✅</div>
+            Alanından mezun, diplomalı gerçek bir öğretmen.
+          </div>
+          <div class="hl-row">
+            <div class="hl-icon">✅</div>
+            9 yıllık öğretim tecrübesi, yüzlerce mutlu öğrenci ve başarı hikayesi.
+          </div>
+          <div class="hl-row">
+            <div class="hl-icon">✅</div>
+            İspanya Eğitim Bakanlığı onaylı <strong>DELE C2</strong> sertifikası — uluslararası geçerli en üst düzey İspanyolca belgesi.
+          </div>
+        </div>
+
+        <p class="hazel-bio-text">
+          Aslen Antalyalıyım ve 1996 doğumluyum. Lise hayatımda yabancı dil bölümünde okudum ve ailemin mesleği sayesinde turizm ile sürekli içli dışlı oldum. Ankara Üniversitesi, Dil ve Tarih Coğrafya Fakültesi, İspanyol Dili ve Edebiyatı bölümünden <strong>3,68 not ortalamasıyla birincilikle mezun</strong> olduktan sonra, o dönemden başlayarak öğrencilerin dil hedeflerine ulaşmalarına yardımcı olma ve öğretme konusunda 9 yıllık bir deneyime sahibim.
+        </p>
+        <p class="hazel-bio-text">
+          Lisans eğitimimin yanı sıra İspanya'daki <strong>Córdoba Üniversitesi</strong>'nde aldığım ek eğitimle sınıfıma zengin bir bilgi ve uzmanlık getiriyorum. Derslerimde okuma, dinleme, konuşma ve yazmanın tüm yönlerini kullanan modern bir öğretim anlayışıyla, eğlenceli ve kalıcı bir dil öğrenme deneyimi sunuyorum.
+        </p>
+
+        <div class="lang-chips">
+          <span style="font-size:.78rem;font-weight:700;color:var(--gray);align-self:center;">Konuştuğu diller:</span>
+          <span class="lang-chip">🇹🇷 Türkçe</span>
+          <span class="lang-chip">🇪🇸 İspanyolca</span>
+          <span class="lang-chip">🇬🇧 İngilizce</span>
+          <span class="lang-chip">🇵🇹 Portekizce</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="iletisim">
+  <div class="section-tag">✦ Hemen Başla</div>
+  <h2 class="section-title">Hayalindeki İspanyolca için<br>sadece bir mesaj uzağındayım!</h2>
+  <p class="section-sub">Kontenjan her grupta yalnızca 15 kişi. Grubun dolmadan yerini ayırt.</p>
+  <br><br>
+  <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%202026%20Yaz%20D%C3%B6nemi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="btn-wa-large" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp'tan Yaz
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">İ<span>D</span>A <span style="color:rgba(255,255,255,.3);font-weight:400;">İspanyolca Dil Akademisi</span></div>
+  <div>© 2026 İDA · Tüm hakları saklıdır.</div>
+</footer>
+
+<script>
+  let current = 0;
+  const total = 6;
+  const track = document.getElementById('sliderTrack');
+  const dots  = document.querySelectorAll('.dot');
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+  function moveSlide(dir) {
+    current = (current + dir + total) % total;
+    updateSlider();
+  }
+  function goToSlide(i) {
+    current = i;
+    updateSlider();
+  }
+
+  // Auto-play
+  setInterval(() => moveSlide(1), 4000);
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  moveSlide(-1);
+    if (e.key === 'ArrowRight') moveSlide(1);
+  });
+
+  // Touch swipe
+  let startX = 0;
+  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  track.addEventListener('touchend',   e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) moveSlide(diff > 0 ? 1 : -1);
+  });
+</script>
+</body>
+</html>
