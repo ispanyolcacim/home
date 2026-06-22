@@ -99,7 +99,7 @@
     .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .btn-hero { padding: 13px 26px; border-radius: 100px; background: var(--pink); color: white; font-size: .95rem; font-weight: 700; text-decoration: none; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 6px; }
     .btn-hero:hover { background: #e0224f; transform: scale(1.03); }
-    .btn-hero-ghost { padding: 13px 26px; border-radius: 100px; border: 1.5px solid var(--pink-mid); color: var(--pink); font-size: .9rem; font-weight: 700; text-decoration: none; background: var(--pink-soft); transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-hero-ghost { padding: 13px 26px; border-radius: 100px; border: 1.5px solid #FFE3E9; color: var(--pink); font-size: .9rem; font-weight: 700; text-decoration: none; background: #FFF7F8; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 6px; }
     .btn-hero-ghost:hover { background: var(--pink-mid); transform: scale(1.03); }
 
     /* HERO CARDS — fixed layout, no overlap */
@@ -191,8 +191,17 @@
       background: var(--amber-soft); border: 1px solid #FFD76B; color: #9A6800;
       font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; margin-bottom: 8px;
     }
-    .gc-price { font-size: 1.55rem; font-weight: 800; letter-spacing: -.03em; }
+    .gc-earlybird-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--pink); color: white;
+      font-size: .68rem; font-weight: 800; letter-spacing: .02em;
+      padding: 4px 10px; border-radius: 100px; margin-bottom: 8px; margin-left: 6px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+    .gc-price-old { font-size: .95rem; color: var(--gray); text-decoration: line-through; font-weight: 600; margin-right: 8px; }
     .gc-price-sub { font-size: .78rem; color: var(--gray); margin-top: 3px; }
+    .gc-price { font-size: 1.55rem; font-weight: 800; letter-spacing: -.03em; }
     .gc-seats { margin-top: 12px; }
     .gc-seats-label { font-size: .74rem; font-weight: 700; color: var(--gray); margin-bottom: 5px; }
     .seats-track { height: 5px; background: var(--border); border-radius: 100px; overflow: hidden; }
@@ -380,8 +389,8 @@
         <div class="feat"><span class="feat-icon">⏱</span> 1 ders = 40 dk</div>
       </div>
       <div class="hero-actions">
-        <a href="#gruplar" class="btn-hero">Gruplara Bak →</a>
-        <a href="#hazel" class="btn-hero-ghost">👩‍🏫 Hazel Hoca Kimdir?</a>
+        <a href="https://www.ispanyolcacim.com/index.html#gruplar" class="btn-hero">Gruplara Bak →</a>
+        <a href="https://www.ispanyolcacim.com/index.html#gruplar" class="btn-hero">Hazel Hoca Kimdir? →</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -447,7 +456,8 @@
         </div>
         <div class="gc-price-wrap">
           <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
-          <div class="gc-price">16.000 TL</div>
+          <span class="gc-earlybird-badge">⏳ 20 Temmuz'a kadar</span>
+          <div><span class="gc-price-old">19.500 TL</span><span class="gc-price">16.000 TL</span></div>
           <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
           <div class="gc-seats"><div class="gc-seats-label">15 / 15 yer müsait</div><div class="seats-track"><div class="seats-fill" style="width:0%"></div></div></div>
         </div>
@@ -464,7 +474,8 @@
         </div>
         <div class="gc-price-wrap">
           <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
-          <div class="gc-price">16.000 TL</div>
+          <span class="gc-earlybird-badge">⏳ 20 Temmuz'a kadar</span>
+          <div><span class="gc-price-old">19.500 TL</span><span class="gc-price">16.000 TL</span></div>
           <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
           <div class="gc-seats"><div class="gc-seats-label">6 / 15 yer müsait</div><div class="seats-track"><div class="seats-fill" style="width:60%"></div></div></div>
         </div>
@@ -481,7 +492,8 @@
         </div>
         <div class="gc-price-wrap">
           <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
-          <div class="gc-price">16.000 TL</div>
+          <span class="gc-earlybird-badge">⏳ 20 Temmuz'a kadar</span>
+          <div><span class="gc-price-old">19.500 TL</span><span class="gc-price">16.000 TL</span></div>
           <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
           <div class="gc-seats"><div class="gc-seats-label">1 / 15 yer müsait</div><div class="seats-track"><div class="seats-fill" style="width:93%"></div></div></div>
         </div>
@@ -498,7 +510,8 @@
         </div>
         <div class="gc-price-wrap">
           <div class="gc-lesson-count">🚀 32 Ders · Tek dönem</div>
-          <div class="gc-price">16.000 TL</div>
+          <span class="gc-earlybird-badge">⏳ 20 Temmuz'a kadar</span>
+          <div><span class="gc-price-old">19.500 TL</span><span class="gc-price">16.000 TL</span></div>
           <div class="gc-price-sub">ya da 12.000 + 4.000 TL taksit</div>
           <div class="gc-seats"><div class="gc-seats-label">3 / 15 yer müsait</div><div class="seats-track"><div class="seats-fill" style="width:80%"></div></div></div>
         </div>
@@ -720,7 +733,7 @@
   function moveSlide(dir) { current = (current + dir + total) % total; updateSlider(); }
   function goToSlide(i)   { current = i; updateSlider(); }
 
-  setInterval(() => moveSlide(1), 6000);
+  setInterval(() => moveSlide(1), 4500);
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft')  moveSlide(-1);
     if (e.key === 'ArrowRight') moveSlide(1);
