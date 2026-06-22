@@ -720,7 +720,7 @@
   function moveSlide(dir) { current = (current + dir + total) % total; updateSlider(); }
   function goToSlide(i)   { current = i; updateSlider(); }
 
-  setInterval(() => moveSlide(1), 4500);
+  setInterval(() => moveSlide(1), 6000);
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft')  moveSlide(-1);
     if (e.key === 'ArrowRight') moveSlide(1);
