@@ -199,10 +199,16 @@
     .seats-fill { height: 100%; background: var(--pink); border-radius: 100px; }
     .gc-cta {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 11px; border-radius: 10px; background: var(--pink-soft); color: var(--pink);
-      font-weight: 700; font-size: .88rem; text-decoration: none; transition: background .2s;
+      padding: 13px; border-radius: 10px; background: var(--dark); color: white;
+      font-weight: 800; font-size: 1rem; text-decoration: none; transition: background .2s, transform .15s;
     }
-    .gc-cta:hover { background: var(--pink-mid); }
+    .gc-cta:hover { background: #2A2A45; transform: scale(1.02); }
+    .gc-urgency {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--dark); color: white;
+      font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px; margin-left: 8px;
+    }
 
     /* SLIDER */
     #slider-section { background: var(--gray-light); }
@@ -449,7 +455,7 @@
       </div>
 
       <div class="group-card">
-        <div class="gc-top"><div class="gc-level">A1.2</div><span class="gc-badge badge-pink">Temel</span></div>
+        <div class="gc-top"><div class="gc-level">A1.2</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;"><span class="gc-badge badge-pink">Temel</span><span class="gc-urgency">Son 6 Kontenjan</span></div></div>
         <div class="gc-divider"></div>
         <div class="gc-rows">
           <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>18 Ağ — 8 Eki 2026</div></div>
@@ -466,7 +472,7 @@
       </div>
 
       <div class="group-card">
-        <div class="gc-top"><div class="gc-level">A2.1</div><span class="gc-badge badge-amber">Orta-Alt</span></div>
+        <div class="gc-top"><div class="gc-level">A2.1</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;"><span class="gc-badge badge-amber">Orta-Alt</span><span class="gc-urgency">Son 1 Kontenjan</span></div></div>
         <div class="gc-divider"></div>
         <div class="gc-rows">
           <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>17 Ağ — 7 Eki 2026</div></div>
@@ -483,7 +489,7 @@
       </div>
 
       <div class="group-card">
-        <div class="gc-top"><div class="gc-level">A2.2</div><span class="gc-badge badge-amber">Orta</span></div>
+        <div class="gc-top"><div class="gc-level">A2.2</div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;"><span class="gc-badge badge-amber">Orta</span><span class="gc-urgency">Son 3 Kontenjan</span></div></div>
         <div class="gc-divider"></div>
         <div class="gc-rows">
           <div class="gc-row"><div class="gc-row-icon">📅</div><div class="gc-row-text"><b>Tarihler</b>17 Ağ — 7 Eki 2026</div></div>
