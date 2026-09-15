@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-  <title>Öğrenci Deneyimleri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<title>Öğrenci Deneyimleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --pink: #F83564; --pink-soft: #FFF0F3; --pink-mid: #FFD6DF;
@@ -390,162 +391,124 @@
 }
 
 </style>
-
 <style>
 @media (max-width: 520px) {
   #studentLevelModal > div { padding: 26px 20px !important; }
   #studentLevelModal > div > div:nth-of-type(2) { grid-template-columns: 1fr !important; }
 }
 </style>
-
 </head>
 <body>
-
 <div class="announce-bar">
   🔥 <span>2026 GÜZ DÖNEMİ KAYITLARI BAŞLADI!</span> 🔥
 </div>
-
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="images/logo.png" alt="İspanyolcacım Dil Akademisi" />
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#gruplar">Eğitimler</a></li>
-    <li><a href="index.html#slider-section">Neler Yapıyoruz?</a></li>
-    <li><a href="index.html#hizmetler">Hizmetler</a></li>
-    <li><a href="index.html#hazel">Hazel Hoca</a></li>
-    <li><a href="blog.html" class="active">Öğrenci Deneyimleri</a></li>
-  </ul>
-  <div class="nav-stats">
-    <div class="nav-stat">
-      <div class="nav-stat-val">9 Yıl</div>
-      <div class="nav-stat-label">Tecrübe</div>
-    </div>
-    <div class="nav-stat-divider"></div>
-    <div class="nav-stat">
-      <div class="nav-stat-val">+2.000</div>
-      <div class="nav-stat-label">Mutlu Öğrenci</div>
-    </div>
-  </div>
-  <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%202026%20Yaz%20D%C3%B6nemi%20hakk%C4%B1nda%20internet%20sitenizi%20inceledim.%20Kay%C4%B1t%20olmak%20istiyorum." target="_blank" class="btn-primary">Kayıt Ol →</a>
+<a class="nav-logo" href="index.html">
+<img alt="İspanyolcacım Dil Akademisi" decoding="async" height="640" src="images/logo.png" width="1268"/>
+</a>
+<ul class="nav-links">
+<li><a href="index.html#gruplar">Eğitimler</a></li>
+<li><a href="index.html#slider-section">Neler Yapıyoruz?</a></li>
+<li><a href="index.html#hizmetler">Hizmetler</a></li>
+<li><a href="index.html#hazel">Hazel Hoca</a></li>
+<li><a class="active" href="blog.html">Öğrenci Deneyimleri</a></li>
+</ul>
+<div class="nav-stats">
+<div class="nav-stat">
+<div class="nav-stat-val">9 Yıl</div>
+<div class="nav-stat-label">Tecrübe</div>
+</div>
+<div class="nav-stat-divider"></div>
+<div class="nav-stat">
+<div class="nav-stat-val">+2.000</div>
+<div class="nav-stat-label">Mutlu Öğrenci</div>
+</div>
+</div>
+<a class="btn-primary" href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%202026%20Yaz%20D%C3%B6nemi%20hakk%C4%B1nda%20internet%20sitenizi%20inceledim.%20Kay%C4%B1t%20olmak%20istiyorum." target="_blank">Kayıt Ol →</a>
 </nav>
-
-
-
 <section class="student-stories" id="ogrencilerim-anlatiyor">
-  <div class="section-wrap">
-    <div class="student-stories-head">
-      <div>
-        <div class="section-tag">🎥 Öğrencilerim Anlatıyor</div>
-        <h1 class="section-title">Dersleri bir de onların<br>gözünden dinleyin.</h1>
-        <p class="section-sub">İspanyolcacım Dil Akademisi’nde öğrenme sürecini deneyimleyen öğrencilerim, dersleri, gelişimlerini ve kendi İspanyolca yolculuklarını kendi sözleriyle anlatıyor.</p>
-      </div>
-    </div>
-
-    <!-- SİMGE -->
-    <article class="featured-story">
-      <div class="story-video" id="simge-video">
-        <button
-          class="story-video-cover"
-          type="button"
-          data-video-id="UtbK-ZOq-X8"
-          data-video-title="Simge — İspanyolcacım öğrenci deneyimi"
-          aria-label="Simge'nin öğrenci deneyimi videosunu oynat"
-          onclick="playStudentVideo(this)">
-          <img src="images/simge-video-kapak.png" alt="Simge DELE öğrenci deneyimi video kapağı" loading="lazy">
-          <span class="story-play-button" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"></path>
-            </svg>
-          </span>
-        </button>
-      </div>
-
-      <div class="story-content">
-        <div class="story-kicker">Öne Çıkan Öğrenci Hikâyesi</div>
-
-        <div class="story-name-row">
-          <div class="story-name">Simge</div>
-          <span class="story-badge dele">🏅 DELE A2</span>
-          <span class="story-badge programs">5 Programa Katıldı</span>
-        </div>
-
-        <div class="story-meta">27 yaş · İstanbul · Finans Takım Lideri</div>
-
-        <p class="story-intro">
+<div class="section-wrap">
+<div class="student-stories-head">
+<div>
+<div class="section-tag">🎥 Öğrencilerim Anlatıyor</div>
+<h1 class="section-title">Dersleri bir de onların<br/>gözünden dinleyin.</h1>
+<p class="section-sub">İspanyolcacım Dil Akademisi’nde öğrenme sürecini deneyimleyen öğrencilerim, dersleri, gelişimlerini ve kendi İspanyolca yolculuklarını kendi sözleriyle anlatıyor.</p>
+</div>
+</div>
+<!-- SİMGE -->
+<article class="featured-story">
+<div class="story-video" id="simge-video">
+<button aria-label="Simge'nin öğrenci deneyimi videosunu oynat" class="story-video-cover" data-video-id="UtbK-ZOq-X8" data-video-title="Simge — İspanyolcacım öğrenci deneyimi" onclick="playStudentVideo(this)" type="button">
+<img alt="Simge DELE öğrenci deneyimi video kapağı" decoding="async" height="1365" loading="lazy" src="images/simge-video-kapak.png" width="768"/>
+<span aria-hidden="true" class="story-play-button">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</span>
+</button>
+</div>
+<div class="story-content">
+<div class="story-kicker">Öne Çıkan Öğrenci Hikâyesi</div>
+<div class="story-name-row">
+<div class="story-name">Simge</div>
+<span class="story-badge dele">🏅 DELE A2</span>
+<span class="story-badge programs">5 Programa Katıldı</span>
+</div>
+<div class="story-meta">27 yaş · İstanbul · Finans Takım Lideri</div>
+<p class="story-intro">
           İspanyolca öğrenme sürecini, ders deneyimini ve uzun soluklu eğitim yolculuğunu kendi sözleriyle anlatıyor.
         </p>
-
-        <div class="story-program-title">Aldığı Dersler</div>
-        <div class="story-programs">
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.2</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.1</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.2</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca B1.1</div>
-          <div class="story-program"><span class="story-check">✅</span>Konuşma Kulübü</div>
-        </div>
-
-        <div class="story-note">
+<div class="story-program-title">Aldığı Dersler</div>
+<div class="story-programs">
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.2</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.1</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.2</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca B1.1</div>
+<div class="story-program"><span class="story-check">✅</span>Konuşma Kulübü</div>
+</div>
+<div class="story-note">
           Simge; Genel İspanyolca A1.2, A2.1, A2.2 ve B1.1 programlarına ve Konuşma Kulübü’ne katıldı.
         </div>
-      </div>
-    </article>
-
-    <!-- CEYLİN -->
-    <article class="featured-story">
-      <div class="story-video" id="ceylin-video">
-        <button
-          class="story-video-cover"
-          type="button"
-          data-video-id="sY8z6qaN0wM"
-          data-video-title="Ceylin — İspanyolcacım öğrenci deneyimi"
-          aria-label="Ceylin'in öğrenci deneyimi videosunu oynat"
-          onclick="playStudentVideo(this)">
-          <img src="images/ceylin-video-kapak.png" alt="Ceylin öğrenci tavsiyesi video kapağı" loading="lazy">
-          <span class="story-play-button" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"></path>
-            </svg>
-          </span>
-        </button>
-      </div>
-
-      <div class="story-content">
-        <div class="story-kicker">Öğrenci Hikâyesi</div>
-
-        <div class="story-name-row">
-          <div class="story-name">Ceylin</div>
-          <span class="story-badge dele">🏅 DELE A2</span>
-          <span class="story-badge programs">5 Programa Katıldı</span>
-        </div>
-
-        <div class="story-meta">30 yaş · İstanbul · Mimar</div>
-
-        <p class="story-intro">
+</div>
+</article>
+<!-- CEYLİN -->
+<article class="featured-story">
+<div class="story-video" id="ceylin-video">
+<button aria-label="Ceylin'in öğrenci deneyimi videosunu oynat" class="story-video-cover" data-video-id="sY8z6qaN0wM" data-video-title="Ceylin — İspanyolcacım öğrenci deneyimi" onclick="playStudentVideo(this)" type="button">
+<img alt="Ceylin öğrenci tavsiyesi video kapağı" decoding="async" height="1365" loading="lazy" src="images/ceylin-video-kapak.png" width="768"/>
+<span aria-hidden="true" class="story-play-button">
+<svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</span>
+</button>
+</div>
+<div class="story-content">
+<div class="story-kicker">Öğrenci Hikâyesi</div>
+<div class="story-name-row">
+<div class="story-name">Ceylin</div>
+<span class="story-badge dele">🏅 DELE A2</span>
+<span class="story-badge programs">5 Programa Katıldı</span>
+</div>
+<div class="story-meta">30 yaş · İstanbul · Mimar</div>
+<p class="story-intro">
           A1.1 seviyesinden B1.1 seviyesine kadar uzanan İspanyolca eğitim sürecini, ders deneyimini ve gelişimini kendi sözleriyle anlatıyor.
         </p>
-
-        <div class="story-program-title">Aldığı Dersler</div>
-        <div class="story-programs">
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.1</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.2</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.1</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.2</div>
-          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca B1.1</div>
-        </div>
-
-        <div class="story-note">
+<div class="story-program-title">Aldığı Dersler</div>
+<div class="story-programs">
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.1</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.2</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.1</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.2</div>
+<div class="story-program"><span class="story-check">✅</span>Genel İspanyolca B1.1</div>
+</div>
+<div class="story-note">
           Ceylin; Genel İspanyolca A1.1, A1.2, A2.1, A2.2 ve B1.1 programlarına katıldı ve DELE A2 belgesini aldı.
         </div>
-      </div>
-    </article>
-  </div>
+</div>
+</article>
+</div>
 </section>
-
-
-
-
-
 <!-- KAYIT CTA -->
 <section style="
   background:#ffffff;
@@ -553,11 +516,8 @@
   text-align:center;
   border-top:1px solid #E8E8EE;
 ">
-  <div style="max-width:1120px;margin:0 auto;">
-    <button
-      type="button"
-      onclick="openStudentLevelModal()"
-      style="
+<div style="max-width:1120px;margin:0 auto;">
+<button onclick="openStudentLevelModal()" style="
         display:flex;
         align-items:center;
         justify-content:center;
@@ -575,13 +535,13 @@
         font-weight:800;
         letter-spacing:-0.02em;
         box-shadow:0 14px 34px rgba(248,53,100,.30);
-      ;border:none;cursor:pointer;">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
+      ;border:none;cursor:pointer;" type="button">
+<svg aria-hidden="true" fill="currentColor" height="26" viewbox="0 0 24 24" width="26">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
       Kayıt Olmak İstiyorum
     </button>
-    <div style="
+<div style="
       margin-top:12px;
       color:#6B7280;
       font-family:'Plus Jakarta Sans',sans-serif;
@@ -589,95 +549,68 @@
     ">
       WhatsApp üzerinden kayıt için bize yazın.
     </div>
-  </div>
+</div>
 </section>
-
-
 <!-- ÖĞRENCİ DENEYİMLERİ — SEVİYE SEÇİM MODALI -->
-<div id="studentLevelModal"
-     onclick="if(event.target===this) closeStudentLevelModal()"
-     style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.52);
+<div id="studentLevelModal" onclick="if(event.target===this) closeStudentLevelModal()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.52);
             backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;">
-  <div style="background:white;border-radius:24px;padding:36px;max-width:500px;width:100%;
+<div style="background:white;border-radius:24px;padding:36px;max-width:500px;width:100%;
               box-shadow:0 24px 64px rgba(0,0,0,.22);">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px;">
-      <div>
-        <div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#F83564;margin-bottom:4px;">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px;">
+<div>
+<div style="font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#F83564;margin-bottom:4px;">
           Kayıt Ol
         </div>
-        <div style="font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#1A1A2E;">
+<div style="font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#1A1A2E;">
           Seviyeni seç
         </div>
-        <div style="font-size:.82rem;color:#6B7280;margin-top:4px;">
+<div style="font-size:.82rem;color:#6B7280;margin-top:4px;">
           Seçimin ardından WhatsApp mesajın hazır açılacak.
         </div>
-      </div>
-      <button type="button" onclick="closeStudentLevelModal()"
-              aria-label="Seviye seçimini kapat"
-              style="width:38px;height:38px;border-radius:50%;border:1.5px solid #E8E8EE;background:white;
-                     font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
-                     color:#6B7280;flex-shrink:0;">✕</button>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      
-      <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A1.1.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." target="_blank" rel="noopener"
-         onclick="closeStudentLevelModal()"
-         style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
-                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;"
-         onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'"
-         onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'">
-        <span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A1.1</span>
-        <span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Başlangıç</span>
-      </a>
-      <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A1.2.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." target="_blank" rel="noopener"
-         onclick="closeStudentLevelModal()"
-         style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
-                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;"
-         onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'"
-         onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'">
-        <span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A1.2</span>
-        <span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Temel</span>
-      </a>
-      <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A2.1.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." target="_blank" rel="noopener"
-         onclick="closeStudentLevelModal()"
-         style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
-                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;"
-         onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'"
-         onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'">
-        <span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A2.1</span>
-        <span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Orta-Alt</span>
-      </a>
-      <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A2.2.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." target="_blank" rel="noopener"
-         onclick="closeStudentLevelModal()"
-         style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
-                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;"
-         onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'"
-         onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'">
-        <span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A2.2</span>
-        <span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Orta</span>
-      </a>
-    </div>
-  </div>
 </div>
-
+<button aria-label="Seviye seçimini kapat" onclick="closeStudentLevelModal()" style="width:38px;height:38px;border-radius:50%;border:1.5px solid #E8E8EE;background:white;
+                     font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+                     color:#6B7280;flex-shrink:0;" type="button">✕</button>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+<a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A1.1.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." onclick="closeStudentLevelModal()" onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'" rel="noopener" style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
+                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;" target="_blank">
+<span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A1.1</span>
+<span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Başlangıç</span>
+</a>
+<a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A1.2.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." onclick="closeStudentLevelModal()" onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'" rel="noopener" style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
+                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;" target="_blank">
+<span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A1.2</span>
+<span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Temel</span>
+</a>
+<a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A2.1.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." onclick="closeStudentLevelModal()" onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'" rel="noopener" style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
+                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;" target="_blank">
+<span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A2.1</span>
+<span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Orta-Alt</span>
+</a>
+<a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%20internet%20sitenizde%20%C3%96%C4%9Frenci%20Deneyimleri%20sayfas%C4%B1n%C4%B1%20inceledim.%20Seviyem%20A2.2.%20G%C3%BCz%20d%C3%B6nemi%20derslerinize%20kay%C4%B1t%20olmak%20istiyorum." onclick="closeStudentLevelModal()" onmouseout="this.style.borderColor='#E8E8EE';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#F83564';this.style.boxShadow='0 4px 16px rgba(248,53,100,.15)'" rel="noopener" style="padding:20px;border:1.5px solid #E8E8EE;border-radius:16px;text-decoration:none;color:#1A1A2E;
+                transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:4px;background:#fff;" target="_blank">
+<span style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;">A2.2</span>
+<span style="font-size:.75rem;font-weight:700;background:#FFF0F3;color:#F83564;padding:3px 8px;border-radius:100px;display:inline-block;width:fit-content;">Orta</span>
+</a>
+</div>
+</div>
+</div>
 <footer>
-  <div class="footer-logo"><span class="footer-brand">İspanyolcacım Dil Akademisi</span> <span class="footer-sep">–</span> <span class="footer-owner">Hazel Buse Küreşir</span></div>
-  <div class="footer-socials">
-    <a href="https://www.instagram.com/ispanyolcacim/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@ispanyolcacim?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok" class="social-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
-    </a>
-    <a href="https://www.youtube.com/@ispanyolcacim" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    </a>
-  </div>
-  <div>© 2026 Hazel Buse Küreşir · Tüm hakları saklıdır.</div>
+<div class="footer-logo"><span class="footer-brand">İspanyolcacım Dil Akademisi</span> <span class="footer-sep">–</span> <span class="footer-owner">Hazel Buse Küreşir</span></div>
+<div class="footer-socials">
+<a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/ispanyolcacim/" rel="noopener" target="_blank">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a aria-label="TikTok" class="social-icon" href="https://www.tiktok.com/@ispanyolcacim?is_from_webapp=1&amp;sender_device=pc" rel="noopener" target="_blank">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"></path></svg>
+</a>
+<a aria-label="YouTube" class="social-icon" href="https://www.youtube.com/@ispanyolcacim" rel="noopener" target="_blank">
+<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+</div>
+<div>© 2026 Hazel Buse Küreşir · Tüm hakları saklıdır.</div>
 </footer>
-
-
 <script>
   function playStudentVideo(button) {
     const container = button.closest('.story-video');
@@ -695,8 +628,6 @@
     container.appendChild(iframe);
   }
 </script>
-
-
 <script>
 function openStudentLevelModal() {
   const modal = document.getElementById('studentLevelModal');
@@ -716,6 +647,5 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeStudentLevelModal();
 });
 </script>
-
 </body>
 </html>
