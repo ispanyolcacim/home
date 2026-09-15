@@ -79,6 +79,173 @@
       transition: background .2s, color .2s, transform .2s;
     }
     .social-icon:hover { background: var(--pink); color: white; transform: translateY(-2px); }
+  
+    /* ÖĞRENCİ DENEYİMLERİ */
+    .student-stories {
+      background: linear-gradient(180deg, #fff 0%, var(--gray-light) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .student-stories .section-wrap { max-width: 1120px; }
+    .student-stories-head { margin-bottom: 36px; }
+    .student-stories-head .section-sub { max-width: 620px; }
+
+    .featured-story {
+      display: grid;
+      grid-template-columns: minmax(280px, 390px) 1fr;
+      gap: 34px;
+      align-items: stretch;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 14px 40px rgba(26,26,46,.08);
+    }
+
+    .story-video {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,.14);
+    }
+
+    .story-video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .story-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: 8px 6px;
+    }
+
+    .story-kicker {
+      color: var(--pink);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .story-name-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .story-name {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    .story-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: 100px;
+      font-size: .72rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .story-badge.dele {
+      background: var(--pink-soft);
+      border: 1px solid var(--pink-mid);
+      color: var(--pink);
+    }
+
+    .story-badge.programs {
+      background: var(--amber-soft);
+      border: 1px solid #FFD76B;
+      color: #9A6800;
+    }
+
+    .story-meta {
+      color: var(--gray);
+      font-size: .92rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .story-intro {
+      color: var(--gray);
+      font-size: .96rem;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    .story-program-title {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .story-programs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+      margin-bottom: 20px;
+    }
+
+    .story-program {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--dark);
+      background: #FAFAFB;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 10px 12px;
+    }
+
+    .story-check {
+      color: #16A34A;
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .story-note {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--gray);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 820px) {
+      .featured-story {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+      .story-content { padding: 6px 2px 2px; }
+    }
+
+    @media (max-width: 520px) {
+      .story-programs { grid-template-columns: 1fr; }
+      .story-video { max-width: 320px; }
+    }
+
   </style>
 </head>
 <body>
@@ -111,6 +278,62 @@
   </div>
   <a href="https://wa.me/905306882206?text=Merhaba%20Hazel%20Hoca%2C%202026%20Yaz%20D%C3%B6nemi%20hakk%C4%B1nda%20internet%20sitenizi%20inceledim.%20Kay%C4%B1t%20olmak%20istiyorum." target="_blank" class="btn-primary">Kayıt Ol →</a>
 </nav>
+
+
+<section class="student-stories" id="ogrencilerim-anlatiyor">
+  <div class="section-wrap">
+    <div class="student-stories-head">
+      <div>
+        <div class="section-tag">🎥 Öğrencilerim Anlatıyor</div>
+        <h1 class="section-title">Dersleri bir de onların<br>gözünden dinleyin.</h1>
+        <p class="section-sub">İspanyolcacım Dil Akademisi’nde öğrenme sürecini deneyimleyen öğrencilerim, dersleri ve kendi İspanyolca yolculuklarını kendi sözleriyle anlatıyor.</p>
+      </div>
+    </div>
+
+    <article class="featured-story">
+      <div class="story-video">
+        <iframe
+          src="https://www.youtube.com/embed/UtbK-ZOq-X8"
+          title="Simge — İspanyolcacım öğrenci deneyimi"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="story-content">
+        <div class="story-kicker">Öne Çıkan Öğrenci Hikâyesi</div>
+
+        <div class="story-name-row">
+          <div class="story-name">Simge</div>
+          <span class="story-badge dele">🏅 DELE A2</span>
+          <span class="story-badge programs">5 Programa Katıldı</span>
+        </div>
+
+        <div class="story-meta">27 yaş · İstanbul · Finance Team Lead</div>
+
+        <p class="story-intro">
+          İspanyolca öğrenme sürecini, ders deneyimini ve uzun soluklu eğitim yolculuğunu kendi sözleriyle anlatıyor.
+        </p>
+
+        <div class="story-program-title">Aldığı Dersler</div>
+        <div class="story-programs">
+          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.1</div>
+          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A1.2</div>
+          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.1</div>
+          <div class="story-program"><span class="story-check">✅</span>Genel İspanyolca A2.2</div>
+          <div class="story-program"><span class="story-check">✅</span>Konuşma Kulübü</div>
+        </div>
+
+        <div class="story-note">
+          Simge, A1.1 seviyesinden A2.2 seviyesine kadar Genel İspanyolca programlarına ve Konuşma Kulübü’ne katıldı.
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 
 <section>
   <div class="section-wrap">
