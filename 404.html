@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sayfa Bulunamadı — İspanyolcacım</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="/images/favicon.png">
+  <style>
+    :root{
+      --navy:#111827;
+      --pink:#ef476f;
+      --amber:#f59e0b;
+      --soft:#fff7fb;
+      --line:#e5e7eb;
+      --text:#1f2937;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#fff 0%,var(--soft) 100%);
+    }
+    .wrap{width:min(1120px,90vw);margin:0 auto}
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .logo img{
+      width:190px;
+      height:auto;
+      display:block;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+    .nav-links a{
+      color:var(--navy);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 20px;
+      border-radius:999px;
+      background:var(--navy);
+      color:#fff !important;
+    }
+    main{
+      min-height:68vh;
+      display:grid;
+      place-items:center;
+      padding:70px 0;
+    }
+    .card{
+      width:min(780px,100%);
+      text-align:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:56px 32px;
+      box-shadow:0 20px 60px rgba(17,24,39,.08);
+    }
+    .code{
+      font-size:clamp(72px,14vw,150px);
+      line-height:.9;
+      font-weight:900;
+      letter-spacing:-6px;
+      color:var(--pink);
+      margin-bottom:24px;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size:clamp(28px,4vw,46px);
+      color:var(--navy);
+    }
+    p{
+      margin:0 auto 30px;
+      max-width:620px;
+      font-size:18px;
+      line-height:1.7;
+      color:#4b5563;
+    }
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+    }
+    .btn-primary{background:var(--navy);color:#fff}
+    .btn-secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    footer{
+      border-top:1px solid var(--line);
+      background:#111827;
+      color:#fff;
+      padding:28px 0;
+      text-align:center;
+      font-size:14px;
+    }
+    footer a{color:#fff;text-decoration:none}
+    @media (max-width:760px){
+      .nav{min-height:auto;padding:16px 0;align-items:flex-start}
+      .nav-links{justify-content:flex-end;gap:12px}
+      .logo img{width:150px}
+      .card{padding:42px 20px}
+      .code{letter-spacing:-3px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="İspanyolcacım ana sayfa">
+        <img src="/images/logo.png" alt="İspanyolcacım Dil Akademisi" width="1268" height="640" decoding="async">
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a href="/#gruplar">Grup Dersleri</a>
+        <a href="/blog.html">Öğrenci Deneyimleri</a>
+        <a class="cta" href="/">Ana Sayfa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="card" aria-labelledby="page-title">
+        <div class="code">404</div>
+        <h1 id="page-title">Aradığınız sayfayı bulamadık.</h1>
+        <p>
+          Bağlantı değişmiş, sayfa kaldırılmış ya da adres yanlış yazılmış olabilir.
+          Ana sayfaya dönebilir veya öğrencilerimizin deneyimlerini inceleyebilirsiniz.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/">Ana Sayfaya Dön</a>
+          <a class="btn btn-secondary" href="/blog.html">Öğrenci Deneyimleri</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      İspanyolcacım Dil Akademisi – Profe Hazel
+    </div>
+  </footer>
+</body>
+</html>
