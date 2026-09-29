@@ -4450,15 +4450,17 @@ function openTracker(){
   hideTrackerMessage();
 }
 
-function trackerJsonp(params){
+function trackerJsonp(params, attempt = 1){
   return new Promise((resolve,reject) => {
     const callbackName = 'trackerCallback_' + Date.now() + '_' + Math.floor(Math.random()*100000);
     const script = document.createElement('script');
     let finished = false;
+    let timer = null;
 
     const cleanup = () => {
       if(finished) return;
       finished = true;
+      if(timer) clearTimeout(timer);
       try{ delete window[callbackName]; }catch(e){ window[callbackName] = undefined; }
       if(script.parentNode) script.parentNode.removeChild(script);
     };
@@ -4468,22 +4470,35 @@ function trackerJsonp(params){
       resolve(data);
     };
 
-    const query = new URLSearchParams({...params, callback:callbackName});
+    const query = new URLSearchParams({...params, callback:callbackName, _t:Date.now()});
     script.src = TRACKER_API_URL + '?' + query.toString();
     script.async = true;
+
     script.onerror = function(){
       cleanup();
-      reject(new Error('Bağlantı kurulamadı.'));
+      if(attempt < 2){
+        setTimeout(() => {
+          trackerJsonp(params, attempt + 1).then(resolve).catch(reject);
+        }, 500);
+      }else{
+        reject(new Error('Bağlantı kurulamadı. Lütfen tekrar dene.'));
+      }
     };
 
     document.body.appendChild(script);
 
-    setTimeout(() => {
+    // Apps Script ilk çalışmada bazen yavaş açılabilir.
+    // 30 saniye bekle; ilk deneme zaman aşımına uğrarsa bir kez otomatik tekrar dene.
+    timer = setTimeout(() => {
       if(!finished){
         cleanup();
-        reject(new Error('İstek zaman aşımına uğradı.'));
+        if(attempt < 2){
+          trackerJsonp(params, attempt + 1).then(resolve).catch(reject);
+        }else{
+          reject(new Error('Bağlantı yavaşladı. Lütfen birkaç saniye sonra tekrar dene.'));
+        }
       }
-    },15000);
+    },30000);
   });
 }
 
@@ -4503,7 +4518,7 @@ async function loadTrackerStudents(){
 
   studentSelect.disabled = true;
   studentSelect.innerHTML = '<option value="">Öğrenciler yükleniyor...</option>';
-  showTrackerMessage('Öğrenci listesi yükleniyor…','info');
+  showTrackerMessage('Öğrenci listesi hazırlanıyor…','info');
 
   try{
     const data = await trackerJsonp({action:'students', level:level});
@@ -4547,7 +4562,7 @@ async function checkHomeworkTracker(){
 
   button.disabled = true;
   button.textContent = 'Kontrol ediliyor…';
-  showTrackerMessage('Google Sheets üzerindeki güncel durumun kontrol ediliyor…','info');
+  showTrackerMessage('Güncel ödev durumun kontrol ediliyor…','info');
 
   try{
     const data = await trackerJsonp({level:level, student:student, code:code});
