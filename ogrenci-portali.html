@@ -551,6 +551,238 @@ button{
 }
 
 
+
+/* ---------- HOMEWORK TRACKER ---------- */
+.tracker-home-card{
+  background:linear-gradient(145deg,#fff5e9,#ffe1bd);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.tracker-home-card .label{
+  margin:0;
+  font-size:clamp(27px,3vw,40px);
+  max-width:100%;
+}
+.tracker-home-card::after{display:none}
+
+.tracker-wrap{
+  width:min(1120px,calc(100% - 36px));
+  margin:24px auto 70px;
+}
+.tracker-intro{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:17px;
+  font-weight:700;
+  line-height:1.6;
+}
+.tracker-login{
+  width:min(760px,100%);
+  margin:0 auto;
+  background:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(32,48,74,.07);
+  padding:28px;
+}
+.tracker-steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-bottom:22px;
+}
+.tracker-step{
+  background:#f7f8fb;
+  border-radius:14px;
+  padding:9px 8px;
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
+  color:#68778d;
+}
+.tracker-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.tracker-field{display:flex;flex-direction:column;gap:7px}
+.tracker-field.full{grid-column:1/-1}
+.tracker-field label{font-weight:1000;font-size:14px}
+.tracker-input{
+  width:100%;
+  border:2px solid #e8ebf1;
+  border-radius:16px;
+  padding:14px 15px;
+  font:inherit;
+  font-size:16px;
+  outline:none;
+  background:#fbfcfe;
+  color:var(--ink);
+}
+.tracker-input:focus{
+  border-color:var(--orange);
+  box-shadow:0 0 0 4px rgba(255,182,95,.15);
+}
+.tracker-input:disabled{opacity:.6;cursor:not-allowed}
+.tracker-button{
+  width:100%;
+  margin-top:16px;
+  border:none;
+  border-radius:17px;
+  padding:15px 18px;
+  cursor:pointer;
+  background:var(--ink);
+  color:#fff;
+  font-weight:1000;
+  font-size:16px;
+}
+.tracker-button:disabled{opacity:.55;cursor:wait}
+.tracker-message{
+  display:none;
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:900;
+  font-size:14px;
+}
+.tracker-message.show{display:block}
+.tracker-message.error{background:#fff0f2;color:#b23349}
+.tracker-message.info{background:var(--blue-soft);color:#346783}
+
+.tracker-results{display:none;margin-top:26px}
+.tracker-results.show{display:block}
+.tracker-profile{
+  background:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(32,48,74,.07);
+  padding:26px;
+}
+.tracker-profile-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.tracker-profile h3{margin:0;font-size:30px}
+.tracker-level-pill{
+  display:inline-block;
+  margin-top:7px;
+  padding:7px 11px;
+  border-radius:999px;
+  background:var(--orange-soft);
+  font-size:13px;
+  font-weight:1000;
+}
+.tracker-progress-number{font-size:38px;font-weight:1000;line-height:1}
+.tracker-progress-label{font-size:12px;color:var(--muted);font-weight:900;margin-top:5px;text-align:right}
+.tracker-progress-track{
+  height:14px;
+  border-radius:999px;
+  background:#edf0f4;
+  overflow:hidden;
+  margin-top:20px;
+}
+.tracker-progress-fill{
+  height:100%;
+  width:0;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  transition:width .45s ease;
+}
+.tracker-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+.tracker-stat{
+  border-radius:18px;
+  padding:15px;
+  text-align:center;
+  background:#f8f9fb;
+}
+.tracker-stat strong{display:block;font-size:25px}
+.tracker-stat span{font-size:12px;font-weight:900;color:var(--muted)}
+.tracker-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:22px 0 14px;
+}
+.tracker-filter{
+  border:none;
+  border-radius:999px;
+  padding:9px 13px;
+  cursor:pointer;
+  background:#fff;
+  box-shadow:0 5px 14px rgba(32,48,74,.08);
+  color:var(--ink);
+  font-weight:900;
+}
+.tracker-filter.active{background:var(--ink);color:#fff}
+.tracker-list{display:flex;flex-direction:column;gap:11px}
+.tracker-task{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+  background:#fff;
+  border-radius:20px;
+  padding:16px 18px;
+  border:1px solid rgba(32,48,74,.07);
+  box-shadow:0 6px 18px rgba(32,48,74,.05);
+}
+.tracker-task-title{font-weight:1000;font-size:16px}
+.tracker-task-value{
+  white-space:pre-line;
+  margin-top:5px;
+  color:#66758a;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.45;
+}
+.tracker-status{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:118px;
+  padding:8px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:1000;
+}
+.tracker-status.completed{background:var(--green-soft);color:#34704c}
+.tracker-status.missing{background:#fff0f2;color:#b23349}
+.tracker-status.pending{background:var(--yellow-soft);color:#8b6814}
+.tracker-empty{
+  padding:30px 18px;
+  text-align:center;
+  color:var(--muted);
+  font-weight:900;
+}
+.tracker-note{
+  margin-top:12px;
+  text-align:center;
+  color:#7b8798;
+  font-size:12px;
+  font-weight:700;
+}
+
+@media(max-width:700px){
+  .tracker-form-grid{grid-template-columns:1fr}
+  .tracker-field.full{grid-column:auto}
+  .tracker-steps{grid-template-columns:1fr 1fr}
+  .tracker-stats{grid-template-columns:1fr 1fr}
+  .tracker-task{grid-template-columns:1fr}
+  .tracker-status{justify-self:start}
+}
+
 /* ---------- PASSWORD MODAL ---------- */
 .modal{
   position:fixed;
@@ -699,6 +931,10 @@ button{
       <button class="level-card" style="background:linear-gradient(145deg,#fff8dc,#ffe6a7);" onclick="requestAccess('toolbox')">
         <span class="big">🧰</span>
         <span class="label">İspanyolca Araç Kutusu</span>
+      </button>
+
+      <button class="level-card tracker-home-card" onclick="openTracker()">
+        <span class="label">📝 Ödev Takip Merkezi</span>
       </button>
     </div>
 
@@ -4011,6 +4247,100 @@ button{
   </div>
 </section>
 
+
+<!-- =========================================================
+     ÖDEV TAKİP MERKEZİ
+========================================================= -->
+<section id="tracker" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">📝 Ödev Takip Merkezi</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">📚 KENDİ ÖDEV DURUMUNU KONTROL ET</div>
+    <h2>📝 Ödev Takip Merkezi</h2>
+    <p>Tamamladığın, eksik ve değerlendirme bekleyen ödevlerini görüntüle.</p>
+  </div>
+
+  <div class="tracker-wrap">
+    <div class="tracker-login">
+      <div class="tracker-steps">
+        <div class="tracker-step">1 · Seviye</div>
+        <div class="tracker-step">2 · Öğrenci</div>
+        <div class="tracker-step">3 · Kod</div>
+        <div class="tracker-step">4 · Sonuç</div>
+      </div>
+
+      <div class="tracker-form-grid">
+        <div class="tracker-field">
+          <label for="trackerLevel">🎓 Seviyen</label>
+          <select id="trackerLevel" class="tracker-input" onchange="loadTrackerStudents()">
+            <option value="">Seviye seç</option>
+            <option value="A1.1">A1.1</option>
+            <option value="A1.2">A1.2</option>
+            <option value="A2.1">A2.1</option>
+            <option value="A2.2">A2.2</option>
+            <option value="B1.1">B1.1</option>
+          </select>
+        </div>
+
+        <div class="tracker-field">
+          <label for="trackerStudent">👤 Adın Soyadın</label>
+          <select id="trackerStudent" class="tracker-input" disabled>
+            <option value="">Önce seviyeni seç</option>
+          </select>
+        </div>
+
+        <div class="tracker-field full">
+          <label for="trackerCode">🔐 4 Haneli Öğrenci Kodun</label>
+          <input id="trackerCode" class="tracker-input" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off" onkeydown="if(event.key==='Enter') checkHomeworkTracker()">
+        </div>
+      </div>
+
+      <button id="trackerSubmit" class="tracker-button" onclick="checkHomeworkTracker()">Ödevlerimi Gör ✨</button>
+      <div id="trackerMessage" class="tracker-message"></div>
+      <div class="tracker-note">🔒 Sonuçlar yalnızca öğrenci adı ve kişisel kod eşleştiğinde açılır.</div>
+    </div>
+
+    <div id="trackerResults" class="tracker-results">
+      <div class="tracker-profile">
+        <div class="tracker-profile-head">
+          <div>
+            <h3 id="trackerResultName">Öğrenci</h3>
+            <span id="trackerResultLevel" class="tracker-level-pill">Seviye</span>
+          </div>
+          <div>
+            <div id="trackerProgressNumber" class="tracker-progress-number">0%</div>
+            <div class="tracker-progress-label">tamamlandı</div>
+          </div>
+        </div>
+
+        <div class="tracker-progress-track">
+          <div id="trackerProgressFill" class="tracker-progress-fill"></div>
+        </div>
+
+        <div class="tracker-stats">
+          <div class="tracker-stat"><strong id="trackerTotal">0</strong><span>Toplam</span></div>
+          <div class="tracker-stat"><strong id="trackerCompleted">0</strong><span>✅ Tamamlanan</span></div>
+          <div class="tracker-stat"><strong id="trackerMissing">0</strong><span>❌ Eksik</span></div>
+          <div class="tracker-stat"><strong id="trackerPending">0</strong><span>🟡 Kontrol Bekleyen</span></div>
+        </div>
+      </div>
+
+      <div class="tracker-filters">
+        <button class="tracker-filter active" data-filter="all" onclick="filterTrackerTasks('all',this)">Tümü</button>
+        <button class="tracker-filter" data-filter="missing" onclick="filterTrackerTasks('missing',this)">❌ Eksikler</button>
+        <button class="tracker-filter" data-filter="completed" onclick="filterTrackerTasks('completed',this)">✅ Tamamlananlar</button>
+        <button class="tracker-filter" data-filter="pending" onclick="filterTrackerTasks('pending',this)">🟡 Kontrol Bekleyen</button>
+      </div>
+
+      <div id="trackerTaskList" class="tracker-list"></div>
+    </div>
+  </div>
+</section>
+
 <div id="passwordModal" class="modal" aria-hidden="true">
   <div class="modal-card">
     <div class="modal-icon">🔐</div>
@@ -4109,6 +4439,219 @@ function closePasswordModal(){
   modal.setAttribute('aria-hidden','true');
   document.getElementById('passwordError').classList.remove('show');
   requestedLevel = null;
+}
+
+
+const TRACKER_API_URL = "https://script.google.com/macros/s/AKfycbw7BdcjAuCuD2cem_q7ixdHPDl51_gC4tyGuv9OsAW-v1Qr1TO-gxkXxD7WX1h37vO7FA/exec";
+let trackerAssignments = [];
+
+function openTracker(){
+  openScreen('tracker');
+  hideTrackerMessage();
+}
+
+function trackerJsonp(params){
+  return new Promise((resolve,reject) => {
+    const callbackName = 'trackerCallback_' + Date.now() + '_' + Math.floor(Math.random()*100000);
+    const script = document.createElement('script');
+    let finished = false;
+
+    const cleanup = () => {
+      if(finished) return;
+      finished = true;
+      try{ delete window[callbackName]; }catch(e){ window[callbackName] = undefined; }
+      if(script.parentNode) script.parentNode.removeChild(script);
+    };
+
+    window[callbackName] = function(data){
+      cleanup();
+      resolve(data);
+    };
+
+    const query = new URLSearchParams({...params, callback:callbackName});
+    script.src = TRACKER_API_URL + '?' + query.toString();
+    script.async = true;
+    script.onerror = function(){
+      cleanup();
+      reject(new Error('Bağlantı kurulamadı.'));
+    };
+
+    document.body.appendChild(script);
+
+    setTimeout(() => {
+      if(!finished){
+        cleanup();
+        reject(new Error('İstek zaman aşımına uğradı.'));
+      }
+    },15000);
+  });
+}
+
+async function loadTrackerStudents(){
+  const level = document.getElementById('trackerLevel').value;
+  const studentSelect = document.getElementById('trackerStudent');
+  const results = document.getElementById('trackerResults');
+  results.classList.remove('show');
+  trackerAssignments = [];
+  hideTrackerMessage();
+
+  if(!level){
+    studentSelect.innerHTML = '<option value="">Önce seviyeni seç</option>';
+    studentSelect.disabled = true;
+    return;
+  }
+
+  studentSelect.disabled = true;
+  studentSelect.innerHTML = '<option value="">Öğrenciler yükleniyor...</option>';
+  showTrackerMessage('Öğrenci listesi yükleniyor…','info');
+
+  try{
+    const data = await trackerJsonp({action:'students', level:level});
+
+    if(!data.success){
+      throw new Error(data.message || 'Öğrenci listesi alınamadı.');
+    }
+
+    const students = Array.isArray(data.students) ? data.students : [];
+    studentSelect.innerHTML = '<option value="">Adını seç</option>' +
+      students.map(name => `<option value="${escapeHtmlAttr(name)}">${escapeHtml(name)}</option>`).join('');
+    studentSelect.disabled = false;
+    hideTrackerMessage();
+  }catch(err){
+    studentSelect.innerHTML = '<option value="">Liste alınamadı</option>';
+    showTrackerMessage('❌ ' + err.message,'error');
+  }
+}
+
+async function checkHomeworkTracker(){
+  const level = document.getElementById('trackerLevel').value;
+  const student = document.getElementById('trackerStudent').value;
+  const code = document.getElementById('trackerCode').value.trim();
+  const button = document.getElementById('trackerSubmit');
+
+  document.getElementById('trackerResults').classList.remove('show');
+  hideTrackerMessage();
+
+  if(!level){
+    showTrackerMessage('❌ Lütfen seviyeni seç.','error');
+    return;
+  }
+  if(!student){
+    showTrackerMessage('❌ Lütfen adını seç.','error');
+    return;
+  }
+  if(!/^\d{4}$/.test(code)){
+    showTrackerMessage('❌ 4 haneli öğrenci kodunu gir.','error');
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = 'Kontrol ediliyor…';
+  showTrackerMessage('Google Sheets üzerindeki güncel durumun kontrol ediliyor…','info');
+
+  try{
+    const data = await trackerJsonp({level:level, student:student, code:code});
+
+    if(!data.success){
+      throw new Error(data.message || 'Bilgiler doğrulanamadı.');
+    }
+
+    renderTrackerResults(data);
+    hideTrackerMessage();
+    document.getElementById('trackerCode').value = '';
+  }catch(err){
+    showTrackerMessage('❌ ' + err.message,'error');
+  }finally{
+    button.disabled = false;
+    button.textContent = 'Ödevlerimi Gör ✨';
+  }
+}
+
+function renderTrackerResults(data){
+  const summary = data.summary || {};
+  trackerAssignments = Array.isArray(data.assignments) ? data.assignments : [];
+
+  document.getElementById('trackerResultName').textContent = '👤 ' + (data.student || 'Öğrenci');
+  document.getElementById('trackerResultLevel').textContent = '🎓 ' + (data.level || '');
+  document.getElementById('trackerProgressNumber').textContent = (summary.progress || 0) + '%';
+  document.getElementById('trackerProgressFill').style.width = (summary.progress || 0) + '%';
+  document.getElementById('trackerTotal').textContent = summary.total || 0;
+  document.getElementById('trackerCompleted').textContent = summary.completed || 0;
+  document.getElementById('trackerMissing').textContent = summary.missing || 0;
+  document.getElementById('trackerPending').textContent = summary.pending || 0;
+
+  document.querySelectorAll('.tracker-filter').forEach(btn => btn.classList.remove('active'));
+  const allBtn = document.querySelector('.tracker-filter[data-filter="all"]');
+  if(allBtn) allBtn.classList.add('active');
+  renderTrackerTasks('all');
+
+  const results = document.getElementById('trackerResults');
+  results.classList.add('show');
+  setTimeout(() => results.scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+function filterTrackerTasks(filter,button){
+  document.querySelectorAll('.tracker-filter').forEach(btn => btn.classList.remove('active'));
+  if(button) button.classList.add('active');
+  renderTrackerTasks(filter);
+}
+
+function renderTrackerTasks(filter){
+  const list = document.getElementById('trackerTaskList');
+  const filtered = filter === 'all'
+    ? trackerAssignments
+    : trackerAssignments.filter(item => item.status === filter);
+
+  if(!filtered.length){
+    list.innerHTML = '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(item => {
+    const status = item.status || 'missing';
+    const statusText = status === 'completed'
+      ? '✅ Tamamlandı'
+      : status === 'pending'
+        ? '🟡 Kontrol Bekliyor'
+        : '❌ Eksik';
+
+    const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
+
+    return `
+      <div class="tracker-task">
+        <div>
+          <div class="tracker-task-title">${escapeHtml(item.title || '')}</div>
+          ${value}
+        </div>
+        <span class="tracker-status ${status}">${statusText}</span>
+      </div>`;
+  }).join('');
+}
+
+function showTrackerMessage(text,type){
+  const el = document.getElementById('trackerMessage');
+  el.textContent = text;
+  el.className = 'tracker-message show ' + (type || 'info');
+}
+
+function hideTrackerMessage(){
+  const el = document.getElementById('trackerMessage');
+  if(!el) return;
+  el.textContent = '';
+  el.className = 'tracker-message';
+}
+
+function escapeHtml(value){
+  return String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+}
+
+function escapeHtmlAttr(value){
+  return escapeHtml(value);
 }
 
 function toggleTopic(btn){
