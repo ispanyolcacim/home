@@ -1,0 +1,4127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Öğrenci Portalı — İspanyolcacım</title>
+
+<style>
+:root{
+  --ink:#20304a;
+  --muted:#68778d;
+  --bg:#fffaf5;
+  --white:#ffffff;
+  --pink:#ff82b0;
+  --pink-soft:#fff0f5;
+  --blue:#72c4ff;
+  --blue-soft:#eef8ff;
+  --green:#82d8a5;
+  --green-soft:#effbf4;
+  --purple:#ad93f7;
+  --purple-soft:#f4f0ff;
+  --orange:#ffb65f;
+  --orange-soft:#fff4e5;
+  --yellow:#ffd76c;
+  --yellow-soft:#fff9df;
+  --shadow:0 14px 34px rgba(32,48,74,.10);
+  --shadow2:0 24px 60px rgba(32,48,74,.15);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(255,130,176,.11), transparent 24%),
+    radial-gradient(circle at 92% 8%, rgba(114,196,255,.12), transparent 24%),
+    radial-gradient(circle at 12% 92%, rgba(130,216,165,.10), transparent 24%),
+    radial-gradient(circle at 88% 88%, rgba(173,147,247,.10), transparent 24%),
+    var(--bg);
+  min-height:100vh;
+}
+
+button{
+  font:inherit;
+}
+
+/* ---------- SCREEN SYSTEM ---------- */
+.screen{
+  display:none;
+  min-height:100vh;
+}
+.screen.active{
+  display:block;
+}
+
+/* ---------- HOME ---------- */
+.home{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.home-head{
+  text-align:center;
+  padding:68px 24px 30px;
+}
+
+.brand{
+  display:inline-block;
+  padding:9px 15px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  font-size:14px;
+  font-weight:900;
+}
+
+.home-head h1{
+  margin:18px 0 10px;
+  font-size:clamp(40px,6vw,82px);
+  line-height:1.02;
+}
+
+.home-head p{
+  max-width:750px;
+  margin:0 auto;
+  color:var(--muted);
+  font-weight:700;
+  font-size:clamp(17px,2vw,21px);
+}
+
+.levels{
+  width:min(1150px,calc(100% - 36px));
+  margin:28px auto 70px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+
+.level-card{
+  border:none;
+  cursor:pointer;
+  position:relative;
+  min-height:245px;
+  border-radius:34px;
+  padding:30px;
+  text-align:left;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+  transition:.22s ease;
+  overflow:hidden;
+}
+
+.level-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow2);
+}
+
+.level-card::after{
+  content:"→";
+  position:absolute;
+  right:28px;
+  bottom:23px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.78);
+  font-size:30px;
+  font-weight:900;
+}
+
+.level-card .big{
+  display:block;
+  font-size:clamp(48px,5vw,70px);
+  font-weight:1000;
+  line-height:1;
+}
+
+.level-card .label{
+  display:block;
+  margin-top:12px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.level-card .desc{
+  display:block;
+  margin-top:8px;
+  color:#617087;
+  font-weight:700;
+  max-width:82%;
+}
+
+.a11{background:linear-gradient(145deg,#fff0f5,#ffdce9)}
+.a12{background:linear-gradient(145deg,#edf8ff,#d9efff)}
+.a21{background:linear-gradient(145deg,#eefbf3,#d8f5e4)}
+.a22{background:linear-gradient(145deg,#f4f0ff,#e7deff)}
+
+.home-foot{
+  margin-top:auto;
+  text-align:center;
+  padding:22px;
+  color:#6b778b;
+  font-weight:800;
+}
+
+/* ---------- LEVEL PAGE ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding:14px 22px;
+  background:rgba(255,250,245,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(32,48,74,.08);
+}
+
+.back{
+  border:none;
+  background:#fff;
+  border-radius:999px;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:900;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+}
+
+.top-title{
+  font-weight:1000;
+}
+
+.hero{
+  text-align:center;
+  padding:48px 24px 30px;
+}
+
+.hero .pill{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  font-size:13px;
+  font-weight:900;
+}
+
+.hero h2{
+  margin:16px 0 8px;
+  font-size:clamp(38px,5vw,66px);
+}
+
+.hero p{
+  max-width:800px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* ---------- ACCORDION LIST ---------- */
+.topic-list{
+  width:min(1180px,calc(100% - 36px));
+  margin:20px auto 70px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.topic{
+  background:#fff;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  border:1px solid rgba(32,48,74,.07);
+}
+
+.topic-btn{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  background:transparent;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:20px 22px;
+  text-align:left;
+}
+
+.topic-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.topic-num{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-weight:900;
+}
+
+.topic-title{
+  font-size:21px;
+  font-weight:1000;
+}
+
+.topic-sub{
+  display:block;
+  margin-top:4px;
+  color:#748196;
+  font-size:13px;
+  font-weight:700;
+}
+
+.arrow{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#f6f7fa;
+  font-size:20px;
+  font-weight:900;
+  transition:.2s ease;
+}
+
+.topic.open .arrow{
+  transform:rotate(180deg);
+}
+
+.topic-content{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .45s ease, opacity .25s ease;
+}
+
+.topic.open .topic-content{
+  max-height:5000px;
+  opacity:1;
+}
+
+.inner{
+  padding:0 22px 24px;
+}
+
+/* ---------- DETAIL ELEMENTS ---------- */
+.section-box{
+  border-radius:22px;
+  padding:18px;
+  background:#fbfbfd;
+  border:1px solid rgba(32,48,74,.07);
+  margin-top:14px;
+}
+
+.section-box h3{
+  margin:0 0 12px;
+  font-size:19px;
+}
+
+.alpha-grid{
+  display:grid;
+  grid-template-columns:repeat(9,minmax(0,1fr));
+  gap:8px;
+}
+
+.letter{
+  text-align:center;
+  background:#fff;
+  border-radius:14px;
+  padding:10px 4px;
+  box-shadow:0 5px 14px rgba(32,48,74,.06);
+  font-weight:900;
+}
+
+.letter span{
+  display:block;
+  font-size:12px;
+  color:#6e7b8f;
+  margin-top:4px;
+}
+
+.sound-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.sound{
+  background:#fff;
+  border-radius:18px;
+  padding:14px;
+  border-left:5px solid var(--pink);
+}
+
+.sound strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.sound small{
+  color:#65758b;
+  font-weight:700;
+}
+
+.verb-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:6px;
+  font-size:14px;
+}
+
+.verb-table th,.verb-table td{
+  padding:10px 8px;
+  border-radius:10px;
+  text-align:center;
+  background:#f7f8fb;
+}
+
+.verb-table th{
+  font-weight:1000;
+}
+
+.rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.rule{
+  border-radius:20px;
+  padding:16px;
+  background:#fff;
+  border:1px solid rgba(32,48,74,.07);
+}
+
+.rule .rnum{
+  display:inline-grid;
+  width:32px;
+  height:32px;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background:var(--ink);
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.rule h4{
+  margin:0 0 8px;
+  font-size:17px;
+}
+
+.rule p{
+  margin:0;
+  color:#5f6f86;
+  font-weight:700;
+  line-height:1.55;
+}
+
+.mini-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+
+.chip{
+  display:inline-block;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#f4f6f9;
+  font-size:13px;
+  font-weight:900;
+}
+
+.alert{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:16px;
+  background:var(--yellow-soft);
+  border:1px solid rgba(255,215,108,.7);
+  font-weight:900;
+}
+
+.usage-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.usage-card{
+  background:#fff;
+  border:1px solid rgba(32,48,74,.07);
+  border-radius:18px;
+  padding:14px;
+}
+.usage-card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:15px;
+}
+.usage-card p{
+  margin:0;
+  color:#607087;
+  font-size:13px;
+  line-height:1.5;
+  font-weight:700;
+}
+.example-box{
+  margin-top:8px;
+  padding:9px 11px;
+  border-radius:13px;
+  background:#f7f8fb;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.45;
+}
+.quick-profile{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.profile-line{
+  background:#fff;
+  border-radius:16px;
+  padding:12px 14px;
+  border:1px solid rgba(32,48,74,.07);
+}
+.profile-line b{
+  display:block;
+  margin-bottom:4px;
+}
+
+.pink{border-top:6px solid var(--pink)}
+.blue{border-top:6px solid var(--blue)}
+.green{border-top:6px solid var(--green)}
+.purple{border-top:6px solid var(--purple)}
+.orange{border-top:6px solid var(--orange)}
+.yellow{border-top:6px solid var(--yellow)}
+
+.placeholder{
+  text-align:center;
+  padding:40px 20px 10px;
+  color:#758197;
+  font-weight:800;
+}
+
+/* ---------- OTHER LEVELS ---------- */
+.empty-wrap{
+  width:min(850px,calc(100% - 36px));
+  margin:80px auto;
+  background:#fff;
+  box-shadow:var(--shadow);
+  border-radius:30px;
+  padding:44px 30px;
+  text-align:center;
+}
+
+.empty-wrap .emoji{
+  font-size:56px;
+}
+
+.empty-wrap h3{
+  margin:12px 0 6px;
+  font-size:34px;
+}
+
+.empty-wrap p{
+  margin:0;
+  color:#6a788d;
+  font-weight:700;
+}
+
+
+/* ---------- PASSWORD MODAL ---------- */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(32,48,74,.34);
+  backdrop-filter:blur(7px);
+}
+.modal.show{display:flex}
+.modal-card{
+  width:min(430px,100%);
+  background:#fff;
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 30px 90px rgba(32,48,74,.28);
+  text-align:center;
+  border:1px solid rgba(32,48,74,.08);
+}
+.modal-icon{
+  width:68px;
+  height:68px;
+  margin:0 auto 12px;
+  border-radius:22px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,var(--pink-soft),var(--purple-soft));
+  font-size:34px;
+}
+.modal-card h3{
+  margin:6px 0 7px;
+  font-size:27px;
+}
+.modal-card p{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-weight:700;
+  line-height:1.5;
+}
+.password-input{
+  width:100%;
+  border:2px solid #e8ebf1;
+  border-radius:16px;
+  padding:14px 15px;
+  font-size:17px;
+  outline:none;
+  color:var(--ink);
+  background:#fbfcfe;
+}
+.password-input:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(173,147,247,.12);
+}
+.modal-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.modal-btn{
+  border:none;
+  border-radius:15px;
+  padding:12px 14px;
+  font-weight:900;
+  cursor:pointer;
+}
+.modal-btn.cancel{
+  background:#f3f5f8;
+  color:var(--ink);
+}
+.modal-btn.enter{
+  background:var(--ink);
+  color:white;
+}
+.password-error{
+  display:none;
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:13px;
+  background:#fff0f2;
+  color:#b23349;
+  font-size:13px;
+  font-weight:900;
+}
+.password-error.show{display:block}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .levels{grid-template-columns:1fr}
+  .alpha-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .sound-grid{grid-template-columns:1fr 1fr}
+  .rule-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:620px){
+  .home-head{padding-top:42px}
+  .level-card{min-height:205px}
+  .topic-title{font-size:18px}
+  .alpha-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sound-grid{grid-template-columns:1fr}
+  .usage-grid,.quick-profile{grid-template-columns:1fr}
+  .verb-table{font-size:12px}
+  .verb-table th,.verb-table td{padding:8px 4px}
+  .top-title{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+<section id="home" class="screen active">
+  <div class="home">
+    <header class="home-head">
+      <div class="brand">🇪🇸 @ispanyolcacim · Profe Hazel</div>
+      <h1>Öğrenci Portalı</h1>
+      <p>Öğrenci portalına hoş geldin! 🌈 Dil edinimi tekrar, temas ve kullanım ister; her küçük tekrar büyük bir birikimin parçasıdır.</p>
+    </header>
+
+    <div class="levels">
+      <button class="level-card a11" onclick="requestAccess('a11')">
+        <span class="big">A1.1</span>
+        <span class="label">Başlangıç Seviyesi</span>
+      </button>
+
+      <button class="level-card a12" onclick="requestAccess('a12')">
+        <span class="big">A1.2</span>
+        <span class="label">Temel Seviye Devam</span>
+      </button>
+
+      <button class="level-card a21" onclick="requestAccess('a21')">
+        <span class="big">A2.1</span>
+        <span class="label">Orta Başlangıç</span>
+      </button>
+
+      <button class="level-card a22" onclick="requestAccess('a22')">
+        <span class="big">A2.2</span>
+        <span class="label">Orta Seviye</span>
+      </button>
+
+      <button class="level-card" style="background:linear-gradient(145deg,#fff8dc,#ffe6a7);" onclick="requestAccess('toolbox')">
+        <span class="big">🧰</span>
+        <span class="label">İspanyolca Araç Kutusu</span>
+      </button>
+    </div>
+
+    <footer class="home-foot">🌸 İspanyolcacım Dil Akademisi · ¡Pequeños pasos, grandes logros!</footer>
+  </div>
+</section>
+
+<!-- =========================================================
+     A1.1
+========================================================= -->
+<section id="a11" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🇪🇸 A1.1 · Dönem Sonu Özeti</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ KONUYA TIKLA · DETAYLARI AÇ</div>
+    <h2>A1.1 Konuları</h2>
+    <p>Konular liste halinde. İstediğin başlığa tıklayıp özet kartlarını açabilirsin.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- 1. ALFABE -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">🔤 El alfabeto español</div>
+            <span class="topic-sub">Harf adları · özel sesler · harf kombinasyonları</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔠 İspanyol Alfabesi — Harflerin Adı</h3>
+
+            <table class="verb-table">
+              <tr>
+                <th>Harf</th><th>Adı</th>
+                <th>Harf</th><th>Adı</th>
+                <th>Harf</th><th>Adı</th>
+              </tr>
+              <tr><td>A</td><td>a</td><td>J</td><td>jota</td><td>S</td><td>ese</td></tr>
+              <tr><td>B</td><td>be</td><td>K</td><td>ka</td><td>T</td><td>te</td></tr>
+              <tr><td>C</td><td>ce</td><td>L</td><td>ele</td><td>U</td><td>u</td></tr>
+              <tr><td>D</td><td>de</td><td>M</td><td>eme</td><td>V</td><td>uve</td></tr>
+              <tr><td>E</td><td>e</td><td>N</td><td>ene</td><td>W</td><td>uve doble</td></tr>
+              <tr><td>F</td><td>efe</td><td>Ñ</td><td>eñe</td><td>X</td><td>equis</td></tr>
+              <tr><td>G</td><td>ge</td><td>O</td><td>o</td><td>Y</td><td><strong>i griega</strong></td></tr>
+              <tr><td>H</td><td>hache</td><td>P</td><td>pe</td><td>Z</td><td>zeta</td></tr>
+              <tr><td>I</td><td>i</td><td>Q</td><td>cu</td><td>R</td><td>erre</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🎧 Özel Sesler — Hızlı Hatırlatma</h3>
+
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Ñ → “ny”</strong>
+                <p>Türkçedeki “ny” sesine yakın.</p>
+                <div class="example-box">niño · España · mañana</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>LL → “y” sesi</strong>
+                <p>Temel seviyede “y” gibi hatırlayabilirsin.</p>
+                <div class="example-box">llamar · lluvia · calle</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>RR → güçlü “r”</strong>
+                <p>Daha kuvvetli ve titreşimli söylenir.</p>
+                <div class="example-box">perro · correr · arriba</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>B / V</strong>
+                <p>İspanyolcada sesleri birbirine çok yakındır.</p>
+                <div class="example-box">bien · vivir · beber</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>J → sert “h”</strong>
+                <p>Boğazdan gelen sert bir “h” sesi.</p>
+                <div class="example-box">jamón · junio · trabajar</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>H → sessiz</strong>
+                <p>Yazılır ama okunmaz.</p>
+                <div class="example-box">hola · hotel · ahora</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟦 G Harfi — Kurallar Arka Arkaya</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>G + A / O / U → “g”</strong>
+                <div class="example-box">gato · goma · gusto</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>G + E / I → sert “h”</strong>
+                <div class="example-box">gente · girar · gimnasio</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>G + UE / UI → “g”</strong>
+                <p>Bu yapıda <strong>u okunmaz</strong>.</p>
+                <div class="example-box">guerra · guitarra · Guillermo</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>G + ÜE / ÜI → u da okunur</strong>
+                <p>Üstündeki iki nokta bize “u” sesini de söylememiz gerektiğini hatırlatır.</p>
+                <div class="example-box">vergüenza · pingüino · bilingüe</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟥 C ve Z Harfi</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>C + A / O / U → “k”</strong>
+                <div class="example-box">casa · cosa · Cuba</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>C + E / I → peltek “s”</strong>
+                <div class="example-box">cena · cine · cinco · cero</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Z → peltek “s”</strong>
+                <div class="example-box">zapato · zona · azul</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>QU + E / I → “k”</strong>
+                <p>Bu yapıda <strong>u okunmaz</strong>.</p>
+                <div class="example-box">queso · quiero · quince</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. PRESENTE -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">🔄 Presente de Indicativo</div>
+            <span class="topic-sub">Düzenli fiiller · 6 özne · 5 düzensizlik mantığı</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>✅ Düzenli -AR / -ER / -IR Fiilleri</h3>
+
+            <table class="verb-table">
+              <tr>
+                <th>Özne</th>
+                <th>HABLAR</th>
+                <th>COMER</th>
+                <th>VIVIR</th>
+              </tr>
+              <tr><td>yo</td><td>hablo</td><td>como</td><td>vivo</td></tr>
+              <tr><td>tú</td><td>hablas</td><td>comes</td><td>vives</td></tr>
+              <tr><td>él / ella / usted</td><td>habla</td><td>come</td><td>vive</td></tr>
+              <tr><td>nosotros/as</td><td>hablamos</td><td>comemos</td><td>vivimos</td></tr>
+              <tr><td>vosotros/as</td><td>habláis</td><td>coméis</td><td>vivís</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>hablan</td><td>comen</td><td>viven</td></tr>
+            </table>
+
+            <div class="alert">📌 Önce mastar ekini çıkar: hablar → habl- · comer → com- · vivir → viv-</div>
+          </div>
+
+          <div class="section-box">
+            <h3>⚡ Düzensizlikleri 5 grupta hatırla</h3>
+
+            <div class="rule-grid">
+
+              <div class="rule">
+                <span class="rnum">1</span>
+                <h4>Ses Değişimi Olanlar</h4>
+                <p>Fiilin kökündeki ses değişir. Genellikle <strong>3–2–1 kuralı</strong> vardır: yo, tú, él/ella/usted ve ellos/ellas/ustedes değişir; nosotros ve vosotros genellikle düzenli kalır.</p>
+
+                <div class="usage-grid" style="margin-top:12px;">
+                  <div class="usage-card">
+                    <strong>E → IE</strong>
+                    <p>pensar → pienso<br>querer → quiero<br>empezar → empiezo<br>entender → entiendo<br>cerrar → cierro</p>
+                  </div>
+
+                  <div class="usage-card">
+                    <strong>E → I</strong>
+                    <p>pedir → pido<br>servir → sirvo<br>repetir → repito<br>vestir → visto<br>medir → mido</p>
+                  </div>
+
+                  <div class="usage-card">
+                    <strong>O → UE</strong>
+                    <p>poder → puedo<br>volver → vuelvo<br>dormir → duermo<br>contar → cuento<br>costar → cuesta</p>
+                  </div>
+
+                  <div class="usage-card">
+                    <strong>U → UE</strong>
+                    <p>jugar → juego<br><br>📌 Bu grup için temel örnek: <b>jugar</b>.</p>
+                  </div>
+
+                  <div class="usage-card">
+                    <strong>+ Y Kaynaştırması</strong>
+                    <p><b>-uir</b> ile biten ve <b>u-i-r seslerini duyduğumuz</b> fiillerde görülür.</p>
+                    <div class="example-box">construir → construyo<br>destruir → destruyo<br>huir → huyo<br>influir → influyo<br>sustituir → sustituyo<br>distribuir → distribuyo</div>
+                  </div>
+                </div>
+
+                <div class="alert">🧠 3–2–1: değişim yo–tú–él/ella/usted | nosotros–vosotros düzenli | ellos/ellas/ustedes tekrar değişir.</div>
+              </div>
+
+              <div class="rule">
+                <span class="rnum">2</span>
+                <h4>Sadece “YO” Düzensiz Olanlar</h4>
+                <p>Fiilin özellikle <strong>1. tekil şahıs (yo)</strong> çekimi düzensizdir; diğer şahıslar çoğunlukla düzenli mantığı takip eder.</p>
+                <div class="mini-chips">
+                  <span class="chip">saber → sé</span>
+                  <span class="chip">dar → doy</span>
+                  <span class="chip">ver → veo</span>
+                  <span class="chip">caber → quepo</span>
+                  <span class="chip">hacer → hago</span>
+                  <span class="chip">poner → pongo</span>
+                  <span class="chip">salir → salgo</span>
+                  <span class="chip">traer → traigo</span>
+                  <span class="chip">caer → caigo</span>
+                  <span class="chip">valer → valgo</span>
+                </div>
+
+                <div class="alert">➕ <b>-acer / -ecer / -ocer / -ucir</b> ile biten birçok fiil YO çekiminde <b>-zco</b> alır.</div>
+                <div class="mini-chips">
+                  <span class="chip">nacer → nazco</span>
+                  <span class="chip">parecer → parezco</span>
+                  <span class="chip">conocer → conozco</span>
+                  <span class="chip">traducir → traduzco</span>
+                  <span class="chip">producir → produzco</span>
+                  <span class="chip">conducir → conduzco</span>
+                </div>
+              </div>
+
+              <div class="rule">
+                <span class="rnum">3</span>
+                <h4>Çift Düzensizlik</h4>
+                <p>Bu fiillerde <strong>hem ses değişimi</strong> vardır hem de <strong>yo çekimi özel/düzensizdir</strong>.</p>
+                <div class="mini-chips">
+                  <span class="chip">tener → tengo / tienes</span>
+                  <span class="chip">venir → vengo / vienes</span>
+                  <span class="chip">decir → digo / dices</span>
+                </div>
+                <div class="alert">🧠 YO ayrı ezberlenir; diğer ilgili kişilerde ses değişimi mantığı devam eder.</div>
+              </div>
+
+              <div class="rule">
+                <span class="rnum">4</span>
+                <h4>Yazım Kuralı Nedeniyle Düzensiz Olanlar</h4>
+                <div class="alert">🗣️✍️ <b>İspanyolca hep önce konuşur, sonra yazar!</b></div>
+                <p style="margin-top:10px;">Amaç, fiilin sesini/telaffuzunu korumaktır. Konuşmada aynı sesi duyarız; yazıda o sesi koruyabilmek için harf değişikliği görürüz.</p>
+                <div class="mini-chips">
+                  <span class="chip">seguir → sigo</span>
+                  <span class="chip">distinguir → distingo</span>
+                  <span class="chip">coger → cojo</span>
+                  <span class="chip">proteger → protejo</span>
+                </div>
+                <div class="alert">✍️ “Neden harf değişti?” → Çünkü İspanyolca yazım, duyduğumuz sesi korumaya çalışıyor.</div>
+              </div>
+
+              <div class="rule">
+                <span class="rnum">5</span>
+                <h4>Tamamen Düzensiz Olanlar</h4>
+                <p>Bu fiillerde düzenli -AR / -ER / -IR çekim mantığına güvenmeyiz; çekimler bütün olarak öğrenilir.</p>
+                <div class="mini-chips">
+                  <span class="chip">SER → soy, eres, es, somos, sois, son</span>
+                  <span class="chip">IR → voy, vas, va, vamos, vais, van</span>
+                </div>
+                <div class="alert">⭐ BONUS — ESTAR: estoy, <b>estás</b>, <b>está</b>, estamos, <b>estáis</b>, <b>están</b>. 2. ve 3. tekil ile 2. ve 3. çoğulda tildeyi unutma.</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">🗣️ Kendi Tanıtımı · Presentación Personal</div>
+            <span class="topic-sub">İsim · köken · milliyet · meslek · yaş · konum · aile</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>👋 Kendini Tanıtırken Kullanabileceğin İskelet</h3>
+            <div class="quick-profile">
+
+              <div class="profile-line">
+                <b>1. İsim / Tanıtım</b>
+                Me llamo Hazel. / Soy Hazel.
+              </div>
+
+              <div class="profile-line">
+                <b>2. Köken – Milliyet</b>
+                Soy de Turquía. / Soy turca.
+              </div>
+
+              <div class="profile-line">
+                <b>3. Meslek</b>
+                Soy profesora de español.<br>
+                ¿A qué te dedicas?
+              </div>
+
+              <div class="profile-line">
+                <b>4. Yaş</b>
+                Tengo ... años.<br>
+                ¿Cuántos años tienes?
+              </div>
+
+              <div class="profile-line">
+                <b>5. Konum / Nerede olduğun</b>
+                Estoy en Antalya.<br>
+                Estoy en clase de español.
+              </div>
+
+              <div class="profile-line">
+                <b>6. Aile / İlişki</b>
+                Ella es mi hermana.<br>
+                Ellos son mis padres.
+              </div>
+
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🧠 Hangi Fiili Seçiyorum?</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>SER</strong>
+                <p>Kim olduğun, kökenin/milliyetin, mesleğin, tanım ve ilişkiler.</p>
+                <div class="example-box">Soy profesora.<br>Soy de Turquía.<br>Ella es mi hermana.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>TENER</strong>
+                <p>Yaş ve sahiplik.</p>
+                <div class="example-box">Tengo 30 años.<br>Tengo una familia grande.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>ESTAR</strong>
+                <p>O anda nerede olduğun ve geçerli durumun.</p>
+                <div class="example-box">Estoy en casa.<br>Estoy cansada.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>HAY</strong>
+                <p>Bir yerde neyin “var / bulunduğunu” söylemek için.</p>
+                <div class="example-box">Hay un café cerca.<br>Hay dos personas.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">🧩 SER · ESTAR · TENER · HABER (HAY)</div>
+            <span class="topic-sub">Kullanım alanları · kısa formüller · örnekler</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔵 SER — Daha kalıcı / tanımlayıcı bilgiler</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>1. Presentación – Descripción</strong><p>Tanıtım ve tasvir.</p><div class="example-box">Yo soy David.<br>Eres muy guapa.</div></div>
+              <div class="usage-card"><strong>2. Origen – Nacionalidad</strong><p>Köken ve milliyet.</p><div class="example-box">Soy de Turquía.<br>İhsan es turco.</div></div>
+              <div class="usage-card"><strong>3. Profesión</strong><p>Meslek.</p><div class="example-box">Mi padre es abogado.<br>Soy profesora de español.</div></div>
+              <div class="usage-card"><strong>4. Ideología – Religión</strong><p>İdeoloji ve din bilgisi.</p><div class="example-box">Mis primos son musulmanes.</div></div>
+              <div class="usage-card"><strong>5. Material</strong><p>Bir şeyin hangi malzemeden olduğu.</p><div class="example-box">La mesa es de madera.<br>El anillo es de oro.</div></div>
+              <div class="usage-card"><strong>6. Posesión – Relación</strong><p>Aidiyet ve ilişki.</p><div class="example-box">El libro es de Alejandra.<br>Ella es mi hermana.</div></div>
+              <div class="usage-card"><strong>7. La hora y la fecha</strong><p>Saat ve tarih.</p><div class="example-box">Es la una.<br>Son las dos.<br>Hoy es lunes.</div></div>
+              <div class="usage-card"><strong>8. El precio</strong><p>Fiyat belirtme.</p><div class="example-box">El libro es 10 euros.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟢 ESTAR — O anda geçerli durum / konum</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>1. Estado de ánimo</strong><p>Ruh hâli ve o anki durum.</p><div class="example-box">Estoy triste.<br>Estás cansado.</div></div>
+              <div class="usage-card"><strong>2. Resultado de proceso anterior</strong><p>Bir olayın veya sürecin sonucu.</p><div class="example-box">La puerta está cerrada.<br>El jarrón está roto.</div></div>
+              <div class="usage-card"><strong>3. Estado civil</strong><p>Medeni durum.</p><div class="example-box">Estoy soltera.<br>Estamos casados.<br>⚠️ Soy viudo.</div></div>
+              <div class="usage-card"><strong>4. Estar + gerundio</strong><p>Devam eden eylem.</p><div class="example-box">Laura está escribiendo.<br>Estoy hablando.</div></div>
+              <div class="usage-card"><strong>5. Profesión temporal</strong><p><b>estar de + meslek</b>: dönemsel/geçici çalışma.</p><div class="example-box">Ahora estoy de taxista.</div></div>
+              <div class="usage-card"><strong>6. Situación – Localización – Compañía</strong><p>Durum, konum ve kiminle olduğumuz.</p><div class="example-box">Estamos en clase.<br>Estoy con mis amigos.</div></div>
+              <div class="usage-card"><strong>7. Fecha – Estación del año</strong><p>Nosotros ile: <b>estamos a + gün/tarih</b>, <b>estamos en + mevsim</b>.</p><div class="example-box">Estamos a domingo.<br>Estamos en primavera.</div></div>
+              <div class="usage-card"><strong>8. Precio con “a”</strong><p>“a” edatıyla fiyat.</p><div class="example-box">¿A cuánto están las manzanas?<br>Están a 2€ el kilo.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟡 TENER — 4 temel kullanım</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>1. Tener + isim</strong><p>Aidiyet / sahiplik / ilişki.</p><div class="example-box">Tengo una casa.<br>Tenemos una familia grande.</div></div>
+              <div class="usage-card"><strong>2. Tener + sayı + años</strong><p>Yaş ifade eder.</p><div class="example-box">Mi padre tiene 60 años.<br>¿Cuántos años tienes?</div></div>
+              <div class="usage-card"><strong>3. Tener que + infinitivo</strong><p>İhtiyaç veya zorunluluk.</p><div class="example-box">Tengo que estudiar.<br>Tenemos que practicar más.</div></div>
+              <div class="usage-card"><strong>4. Fiziksel hisler / durumlar</strong><p>tener fiebre · dolor de · tos · sed · hambre · calor · frío · sueño</p><div class="example-box">Tengo hambre.<br>¿Tienes frío?<br>No tengo sueño.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟣 HABER → HAY — “Var / bulunuyor”</h3>
+            <div class="alert">HAY <b>impersonal</b> bir yapıdır: öznesi yoktur ve tekil/çoğula göre değişmez.<br>Hay un coche. · Hay dos coches.</div>
+
+            <div class="usage-grid" style="margin-top:12px;">
+              <div class="usage-card"><strong>1. Belirsiz artikeller</strong><p>un / una / unos / unas</p><div class="example-box">Hay una silla en la habitación.</div></div>
+              <div class="usage-card"><strong>2. Sayılar</strong><p>Miktar sayıyla belirtilir.</p><div class="example-box">Hay tres bicicletas rojas.</div></div>
+              <div class="usage-card"><strong>3. Belirsiz miktarlar</strong><p>poco · mucho · algo vb.</p><div class="example-box">Hay poca gente aquí.<br>Hay algo en la bolsa.</div></div>
+              <div class="usage-card"><strong>4. Çoğul / sayılamayan isimler</strong><p>Birden fazla veya sayılamayan isim.</p><div class="example-box">Hay chicas en el parque.<br>Hay agua en el vaso.</div></div>
+              <div class="usage-card"><strong>Yer ifadeleriyle</strong><p>Bir şeyin nerede bulunduğunu söyler.</p><div class="example-box">Hay un perro en el jardín.</div></div>
+              <div class="usage-card"><strong>Soru cümlelerinde</strong><p>Bir şeyin var olup olmadığını / miktarını sorarız.</p><div class="example-box">¿Hay algo que necesites?<br>¿Cuántas personas hay?</div></div>
+            </div>
+
+            <div class="alert"><b>HAY + belirli artikel (el / la / los / las) kullanılmaz.</b><br>❌ Hay la silla. &nbsp; ✅ Hay una silla.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">🧠 Perífrasis Verbales</div>
+            <span class="topic-sub">Fiil + mastar yapıları · zorunluluk · alışkanlık · başlangıç · tekrar</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔗 Perífrasis Verbales — Hızlı Hatırlatma</h3>
+            <p style="margin:0 0 14px;color:#607087;font-weight:700;line-height:1.6;">
+              İki fiilin birlikte tek bir anlam oluşturduğu yapılardır. İlk fiil kişiye göre çekilir; ikinci fiil çoğunlukla <strong>mastar</strong> hâlinde kalır.
+            </p>
+
+            <table class="verb-table">
+              <tr>
+                <th>Yapı</th>
+                <th>Anlam</th>
+                <th>Presente Örneği</th>
+                <th>Türkçesi</th>
+              </tr>
+
+              <tr>
+                <td><strong>tener que + inf.</strong></td>
+                <td>zorunda olmak</td>
+                <td>Tengo que estudiar.</td>
+                <td>Ders çalışmak zorundayım.</td>
+              </tr>
+
+              <tr>
+                <td><strong>hay que + inf.</strong></td>
+                <td>yapmak gerekir</td>
+                <td>Hay que estudiar.</td>
+                <td>Ders çalışmak gerekir.</td>
+              </tr>
+
+              <tr>
+                <td><strong>deber + inf.</strong></td>
+                <td>yapmalı / -meli -malı</td>
+                <td>Debes estudiar.</td>
+                <td>Ders çalışmalısın.</td>
+              </tr>
+
+              <tr>
+                <td><strong>necesitar + inf.</strong></td>
+                <td>yapmaya ihtiyaç duymak</td>
+                <td>Necesito descansar.</td>
+                <td>Dinlenmeye ihtiyacım var.</td>
+              </tr>
+
+              <tr>
+                <td><strong>soler + inf.</strong></td>
+                <td>genellikle yapmak</td>
+                <td>Suelo caminar.</td>
+                <td>Genellikle yürürüm.</td>
+              </tr>
+
+              <tr>
+                <td><strong>empezar a + inf.</strong></td>
+                <td>yapmaya başlamak</td>
+                <td>Empiezo a estudiar.</td>
+                <td>Ders çalışmaya başlıyorum.</td>
+              </tr>
+
+              <tr>
+                <td><strong>ponerse a + inf.</strong></td>
+                <td>birden başlamaya koyulmak</td>
+                <td>Me pongo a estudiar.</td>
+                <td>Birden ders çalışmaya koyuluyorum.</td>
+              </tr>
+
+              <tr>
+                <td><strong>volver a + inf.</strong></td>
+                <td>yeniden yapmak</td>
+                <td>Vuelvo a llamar.</td>
+                <td>Tekrar arıyorum.</td>
+              </tr>
+
+              <tr>
+                <td><strong>acabar de + inf.</strong></td>
+                <td>az önce yapmak</td>
+                <td>Acabo de llegar.</td>
+                <td>Az önce geldim.</td>
+              </tr>
+
+              <tr>
+                <td><strong>dejar de + inf.</strong></td>
+                <td>yapmayı bırakmak</td>
+                <td>Dejo de fumar.</td>
+                <td>Sigara içmeyi bırakıyorum.</td>
+              </tr>
+            </table>
+
+            <div class="alert">
+              📌 Tüm örnekler <strong>Presente de Indicativo</strong> ile verilmiştir.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">🚿 Verbos Reflexivos · Dönüşlü Fiiller</div>
+            <span class="topic-sub">me · te · se · nos · os · se | günlük rutin</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔁 Dönüşlü Fiilin Mantığı</h3>
+            <p style="margin:0;color:#607087;font-weight:700;line-height:1.6;">
+              Eylem öznenin kendisine dönüyorsa dönüşlü yapı kullanılır. Mastar hâlinde fiilin sonunda <strong>-se</strong> görürüz:
+              <strong>levantarse, llamarse, ducharse, acostarse...</strong>
+            </p>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>Dönüşlülük Zamiri</th><th>LEVANTARSE</th></tr>
+              <tr><td>yo</td><td><strong>me</strong></td><td>me levanto</td></tr>
+              <tr><td>tú</td><td><strong>te</strong></td><td>te levantas</td></tr>
+              <tr><td>él / ella / usted</td><td><strong>se</strong></td><td>se levanta</td></tr>
+              <tr><td>nosotros/as</td><td><strong>nos</strong></td><td>nos levantamos</td></tr>
+              <tr><td>vosotros/as</td><td><strong>os</strong></td><td>os levantáis</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td><strong>se</strong></td><td>se levantan</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🧼 Günlük Rutinde Çok Kullanılanlar</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>levantarse</strong><p>kalkmak</p><div class="example-box">Me levanto a las siete.<br>Saat yedide kalkıyorum.</div></div>
+              <div class="usage-card"><strong>ducharse</strong><p>duş almak</p><div class="example-box">Me ducho por la mañana.<br>Sabah duş alıyorum.</div></div>
+              <div class="usage-card"><strong>lavarse</strong><p>yıkanmak / yıkamak</p><div class="example-box">Me lavo las manos.<br>Ellerimi yıkıyorum.</div></div>
+              <div class="usage-card"><strong>vestirse</strong><p>giyinmek</p><div class="example-box">Me visto rápido.<br>Hızlı giyiniyorum.</div></div>
+              <div class="usage-card"><strong>acostarse</strong><p>yatağa gitmek</p><div class="example-box">Me acuesto a las once.<br>Saat on birde yatıyorum.</div></div>
+              <div class="usage-card"><strong>llamarse</strong><p>adı ... olmak</p><div class="example-box">Me llamo Laura.<br>Benim adım Laura.</div></div>
+            </div>
+
+            <div class="alert">📌 Zamir özneye göre değişir: <strong>me · te · se · nos · os · se</strong></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">📍 Adjetivos Demostrativos · İşaret Sıfatları</div>
+            <span class="topic-sub">este · ese · aquel | yakın · orta · uzak</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>👉 Üç Mesafe Mantığı</h3>
+            <table class="verb-table">
+              <tr><th>Mesafe</th><th>Eril Tekil</th><th>Dişil Tekil</th><th>Eril Çoğul</th><th>Dişil Çoğul</th></tr>
+              <tr><td>📍 Yakın</td><td>este</td><td>esta</td><td>estos</td><td>estas</td></tr>
+              <tr><td>↔️ Orta</td><td>ese</td><td>esa</td><td>esos</td><td>esas</td></tr>
+              <tr><td>🔭 Uzak</td><td>aquel</td><td>aquella</td><td>aquellos</td><td>aquellas</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🧩 İsme Göre Uyum</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>este libro</strong><p>bu kitap</p><div class="example-box">Este libro es interesante.<br>Bu kitap ilginç.</div></div>
+              <div class="usage-card"><strong>esta casa</strong><p>bu ev</p><div class="example-box">Esta casa es grande.<br>Bu ev büyük.</div></div>
+              <div class="usage-card"><strong>esos zapatos</strong><p>şu ayakkabılar</p><div class="example-box">Esos zapatos son caros.<br>Şu ayakkabılar pahalı.</div></div>
+              <div class="usage-card"><strong>aquellas montañas</strong><p>şu uzaktaki dağlar</p><div class="example-box">Aquellas montañas son altas.<br>Şu uzaktaki dağlar yüksek.</div></div>
+            </div>
+            <div class="alert">🧠 İşaret sıfatı, yanındaki ismin <strong>cinsiyetine ve sayısına</strong> uyar.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">🏷️ Adjetivos Posesivos · Sahiplik Sıfatları</div>
+            <span class="topic-sub">mi · tu · su · nuestro · vuestro · su</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔐 “Kimin?” Sorusunun Cevabı</h3>
+            <table class="verb-table">
+              <tr><th>Kişi</th><th>Tekil İsimle</th><th>Çoğul İsimle</th></tr>
+              <tr><td>yo</td><td>mi</td><td>mis</td></tr>
+              <tr><td>tú</td><td>tu</td><td>tus</td></tr>
+              <tr><td>él / ella / usted</td><td>su</td><td>sus</td></tr>
+              <tr><td>nosotros/as</td><td>nuestro / nuestra</td><td>nuestros / nuestras</td></tr>
+              <tr><td>vosotros/as</td><td>vuestro / vuestra</td><td>vuestros / vuestras</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>su</td><td>sus</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>💡 Örnekler</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>mi libro</strong><p>benim kitabım</p><div class="example-box">Mi libro está aquí.<br>Kitabım burada.</div></div>
+              <div class="usage-card"><strong>tus amigos</strong><p>senin arkadaşların</p><div class="example-box">Tus amigos son simpáticos.<br>Arkadaşların sempatik.</div></div>
+              <div class="usage-card"><strong>nuestra casa</strong><p>bizim evimiz</p><div class="example-box">Nuestra casa es pequeña.<br>Evimiz küçük.</div></div>
+              <div class="usage-card"><strong>sus coches</strong><p>onun/onların arabaları</p><div class="example-box">Sus coches son nuevos.<br>Arabaları yeni.</div></div>
+            </div>
+
+            <div class="alert">📌 <strong>mi / tu / su</strong> cinsiyete göre değişmez; sadece tekil–çoğul olur. <strong>nuestro / vuestro</strong> ise hem cinsiyete hem sayıya uyar.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">9</span>
+          <div>
+            <div class="topic-title">🎨 Artículos + Género y Número</div>
+            <span class="topic-sub">el · la · los · las | un · una · unos · unas | sıfat uyumu</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>⚖️ Belirli ve Belirsiz Artikeller</h3>
+            <table class="verb-table">
+              <tr><th></th><th>Eril Tekil</th><th>Dişil Tekil</th><th>Eril Çoğul</th><th>Dişil Çoğul</th></tr>
+              <tr><td><strong>Belirli</strong></td><td>el</td><td>la</td><td>los</td><td>las</td></tr>
+              <tr><td><strong>Belirsiz</strong></td><td>un</td><td>una</td><td>unos</td><td>unas</td></tr>
+            </table>
+            <div class="alert">📘 el libro · 🏠 la casa · 📚 los libros · 🏘️ las casas</div>
+          </div>
+
+          <div class="section-box">
+            <h3>🧠 Cinsiyet İçin Hızlı Hatırlatma</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Çoğunlukla -O → masculino</strong>
+                <p>libro · chico · teléfono</p>
+              </div>
+              <div class="usage-card">
+                <strong>Çoğunlukla -A → femenino</strong>
+                <p>casa · mesa · ventana</p>
+              </div>
+              <div class="usage-card">
+                <strong>-ción / -sión genellikle femenino</strong>
+                <p>la canción · la televisión</p>
+              </div>
+              <div class="usage-card">
+                <strong>İstisnaları artikel ile öğren</strong>
+                <p>el día · el problema · la mano</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🌈 Sıfat ve Renk Uyumu</h3>
+            <p style="margin:0 0 12px;color:#607087;font-weight:700;line-height:1.6;">
+              Sıfatlar çoğunlukla ismin <strong>cinsiyetine</strong> ve <strong>sayısına</strong> uyar.
+            </p>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>un coche rojo</strong><p>kırmızı bir araba</p></div>
+              <div class="usage-card"><strong>una casa roja</strong><p>kırmızı bir ev</p></div>
+              <div class="usage-card"><strong>unos coches rojos</strong><p>kırmızı birkaç araba</p></div>
+              <div class="usage-card"><strong>unas casas rojas</strong><p>kırmızı birkaç ev</p></div>
+            </div>
+
+            <div class="alert">🎨 Renkler: rojo · amarillo · naranja · rosa · morado · violeta · verde · azul · negro · blanco · gris · marrón</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">10</span>
+          <div>
+            <div class="topic-title">❤️ Gustar ve Ailesi</div>
+            <span class="topic-sub">A mí me gusta · A ti te gusta · gusta / gustan · benzer fiiller</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>💗 GUSTAR Mantığı</h3>
+            <div class="alert">
+              Türkçe mantıkla “Ben kahveyi seviyorum” diye düşünmek yerine,
+              İspanyolca mantığı hatırla: <strong>“Kahve bana hoş geliyor.”</strong>
+            </div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr>
+                <th>Vurgulu Kişi</th>
+                <th>Zamir</th>
+                <th>Örnek</th>
+              </tr>
+              <tr>
+                <td><strong>A mí</strong></td>
+                <td><strong>me</strong> (bana)</td>
+                <td>A mí me gusta...</td>
+              </tr>
+              <tr>
+                <td><strong>A ti</strong></td>
+                <td><strong>te</strong> (sana)</td>
+                <td>A ti te gusta...</td>
+              </tr>
+              <tr>
+                <td><strong>A él / A ella / A usted</strong></td>
+                <td><strong>le</strong> (ona)</td>
+                <td>A ella le gusta...</td>
+              </tr>
+              <tr>
+                <td><strong>A nosotros/as</strong></td>
+                <td><strong>nos</strong> (bize)</td>
+                <td>A nosotros nos gusta...</td>
+              </tr>
+              <tr>
+                <td><strong>A vosotros/as</strong></td>
+                <td><strong>os</strong> (size)</td>
+                <td>A vosotros os gusta...</td>
+              </tr>
+              <tr>
+                <td><strong>A ellos / A ellas / A ustedes</strong></td>
+                <td><strong>les</strong> (onlara)</td>
+                <td>A ellos les gusta...</td>
+              </tr>
+            </table>
+
+            <div class="alert">
+              📌 <strong>A mí / A ti / A él...</strong> kısmı kişiyi vurgular;
+              <strong>me / te / le / nos / os / les</strong> ise yapının zorunlu zamiridir.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✅ GUSTA mı GUSTAN mı?</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>gusta + tekil isim</strong>
+                <div class="example-box">Me gusta el café.<br>Kahveyi seviyorum.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>gusta + mastar fiil</strong>
+                <div class="example-box">Me gusta bailar.<br>Dans etmeyi seviyorum.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>gustan + çoğul isim</strong>
+                <div class="example-box">Me gustan los libros.<br>Kitapları seviyorum.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Olumsuz</strong>
+                <div class="example-box">No me gusta cocinar.<br>Yemek yapmayı sevmiyorum.</div>
+              </div>
+            </div>
+
+            <div class="alert">
+              🧠 <strong>GUSTA / GUSTAN kişiye göre değil, hoşumuza giden şeye göre seçilir.</strong>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>👨‍👩‍👧 Gustar Ailesi — Aynı Mantıkla Çalışan Fiiller</h3>
+
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>encantar</strong>
+                <p>çok sevmek / bayılmak</p>
+                <div class="example-box">Me encanta viajar.<br>Seyahat etmeye bayılıyorum.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>interesar</strong>
+                <p>ilgisini çekmek</p>
+                <div class="example-box">Me interesa el arte.<br>Sanat ilgimi çekiyor.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>molestar</strong>
+                <p>rahatsız etmek</p>
+                <div class="example-box">Me molesta el ruido.<br>Gürültü beni rahatsız ediyor.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>importar</strong>
+                <p>önemli olmak / önemsemek</p>
+                <div class="example-box">Me importa la familia.<br>Aile benim için önemli.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>fascinar</strong>
+                <p>büyülemek / çok ilgisini çekmek</p>
+                <div class="example-box">Me fascina España.<br>İspanya beni büyülüyor.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>aburrir</strong>
+                <p>sıkmak</p>
+                <div class="example-box">Me aburren las reuniones largas.<br>Uzun toplantılar beni sıkıyor.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>apetecer</strong>
+                <p>canı istemek</p>
+                <div class="example-box">Me apetece un café.<br>Canım bir kahve istiyor.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>doler</strong>
+                <p>ağrımak</p>
+                <div class="example-box">Me duele la cabeza.<br>Başım ağrıyor.</div>
+              </div>
+            </div>
+
+            <div class="alert">
+              🎯 Aynı kontrol sırası: <strong>1) Kime? → me / te / le / nos / os / les &nbsp; 2) Ne? → tekil-mastar mı, çoğul mu?</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">11</span>
+          <div>
+            <div class="topic-title">🕐 La Hora · Saatleri Söyleme</div>
+            <span class="topic-sub">Es la una · Son las... · y cuarto · y media · menos cuarto</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>⏰ Temel Yapı</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>01:00</strong><div class="example-box">Es la una.<br>Saat bir.</div></div>
+              <div class="usage-card"><strong>02:00</strong><div class="example-box">Son las dos.<br>Saat iki.</div></div>
+              <div class="usage-card"><strong>03:15</strong><div class="example-box">Son las tres y cuarto.<br>Saat üçü çeyrek geçiyor.</div></div>
+              <div class="usage-card"><strong>04:30</strong><div class="example-box">Son las cuatro y media.<br>Saat dört buçuk.</div></div>
+              <div class="usage-card"><strong>05:45</strong><div class="example-box">Son las seis menos cuarto.<br>Saat altıya çeyrek var.</div></div>
+              <div class="usage-card"><strong>07:10</strong><div class="example-box">Son las siete y diez.<br>Saat yediyi on geçiyor.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>❓ Soru ve Zaman Dilimleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué hora es?</strong><p>Saat kaç?</p></div>
+              <div class="usage-card"><strong>en punto</strong><p>tam</p><div class="example-box">Son las ocho en punto.<br>Saat tam sekiz.</div></div>
+              <div class="usage-card"><strong>de la mañana</strong><p>sabah</p></div>
+              <div class="usage-card"><strong>de la tarde</strong><p>öğleden sonra / akşamüstü</p></div>
+              <div class="usage-card"><strong>de la noche</strong><p>gece</p></div>
+            </div>
+
+            <div class="alert">📌 Sadece saat <strong>1</strong> için <strong>Es la una</strong>; diğer saatlerde <strong>Son las...</strong></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 12 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">12</span>
+          <div>
+            <div class="topic-title">❓ Pronombres Interrogativos · Soru Zamirleri</div>
+            <span class="topic-sub">qué · quién · dónde · cuándo · cómo · cuánto · cuál · por qué</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧠 5N1K + Temel Soru Kelimeleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué?</strong><p>Ne?</p><div class="example-box">¿Qué estudias?<br>Ne okuyorsun / ne çalışıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Quién? / ¿Quiénes?</strong><p>Kim? / Kimler?</p><div class="example-box">¿Quién es ella?<br>O kim?</div></div>
+              <div class="usage-card"><strong>¿Dónde?</strong><p>Nerede?</p><div class="example-box">¿Dónde vives?<br>Nerede yaşıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Adónde?</strong><p>Nereye?</p><div class="example-box">¿Adónde vas?<br>Nereye gidiyorsun?</div></div>
+              <div class="usage-card"><strong>¿De dónde?</strong><p>Nereden?</p><div class="example-box">¿De dónde eres?<br>Nerelisin?</div></div>
+              <div class="usage-card"><strong>¿Cuándo?</strong><p>Ne zaman?</p><div class="example-box">¿Cuándo estudias?<br>Ne zaman ders çalışıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Cómo?</strong><p>Nasıl?</p><div class="example-box">¿Cómo estás?<br>Nasılsın?</div></div>
+              <div class="usage-card"><strong>¿Por qué?</strong><p>Neden?</p><div class="example-box">¿Por qué estudias español?<br>Neden İspanyolca öğreniyorsun?</div></div>
+              <div class="usage-card"><strong>¿Cuánto/a/os/as?</strong><p>Ne kadar / kaç?</p><div class="example-box">¿Cuántos años tienes?<br>Kaç yaşındasın?</div></div>
+              <div class="usage-card"><strong>¿Cuál? / ¿Cuáles?</strong><p>Hangisi / hangileri?</p><div class="example-box">¿Cuál es tu nombre?<br>Adın ne?</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✍️ Aksanları Unutma</h3>
+            <div class="alert">Soru anlamında kullanıldıklarında: <strong>qué · quién · dónde · cuándo · cómo · cuánto · cuál · por qué</strong> → tilde alır.</div>
+            <div class="example-box" style="margin-top:12px;">
+              ¿Cómo te llamas? → Adın ne?<br>
+              ¿Dónde trabajas? → Nerede çalışıyorsun?<br>
+              ¿Cuándo es tu cumpleaños? → Doğum günün ne zaman?<br>
+              ¿Por qué aprendes español? → Neden İspanyolca öğreniyorsun?
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     A1.2
+========================================================= -->
+<section id="a12" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🇪🇸 A1.2 · Dönem Sonu Özeti</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ KONUYA TIKLA · DETAYLARI AÇ</div>
+    <h2>A1.2 Konuları</h2>
+    <p>Bu dönem öğrendiğimiz yapıları kısa formüller, örnekler ve hatırlatma tablolarıyla tekrar et.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- A1.2 - 1 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">⚖️ Las Oraciones Comparativas</div>
+            <span class="topic-sub">superioridad · inferioridad · igualdad · comparativos irregulares</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>⬆️ Superioridad · Üstünlük</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>MÁS + isim / sıfat / zarf + QUE</strong>
+                <div class="example-box">
+                  Tengo más libros que tú.<br>
+                  Senden daha fazla kitabım var.<br><br>
+                  Soy más alta que tú.<br>
+                  Senden daha uzunum.<br><br>
+                  Corro más rápido que tú.<br>
+                  Senden daha hızlı koşuyorum.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Fiil + MÁS + QUE</strong>
+                <div class="example-box">
+                  Hablo más que tú.<br>
+                  Senden daha çok konuşuyorum.<br><br>
+                  Trabajo más que él.<br>
+                  Ondan daha çok çalışıyorum.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>⬇️ Inferioridad · Daha Azlık</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>MENOS + isim / sıfat / zarf + QUE</strong>
+                <div class="example-box">
+                  Tengo menos tiempo que tú.<br>
+                  Senden daha az zamanım var.<br><br>
+                  Es menos alto que yo.<br>
+                  Benden daha kısa.<br><br>
+                  Corre menos rápido que yo.<br>
+                  Benden daha az hızlı koşuyor.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Fiil + MENOS + QUE</strong>
+                <div class="example-box">
+                  Hablas menos que yo.<br>
+                  Benden daha az konuşuyorsun.<br><br>
+                  Duermo menos que tú.<br>
+                  Senden daha az uyuyorum.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🟰 Igualdad · Eşitlik</h3>
+
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>TANTO / TANTA / TANTOS / TANTAS + isim + COMO</strong>
+                <div class="example-box">
+                  Tengo tantos libros como tú.<br>
+                  Senin kadar kitabım var.<br><br>
+                  Tengo tanta paciencia como ella.<br>
+                  Onun kadar sabrım var.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>TAN + sıfat / zarf + COMO</strong>
+                <div class="example-box">
+                  Soy tan alta como tú.<br>
+                  Senin kadar uzunum.<br><br>
+                  Corro tan rápido como él.<br>
+                  Onun kadar hızlı koşuyorum.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Fiil + TANTO + COMO</strong>
+                <div class="example-box">
+                  Hablo tanto como tú.<br>
+                  Senin kadar konuşuyorum.<br><br>
+                  Trabajo tanto como ella.<br>
+                  Onun kadar çalışıyorum.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>IGUAL DE + sıfat / zarf + QUE</strong>
+                <div class="example-box">
+                  Soy igual de alta que tú.<br>
+                  Senin kadar uzunum.<br><br>
+                  Corro igual de rápido que él.<br>
+                  Onun kadar hızlı koşuyorum.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>⭐ Comparativos Irregulares</h3>
+            <table class="verb-table">
+              <tr><th>Yapı</th><th>Anlam</th><th>Örnek</th></tr>
+              <tr><td><strong>mejor</strong></td><td>daha iyi</td><td>Este libro es mejor que ese.</td></tr>
+              <tr><td><strong>peor</strong></td><td>daha kötü</td><td>Este restaurante es peor que aquel.</td></tr>
+              <tr><td><strong>mayor</strong></td><td>daha büyük / daha yaşlı</td><td>Soy mayor que mi hermano.</td></tr>
+              <tr><td><strong>menor</strong></td><td>daha küçük / daha genç</td><td>Mi hermana es menor que yo.</td></tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 2 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">🏃 Estar + Gerundio</div>
+            <span class="topic-sub">şu anda devam eden eylem · estar + -ando / -iendo</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Formül</h3>
+            <div class="alert"><strong>ESTAR çekimi + GERUNDIO</strong> → “Şu anda ... yapıyorum.”</div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>ESTAR</th><th>Örnek</th></tr>
+              <tr><td>yo</td><td>estoy</td><td>Estoy estudiando.</td></tr>
+              <tr><td>tú</td><td>estás</td><td>Estás estudiando.</td></tr>
+              <tr><td>él / ella / usted</td><td>está</td><td>Está estudiando.</td></tr>
+              <tr><td>nosotros/as</td><td>estamos</td><td>Estamos estudiando.</td></tr>
+              <tr><td>vosotros/as</td><td>estáis</td><td>Estáis estudiando.</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>están</td><td>Están estudiando.</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>✅ Gerundio Düzenli Oluşumu</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>-AR → -ANDO</strong>
+                <div class="example-box">hablar → hablando<br>comprar → comprando<br>trabajar → trabajando</div>
+              </div>
+              <div class="usage-card">
+                <strong>-ER / -IR → -IENDO</strong>
+                <div class="example-box">comer → comiendo<br>beber → bebiendo<br>escribir → escribiendo</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 3 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">⚡ Gerundio · Düzensizler</div>
+            <span class="topic-sub">diciendo · durmiendo · yendo · leyendo · cayendo...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧠 Düzensiz Gerundio Örnekleri</h3>
+
+            <div class="usage-grid">
+              <div class="usage-card"><strong>decir → diciendo</strong><p>Estoy diciendo la verdad.<br>Gerçeği söylüyorum.</p></div>
+              <div class="usage-card"><strong>sentir → sintiendo</strong><p>Estoy sintiendo frío.<br>Üşüyorum.</p></div>
+              <div class="usage-card"><strong>pedir → pidiendo</strong><p>Estoy pidiendo ayuda.<br>Yardım istiyorum.</p></div>
+              <div class="usage-card"><strong>mentir → mintiendo</strong><p>No estoy mintiendo.<br>Yalan söylemiyorum.</p></div>
+              <div class="usage-card"><strong>venir → viniendo</strong><p>Está viniendo a casa.<br>Eve geliyor.</p></div>
+              <div class="usage-card"><strong>vestir → vistiendo</strong><p>Está vistiendo al niño.<br>Çocuğu giydiriyor.</p></div>
+              <div class="usage-card"><strong>servir → sirviendo</strong><p>Está sirviendo la comida.<br>Yemeği servis ediyor.</p></div>
+              <div class="usage-card"><strong>seguir → siguiendo</strong><p>Estoy siguiendo el mapa.<br>Haritayı takip ediyorum.</p></div>
+              <div class="usage-card"><strong>reír → riendo</strong><p>Estamos riendo.<br>Gülüyoruz.</p></div>
+              <div class="usage-card"><strong>morir → muriendo</strong><p>La planta está muriendo.<br>Bitki ölüyor.</p></div>
+              <div class="usage-card"><strong>dormir → durmiendo</strong><p>El bebé está durmiendo.<br>Bebek uyuyor.</p></div>
+              <div class="usage-card"><strong>ir → yendo</strong><p>Estoy yendo al trabajo.<br>İşe gidiyorum.</p></div>
+              <div class="usage-card"><strong>oír → oyendo</strong><p>Estoy oyendo música.<br>Müzik dinliyorum.</p></div>
+              <div class="usage-card"><strong>leer → leyendo</strong><p>Estoy leyendo un libro.<br>Kitap okuyorum.</p></div>
+              <div class="usage-card"><strong>caer → cayendo</strong><p>La lluvia está cayendo.<br>Yağmur yağıyor.</p></div>
+              <div class="usage-card"><strong>traer → trayendo</strong><p>Está trayendo café.<br>Kahve getiriyor.</p></div>
+              <div class="usage-card"><strong>huir → huyendo</strong><p>El gato está huyendo.<br>Kedi kaçıyor.</p></div>
+              <div class="usage-card"><strong>sustituir → sustituyendo</strong><p>Está sustituyendo una pieza.<br>Bir parçayı değiştiriyor.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 4 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">🚿 Estar + Gerundio + Verbos Reflexivos</div>
+            <span class="topic-sub">me estoy duchando = estoy duchándome</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🔄 Zamirin İki Yeri Var</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>1. ESTAR’ın önünde</strong>
+                <div class="example-box">Me estoy duchando.<br>Duş alıyorum.<br><br>Se está vistiendo.<br>Giyiniyor.</div>
+              </div>
+              <div class="usage-card">
+                <strong>2. Gerundioya bitişik</strong>
+                <div class="example-box">Estoy duchándome.<br>Duş alıyorum.<br><br>Está vistiéndose.<br>Giyiniyor.</div>
+              </div>
+            </div>
+            <div class="alert">📌 Zamir gerundioya bağlanırsa çoğu zaman telaffuzu korumak için <strong>tilde</strong> gerekir: duchándo<strong>me</strong>, vistiéndo<strong>se</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 5 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">🎨 Los Adjetivos</div>
+            <span class="topic-sub">isimden önce / sonra · primer · tercer · gran · buen · mal</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>📍 Sıfatın Yeri</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>İsimden SONRA</strong>
+                <p>Genellikle nesnel, ayırt edici, doğrudan özellik verir.</p>
+                <div class="example-box">una casa grande<br>büyük bir ev<br><br>un coche rojo<br>kırmızı bir araba</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>İsimden ÖNCE</strong>
+                <p>Bazı sıfatlarda vurgu, konuşanın değerlendirmesi veya anlam farkı yaratabilir.</p>
+                <div class="example-box">un viejo amigo<br>eski / uzun zamandır tanıdığım bir arkadaş<br><br>un amigo viejo<br>yaşlı bir arkadaş</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✂️ Apócope · Kısalan Sıfatlar</h3>
+            <table class="verb-table">
+              <tr><th>Normal Form</th><th>İsimden Önce</th><th>Örnek</th></tr>
+              <tr><td>primero</td><td><strong>primer</strong></td><td>el primer día</td></tr>
+              <tr><td>tercero</td><td><strong>tercer</strong></td><td>el tercer piso</td></tr>
+              <tr><td>grande</td><td><strong>gran</strong></td><td>un gran amigo / una gran mujer</td></tr>
+              <tr><td>bueno</td><td><strong>buen</strong></td><td>un buen libro</td></tr>
+              <tr><td>malo</td><td><strong>mal</strong></td><td>un mal día</td></tr>
+            </table>
+
+            <div class="alert">
+              🧠 <strong>primer / tercer / buen / mal</strong> → eril tekil isimden önce.<br>
+              <strong>gran</strong> → tekil isimden önce, eril veya dişil olabilir.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 6 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">🔮 Ir a + Infinitivo</div>
+            <span class="topic-sub">yakın gelecek · “-acak / -ecek”</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Formül</h3>
+            <div class="alert"><strong>IR çekimi + A + mastar</strong></div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>IR</th><th>Örnek</th></tr>
+              <tr><td>yo</td><td>voy</td><td>Voy a estudiar.</td></tr>
+              <tr><td>tú</td><td>vas</td><td>Vas a estudiar.</td></tr>
+              <tr><td>él / ella / usted</td><td>va</td><td>Va a estudiar.</td></tr>
+              <tr><td>nosotros/as</td><td>vamos</td><td>Vamos a estudiar.</td></tr>
+              <tr><td>vosotros/as</td><td>vais</td><td>Vais a estudiar.</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>van</td><td>Van a estudiar.</td></tr>
+            </table>
+
+            <div class="usage-grid">
+              <div class="usage-card"><strong>Voy a viajar mañana.</strong><p>Yarın seyahat edeceğim.</p></div>
+              <div class="usage-card"><strong>Vamos a cenar fuera.</strong><p>Dışarıda akşam yemeği yiyeceğiz.</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 7 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">🚿 Ir a + Infinitivo + Verbos Reflexivos</div>
+            <span class="topic-sub">me voy a levantar = voy a levantarme</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🔁 Zamirin İki Yeri</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>1. IR fiilinin önünde</strong>
+                <div class="example-box">Me voy a levantar temprano.<br>Erken kalkacağım.<br><br>Se va a duchar.<br>Duş alacak.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>2. Mastarın sonunda</strong>
+                <div class="example-box">Voy a levantarme temprano.<br>Erken kalkacağım.<br><br>Va a ducharse.<br>Duş alacak.</div>
+              </div>
+            </div>
+
+            <div class="alert">✅ İki kullanım da doğrudur: <strong>Me voy a acostar = Voy a acostarme.</strong></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 8 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">📏 Muy vs Mucho</div>
+            <span class="topic-sub">muy + sıfat/zarf · mucho + fiil · mucho/a/os/as + isim</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>💥 MUY</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>MUY + adjetivo</strong>
+                <div class="example-box">Es muy guapo.<br>Çok yakışıklı.</div>
+              </div>
+              <div class="usage-card">
+                <strong>MUY + adverbio</strong>
+                <div class="example-box">Escribe muy bien.<br>Çok iyi yazıyor.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>📦 MUCHO</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Fiil + MUCHO</strong>
+                <div class="example-box">Trabajo mucho.<br>Çok çalışıyorum.<br><br>Leo mucho.<br>Çok okuyorum.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>MUCHO/A/OS/AS + isim</strong>
+                <div class="example-box">
+                  Como mucho pan.<br>Çok ekmek yiyorum.<br><br>
+                  Hay mucha gente.<br>Çok insan var.<br><br>
+                  Leo muchos libros.<br>Çok kitap okuyorum.<br><br>
+                  Tengo muchas amigas.<br>Çok kız arkadaşım var.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">🧠 <strong>MUY değişmez.</strong> Ama isimle kullanılan <strong>mucho</strong>, ismin cinsiyet ve sayısına uyar: mucha / muchos / muchas.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 9 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">9</span>
+          <div>
+            <div class="topic-title">⏳ Pretérito Perfecto</div>
+            <span class="topic-sub">haber + participio · he hablado · has comido...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Formül</h3>
+            <div class="alert"><strong>HABER (presente) + PARTICIPIO</strong></div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>HABER</th><th>Örnek</th></tr>
+              <tr><td>yo</td><td>he</td><td>He hablado.</td></tr>
+              <tr><td>tú</td><td>has</td><td>Has hablado.</td></tr>
+              <tr><td>él / ella / usted</td><td>ha</td><td>Ha hablado.</td></tr>
+              <tr><td>nosotros/as</td><td>hemos</td><td>Hemos hablado.</td></tr>
+              <tr><td>vosotros/as</td><td>habéis</td><td>Habéis hablado.</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>han</td><td>Han hablado.</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>✅ Participio Düzenli</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>-AR → -ADO</strong><div class="example-box">hablar → hablado<br>trabajar → trabajado<br>viajar → viajado</div></div>
+              <div class="usage-card"><strong>-ER / -IR → -IDO</strong><div class="example-box">comer → comido<br>beber → bebido<br>vivir → vivido</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 10 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">10</span>
+          <div>
+            <div class="topic-title">🚿 Pretérito Perfecto + Verbos Reflexivos</div>
+            <span class="topic-sub">me he levantado · te has duchado · se ha acostado</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>📍 Zamirin Yeri</h3>
+            <div class="alert"><strong>Dönüşlülük zamiri + HABER + participio</strong></div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Kişi</th><th>Örnek</th><th>Türkçesi</th></tr>
+              <tr><td>me</td><td>Me he levantado temprano.</td><td>Erken kalktım.</td></tr>
+              <tr><td>te</td><td>Te has duchado.</td><td>Duş aldın.</td></tr>
+              <tr><td>se</td><td>Se ha acostado tarde.</td><td>Geç yattı.</td></tr>
+              <tr><td>nos</td><td>Nos hemos preparado.</td><td>Hazırlandık.</td></tr>
+              <tr><td>os</td><td>Os habéis vestido.</td><td>Giyindiniz.</td></tr>
+              <tr><td>se</td><td>Se han despertado.</td><td>Uyandılar.</td></tr>
+            </table>
+
+            <div class="alert">⚠️ Zamir participioya bağlanmaz: ✅ <strong>Me he duchado.</strong> ❌ He duchadome.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 11 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">11</span>
+          <div>
+            <div class="topic-title">🧱 Participio · Düzenli ve Düzensiz</div>
+            <span class="topic-sub">-ado / -ido · dicho · hecho · visto · puesto...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>✅ Düzenli Participio</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>-AR → -ADO</strong><div class="example-box">cantar → cantado<br>comprar → comprado<br>estudiar → estudiado</div></div>
+              <div class="usage-card"><strong>-ER / -IR → -IDO</strong><div class="example-box">comer → comido<br>beber → bebido<br>vivir → vivido</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>⚡ Düzensiz Participio</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>decir → dicho</strong></div>
+              <div class="usage-card"><strong>hacer → hecho</strong></div>
+              <div class="usage-card"><strong>volver → vuelto</strong></div>
+              <div class="usage-card"><strong>devolver → devuelto</strong></div>
+              <div class="usage-card"><strong>escribir → escrito</strong></div>
+              <div class="usage-card"><strong>poner → puesto</strong></div>
+              <div class="usage-card"><strong>componer → compuesto</strong></div>
+              <div class="usage-card"><strong>romper → roto</strong></div>
+              <div class="usage-card"><strong>morir → muerto</strong></div>
+              <div class="usage-card"><strong>abrir → abierto</strong></div>
+              <div class="usage-card"><strong>ver → visto</strong></div>
+              <div class="usage-card"><strong>descubrir → descubierto</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A1.2 - 12 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">12</span>
+          <div>
+            <div class="topic-title">🚪 El Participio como Adjetivo</div>
+            <span class="topic-sub">cerrado/a · abierto/a · roto/a · escrito/a...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🎨 Participio Sıfat Olursa Ne Olur?</h3>
+            <p style="margin:0;color:#607087;font-weight:700;line-height:1.65;">
+              Participio sadece <strong>Pretérito Perfecto</strong> kurmak için kullanılmaz.
+              Bir ismin durumunu anlatırken <strong>sıfat</strong> gibi de kullanılabilir.
+              Bu durumda isimle <strong>cinsiyet ve sayı uyumu</strong> yapar.
+            </p>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card">
+                <strong>La puerta está cerrada.</strong>
+                <p>Kapı kapalı.</p>
+              </div>
+              <div class="usage-card">
+                <strong>Las puertas están cerradas.</strong>
+                <p>Kapılar kapalı.</p>
+              </div>
+              <div class="usage-card">
+                <strong>El libro está abierto.</strong>
+                <p>Kitap açık.</p>
+              </div>
+              <div class="usage-card">
+                <strong>Las ventanas están abiertas.</strong>
+                <p>Pencereler açık.</p>
+              </div>
+              <div class="usage-card">
+                <strong>El vaso está roto.</strong>
+                <p>Bardak kırık.</p>
+              </div>
+              <div class="usage-card">
+                <strong>La carta está escrita.</strong>
+                <p>Mektup yazılmış / yazılı.</p>
+              </div>
+            </div>
+
+            <div class="alert">
+              🧠 Karşılaştır:<br>
+              <strong>He abierto la puerta.</strong> → Kapıyı açtım. (Pretérito Perfecto)<br>
+              <strong>La puerta está abierta.</strong> → Kapı açık. (Participio = sıfat)
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     A2.1
+========================================================= -->
+<section id="a21" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🇪🇸 A2.1 · Dönem Sonu Özeti</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ KONUYA TIKLA · DETAYLARI AÇ</div>
+    <h2>A2.1 Konuları</h2>
+    <p>Geçmiş zamanlar, nesne zamirleri ve A1.1’de öğrendiğimiz yapıların geçmişe taşınması.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- A2.1 - 1 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">⏱️ Pretérito Indefinido · Düzenli Çekimler</div>
+            <span class="topic-sub">-AR / -ER / -IR · tamamlanmış geçmiş eylem</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>✅ Düzenli Çekimler</h3>
+            <table class="verb-table">
+              <tr><th>Özne</th><th>TRABAJAR</th><th>COMER</th><th>VIVIR</th></tr>
+              <tr><td>yo</td><td>trabajé</td><td>comí</td><td>viví</td></tr>
+              <tr><td>tú</td><td>trabajaste</td><td>comiste</td><td>viviste</td></tr>
+              <tr><td>él / ella / usted</td><td>trabajó</td><td>comió</td><td>vivió</td></tr>
+              <tr><td>nosotros/as</td><td>trabajamos</td><td>comimos</td><td>vivimos</td></tr>
+              <tr><td>vosotros/as</td><td>trabajasteis</td><td>comisteis</td><td>vivisteis</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>trabajaron</td><td>comieron</td><td>vivieron</td></tr>
+            </table>
+
+            <div class="alert">
+              🧠 <strong>Indefinido = oldu, bitti.</strong> Geçmişte tamamlanmış ve sınırı belli eylemleri anlatır.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 2 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">⚡ Indefinido · Düzensiz Kökler</div>
+            <span class="topic-sub">ortak ekler · U-J-I kökleri · J ile bitenlerde ellos dikkat</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Düzensiz Kök + Ortak Ekler</h3>
+            <div class="alert">
+              Düzensiz kök aldıktan sonra fiilin <strong>-AR / -ER / -IR</strong> ile bitmesine bakmayız.
+              Hepsi ortak ekleri alır:
+              <br><strong>-e · -iste · -o · -imos · -isteis · -ieron</strong>
+            </div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Fiil</th><th>Düzensiz Kök</th><th>Örnek</th></tr>
+              <tr><td>estar</td><td>estuv-</td><td>estuve</td></tr>
+              <tr><td>hacer</td><td>hic-</td><td>hice / hizo</td></tr>
+              <tr><td>decir</td><td>dij-</td><td>dije</td></tr>
+              <tr><td>tener</td><td>tuv-</td><td>tuve</td></tr>
+              <tr><td>andar</td><td>anduv-</td><td>anduve</td></tr>
+              <tr><td>poder</td><td>pud-</td><td>pude</td></tr>
+              <tr><td>poner</td><td>pus-</td><td>puse</td></tr>
+              <tr><td>saber</td><td>sup-</td><td>supe</td></tr>
+              <tr><td>caber</td><td>cup-</td><td>cupe</td></tr>
+              <tr><td>haber</td><td>hub-</td><td>hubo</td></tr>
+              <tr><td>querer</td><td>quis-</td><td>quise</td></tr>
+              <tr><td>venir</td><td>vin-</td><td>vine</td></tr>
+            </table>
+
+            <div class="alert">
+              ⚠️ Bu düzensiz kök grubunda <strong>aksan işareti yoktur.</strong>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🔤 U – J – I Tipleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>U kökü</strong>
+                <div class="example-box">
+                  saber → sup-<br>
+                  poder → pud-<br>
+                  poner → pus-<br>
+                  haber → hub-<br>
+                  caber → cup-<br>
+                  tener → tuv-<br>
+                  estar → estuv-<br>
+                  andar → anduv-
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>J kökü</strong>
+                <div class="example-box">
+                  decir → dij-<br>
+                  conducir → conduj-<br>
+                  producir → produj-<br>
+                  traducir → traduj-<br>
+                  traer → traj-
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>I kökü</strong>
+                <div class="example-box">
+                  querer → quis-<br>
+                  venir → vin-<br>
+                  hacer → hic- / hiz- (hizo)
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">
+              🚨 Kök <strong>-j</strong> ile bitiyorsa ellos/ellas/ustedes çekiminde <strong>-ieron değil, -eron</strong> gelir:
+              <br>decir → <strong>dijeron</strong> · traer → <strong>trajeron</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 3 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">🔄 Indefinido · Ses Değişimi ve +Y</div>
+            <span class="topic-sub">E→I · O→U · I→Y | sadece belirli şahıslarda</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🎯 Ses Değişimi</h3>
+            <p style="margin:0 0 12px;color:#607087;font-weight:700;line-height:1.6;">
+              Bazı <strong>-IR</strong> fiillerinde ses değişimi sadece
+              <strong>él/ella/usted</strong> ve <strong>ellos/ellas/ustedes</strong> çekimlerinde görülür.
+            </p>
+
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>E → I</strong>
+                <div class="example-box">
+                  pedir → pidió / pidieron<br>
+                  sentir → sintió / sintieron<br>
+                  repetir → repitió / repitieron<br>
+                  seguir → siguió / siguieron
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>O → U</strong>
+                <div class="example-box">
+                  dormir → durmió / durmieron<br>
+                  morir → murió / murieron
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>➕ Y Kaynaştırması</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>leer</strong>
+                <div class="example-box">leyó · leyeron</div>
+              </div>
+              <div class="usage-card">
+                <strong>construir</strong>
+                <div class="example-box">construyó · construyeron</div>
+              </div>
+              <div class="usage-card">
+                <strong>caer</strong>
+                <div class="example-box">cayó · cayeron</div>
+              </div>
+              <div class="usage-card">
+                <strong>oír</strong>
+                <div class="example-box">oyó · oyeron</div>
+              </div>
+              <div class="usage-card">
+                <strong>huir</strong>
+                <div class="example-box">huyó · huyeron</div>
+              </div>
+              <div class="usage-card">
+                <strong>influir / sustituir</strong>
+                <div class="example-box">influyó · influyeron<br>sustituyó · sustituyeron</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 4 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">⭐ Indefinido · Tamamen Düzensizler</div>
+            <span class="topic-sub">DAR · SER / IR</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🚨 Tamamen Düzensiz Çekimler</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>DAR</strong>
+                <div class="example-box">
+                  di · diste · dio<br>
+                  dimos · disteis · dieron
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>SER / IR</strong>
+                <div class="example-box">
+                  fui · fuiste · fue<br>
+                  fuimos · fuisteis · fueron
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">📌 SER ve IR aynı çekimi paylaşır. Anlamı cümle bağlamından anlarsın.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 5 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">🌫️ Pretérito Imperfecto de Indicativo</div>
+            <span class="topic-sub">presentenin geçmişi · tekrar eden eylem · geçmişin tarifi</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧠 Ana Mantık: “Presentenin Geçmişi”</h3>
+            <div class="alert">
+              Presente’de ne yapıyorsak / nasılsak / nerede isek,
+              <strong>Imperfecto</strong> ile bunu geçmişte “-yordum / -rdım / idi” mantığına taşırız.
+            </div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card">
+                <strong>1. Tekrar eden geçmiş eylem</strong>
+                <div class="example-box">
+                  De niño jugaba en la calle.<br>
+                  Çocukken sokakta oynardım.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>2. Geçmişin tarifi / arka planı</strong>
+                <div class="example-box">
+                  La casa era grande.<br>
+                  Ev büyüktü.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>3. “-idi” / durum anlatımı</strong>
+                <div class="example-box">
+                  Estaba cansada.<br>
+                  Yorgundum.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✅ Düzenli Çekimler</h3>
+            <table class="verb-table">
+              <tr><th>Özne</th><th>CANTAR</th><th>BEBER</th><th>VIVIR</th></tr>
+              <tr><td>yo</td><td>cantaba</td><td>bebía</td><td>vivía</td></tr>
+              <tr><td>tú</td><td>cantabas</td><td>bebías</td><td>vivías</td></tr>
+              <tr><td>él / ella / usted</td><td>cantaba</td><td>bebía</td><td>vivía</td></tr>
+              <tr><td>nosotros/as</td><td>cantábamos</td><td>bebíamos</td><td>vivíamos</td></tr>
+              <tr><td>vosotros/as</td><td>cantabais</td><td>bebíais</td><td>vivíais</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>cantaban</td><td>bebían</td><td>vivían</td></tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 6 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">🚨 Imperfecto · Sadece 3 Düzensiz</div>
+            <span class="topic-sub">SER · IR · VER</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>⭐ Üç Düzensiz Fiil</h3>
+            <table class="verb-table">
+              <tr><th>Özne</th><th>SER</th><th>IR</th><th>VER</th></tr>
+              <tr><td>yo</td><td>era</td><td>iba</td><td>veía</td></tr>
+              <tr><td>tú</td><td>eras</td><td>ibas</td><td>veías</td></tr>
+              <tr><td>él / ella / usted</td><td>era</td><td>iba</td><td>veía</td></tr>
+              <tr><td>nosotros/as</td><td>éramos</td><td>íbamos</td><td>veíamos</td></tr>
+              <tr><td>vosotros/as</td><td>erais</td><td>ibais</td><td>veíais</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>eran</td><td>iban</td><td>veían</td></tr>
+            </table>
+
+            <div class="alert">🎯 Imperfecto’da düzensiz fiil sayısı sadece <strong>3</strong>: SER · IR · VER.</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 7 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">🔁 Presente → Imperfecto Mantığı</div>
+            <span class="topic-sub">ir a + infinitivo · estar + gerundio geçmişe taşınır</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔮 Ir a + Infinitivo → Imperfecto</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Presente</strong>
+                <div class="example-box">
+                  Voy a decir la verdad.<br>
+                  Gerçeği söyleyeceğim.
+                </div>
+              </div>
+              <div class="usage-card">
+                <strong>Imperfecto</strong>
+                <div class="example-box">
+                  Iba a decir la verdad.<br>
+                  Gerçeği söyleyecektim.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">🧠 <strong>voy a + infinitivo → iba a + infinitivo</strong> = “-acaktım / -ecektim”</div>
+          </div>
+
+          <div class="section-box">
+            <h3>🏃 Estar + Gerundio → Imperfecto</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Presente</strong>
+                <div class="example-box">
+                  Estoy bailando.<br>
+                  Dans ediyorum.
+                </div>
+              </div>
+              <div class="usage-card">
+                <strong>Imperfecto</strong>
+                <div class="example-box">
+                  Estaba bailando.<br>
+                  Dans ediyordum.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">🧠 <strong>estoy + gerundio → estaba + gerundio</strong> = “-yordum”</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 8 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">🧠 Perífrasis Verbales · Geçmişe Taşıma</div>
+            <span class="topic-sub">A1.1’de presente ile öğrendiklerimizi imperfecto ile kurma</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🔗 Aynı Yapı, Sadece İlk Fiil Geçmişte</h3>
+            <table class="verb-table">
+              <tr><th>Presente</th><th>Imperfecto</th><th>Türkçesi</th></tr>
+              <tr><td>Tengo que estudiar.</td><td>Tenía que estudiar.</td><td>Ders çalışmak zorundaydım.</td></tr>
+                            <tr><td>Debo trabajar.</td><td>Debía trabajar.</td><td>Çalışmam gerekiyordu / çalışmalıydım.</td></tr>
+              <tr><td>Necesito descansar.</td><td>Necesitaba descansar.</td><td>Dinlenmeye ihtiyacım vardı.</td></tr>
+              <tr><td>Suelo caminar.</td><td>Solía caminar.</td><td>Genellikle yürürdüm.</td></tr>
+              <tr><td>Empiezo a estudiar.</td><td>Empezaba a estudiar.</td><td>Ders çalışmaya başlıyordum.</td></tr>
+                                                                    </table>
+
+            <div class="alert">
+              📌 Ana fikir: ikinci fiil yine <strong>mastar</strong> kalır; zamanı taşıyan ilk fiildir.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 9 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">9</span>
+          <div>
+            <div class="topic-title">🎯 Objeto Directo · OD</div>
+            <span class="topic-sub">Neyi? Kimi? · me te lo la nos os los las</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>❓ Objeto Directo = Neyi? Kimi?</h3>
+            <table class="verb-table">
+              <tr><th>Kişi / Nesne</th><th>OD Zamiri</th><th>Örnek</th></tr>
+              <tr><td>a mí</td><td>me</td><td>Me ves. → Beni görüyorsun.</td></tr>
+              <tr><td>a ti</td><td>te</td><td>Te veo. → Seni görüyorum.</td></tr>
+              <tr><td>él / nesne masculino</td><td>lo</td><td>Lo compro. → Onu satın alıyorum.</td></tr>
+              <tr><td>ella / nesne femenino</td><td>la</td><td>La compro. → Onu satın alıyorum.</td></tr>
+              <tr><td>nosotros/as</td><td>nos</td><td>Nos llaman. → Bizi arıyorlar.</td></tr>
+              <tr><td>vosotros/as</td><td>os</td><td>Os escucho. → Sizi dinliyorum.</td></tr>
+              <tr><td>masculino plural</td><td>los</td><td>Los veo. → Onları görüyorum.</td></tr>
+              <tr><td>femenino plural</td><td>las</td><td>Las veo. → Onları görüyorum.</td></tr>
+            </table>
+
+            <div class="alert">🎯 OD sorusu: <strong>¿Qué? / ¿A quién?</strong> → Neyi? / Kimi?</div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 10 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">10</span>
+          <div>
+            <div class="topic-title">🎁 Objeto Indirecto · OI</div>
+            <span class="topic-sub">Kime? Kimin için? · me te le nos os les</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>❓ Objeto Indirecto = Kime? Kimin için?</h3>
+            <table class="verb-table">
+              <tr><th>Kişi</th><th>OI Zamiri</th><th>Örnek</th></tr>
+              <tr><td>para mí / a mí</td><td>me</td><td>Me compra un regalo. → Bana bir hediye alıyor.</td></tr>
+              <tr><td>para ti / a ti</td><td>te</td><td>Te escribo. → Sana yazıyorum.</td></tr>
+              <tr><td>a él / a ella / a usted</td><td>le</td><td>Le doy el libro. → Ona kitabı veriyorum.</td></tr>
+              <tr><td>a nosotros/as</td><td>nos</td><td>Nos explica la lección. → Bize dersi açıklıyor.</td></tr>
+              <tr><td>a vosotros/as</td><td>os</td><td>Os preparo café. → Size kahve hazırlıyorum.</td></tr>
+              <tr><td>a ellos / ellas / ustedes</td><td>les</td><td>Les mando un mensaje. → Onlara mesaj gönderiyorum.</td></tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.1 - 11 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">11</span>
+          <div>
+            <div class="topic-title">🧩 OD + OI Birlikte</div>
+            <span class="topic-sub">OI + OD + fiil · le/les + lo/la/los/las → se</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>📌 Sıralama</h3>
+            <div class="alert"><strong>OI + OD + FİİL</strong></div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card">
+                <strong>Cindy compró una gorra para mí.</strong>
+                <p>Ne aldı? → una gorra = OD<br>Kimin için? → para mí = OI</p>
+                <div class="example-box">Cindy me la compró.<br>Cindy onu benim için aldı.</div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Le doy el libro.</strong>
+                <p>le = ona · el libro = onu</p>
+                <div class="example-box">Se lo doy.<br>Onu ona veriyorum.</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="section-box">
+            <h3>📍 OD + OI Cümlede Nereye Yerleşir?</h3>
+
+            <div class="alert">
+              Önce sıra değişmez: <strong>OI + OD</strong><br>
+              Örn. <strong>te + lo</strong>, <strong>me + la</strong>, <strong>se + los</strong>
+            </div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+
+              <div class="usage-card">
+                <strong>1. Sadece çekimli fiil varsa</strong>
+                <p>Zamirler fiilin <strong>önüne</strong> gelir.</p>
+                <div class="example-box">
+                  Te lo compro.<br>
+                  Onu sana alıyorum.<br><br>
+                  Se la doy.<br>
+                  Onu ona veriyorum.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>2. Fiil grubunda MASTAR varsa</strong>
+                <p>İki doğru yerleşim vardır.</p>
+                <div class="example-box">
+                  Te lo voy a comprar. ✅<br>
+                  Voy a comprártelo. ✅<br><br>
+                  Onu sana alacağım.
+                </div>
+                <div class="note" style="margin-top:10px;">
+                  Mastara bağlanınca zamirler sona eklenir ve vurgu korunması için tilde gerekebilir:
+                  <strong>comprar → comprártelo</strong>
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>3. Fiil grubunda GERUNDIO varsa</strong>
+                <p>Yine iki doğru yerleşim vardır.</p>
+                <div class="example-box">
+                  Te lo estoy comprando. ✅<br>
+                  Estoy comprándotelo. ✅<br><br>
+                  Onu sana satın alıyorum.
+                </div>
+                <div class="note" style="margin-top:10px;">
+                  Gerundioya bağlanınca tildeyi unutma:
+                  <strong>comprando → comprándotelo</strong>
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>4. Olumlu IMPERATIVO varsa</strong>
+                <p>Zamirler fiilin <strong>sonuna bitişik</strong> gelir.</p>
+                <div class="example-box">
+                  ¡Cómpratelo! ✅<br>
+                  Onu kendine / onu satın al!<br><br>
+                  ¡Dámelo! ✅<br>
+                  Onu bana ver!
+                </div>
+                <div class="note" style="margin-top:10px;">
+                  Bu yapıda zamirleri fiilin önüne koymayız.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="alert">
+              🧠 Hızlı karar:<br>
+              <strong>Çekimli fiil tek başına</strong> → ÖNDE<br>
+              <strong>Mastar / gerundio varsa</strong> → ÖNDE veya SONA BİTİŞİK<br>
+              <strong>Olumlu imperativo</strong> → SONA BİTİŞİK
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🚨 LE / LES + LO / LA / LOS / LAS</h3>
+            <div class="alert">
+              <strong>le lo ❌ → se lo ✅</strong><br>
+              <strong>le la ❌ → se la ✅</strong><br>
+              <strong>les los ❌ → se los ✅</strong><br>
+              <strong>les las ❌ → se las ✅</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     A2.2
+========================================================= -->
+<section id="a22" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🇪🇸 A2.2 · Dönem Sonu Özeti</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ KONUYA TIKLA · DETAYLARI AÇ</div>
+    <h2>A2.2 Konuları</h2>
+    <p>Geçmişin geçmişi, edilgen yapı, gelecek zaman ve koşul yapıları arasında bağlantı kur.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- A2.2 - 1 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">⏮️ Pretérito Pluscuamperfecto</div>
+            <span class="topic-sub">había + participio · geçmişin geçmişi</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Formül</h3>
+            <div class="alert"><strong>HABER (imperfecto) + PARTICIPIO</strong></div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>HABER</th><th>Örnek</th></tr>
+              <tr><td>yo</td><td>había</td><td>Había comido.</td></tr>
+              <tr><td>tú</td><td>habías</td><td>Habías comido.</td></tr>
+              <tr><td>él / ella / usted</td><td>había</td><td>Había comido.</td></tr>
+              <tr><td>nosotros/as</td><td>habíamos</td><td>Habíamos comido.</td></tr>
+              <tr><td>vosotros/as</td><td>habíais</td><td>Habíais comido.</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>habían</td><td>Habían comido.</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🕰️ Geçmişin Geçmişi</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Önce olan eylem</strong>
+                <div class="example-box">
+                  Cuando llegué, Ana ya había salido.<br>
+                  Ben vardığımda Ana çoktan çıkmıştı.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>İki geçmiş olay arasında sıra</strong>
+                <div class="example-box">
+                  Ya había cenado cuando me llamaste.<br>
+                  Sen beni aradığında yemeğimi çoktan yemiştim.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">
+              🧠 <strong>Indefinido = geçmişte oldu.</strong><br>
+              <strong>Pluscuamperfecto = o geçmiş olaydan daha önce olmuştu.</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 2 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">📰 Voz Pasiva · SER + Participio</div>
+            <span class="topic-sub">sujeto paciente · ser · participio · por + agente</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧩 Formül</h3>
+            <div class="alert">
+              <strong>SUJETO PACIENTE + SER + PARTICIPIO + POR + AGENTE</strong>
+            </div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card">
+                <strong>Activa</strong>
+                <div class="example-box">
+                  Pablo Neruda escribió muchos poemas.<br>
+                  Pablo Neruda birçok şiir yazdı.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Pasiva</strong>
+                <div class="example-box">
+                  Muchos poemas fueron escritos por Pablo Neruda.<br>
+                  Birçok şiir Pablo Neruda tarafından yazıldı.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">
+              📌 Participio, pasif cümlenin öznesiyle <strong>cinsiyet ve sayı bakımından uyum</strong> sağlar:
+              escrito / escrita / escritos / escritas.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🎯 Neden Pasif Kullanırız?</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Eylemden etkilenen şeyi öne çıkarmak</strong>
+                <div class="example-box">La ciudad fue destruida por el ejército.</div>
+              </div>
+              <div class="usage-card">
+                <strong>Agente önemli değilse / söylenmek istenmiyorsa</strong>
+                <div class="example-box">La puerta fue cerrada.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 3 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">🕒 Voz Pasiva · Farklı Zamanlarda</div>
+            <span class="topic-sub">zaman SER üzerinde · participio sabit mantıkta</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>⏱️ Zamanı SER Taşır</h3>
+            <table class="verb-table">
+              <tr><th>Zaman</th><th>Pasif Yapı</th><th>Örnek</th></tr>
+              <tr><td>Presente</td><td>es + participio</td><td>El libro es escrito.</td></tr>
+              <tr><td>Imperfecto</td><td>era + participio</td><td>El libro era escrito.</td></tr>
+              <tr><td>Indefinido</td><td>fue + participio</td><td>El libro fue escrito.</td></tr>
+              <tr><td>Pretérito Perfecto</td><td>ha sido + participio</td><td>El libro ha sido escrito.</td></tr>
+              <tr><td>Pluscuamperfecto</td><td>había sido + participio</td><td>El libro había sido escrito.</td></tr>
+              <tr><td>Futuro</td><td>será + participio</td><td>El libro será escrito.</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🔄 Devam Eden Pasif Eylem</h3>
+            <div class="alert"><strong>ESTAR + SIENDO + PARTICIPIO</strong></div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card">
+                <strong>La comida fue preparada.</strong>
+                <p>Yemek hazırlandı.</p>
+                <div class="example-box">Eylem tamamlandı.</div>
+              </div>
+              <div class="usage-card">
+                <strong>La comida está siendo preparada.</strong>
+                <p>Yemek hazırlanıyor.</p>
+                <div class="example-box">Eylem şu anda devam ediyor.</div>
+              </div>
+            </div>
+
+            <div class="alert">
+              ⚠️ <strong>Está siendo preparada</strong> ≠ <strong>Está preparada</strong><br>
+              İlki: hazırlanıyor. &nbsp; İkincisi: hazır durumda.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 4 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">🧾 Pasiva con SE</div>
+            <span class="topic-sub">se vende · se venden · agente bilinmiyor / önemsiz</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧠 SE ile Edilgen Anlam</h3>
+            <p style="margin:0 0 14px;color:#607087;font-weight:700;line-height:1.6;">
+              Eylemi yapan kişinin kim olduğu bilinmiyor, önemli değil veya belirtilmek istenmiyorsa
+              <strong>SE</strong> ile edilgen anlam kurulabilir.
+            </p>
+
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Tekil</strong>
+                <div class="example-box">
+                  Se vende una casa.<br>
+                  Bir ev satılıyor.
+                </div>
+              </div>
+              <div class="usage-card">
+                <strong>Çoğul</strong>
+                <div class="example-box">
+                  Se venden casas.<br>
+                  Evler satılıyor.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">
+              📌 Fiil, özneyle <strong>tekil–çoğul bakımından uyum</strong> sağlar.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 5 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">🔮 Futuro Simple · Düzenli Çekim</div>
+            <span class="topic-sub">mastar + é ás á emos éis án</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>✅ Düzenli Futuro</h3>
+            <div class="alert">
+              <strong>Mastar fiilin tamamı korunur + gelecek zaman eki gelir.</strong>
+            </div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>HABLAR</th><th>COMER</th><th>VIVIR</th></tr>
+              <tr><td>yo</td><td>hablaré</td><td>comeré</td><td>viviré</td></tr>
+              <tr><td>tú</td><td>hablarás</td><td>comerás</td><td>vivirás</td></tr>
+              <tr><td>él / ella / usted</td><td>hablará</td><td>comerá</td><td>vivirá</td></tr>
+              <tr><td>nosotros/as</td><td>hablaremos</td><td>comeremos</td><td>viviremos</td></tr>
+              <tr><td>vosotros/as</td><td>hablaréis</td><td>comeréis</td><td>viviréis</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>hablarán</td><td>comerán</td><td>vivirán</td></tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 6 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">⚡ Futuro Simple · Düzensiz Kökler</div>
+            <span class="topic-sub">kök değişir · ekler aynı kalır</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧩 Düzensiz Kök + Aynı Ekler</h3>
+
+            <div class="usage-grid">
+              <div class="usage-card"><strong>tener → tendr-</strong><div class="example-box">tendré</div></div>
+              <div class="usage-card"><strong>venir → vendr-</strong><div class="example-box">vendré</div></div>
+              <div class="usage-card"><strong>poner → pondr-</strong><div class="example-box">pondré</div></div>
+              <div class="usage-card"><strong>salir → saldr-</strong><div class="example-box">saldré</div></div>
+              <div class="usage-card"><strong>poder → podr-</strong><div class="example-box">podré</div></div>
+              <div class="usage-card"><strong>saber → sabr-</strong><div class="example-box">sabré</div></div>
+              <div class="usage-card"><strong>haber → habr-</strong><div class="example-box">habrá</div></div>
+              <div class="usage-card"><strong>hacer → har-</strong><div class="example-box">haré</div></div>
+              <div class="usage-card"><strong>decir → dir-</strong><div class="example-box">diré</div></div>
+              <div class="usage-card"><strong>querer → querr-</strong><div class="example-box">querré</div></div>
+              <div class="usage-card"><strong>valer → valdr-</strong><div class="example-box">valdré</div></div>
+            </div>
+
+            <div class="alert">
+              🎯 Düzensizlik sadece kökte; ekler yine <strong>-é, -ás, -á, -emos, -éis, -án</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 7 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">🧠 Futuro Simple · Kullanım Alanları</div>
+            <span class="topic-sub">gelecek · tahmin · şimdi hakkında varsayım · kural/emir</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>1️⃣ Gelecekte Olacak Bir Şey / Tahmin</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Mañana acabará el trabajo.</strong>
+                <p>Yarın işi bitirecek.</p>
+              </div>
+              <div class="usage-card">
+                <strong>Seguramente llorarán al final de esa película.</strong>
+                <p>Muhtemelen filmin sonunda ağlayacaklar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>2️⃣ Şimdi Hakkında Tahmin / Belirsizlik</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Estará en Madrid ahora.</strong>
+                <p>Herhalde şimdi Madrid’dedir.</p>
+              </div>
+              <div class="usage-card">
+                <strong>Ahora tendrá mucho trabajo.</strong>
+                <p>Herhalde şu anda çok işi vardır.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>3️⃣ Mandato / Regla · Kural veya Kesin Emir</h3>
+            <div class="example-box">
+              No mentirás. → Yalan söylemeyeceksin.<br>
+              No robarás. → Çalmayacaksın.<br>
+              No traicionarás. → İhanet etmeyeceksin.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 8 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">💭 Condicional Simple · Düzenli ve Düzensiz</div>
+            <span class="topic-sub">mastar / futuro kökü + ía ías ía íamos íais ían</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>✅ Düzenli Çekim</h3>
+            <div class="alert">
+              <strong>Mastar + -ía, -ías, -ía, -íamos, -íais, -ían</strong>
+            </div>
+
+            <table class="verb-table" style="margin-top:14px;">
+              <tr><th>Özne</th><th>HABLAR</th><th>COMER</th><th>VIVIR</th></tr>
+              <tr><td>yo</td><td>hablaría</td><td>comería</td><td>viviría</td></tr>
+              <tr><td>tú</td><td>hablarías</td><td>comerías</td><td>vivirías</td></tr>
+              <tr><td>él / ella / usted</td><td>hablaría</td><td>comería</td><td>viviría</td></tr>
+              <tr><td>nosotros/as</td><td>hablaríamos</td><td>comeríamos</td><td>viviríamos</td></tr>
+              <tr><td>vosotros/as</td><td>hablaríais</td><td>comeríais</td><td>viviríais</td></tr>
+              <tr><td>ellos / ellas / ustedes</td><td>hablarían</td><td>comerían</td><td>vivirían</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>⚡ Düzensiz Kökler</h3>
+            <div class="alert">
+              Futuro Simple’deki düzensiz kökler <strong>Condicional Simple’de de aynıdır.</strong>
+            </div>
+
+            <div class="usage-grid" style="margin-top:14px;">
+              <div class="usage-card"><strong>tendr-</strong><div class="example-box">tendría</div></div>
+              <div class="usage-card"><strong>vendr-</strong><div class="example-box">vendría</div></div>
+              <div class="usage-card"><strong>pondr-</strong><div class="example-box">pondría</div></div>
+              <div class="usage-card"><strong>saldr-</strong><div class="example-box">saldría</div></div>
+              <div class="usage-card"><strong>podr-</strong><div class="example-box">podría</div></div>
+              <div class="usage-card"><strong>sabr-</strong><div class="example-box">sabría</div></div>
+              <div class="usage-card"><strong>har-</strong><div class="example-box">haría</div></div>
+              <div class="usage-card"><strong>dir-</strong><div class="example-box">diría</div></div>
+              <div class="usage-card"><strong>querr-</strong><div class="example-box">querría</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 9 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">9</span>
+          <div>
+            <div class="topic-title">🧠 Condicional Simple · Kullanım Alanları</div>
+            <span class="topic-sub">HTİNÖ · hayal · tavsiye · istek · nazik rica · öneri</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧠 Hatırlatma Kodu: HTİNÖ</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>H → Hayal / Varsayım</strong>
+                <div class="example-box">Viviría en España.<br>İspanya’da yaşardım.</div>
+              </div>
+              <div class="usage-card">
+                <strong>T → Tavsiye</strong>
+                <div class="example-box">Yo en tu lugar descansaría.<br>Senin yerinde olsam dinlenirdim.</div>
+              </div>
+              <div class="usage-card">
+                <strong>İ → İstek</strong>
+                <div class="example-box">Me gustaría un café.<br>Bir kahve isterdim.</div>
+              </div>
+              <div class="usage-card">
+                <strong>N → Nazik Rica</strong>
+                <div class="example-box">¿Podrías ayudarme?<br>Bana yardım edebilir misin?</div>
+              </div>
+              <div class="usage-card">
+                <strong>Ö → Öneri</strong>
+                <div class="example-box">Deberías estudiar más.<br>Daha çok çalışmalısın.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🎁 BONUS KOD: GT · “Geçmişi Tahmin Et”</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>G → Geçmişin geleceği</strong>
+                <div class="example-box">
+                  Dijo que vendría.<br>
+                  Geleceğini söyledi.
+                </div>
+              </div>
+              <div class="usage-card">
+                <strong>T → Geçmiş hakkında tahmin / belirsizlik</strong>
+                <div class="example-box">
+                  Serían las diez.<br>
+                  Herhalde saat on civarıydı.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- A2.2 - 10 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">10</span>
+          <div>
+            <div class="topic-title">🔗 Futuro Simple ↔ Condicional Simple</div>
+            <span class="topic-sub">aynı düzensiz kökler · farklı zaman / bakış açısı</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧬 Aynı Kök, Farklı Ek</h3>
+            <table class="verb-table">
+              <tr><th>Fiil</th><th>Futuro</th><th>Condicional</th></tr>
+              <tr><td>tener</td><td>tendré</td><td>tendría</td></tr>
+              <tr><td>venir</td><td>vendré</td><td>vendría</td></tr>
+              <tr><td>poder</td><td>podré</td><td>podría</td></tr>
+              <tr><td>hacer</td><td>haré</td><td>haría</td></tr>
+              <tr><td>decir</td><td>diré</td><td>diría</td></tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h3>🕰️ Zaman Bağlantısı</h3>
+            <div class="usage-grid">
+              <div class="usage-card">
+                <strong>Futuro → geleceğe bakış</strong>
+                <div class="example-box">
+                  Mañana vendrá.<br>
+                  Yarın gelecek.
+                </div>
+              </div>
+
+              <div class="usage-card">
+                <strong>Condicional → geçmişten geleceğe bakış</strong>
+                <div class="example-box">
+                  Dijo que vendría.<br>
+                  Geleceğini söyledi.
+                </div>
+              </div>
+            </div>
+
+            <div class="alert">
+              🧠 Futuro: <strong>gelecek</strong><br>
+              Condicional: <strong>hayal / olasılık / naziklik / geçmişin geleceği</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     TOOLBOX
+========================================================= -->
+<section id="toolbox" class="screen">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🧰 İspanyolca Araç Kutusu</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ TÜM SEVİYELER İÇİN ORTAK BAŞVURU ALANI</div>
+    <h2>İspanyolca Araç Kutusu</h2>
+    <p>Seviye fark etmeksizin dönüp bakabileceğin temel konu özetleri.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- TOOLBOX 1 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">📍 Yer-Yön Zarfları ve Edatları</div>
+            <span class="topic-sub">¿Dónde está? · en · debajo de · delante de · cerca de...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧭 Temel Yapı</h3>
+            <div class="alert">
+              <strong>SUJETO + ESTAR + EXPRESIÓN DE LUGAR + LUGAR / OBJETO</strong><br>
+              El gato está debajo de la mesa. → Kedi masanın altında.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>📌 En Temel Yer İfadeleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>en</strong><p>-de / -da, içinde</p><div class="example-box">Estoy en casa. → Evdeyim.</div></div>
+              <div class="usage-card"><strong>dentro de</strong><p>içinde</p><div class="example-box">El móvil está dentro del bolso.</div></div>
+              <div class="usage-card"><strong>fuera de</strong><p>dışında</p><div class="example-box">El perro está fuera de la casa.</div></div>
+              <div class="usage-card"><strong>encima de / sobre</strong><p>üstünde / üzerinde</p><div class="example-box">El libro está encima de la mesa.</div></div>
+              <div class="usage-card"><strong>debajo de / bajo</strong><p>altında</p><div class="example-box">El gato está debajo de la cama.</div></div>
+              <div class="usage-card"><strong>delante de</strong><p>önünde</p><div class="example-box">El coche está delante de la casa.</div></div>
+              <div class="usage-card"><strong>detrás de</strong><p>arkasında</p><div class="example-box">El jardín está detrás de la casa.</div></div>
+              <div class="usage-card"><strong>al lado de / junto a</strong><p>yanında / bitişiğinde</p><div class="example-box">La farmacia está al lado del banco.</div></div>
+              <div class="usage-card"><strong>enfrente de</strong><p>karşısında</p><div class="example-box">El banco está enfrente del supermercado.</div></div>
+              <div class="usage-card"><strong>a la derecha de</strong><p>sağında</p><div class="example-box">El banco está a la derecha del café.</div></div>
+              <div class="usage-card"><strong>a la izquierda de</strong><p>solunda</p><div class="example-box">La farmacia está a la izquierda del banco.</div></div>
+              <div class="usage-card"><strong>cerca de / lejos de</strong><p>yakınında / uzağında</p><div class="example-box">Vivo cerca de la universidad.</div></div>
+              <div class="usage-card"><strong>entre</strong><p>arasında</p><div class="example-box">La farmacia está entre el banco y el supermercado.</div></div>
+              <div class="usage-card"><strong>en medio de</strong><p>ortasında</p><div class="example-box">La mesa está en medio de la habitación.</div></div>
+              <div class="usage-card"><strong>en el centro de</strong><p>merkezinde</p><div class="example-box">Hay una fuente en el centro de la plaza.</div></div>
+              <div class="usage-card"><strong>alrededor de</strong><p>etrafında</p><div class="example-box">Hay árboles alrededor de la casa.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🧭 Tek Başına Kullanılabilen Yer Zarfları</h3>
+            <div class="mini-chips">
+              <span class="chip">aquí → burada</span>
+              <span class="chip">ahí → orada</span>
+              <span class="chip">allí → orada</span>
+              <span class="chip">allá → ötede</span>
+              <span class="chip">acá → burada</span>
+              <span class="chip">arriba → yukarıda</span>
+              <span class="chip">abajo → aşağıda</span>
+              <span class="chip">dentro → içeride</span>
+              <span class="chip">fuera → dışarıda</span>
+              <span class="chip">delante → önde</span>
+              <span class="chip">detrás → arkada</span>
+              <span class="chip">cerca → yakında</span>
+              <span class="chip">lejos → uzakta</span>
+            </div>
+            <div class="alert">⚠️ Ardından isim geliyorsa çoğunlukla <strong>de</strong> gerekir: fuera de, cerca de, delante de...<br><strong>de + el = del</strong> · <strong>a + el = al</strong></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 2 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">🔢 Sayılar 0–1000 + Sayı Oluşturma Mantığı</div>
+            <span class="topic-sub">cero · diez · veinte · treinta · cien · mil</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>0–15 · Temel Ezber</h3>
+            <div class="mini-chips">
+              <span class="chip">0 cero</span><span class="chip">1 uno</span><span class="chip">2 dos</span><span class="chip">3 tres</span>
+              <span class="chip">4 cuatro</span><span class="chip">5 cinco</span><span class="chip">6 seis</span><span class="chip">7 siete</span>
+              <span class="chip">8 ocho</span><span class="chip">9 nueve</span><span class="chip">10 diez</span><span class="chip">11 once</span>
+              <span class="chip">12 doce</span><span class="chip">13 trece</span><span class="chip">14 catorce</span><span class="chip">15 quince</span>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>16–29 · Birleşik Yazım</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>16–19 → dieci + sayı</strong><div class="example-box">16 dieciséis<br>17 diecisiete<br>18 dieciocho<br>19 diecinueve</div></div>
+              <div class="usage-card"><strong>20–29 → veinti + sayı</strong><div class="example-box">20 veinte<br>21 veintiuno<br>22 veintidós<br>23 veintitrés<br>26 veintiséis</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>30–99 · “y” Mantığı</h3>
+            <div class="alert"><strong>onluk + y + birlik</strong></div>
+            <div class="mini-chips">
+              <span class="chip">30 treinta</span><span class="chip">40 cuarenta</span><span class="chip">50 cincuenta</span>
+              <span class="chip">60 sesenta</span><span class="chip">70 setenta</span><span class="chip">80 ochenta</span><span class="chip">90 noventa</span>
+            </div>
+            <div class="example-box" style="margin-top:12px;">31 → treinta y uno<br>48 → cuarenta y ocho<br>57 → cincuenta y siete<br>99 → noventa y nueve</div>
+          </div>
+
+          <div class="section-box">
+            <h3>100–1000</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>100 = cien</strong><p>Tam 100.</p><div class="example-box">cien</div></div>
+              <div class="usage-card"><strong>101+ = ciento...</strong><p>100'den sonra sayı devam ediyorsa.</p><div class="example-box">101 ciento uno<br>125 ciento veinticinco</div></div>
+              <div class="usage-card"><strong>200 doscientos</strong><p>300 trescientos · 400 cuatrocientos...</p></div>
+              <div class="usage-card"><strong>500 quinientos</strong><p>700 setecientos · 900 novecientos</p></div>
+              <div class="usage-card"><strong>1000 = mil</strong><div class="example-box">999 novecientos noventa y nueve<br>1000 mil</div></div>
+            </div>
+            <div class="alert">🧠 Büyük sayı oluştururken soldan sağa ilerle: <strong>347 = trescientos cuarenta y siete</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 3 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">🔗 Bağlaçlar · Conectores</div>
+            <span class="topic-sub">y · o · pero · porque · además · sin embargo...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧩 Temel Bağlaçlar</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>y → ve</strong><div class="example-box">Quiero una manzana y una pera.</div></div>
+              <div class="usage-card"><strong>o → veya</strong><div class="example-box">¿Quieres té o café?</div></div>
+              <div class="usage-card"><strong>ni...ni → ne...ne de</strong><div class="example-box">No quiero ni té ni café.</div></div>
+              <div class="usage-card"><strong>pero → ama</strong><div class="example-box">Quiero ir, pero tengo que estudiar.</div></div>
+              <div class="usage-card"><strong>sino → ama / aksine</strong><div class="example-box">No es blanco, sino negro.</div></div>
+              <div class="usage-card"><strong>porque → çünkü</strong><div class="example-box">No salgo porque estoy enfermo.</div></div>
+              <div class="usage-card"><strong>así que → bu yüzden / öyleyse</strong><div class="example-box">Tengo trabajo, así que no salgo.</div></div>
+              <div class="usage-card"><strong>sin embargo → ancak / buna rağmen</strong><div class="example-box">Estoy cansado; sin embargo, sigo trabajando.</div></div>
+              <div class="usage-card"><strong>además → ayrıca</strong><div class="example-box">Me gusta leer; además, me gusta escribir.</div></div>
+              <div class="usage-card"><strong>mientras → -iken</strong><div class="example-box">Mientras estudio, escucho música.</div></div>
+              <div class="usage-card"><strong>cuando → -dığında</strong><div class="example-box">Cuando llego a casa, descanso.</div></div>
+              <div class="usage-card"><strong>antes de / después de</strong><p>önce / sonra</p><div class="example-box">Antes de salir...<br>Después de trabajar...</div></div>
+              <div class="usage-card"><strong>si → eğer</strong><div class="example-box">Si llueve, no salimos.</div></div>
+              <div class="usage-card"><strong>por lo tanto</strong><p>bu nedenle</p><div class="example-box">Tengo hambre, por lo tanto voy a comer.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✍️ Yazı Yazarken Kullanışlı İfadeler</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>Giriş</strong><p>En primer lugar...<br>Desde mi punto de vista...<br>Hoy en día...<br>El propósito de este ensayo es...</p></div>
+              <div class="usage-card"><strong>Gelişme</strong><p>Además...<br>Por ejemplo...<br>Por otro lado...<br>En cuanto a...<br>De acuerdo con...</p></div>
+              <div class="usage-card"><strong>Sonuç</strong><p>En conclusión...<br>En resumen...<br>Para concluir...<br>En definitiva...<br>Por estas razones...</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 4 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">❓ Soru Kelimeleri</div>
+            <span class="topic-sub">qué · quién · dónde · cuándo · cómo · cuál · cuánto · por qué</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧠 Temel Soru Kelimeleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué?</strong><p>Ne?</p><div class="example-box">¿Qué haces? → Ne yapıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Quién? / ¿Quiénes?</strong><p>Kim? / Kimler?</p><div class="example-box">¿Quién es? → Kim?</div></div>
+              <div class="usage-card"><strong>¿Dónde?</strong><p>Nerede?</p><div class="example-box">¿Dónde vives? → Nerede yaşıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Adónde?</strong><p>Nereye?</p><div class="example-box">¿Adónde vas? → Nereye gidiyorsun?</div></div>
+              <div class="usage-card"><strong>¿De dónde?</strong><p>Nereden?</p><div class="example-box">¿De dónde eres? → Nerelisin?</div></div>
+              <div class="usage-card"><strong>¿Cuándo?</strong><p>Ne zaman?</p><div class="example-box">¿Cuándo vienes? → Ne zaman geliyorsun?</div></div>
+              <div class="usage-card"><strong>¿Cómo?</strong><p>Nasıl?</p><div class="example-box">¿Cómo estás? → Nasılsın?</div></div>
+              <div class="usage-card"><strong>¿Cuál? / ¿Cuáles?</strong><p>Hangisi / Hangileri?</p></div>
+              <div class="usage-card"><strong>¿Cuánto/a/os/as?</strong><p>Ne kadar / Kaç?</p><div class="example-box">¿Cuántos años tienes?</div></div>
+              <div class="usage-card"><strong>¿Por qué?</strong><p>Neden?</p><div class="example-box">¿Por qué estudias español?</div></div>
+            </div>
+            <div class="alert">✍️ Soru anlamında kullanıldıklarında tildeyi unutma: <strong>qué, quién, dónde, cuándo, cómo, cuál, cuánto, por qué</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 5 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">📅 Günler · Aylar · Tarihler</div>
+            <span class="topic-sub">lunes · enero · 21 de junio · en verano...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>📆 Los días de la semana</h3>
+            <div class="mini-chips">
+              <span class="chip">lunes</span><span class="chip">martes</span><span class="chip">miércoles</span>
+              <span class="chip">jueves</span><span class="chip">viernes</span><span class="chip">sábado</span><span class="chip">domingo</span>
+            </div>
+          </div>
+          <div class="section-box">
+            <h3>🗓️ Los meses</h3>
+            <div class="mini-chips">
+              <span class="chip">enero</span><span class="chip">febrero</span><span class="chip">marzo</span><span class="chip">abril</span>
+              <span class="chip">mayo</span><span class="chip">junio</span><span class="chip">julio</span><span class="chip">agosto</span>
+              <span class="chip">septiembre</span><span class="chip">octubre</span><span class="chip">noviembre</span><span class="chip">diciembre</span>
+            </div>
+          </div>
+          <div class="section-box">
+            <h3>✍️ Tarih Söyleme</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>Hoy es lunes.</strong><p>Bugün pazartesi.</p></div>
+              <div class="usage-card"><strong>Hoy es 21 de junio.</strong><p>Bugün 21 Haziran.</p></div>
+              <div class="usage-card"><strong>Nací el 21 de junio.</strong><p>21 Haziran'da doğdum.</p></div>
+              <div class="usage-card"><strong>Nací en junio / en verano / en 1999.</strong><p>Ay / mevsim / yıl → <strong>en</strong></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 6 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">🕐 Saatler</div>
+            <span class="topic-sub">Es la una · Son las dos · y cuarto · y media · menos cuarto</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>⏰ Temel Kalıplar</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué hora es?</strong><p>Saat kaç?</p></div>
+              <div class="usage-card"><strong>01:00 → Es la una.</strong></div>
+              <div class="usage-card"><strong>02:00 → Son las dos.</strong></div>
+              <div class="usage-card"><strong>03:15 → Son las tres y cuarto.</strong></div>
+              <div class="usage-card"><strong>04:30 → Son las cuatro y media.</strong></div>
+              <div class="usage-card"><strong>05:45 → Son las seis menos cuarto.</strong></div>
+              <div class="usage-card"><strong>en punto</strong><p>tam</p></div>
+              <div class="usage-card"><strong>de la mañana / tarde / noche</strong><p>sabah / öğleden sonra / gece</p></div>
+            </div>
+            <div class="alert">📌 Sadece saat 1 için <strong>Es la una</strong>; diğerlerinde <strong>Son las...</strong></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 7 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">🎨 Renkler</div>
+            <span class="topic-sub">rojo · amarillo · verde · azul · negro · blanco...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🌈 Los Colores</h3>
+            <div class="mini-chips">
+              <span class="chip">rojo → kırmızı</span>
+              <span class="chip">amarillo → sarı</span>
+              <span class="chip">naranja → turuncu</span>
+              <span class="chip">rosa → pembe</span>
+              <span class="chip">morado / violeta → mor</span>
+              <span class="chip">verde → yeşil</span>
+              <span class="chip">azul → mavi</span>
+              <span class="chip">azul claro → açık mavi</span>
+              <span class="chip">azul oscuro → koyu mavi</span>
+              <span class="chip">negro → siyah</span>
+              <span class="chip">blanco → beyaz</span>
+              <span class="chip">gris → gri</span>
+              <span class="chip">marrón → kahverengi</span>
+            </div>
+            <div class="alert">🎯 Renk sıfat olduğunda çoğu zaman isimle uyum yapar: <strong>coche rojo · casa roja · coches rojos · casas rojas</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 8 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">👥 Temel Kişi ve Aile Kelimeleri</div>
+            <span class="topic-sub">madre · padre · hermano · abuela · marido · mujer...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>👨‍👩‍👧‍👦 La Familia</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>madre / padre</strong><p>anne / baba</p></div>
+              <div class="usage-card"><strong>hermano / hermana</strong><p>erkek kardeş / kız kardeş</p></div>
+              <div class="usage-card"><strong>hijo / hija</strong><p>oğul / kız evlat</p></div>
+              <div class="usage-card"><strong>abuelo / abuela</strong><p>dede / büyükanne</p></div>
+              <div class="usage-card"><strong>nieto / nieta</strong><p>erkek torun / kız torun</p></div>
+              <div class="usage-card"><strong>tío / tía</strong><p>amca-dayı / hala-teyze</p></div>
+              <div class="usage-card"><strong>primo / prima</strong><p>erkek kuzen / kız kuzen</p></div>
+              <div class="usage-card"><strong>sobrino / sobrina</strong><p>erkek yeğen / kız yeğen</p></div>
+              <div class="usage-card"><strong>marido / esposo</strong><p>koca / eş</p></div>
+              <div class="usage-card"><strong>mujer / esposa</strong><p>eş / kadın eş</p></div>
+              <div class="usage-card"><strong>novio / novia</strong><p>erkek arkadaş / kız arkadaş</p></div>
+              <div class="usage-card"><strong>padres</strong><p>anne-baba / ebeveynler</p></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🗣️ Temel Kişi Kelimeleri</h3>
+            <div class="mini-chips">
+              <span class="chip">hombre → erkek / adam</span>
+              <span class="chip">mujer → kadın</span>
+              <span class="chip">niño / niña → erkek / kız çocuk</span>
+              <span class="chip">amigo / amiga → arkadaş</span>
+              <span class="chip">persona → kişi</span>
+              <span class="chip">gente → insanlar / halk</span>
+              <span class="chip">compañero/a → arkadaş / meslektaş</span>
+              <span class="chip">vecino/a → komşu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div id="passwordModal" class="modal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-icon">🔐</div>
+    <h3 id="passwordTitle">Seviye Şifresi</h3>
+    <p id="passwordText">Bu seviyeyi açmak için şifreni gir.</p>
+
+    <input
+      id="passwordInput"
+      class="password-input"
+      type="password"
+      placeholder="Şifre"
+      autocomplete="off"
+      onkeydown="if(event.key==='Enter') checkPassword()"
+    >
+
+    <div id="passwordError" class="password-error">
+      ❌ Şifre doğru değil. Tekrar deneyebilirsin.
+    </div>
+
+    <div class="modal-actions">
+      <button class="modal-btn cancel" onclick="closePasswordModal()">Vazgeç</button>
+      <button class="modal-btn enter" onclick="checkPassword()">Kilidi Aç 🔓</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const LEVEL_PASSWORDS = {
+  a11: "2648a",
+  a12: "4872b",
+  a21: "6406c",
+  a22: "8246d",
+  toolbox: "0000x"
+};
+
+const MASTER_PASSWORD = "aaaaa";
+let requestedLevel = null;
+
+function openScreen(id){
+  document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior:'instant'});
+}
+
+function requestAccess(level){
+  requestedLevel = level;
+
+  const labels = {
+    a11: "A1.1",
+    a12: "A1.2",
+    a21: "A2.1",
+    a22: "A2.2",
+    toolbox: "İspanyolca Araç Kutusu"
+  };
+
+  document.getElementById('passwordTitle').textContent = labels[level] + " · Şifre";
+  document.getElementById('passwordText').textContent =
+    "Bu seviyenin dönem sonu özetini açmak için sana verilen şifreyi gir.";
+
+  const modal = document.getElementById('passwordModal');
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+
+  input.value = "";
+  error.classList.remove('show');
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+
+  setTimeout(() => input.focus(), 80);
+}
+
+function checkPassword(){
+  if(!requestedLevel) return;
+
+  const input = document.getElementById('passwordInput');
+  const error = document.getElementById('passwordError');
+  const entered = input.value.trim();
+
+  const correct =
+    entered === LEVEL_PASSWORDS[requestedLevel] ||
+    entered === MASTER_PASSWORD;
+
+  if(correct){
+    const target = requestedLevel;
+    closePasswordModal();
+    openScreen(target);
+  }else{
+    error.classList.add('show');
+    input.select();
+  }
+}
+
+function closePasswordModal(){
+  const modal = document.getElementById('passwordModal');
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden','true');
+  document.getElementById('passwordError').classList.remove('show');
+  requestedLevel = null;
+}
+
+function toggleTopic(btn){
+  const topic = btn.closest('.topic');
+  topic.classList.toggle('open');
+}
+
+document.getElementById('passwordModal').addEventListener('click', function(e){
+  if(e.target === this){
+    closePasswordModal();
+  }
+});
+</script>
+
+</body>
+</html>
