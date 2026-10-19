@@ -1615,7 +1615,9 @@ async function loadTrackerStudents(){
       throw new Error(data.message || 'Öğrenci listesi alınamadı.');
     }
 
-    const students = Array.isArray(data.students) ? data.students : [];
+    const students = Array.isArray(data.students)
+      ? [...data.students].sort((a, b) => String(a).localeCompare(String(b), 'tr', {sensitivity:'base'}))
+      : [];
     studentSelect.innerHTML = '<option value="">Adını seç</option>' +
       students.map(name => `<option value="${escapeHtmlAttr(name)}">${escapeHtml(name)}</option>`).join('');
     studentSelect.disabled = false;
