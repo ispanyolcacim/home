@@ -1,0 +1,37 @@
+name: One-time gallery WebP conversion
+on:
+  push:
+    paths:
+      - '.github/workflows/gallery-webp-once.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create optimized WebP images without modifying JPEG originals
+        run: |
+          python3 -m pip install --user Pillow
+          python3 - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          for n in range(1, 7):
+              original = Path(f'images/slide-{n}.jpg')
+              target = Path(f'images/slide-{n}.webp')
+              with Image.open(original) as img:
+                  new_size = (1200, round(img.height * 1200 / img.width))
+                  img = img.convert('RGB').resize(new_size, Image.Resampling.LANCZOS)
+                  img.save(target, 'WEBP', quality=80, method=6)
+                  print(f'{original} -> {target} ({new_size})')
+          PY
+      - name: Save WebP files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/slide-{1,2,3,4,5,6}.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Madde 8: galeri WebP gorselleri"
+            git push
+          fi
