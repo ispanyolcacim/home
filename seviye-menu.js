@@ -36,6 +36,10 @@
     '.sw-mini-back{border:0;background:#fff;padding:12px 18px;border-radius:999px;color:#8f2f58;cursor:pointer;font:800 14px "Trebuchet MS","Segoe UI",Arial,sans-serif;margin-bottom:29px;box-shadow:0 5px 18px #20304a14}',
     '.sw-weeks{display:grid;grid-template-columns:1fr;gap:11px;max-width:800px;margin:0 auto}',
     '.sw-week{background:#fff;box-shadow:0 5px 18px #20304a0d;border:1px solid #e8e8ee;border-radius:16px;padding:19px 20px;display:flex;align-items:center;gap:16px}',
+    '.sw-week-link{text-decoration:none;color:#20304a;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s}',
+    '.sw-week-link:hover{transform:translateY(-2px);box-shadow:0 10px 22px #20304a19;border-color:#78bad7}',
+    '.sw-week-link:focus-visible{outline:3px solid #a93b6b;outline-offset:3px}',
+    '.sw-week-ready{background:#e5f7ef!important;color:#146b3a!important}',
     '.sw-week-icon{font-size:23px;flex-shrink:0}',
     '.sw-week-title{font-size:16px;font-weight:900;line-height:1.4;flex:1}',
     '.sw-week-state{border-radius:100px;background:#fff4e5;color:#905715;font-weight:800;font-size:12px;padding:7px 11px;white-space:nowrap}',
@@ -51,11 +55,21 @@
   root.className = 'sw-level-menu';
   root.setAttribute('role', 'region');
   root.setAttribute('aria-label', level + ' öğrenci seçenekleri');
-  const weeks = Array.from({length: 8}, (_, i) =>
-    '<div class="sw-week"><span class="sw-week-icon" aria-hidden="true">📄</span>' +
-    '<span class="sw-week-title">' + (i + 1) + '. Hafta – Haftalık Çalışma Dosyası</span>' +
-    '<span class="sw-week-state">Hazırlanıyor</span></div>'
-  ).join('');
+  // PDF'ler Drive'da kalır; GitHub'da yalnızca hafif bağlantılar saklanır.
+  const pdfsByLevel = {
+    'A1.1': ["https://drive.google.com/file/d/1Xdwpq0BXj4KCPs9gbXKxw1gnqkjzlA3s/view?usp=drivesdk","https://drive.google.com/file/d/1raatJysRX7_A10gbQMoTHTYFgGz95c6Z/view?usp=drivesdk","https://drive.google.com/file/d/18gURRfucsp9vi4V1swcOGwVrg_jk4ZqD/view?usp=drivesdk","https://drive.google.com/file/d/1Z43IQTFljq2ryWbmIzWCfe8jIad3mxu8/view?usp=drivesdk","https://drive.google.com/file/d/1AOcNtwIE5mauBKgRF7F8X138D4iJwh5F/view?usp=drivesdk","https://drive.google.com/file/d/1LaqtTrxaVfsgBoIx6k0vA8-8Ll5MuJiB/view?usp=drivesdk","https://drive.google.com/file/d/1mzAGaZ4DQx-UoWyjeDwqr7JrtgeZ-vO9/view?usp=drivesdk","https://drive.google.com/file/d/1u47dvAJ9Qv1ztUrQKf0tWr-njGYAlskH/view?usp=drivesdk"]
+  };
+  const files = pdfsByLevel[level] || [];
+  const weeks = Array.from({length: 8}, (_, i) => {
+    const title = (i + 1) + '. Hafta – Haftalık Çalışma Dosyası';
+    const content = '<span class="sw-week-icon" aria-hidden="true">📄</span>' +
+      '<span class="sw-week-title">' + title + '</span>';
+    const url = files[i];
+    return url
+      ? '<a class="sw-week sw-week-link" href="' + url + '" target="_blank" rel="noopener noreferrer" aria-label="' + title + ' PDF dosyasını Google Drive üzerinden aç">' +
+          content + '<span class="sw-week-state sw-week-ready">PDF\'yi Aç ↗</span></a>'
+      : '<div class="sw-week">' + content + '<span class="sw-week-state">Hazırlanıyor</span></div>';
+  }).join('');
 
   root.innerHTML =
     '<div class="sw-inner">' +
