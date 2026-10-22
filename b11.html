@@ -33,7 +33,7 @@ form.addEventListener('submit',async e=>{
   const zipped=await crypto.subtle.decrypt({name:'AES-GCM',iv:fromBase64(NONCE)},key,fromBase64(ENCRYPTED));
   const decompressed=new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'));
   const html=await new Response(decompressed).text();
-  document.open();document.write(html);document.close();
+  document.open();document.write(html.replace(/<\/body\s*>/i, '<script src="seviye-menu.js"><' + '/script></body>'));document.close();
  }catch(err){error.textContent='Şifre yanlış veya sayfa açılamadı. Lütfen tekrar dene.';button.disabled=false;button.textContent='B1.1 Sayfasını Aç';}
 });
 </script></body></html>
