@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<title>B1.1 · Öğrenci Portalı – İspanyolcacım</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#fff8f2;color:#20304a;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;place-items:center;padding:24px}
+.panel{background:white;width:min(100%,450px);border-radius:26px;box-shadow:0 16px 50px #20304a16;border:1px solid #fae5ee;padding:36px;text-align:center}
+.brand{font-size:14px;font-weight:800;color:#b44875;margin-bottom:14px}.emoji{font-size:44px;margin:8px auto 18px}h1{font-size:26px;line-height:1.2;margin:0 0 12px}p{font-size:15px;line-height:1.6;color:#667085;margin:0 0 23px}
+input{font:inherit;display:block;width:100%;padding:15px 16px;border-radius:14px;border:2px solid #eee5e8;margin-bottom:13px;outline-offset:2px}
+button{font:inherit;font-weight:800;border:0;border-radius:14px;background:#f196ba;color:#20304a;padding:14px 20px;cursor:pointer;width:100%;}
+button:disabled{opacity:.6;cursor:wait}.error{color:#b72d4a;margin-top:15px;font-weight:600;min-height:20px}.back{font-size:14px;color:#a33a6d;display:inline-block;margin-top:22px;text-decoration:none;font-weight:700}
+</style></head><body>
+<main class="panel"><div class="brand">🇪🇸 @ispanyolcacim · Profe Hazel</div><div class="emoji">📚</div>
+<h1>B1.1 · Öğrenci Portalı</h1><p>B1.1 haftalık çalışma dosyalarına ulaşmak için şifreni gir.</p>
+<form id="login"><input type="password" id="password" autocomplete="off" placeholder="B1.1 seviye şifresi" required aria-label="B1.1 seviye şifresi"><button id="submit" type="submit">B1.1 Sayfasını Aç</button></form>
+<div class="error" id="error" role="alert" aria-live="polite"></div><a class="back" href="ogrenci-portali.html">← Öğrenci Portalına Dön</a></main>
+<script>
+const SALT="5UzgVRCNLZc55ttxSms3VQ==";
+const NONCE="sRnzvO9Ph0NSi1y/";
+const ENCRYPTED="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";
+const fromBase64=(str)=>Uint8Array.from(atob(str),c=>c.charCodeAt(0));
+const form=document.getElementById('login');
+form.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const button=document.getElementById('submit');const error=document.getElementById('error');
+ button.disabled=true;button.textContent='Açılıyor…';error.textContent='';
+ try{
+  const pass=document.getElementById('password').value;
+  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:fromBase64(SALT),iterations:600000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+  const zipped=await crypto.subtle.decrypt({name:'AES-GCM',iv:fromBase64(NONCE)},key,fromBase64(ENCRYPTED));
+  const decompressed=new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'));
+  const html=await new Response(decompressed).text();
+  document.open();document.write(html);document.close();
+ }catch(err){error.textContent='Şifre yanlış veya sayfa açılamadı. Lütfen tekrar dene.';button.disabled=false;button.textContent='B1.1 Sayfasını Aç';}
+});
+</script></body></html>
