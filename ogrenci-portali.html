@@ -174,11 +174,13 @@ button{
   max-width:82%;
 }
 
+/* Her portal kartı ayrı renk: pembe, mavi, yeşil, mor, turuncu, sarı ve lacivert */
 .a11{background:linear-gradient(145deg,#fff0f5,#ffdce9)}
 .a12{background:linear-gradient(145deg,#edf8ff,#d9efff)}
 .a21{background:linear-gradient(145deg,#eefbf3,#d8f5e4)}
 .a22{background:linear-gradient(145deg,#f4f0ff,#e7deff)}
-.b11{background:linear-gradient(145deg,#fff4e5,#ffe2b9)}
+.b11{background:linear-gradient(145deg,#fff3e4,#ffd3aa)}
+.toolbox-home-card{background:linear-gradient(145deg,#fff9d7,#ffdf8e)}
 
 .home-foot{
   margin-top:auto;
@@ -572,7 +574,8 @@ button{
 
 /* ---------- HOMEWORK TRACKER ---------- */
 .tracker-home-card{
-  background:linear-gradient(145deg,#fff5e9,#ffe1bd);
+  background:linear-gradient(145deg,#2b405c,#415f80);
+  color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -582,6 +585,7 @@ button{
   margin:0;
   font-size:clamp(27px,3vw,40px);
   max-width:100%;
+  color:#fff;
 }
 .tracker-home-card::after{display:none}
 
@@ -929,6 +933,15 @@ button{
     </header>
 
     <div class="levels">
+      <button class="level-card toolbox-home-card" onclick="location.href='toolbox.html'">
+        <span class="big">🧰</span>
+        <span class="label">İspanyolca Araç Kutusu</span>
+      </button>
+
+      <button class="level-card tracker-home-card" onclick="openTracker()">
+        <span class="label">📝 Ödev Takip Merkezi</span>
+      </button>
+
       <button class="level-card a11" onclick="location.href='a11.html'">
         <span class="big">A1.1</span>
         <span class="label">Başlangıç Seviyesi</span>
@@ -952,15 +965,6 @@ button{
       <button class="level-card b11" onclick="location.href='b11.html'" aria-label="B1.1 Orta seviye, şifreli öğrenci sayfası">
         <span class="big">B1.1</span>
         <span class="label">Orta Seviye Devam</span>
-      </button>
-
-      <button class="level-card" style="background:linear-gradient(145deg,#fff8dc,#ffe6a7);" onclick="location.href='toolbox.html'">
-        <span class="big">🧰</span>
-        <span class="label">İspanyolca Araç Kutusu</span>
-      </button>
-
-      <button class="level-card tracker-home-card" onclick="openTracker()">
-        <span class="label">📝 Ödev Takip Merkezi</span>
       </button>
     </div>
 
