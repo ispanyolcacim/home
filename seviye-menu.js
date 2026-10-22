@@ -41,7 +41,9 @@
     '.sw-week-link:focus-visible{outline:3px solid #a93b6b;outline-offset:3px}',
     '.sw-week-ready{background:#e5f7ef!important;color:#146b3a!important}',
     '.sw-week-icon{font-size:23px;flex-shrink:0}',
-    '.sw-week-title{font-size:16px;font-weight:900;line-height:1.4;flex:1}',
+    '.sw-week-main{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}',
+    '.sw-week-title{font-size:16px;font-weight:900;line-height:1.4}',
+    '.sw-week-dates{font-size:13px;color:#60718a;font-weight:800;line-height:1.4}',
     '.sw-week-state{border-radius:100px;background:#fff4e5;color:#905715;font-weight:800;font-size:12px;padding:7px 11px;white-space:nowrap}',
     '.sw-coming{margin:25px auto;max-width:680px;background:#fff;border:1px solid #eee3e9;border-radius:20px;padding:30px;text-align:center;color:#64748b;font-weight:700}',
     '.sw-topic-return{position:fixed;bottom:23px;right:22px;z-index:2147482999;border:0;border-radius:999px;padding:15px 20px;background:#b72f63;color:#fff;box-shadow:0 10px 30px #20304a30;font:900 14px "Trebuchet MS","Segoe UI",Arial,sans-serif;cursor:pointer}',
@@ -57,16 +59,31 @@
   root.setAttribute('aria-label', level + ' öğrenci seçenekleri');
   // PDF'ler Drive'da kalır; GitHub'da yalnızca hafif bağlantılar saklanır.
   const pdfsByLevel = {
-    'A1.1': ["https://drive.google.com/file/d/1Xdwpq0BXj4KCPs9gbXKxw1gnqkjzlA3s/view?usp=drivesdk","https://drive.google.com/file/d/1raatJysRX7_A10gbQMoTHTYFgGz95c6Z/view?usp=drivesdk","https://drive.google.com/file/d/18gURRfucsp9vi4V1swcOGwVrg_jk4ZqD/view?usp=drivesdk","https://drive.google.com/file/d/1Z43IQTFljq2ryWbmIzWCfe8jIad3mxu8/view?usp=drivesdk","https://drive.google.com/file/d/1AOcNtwIE5mauBKgRF7F8X138D4iJwh5F/view?usp=drivesdk","https://drive.google.com/file/d/1LaqtTrxaVfsgBoIx6k0vA8-8Ll5MuJiB/view?usp=drivesdk","https://drive.google.com/file/d/1mzAGaZ4DQx-UoWyjeDwqr7JrtgeZ-vO9/view?usp=drivesdk","https://drive.google.com/file/d/1u47dvAJ9Qv1ztUrQKf0tWr-njGYAlskH/view?usp=drivesdk"]
+    'A1.1': ["https://drive.google.com/file/d/1Xdwpq0BXj4KCPs9gbXKxw1gnqkjzlA3s/view?usp=drivesdk","https://drive.google.com/file/d/1raatJysRX7_A10gbQMoTHTYFgGz95c6Z/view?usp=drivesdk","https://drive.google.com/file/d/18gURRfucsp9vi4V1swcOGwVrg_jk4ZqD/view?usp=drivesdk","https://drive.google.com/file/d/1Z43IQTFljq2ryWbmIzWCfe8jIad3mxu8/view?usp=drivesdk","https://drive.google.com/file/d/1AOcNtwIE5mauBKgRF7F8X138D4iJwh5F/view?usp=drivesdk","https://drive.google.com/file/d/1LaqtTrxaVfsgBoIx6k0vA8-8Ll5MuJiB/view?usp=drivesdk","https://drive.google.com/file/d/1mzAGaZ4DQx-UoWyjeDwqr7JrtgeZ-vO9/view?usp=drivesdk","https://drive.google.com/file/d/1u47dvAJ9Qv1ztUrQKf0tWr-njGYAlskH/view?usp=drivesdk"],
+    'A1.2': ["https://drive.google.com/file/d/1uOOn4LhixYUvisZwDoegJ2itZVishuxa/view?usp=drivesdk","https://drive.google.com/file/d/1Me7V8at7SsP22AheBCNiL-p2NSCO7RQY/view?usp=drivesdk","https://drive.google.com/file/d/1NktlAaqdvGDlPN3-JFXsngEL-XB4sJaq/view?usp=drivesdk","https://drive.google.com/file/d/1TNP1NDE25vzb68n-TFjMpMLTf-68p3Dz/view?usp=drivesdk","https://drive.google.com/file/d/1fR2CyS4bp3oHsn8W9wwMVY7xiOlDZhy4/view?usp=drivesdk","https://drive.google.com/file/d/1JjYC3tF_lN6Ws4wlZ6oKVTOUiKd8fpYO/view?usp=drivesdk","https://drive.google.com/file/d/19VTUbU2PNF5aWT-5o0xt5RGGOC_bCuxu/view?usp=drivesdk","https://drive.google.com/file/d/1gUg77DkK0HwrL-dfSx0QRg55Sxhqd68C/view?usp=drivesdk"]
   };
   const files = pdfsByLevel[level] || [];
+  // Takvimde haftalar pazartesi başlayıp pazar biter. Son hafta 21–27 Aralık;
+  // canlı dersler 24 Aralık Perşembe günü sona erer.
+  const weekDates = [
+    '2–8 Kasım 2026',
+    '9–15 Kasım 2026',
+    '16–22 Kasım 2026',
+    '23–29 Kasım 2026',
+    '30 Kasım – 6 Aralık 2026',
+    '7–13 Aralık 2026',
+    '14–20 Aralık 2026',
+    '21–27 Aralık 2026'
+  ];
   const weeks = Array.from({length: 8}, (_, i) => {
     const title = (i + 1) + '. Hafta – Haftalık Çalışma Dosyası';
+    const dateRange = weekDates[i];
     const content = '<span class="sw-week-icon" aria-hidden="true">📄</span>' +
-      '<span class="sw-week-title">' + title + '</span>';
+      '<span class="sw-week-main"><span class="sw-week-title">' + title + '</span>' +
+      '<span class="sw-week-dates">📅 ' + dateRange + '</span></span>';
     const url = files[i];
     return url
-      ? '<a class="sw-week sw-week-link" href="' + url + '" target="_blank" rel="noopener noreferrer" aria-label="' + title + ' PDF dosyasını Google Drive üzerinden aç">' +
+      ? '<a class="sw-week sw-week-link" href="' + url + '" target="_blank" rel="noopener noreferrer" aria-label="' + title + ', ' + dateRange + ', PDF dosyasını Google Drive üzerinden aç">' +
           content + '<span class="sw-week-state sw-week-ready">PDF\'yi Aç ↗</span></a>'
       : '<div class="sw-week">' + content + '<span class="sw-week-state">Hazırlanıyor</span></div>';
   }).join('');
