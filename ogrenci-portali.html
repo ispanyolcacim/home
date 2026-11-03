@@ -918,7 +918,8 @@ button{
 </style>
 <style>
 .tracker-task-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
-.tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;border-radius:999px;background:linear-gradient(110deg,#ffc0cf,#ffd4a3,#fff3a6,#b9efce,#b8e1ff,#e0c5ff);color:#202f45;font-weight:800;text-decoration:none;white-space:nowrap}
+.tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-decoration:none;white-space:nowrap}
+.tracker-homework-arrow{display:inline-block;border-inline-start:1px solid #dedbea;padding-inline-start:9px;line-height:1}
 .tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
 @media(max-width:600px){.tracker-task-actions{justify-content:flex-start}}
@@ -1136,8 +1137,76 @@ const trackerHomeworkFiles = {
     "21-22/1": "21-22-ida-1-kisim.html",
     "21-22/2": "21-22-ida-2-kisim.html",
     "25-26/dictado": "25-26-ida-dikte.html"
+  },
+  "A2.1": {
+    "1-2": "1-2.html",
+    "11-12": "11-12.html",
+    "13-14": "13-14.html",
+    "15-16": "15-16.html",
+    "17-18": "17-18.html",
+    "19-20/yazma": "19-20-yazma.html",
+    "19-20": "19-20.html",
+    "21-22": "21-22.html",
+    "23-24": "23-24.html",
+    "25-26": "25-26.html",
+    "27-28": "27-28.html",
+    "29-30/yazma": "29-30-yazma.html",
+    "29-30": "29-30.html",
+    "3-4/yazma": "3-4-yazma.html",
+    "3-4": "3-4.html",
+    "31-32/1": "31-32-1-kisim.html",
+    "31-32/2": "31-32-2-kisim.html",
+    "31-32/3": "31-32-3-kisim.html",
+    "5-6": "5-6.html",
+    "7-8": "7-8.html",
+    "9-10/2": "9-10-2-kisim.html",
+    "9-10": "9-10.html",
+    "9-10/1": "9-10.html",
+    "1-2/yazma": "1-2.html",
+    "11-12/yazma": "11-12.html"
+  },
+  "A2.2": {
+    "1-2": "1-2.html",
+    "11-12/dictado": "11-12-dikte.html",
+    "11-12": "11-12.html",
+    "13-14": "13-14.html",
+    "19-20/yazma": "19-20-yazma.html",
+    "19-20": "19-20.html",
+    "21-22": "21-22.html",
+    "23-24/yazma": "23-24-yazma.html",
+    "25-26": "25-26.html",
+    "27-28/yazma": "27-28-yazma.html",
+    "27-28": "27-28.html",
+    "29-30": "29-30.html",
+    "3-4": "3-4.html",
+    "31-32/1": "31-32-1-kisim.html",
+    "31-32/2": "31-32-2-kisim.html",
+    "31-32/3": "31-32-3-kisim.html",
+    "7-8": "7-8.html",
+    "9-10": "9-10.html",
+    "27-28/1": "27-28.html",
+    "27-28/2": "27-28-yazma.html",
+    "7-8/yazma": "7-8.html",
+    "23-24": "23-24-yazma.html"
+  },
+  "B1.1": {
+    "1-2": "b11-1-2-ida.html",
+    "11-12": "b11-11-12-ida.html",
+    "13-14/yazma": "b11-13-14-ida-yazma-odevi.html",
+    "17-18": "b11-17-18-ida.html",
+    "19-20": "b11-19-20-ida.html",
+    "21-22": "b11-21-22-ida.html",
+    "23-24": "b11-23-24-ida.html",
+    "25-26": "b11-25-26-ida.html",
+    "3-4": "b11-3-4-ida.html",
+    "5-6": "b11-5-6-ida.html",
+    "7-8": "b11-7-8-ida.html",
+    "9-10": "b11-9-10-ida.html",
+    "13-14": "b11-13-14-ida-yazma-odevi.html"
   }
 };
+
+const trackerHomeworkRepos = {"A2.1":"a2.1-tareas-ida","A2.2":"tareas-a2.2","B1.1":"b11-las-tareas"};
 
 function trackerHomeworkUrl(level,title){
   const files = trackerHomeworkFiles[level];
@@ -1147,9 +1216,9 @@ function trackerHomeworkUrl(level,title){
   if(!lesson) return '';
   const part = label.match(/\b(\d+)\s*\.+\s*kisim\b/);
   const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura)\b/);
-  const suffix = part?.[1] || (type?.[1] === 'dikte' ? 'dictado' : type?.[1]);
+  const suffix = part?.[1] || (type?.[1] === 'dikte' ? 'dictado' : type?.[1] === 'escritura' ? 'yazma' : type?.[1]);
   const key = lesson[1]+'-'+lesson[2]+(suffix ? '/'+suffix : '');
-  return files[key] ? 'https://ispanyolcacim.github.io/'+level.toLowerCase()+'-tareas/'+files[key] : '';
+  return files[key] ? 'https://ispanyolcacim.github.io/'+(trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas')+'/'+files[key] : '';
 }
 
 
@@ -1388,7 +1457,7 @@ function renderTrackerTasks(filter){
     const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
 
     const homeworkUrl = trackerHomeworkUrl(trackerHomeworkLevel,item.title);
-    const homeworkLink = homeworkUrl ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(homeworkUrl)}" target="_blank" rel="noopener noreferrer">🌈 Ödeve Git ↗</a>` : '';
+    const homeworkLink = homeworkUrl ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(homeworkUrl)}" target="_blank" rel="noopener noreferrer">Ödeve Git <span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
 
     return `
       <div class="tracker-task">
