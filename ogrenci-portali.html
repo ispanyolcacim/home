@@ -1093,6 +1093,7 @@ let trackerHomeworkLevel = '';
 
 const trackerHomeworkFiles = {
   "A1.1": {
+    "3-4": "a11-03-04-lectura-pronunciacion.html",
     "13-14": "a11-13-14-ida.html",
     "15-16": "a11-15-16-ida.html",
     "17-18": "a11-17-18-ida.html",
@@ -1176,11 +1177,14 @@ const trackerHomeworkFiles = {
     "9-10": "9-10.html",
     "9-10/1": "9-10.html",
     "1-2/yazma": "1-2.html",
+    "5-6/yazma": "5-6.html",
+    "7-8/yazma": "7-8.html",
     "11-12/yazma": "11-12.html"
   },
   "A2.2": {
     "1-2": "1-2.html",
     "11-12/dictado": "11-12-dikte.html",
+    "11-12/yazma": "11-12-dikte.html",
     "11-12": "11-12.html",
     "13-14": "13-14.html",
     "19-20/yazma": "19-20-yazma.html",
@@ -1225,7 +1229,7 @@ function trackerHomeworkUrl(level,title){
   const files = trackerHomeworkFiles[level];
   if(!files) return '';
   const label = String(title || '').toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ı','i');
-  const lesson = label.match(/\b(\d+)\s*[-–—+]\s*(\d+)\b/);
+  const lesson = label.match(/\b(\d+)\s*[-–—+\/]\s*(\d+)\b/);
   if(!lesson) return '';
   const part = label.match(/\b(\d+)(?:\s*\.+\s*|\s+)kisim\b/);
   const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura)\b/);
