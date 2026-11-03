@@ -919,8 +919,9 @@ button{
 <style>
 .tracker-task-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
 .tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-decoration:none;white-space:nowrap}
+.tracker-homework-note{max-width:100%;white-space:normal;text-align:center}
 .tracker-homework-arrow{display:inline-block;border-inline-start:1px solid #dedbea;padding-inline-start:9px;line-height:1}
-.tracker-homework-link:hover{text-decoration:underline}
+a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
 @media(max-width:600px){.tracker-task-actions{justify-content:flex-start}}
 </style></head>
@@ -1137,7 +1138,6 @@ const trackerHomeworkFiles = {
     "21-22/2": "21-22-ida-2-kisim.html",
     "25-26/dictado": "25-26-ida-dikte.html",
     "3-4/yazma": "3-4-ida-yazma.html",
-    "7-8/yazma": "7-8-ida-2-kisim.html",
     "11-12/yazma": "yazma-11-12-ida.html",
     "23-24/yazma": "23-24-yazma.html",
     "31-32/yazma": "31-32-ida-1.kisim.html",
@@ -1462,7 +1462,10 @@ function renderTrackerTasks(filter){
     const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
 
     const homeworkUrl = trackerHomeworkUrl(trackerHomeworkLevel,item.title);
-    const homeworkLink = homeworkUrl ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(homeworkUrl)}" target="_blank" rel="noopener noreferrer">Ödeve Git <span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
+    const isEmbeddedWriting = trackerHomeworkLevel === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
+    const homeworkLink = isEmbeddedWriting
+      ? '<span class="tracker-homework-link tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</span>'
+      : homeworkUrl ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(homeworkUrl)}" target="_blank" rel="noopener noreferrer">Ödeve Git <span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
 
     return `
       <div class="tracker-task">
