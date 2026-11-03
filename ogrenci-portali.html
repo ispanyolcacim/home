@@ -1136,7 +1136,13 @@ const trackerHomeworkFiles = {
     "19-20/4": "19-20-ida-4-kisim.html",
     "21-22/1": "21-22-ida-1-kisim.html",
     "21-22/2": "21-22-ida-2-kisim.html",
-    "25-26/dictado": "25-26-ida-dikte.html"
+    "25-26/dictado": "25-26-ida-dikte.html",
+    "3-4/yazma": "3-4-ida-yazma.html",
+    "7-8/yazma": "7-8-ida-2-kisim.html",
+    "11-12/yazma": "yazma-11-12-ida.html",
+    "23-24/yazma": "23-24-yazma.html",
+    "31-32/yazma": "31-32-ida-1.kisim.html",
+    "31-32/2": "31-32-ida-2.kisim.html"
   },
   "A2.1": {
     "1-2": "1-2.html",
@@ -1214,7 +1220,7 @@ function trackerHomeworkUrl(level,title){
   const label = String(title || '').toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ı','i');
   const lesson = label.match(/\b(\d+)\s*[-–—+]\s*(\d+)\b/);
   if(!lesson) return '';
-  const part = label.match(/\b(\d+)\s*\.+\s*kisim\b/);
+  const part = label.match(/\b(\d+)(?:\s*\.+\s*|\s+)kisim\b/);
   const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura)\b/);
   const suffix = part?.[1] || (type?.[1] === 'dikte' ? 'dictado' : type?.[1] === 'escritura' ? 'yazma' : type?.[1]);
   const key = lesson[1]+'-'+lesson[2]+(suffix ? '/'+suffix : '');
