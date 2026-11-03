@@ -924,7 +924,15 @@ button{
 a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
 @media(max-width:600px){.tracker-task-actions{justify-content:flex-start}}
-</style></head>
+</style><style>
+.tracker-quizlet-strip{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#eef5ff;color:#20304a}
+.tracker-quizlet-strip small{display:block;margin-top:3px;color:#455975}
+.tracker-quizlet-strip a{display:inline-flex;align-items:center;min-height:44px;padding:6px 12px;border:1px solid #97b9ec;border-radius:999px;background:#fff;color:#173b73;font-weight:750;text-decoration:none;white-space:nowrap}
+.tracker-quizlet-strip a:hover{text-decoration:underline}
+.tracker-quizlet-strip a:focus-visible{outline:2px solid #173b73;outline-offset:2px}
+@media(max-width:600px){.tracker-quizlet-strip{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
 
 <body>
 
@@ -1440,6 +1448,9 @@ function filterTrackerTasks(filter,button){
   renderTrackerTasks(filter);
 }
 
+// Quizlet preparations are keyed by level and the lesson that assigns them.
+const trackerQuizletPreparations = {};
+
 function renderTrackerTasks(filter){
   const list = document.getElementById('trackerTaskList');
   const filtered = filter === 'all'
@@ -1451,6 +1462,7 @@ function renderTrackerTasks(filter){
     return;
   }
 
+  const shownPreparations = new Set();
   list.innerHTML = filtered.map(item => {
     const status = item.status || 'missing';
     const statusText = status === 'completed'
@@ -1460,6 +1472,20 @@ function renderTrackerTasks(filter){
         : '❌ Eksik';
 
     const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
+
+    const lesson = String(item.title || '').match(/\b(\d+)\s*[-–—+]\s*(\d+)\b/);
+    const lessonKey = lesson ? lesson[1]+'+'+lesson[2] : '';
+    const preparation = trackerQuizletPreparations[trackerHomeworkLevel]?.[lessonKey];
+    let quizletStrip = '';
+    if(preparation && !shownPreparations.has(lessonKey)){
+      shownPreparations.add(lessonKey);
+      quizletStrip = `
+        <div class="tracker-quizlet-strip">
+          <div><strong>📘 ${escapeHtml(preparation.lesson)} · Quizlet hazırlığı</strong>
+          <small>Bir sonraki dersten önce</small></div>
+          <a href="${escapeHtmlAttr(preparation.url)}" target="_blank" rel="noopener noreferrer">Quizlet’te Aç ↗</a>
+        </div>`;
+    }
 
     const homeworkUrl = trackerHomeworkUrl(trackerHomeworkLevel,item.title);
     const isEmbeddedWriting = trackerHomeworkLevel === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
@@ -1474,6 +1500,7 @@ function renderTrackerTasks(filter){
           ${value}
         </div>
         <div class="tracker-task-actions"><span class="tracker-status ${status}">${statusText}</span>${homeworkLink}</div>
+        ${quizletStrip}
       </div>`;
   }).join('');
 }
