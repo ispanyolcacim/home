@@ -1449,7 +1449,418 @@ function filterTrackerTasks(filter,button){
 }
 
 // Quizlet preparations are keyed by level and the lesson that assigns them.
-const trackerQuizletPreparations = {};
+const trackerQuizletPreparations = {
+  "A2.2": {
+    "1+2": [
+      {
+        "title": "A2.2 - 3+4. DERS HAZIRLIK SETİ",
+        "count": 98,
+        "review": false
+      }
+    ],
+    "3+4": [
+      {
+        "title": "A2.2 - 5+6. DERS HAZIRLIK SETİ",
+        "count": 61,
+        "review": false
+      }
+    ],
+    "5+6": [
+      {
+        "title": "A2.2 - 7+8. DERS HAZIRLIK SETİ",
+        "count": 229,
+        "review": false
+      }
+    ],
+    "7+8": [
+      {
+        "title": "A2.2 - 9+10. DERS HAZIRLIK SETİ",
+        "count": 34,
+        "review": false
+      }
+    ],
+    "9+10": [
+      {
+        "title": "A2.2 - 11+12. DERS HAZIRLIK SETİ",
+        "count": 219,
+        "review": false
+      }
+    ],
+    "11+12": [
+      {
+        "title": "A2.2 - 13+14. DERS HAZIRLIK SETİ",
+        "count": 179,
+        "review": false
+      }
+    ],
+    "13+14": [
+      {
+        "title": "A2.2 - 15+16. DERS HAZIRLIK SETİ",
+        "count": 300,
+        "review": false
+      }
+    ],
+    "15+16": [
+      {
+        "title": "A2.2 - 17+18. DERS HAZIRLIK SETİ",
+        "count": 163,
+        "review": false
+      }
+    ],
+    "17+18": [
+      {
+        "title": "A2.2 - 19+20. DERS HAZIRLIK SETİ",
+        "count": 194,
+        "review": false
+      }
+    ],
+    "19+20": [
+      {
+        "title": "A2.2 - 21+22. DERS HAZIRLIK SETİ",
+        "count": 142,
+        "review": false
+      }
+    ],
+    "21+22": [
+      {
+        "title": "A2.2 - 23+24. DERS HAZIRLIK SETİ",
+        "count": 77,
+        "review": false
+      }
+    ],
+    "23+24": [
+      {
+        "title": "A2.2 - 25+26. DERS HAZIRLIK SETİ",
+        "count": 133,
+        "review": false
+      }
+    ],
+    "25+26": [
+      {
+        "title": "A2.2 - 27+28. DERS HAZIRLIK SETİ",
+        "count": 134,
+        "review": false
+      }
+    ],
+    "27+28": [
+      {
+        "title": "A2.2 - 29+30. DERS HAZIRLIK SETİ",
+        "count": 107,
+        "review": false
+      }
+    ]
+  },
+  "A2.1": {
+    "1+2": [
+      {
+        "title": "A2.1 - 3+4. DERS HAZIRLIK SETİ",
+        "count": 76,
+        "review": false
+      }
+    ],
+    "3+4": [
+      {
+        "title": "A2.1- 5+6. DERS HAZIRLIK SETİ",
+        "count": 60,
+        "review": false
+      }
+    ],
+    "5+6": [
+      {
+        "title": "A2.1- 7+8. DERS HAZIRLIK SETİ",
+        "count": 53,
+        "review": false
+      },
+      {
+        "title": "A2.1 - 7+8. DERS HAZIRLIK SETİ (1)",
+        "count": 64,
+        "review": false
+      },
+      {
+        "title": "A2.1 - 7+8. DERS HAZIRLIK SETİ (2)",
+        "count": 61,
+        "review": false
+      }
+    ],
+    "7+8": [
+      {
+        "title": "A2.1 - 9+10. DERS HAZIRLIK SETİ",
+        "count": 60,
+        "review": false
+      }
+    ],
+    "9+10": [
+      {
+        "title": "A2.1 - 11+12. DERS HAZIRLIK SETİ [1]",
+        "count": 23,
+        "review": false
+      },
+      {
+        "title": "A2.1 - 11+12. DERS HAZIRLIK SETİ",
+        "count": 239,
+        "review": false
+      }
+    ],
+    "11+12": [
+      {
+        "title": "A2.1 - 13+14. DERS HAZIRLIK SETİ",
+        "count": 38,
+        "review": false
+      }
+    ],
+    "15+16": [
+      {
+        "title": "A2.1 - 17+18.. DERS HAZIRLIK SETİ",
+        "count": 76,
+        "review": false
+      }
+    ],
+    "17+18": [
+      {
+        "title": "A2.1 - 19+20.. DERS HAZIRLIK SETİ",
+        "count": 30,
+        "review": false
+      }
+    ],
+    "19+20": [
+      {
+        "title": "A2.1 - 21+22. DERS HAZIRLIK SETİ",
+        "count": 60,
+        "review": false
+      }
+    ],
+    "23+24": [
+      {
+        "title": "A2.1 - 25+26.. DERS HAZIRLIK SETİ",
+        "count": 70,
+        "review": false
+      }
+    ],
+    "29+30": [
+      {
+        "title": "A2.1 - 31+32. DERS HAZIRLIK SETİ",
+        "count": 70,
+        "review": false
+      }
+    ]
+  },
+  "A1.1": {
+    "3+4": [
+      {
+        "title": "A1.1 - 5+6. DERS HAZIRLIK SETİ",
+        "count": 58,
+        "review": false
+      },
+      {
+        "title": "A1.1 - 3+4. DERS TEKRAR SETİ",
+        "count": 32,
+        "review": true
+      }
+    ],
+    "5+6": [
+      {
+        "title": "A1.1 - 7+8. DERS HAZIRLIK SETİ",
+        "count": 63,
+        "review": false
+      }
+    ],
+    "7+8": [
+      {
+        "title": "A1.1 - 9+10. DERS HAZIRLIK SETİ",
+        "count": 141,
+        "review": false
+      }
+    ],
+    "9+10": [
+      {
+        "title": "A1.1 - 11+12. DERS HAZIRLIK SETİ",
+        "count": 74,
+        "review": false
+      }
+    ],
+    "13+14": [
+      {
+        "title": "A1.1 - 15+16. DERS HAZIRLIK SETİ",
+        "count": 117,
+        "review": false
+      }
+    ],
+    "15+16": [
+      {
+        "title": "A1.1 - 17+18. DERS HAZIRLIK SETİ",
+        "count": 87,
+        "review": false
+      }
+    ],
+    "21+22": [
+      {
+        "title": "A1.1 - 23+24. DERS HAZIRLIK SETİ",
+        "count": 77,
+        "review": false
+      }
+    ],
+    "23+24": [
+      {
+        "title": "A1.1 - 25+26. DERS HAZIRLIK SETİ",
+        "count": 72,
+        "review": false
+      }
+    ],
+    "29+30": [
+      {
+        "title": "A1.1 - 31+32. DERS HAZIRLIK SETİ",
+        "count": 70,
+        "review": false
+      }
+    ],
+    "11+12": [
+      {
+        "title": "A1.1 - 11+12. DERS TEKRAR SETİ",
+        "count": 74,
+        "review": true
+      }
+    ],
+    "19+20": [
+      {
+        "title": "A1.1 - 19+20. DERS TEKRAR SETİ",
+        "count": 183,
+        "review": true
+      }
+    ]
+  },
+  "A1.2": {
+    "1+2": [
+      {
+        "title": "IDA - A1.2 (3+4) HAZIRLIK SETİ",
+        "count": 61,
+        "review": false
+      },
+      {
+        "title": "IDA - A1.2 (1+2) TEKRAR SETİ",
+        "count": 81,
+        "review": true
+      }
+    ],
+    "3+4": [
+      {
+        "title": "IDA - A1.2 (5+6) HAZIRLIK SETİ",
+        "count": 103,
+        "review": false
+      },
+      {
+        "title": "IDA A1.2 (5+6) HAZIRLIK SETİ",
+        "count": 114,
+        "review": false
+      }
+    ],
+    "7+8": [
+      {
+        "title": "IDA - A1.2 (9+10) HAZIRLIK SETİ",
+        "count": 112,
+        "review": false
+      }
+    ],
+    "9+10": [
+      {
+        "title": "IDA - A1.2 (11+12) HAZIRLIK SETİ",
+        "count": 71,
+        "review": false
+      }
+    ],
+    "15+16": [
+      {
+        "title": "IDA A1.2 (17+18) HAZIRLIK SETİ",
+        "count": 40,
+        "review": false
+      }
+    ],
+    "17+18": [
+      {
+        "title": "IDA A1.2 (19+20) HAZIRLIK SETİ",
+        "count": 106,
+        "review": false
+      }
+    ],
+    "19+20": [
+      {
+        "title": "IDA A1.2 (21+22) HAZIRLIK SETİ",
+        "count": 129,
+        "review": false
+      }
+    ],
+    "21+22": [
+      {
+        "title": "IDA A1.2 (23+24) HAZIRLIK SETİ",
+        "count": 228,
+        "review": false
+      }
+    ],
+    "23+24": [
+      {
+        "title": "A1.2 IDA (25+26) HAZIRLIK SETİ",
+        "count": 60,
+        "review": false
+      }
+    ],
+    "25+26": [
+      {
+        "title": "IDA A1.2 (27+28) HAZIRLIK SETİ",
+        "count": 41,
+        "review": false
+      }
+    ],
+    "27+28": [
+      {
+        "title": "IDA A1.2 (29+30) HAZIRLIK SETİ",
+        "count": 93,
+        "review": false
+      }
+    ]
+  },
+  "B1.1": {
+    "3+4": [
+      {
+        "title": "B1.1 - 5+6. DERS HAZIRLIK SETİ",
+        "count": 149,
+        "review": false,
+        "url": "https://quizlet.com/tr/988497501/b11-56-ders-hazirlik-seti-flash-cards"
+      }
+    ],
+    "5+6": [
+      {
+        "title": "B1.1 - 7+8. DERS HAZIRLIK SETİ",
+        "count": 84,
+        "review": false,
+        "url": "https://quizlet.com/tr/988498002/b11-78-ders-hazirlik-seti-flash-cards"
+      }
+    ],
+    "7+8": [
+      {
+        "title": "B1.1 - 9+10. DERS HAZIRLIK SETİ",
+        "count": 158,
+        "review": false,
+        "url": "https://quizlet.com/tr/1230604659/b11-910-ders-hazirlik-seti-flash-cards"
+      }
+    ],
+    "9+10": [
+      {
+        "title": "B1.1 - 11+12. DERS HAZIRLIK SETİ",
+        "count": 82,
+        "review": false,
+        "url": "https://quizlet.com/tr/988505137/b11-1112-ders-hazirlik-seti-flash-cards"
+      }
+    ]
+  }
+};
+
+function renderQuizletStrip(sets){
+  return sets.map(set => `
+    <div class="tracker-quizlet-strip">
+      <div><strong>📘 ${set.review ? 'Quizlet tekrarı' : 'Bir sonraki derse hazırlık'}</strong>
+      <small>Quizlet’te “${escapeHtml(set.title)}” setini çalış. · ${set.count} terim</small></div>
+      ${set.url ? `<a href="${escapeHtmlAttr(set.url)}" target="_blank" rel="noopener noreferrer">Quizlet’te Aç ↗</a>` : ''}
+    </div>`).join('');
+}
 
 function renderTrackerTasks(filter){
   const list = document.getElementById('trackerTaskList');
@@ -1457,7 +1868,7 @@ function renderTrackerTasks(filter){
     ? trackerAssignments
     : trackerAssignments.filter(item => item.status === filter);
 
-  if(!filtered.length){
+  if(!filtered.length && filter !== 'all'){
     list.innerHTML = '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
     return;
   }
@@ -1479,12 +1890,7 @@ function renderTrackerTasks(filter){
     let quizletStrip = '';
     if(preparation && !shownPreparations.has(lessonKey)){
       shownPreparations.add(lessonKey);
-      quizletStrip = `
-        <div class="tracker-quizlet-strip">
-          <div><strong>📘 ${escapeHtml(preparation.lesson)} · Quizlet hazırlığı</strong>
-          <small>Bir sonraki dersten önce</small></div>
-          <a href="${escapeHtmlAttr(preparation.url)}" target="_blank" rel="noopener noreferrer">Quizlet’te Aç ↗</a>
-        </div>`;
+      quizletStrip = renderQuizletStrip(preparation);
     }
 
     const homeworkUrl = trackerHomeworkUrl(trackerHomeworkLevel,item.title);
@@ -1505,6 +1911,14 @@ function renderTrackerTasks(filter){
         ${quizletStrip}
       </div>`;
   }).join('');
+
+  if(filter === 'all'){
+    const remaining = Object.entries(trackerQuizletPreparations[trackerHomeworkLevel] || {})
+      .filter(([lesson]) => !shownPreparations.has(lesson))
+      .sort(([a],[b]) => parseInt(a,10)-parseInt(b,10));
+    list.innerHTML += remaining.map(([lesson,sets]) => `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`).join('');
+  }
+  if(!list.innerHTML) list.innerHTML = '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
 }
 
 function showTrackerMessage(text,type){
