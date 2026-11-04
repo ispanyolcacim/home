@@ -2042,9 +2042,9 @@ function renderTrackerTasks(filter){
 
   const shownPreparations = new Set();
   const rowOrder = ({part,type}) => part ? Number(part) : type ? Number.MAX_SAFE_INTEGER : 0;
-  let html = Array.from(cards.values(), ({title,lesson,entries}) => {
+  const renderedCards = Array.from(cards.values(), ({title,lesson,entries}) => {
     const visibleEntries = entries.filter(({item}) => filter === 'all' || item.status === filter);
-    if(!visibleEntries.length) return '';
+    if(!visibleEntries.length) return null;
 
     const grouped = entries.length > 1 || Boolean(entries[0].part);
     const singleType = grouped ? '' : entries[0].type;
@@ -2060,20 +2060,28 @@ function renderTrackerTasks(filter){
     const preparation = preparations[lesson];
     const quizletStrip = preparation && !shownPreparations.has(lesson) ? renderQuizletStrip(preparation) : '';
     if(preparation) shownPreparations.add(lesson);
-    return `
+    const html = `
       <div class="tracker-task">
         ${grouped ? heading : ''}
         ${rows}
         ${quizletStrip}
       </div>`;
-  }).join('');
+    return {lesson,html};
+  }).filter(Boolean);
 
   if(filter === 'all'){
     const remaining = Object.entries(preparations)
       .filter(([lesson]) => !shownPreparations.has(lesson))
       .sort(([a],[b]) => parseInt(a,10)-parseInt(b,10));
-    html += remaining.map(([lesson,sets]) => `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`).join('');
+    for(const [lesson,sets] of remaining){
+      const html = `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`;
+      const nextCard = level === 'A2.2'
+        ? renderedCards.findIndex(card => parseInt(card.lesson,10) > parseInt(lesson,10))
+        : -1;
+      renderedCards.splice(nextCard < 0 ? renderedCards.length : nextCard,0,{lesson,html});
+    }
   }
+  const html = renderedCards.map(card => card.html).join('');
   list.innerHTML = html || '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
 }
 
