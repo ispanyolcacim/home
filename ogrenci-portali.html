@@ -778,6 +778,13 @@ button{
   font-weight:700;
   line-height:1.45;
 }
+.tracker-task-result{
+  color:var(--ink);
+  font-size:14px;
+  font-weight:900;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 .tracker-status{
   display:inline-flex;
   align-items:center;
@@ -790,7 +797,6 @@ button{
 }
 .tracker-status.completed{background:var(--green-soft);color:#34704c}
 .tracker-status.missing{background:#fff0f2;color:#b23349}
-.tracker-status.pending{background:var(--yellow-soft);color:#8b6814}
 .tracker-empty{
   padding:30px 18px;
   text-align:center;
@@ -1955,12 +1961,13 @@ function renderTrackerTasks(filter){
 
 function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const status = item.status || 'missing';
-  const statusText = status === 'completed'
-    ? '✅ Tamamlandı'
-    : status === 'pending'
-      ? '🟡 Kontrol Bekliyor'
-      : '❌ Eksik';
-  const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
+  const statusText = status === 'completed' ? '✅ Tamamlandı' : '❌ Eksik';
+  const statusBadge = status === 'pending' ? '' : `<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
+  const result = escapeHtml(item.value).replace(
+    /^[ \t]*(?:📊[ \t]*)?(?:(?:Puan|Sonuç)[ \t]*:?[ \t]*)?(\d+(?:[.,]\d+)?)[ \t]*\/[ \t]*(\d+)(?![ \t]*\/)(?=$|[ \t(·|])/im,
+    '<strong class="tracker-task-result">📊 Sonuç $1/$2</strong>'
+  );
+  const value = result ? `<div class="tracker-task-value">${result}</div>` : '';
   const isEmbeddedWriting = level === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
   const homeworkNote = isEmbeddedWriting
     ? '<div class="tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</div>'
@@ -1968,11 +1975,12 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
   const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
   const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
+  const actions = statusBadge || homeworkLink ? `<div class="tracker-task-actions">${statusBadge}${homeworkLink}</div>` : '';
 
   return `
     <div class="tracker-task-row">
       <div>${heading}${homeworkNote}${value}</div>
-      <div class="tracker-task-actions"><span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>${homeworkLink}</div>
+      ${actions}
     </div>`;
 }
 
