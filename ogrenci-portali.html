@@ -719,7 +719,7 @@ button{
 }
 .tracker-stats{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:12px;
   margin-top:18px;
 }
@@ -764,10 +764,11 @@ button{
 .tracker-task-title{font-weight:1000;font-size:16px}
 .tracker-task-row{
   display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-columns:minmax(0,1fr) 118px 280px;
   align-items:center;
   gap:10px 14px;
 }
+.tracker-task-info{grid-column:1;grid-row:1;min-width:0}
 .tracker-task-row+.tracker-task-row{border-top:1px solid rgba(32,48,74,.09);padding-top:12px}
 .tracker-task-part{font-size:14px;font-weight:900}
 .tracker-task-value{
@@ -786,10 +787,12 @@ button{
   text-underline-offset:3px;
 }
 .tracker-status{
-  display:inline-flex;
+  grid-column:2;
+  grid-row:1;
+  display:flex;
   align-items:center;
   justify-content:center;
-  min-width:118px;
+  width:118px;
   padding:8px 11px;
   border-radius:999px;
   font-size:12px;
@@ -816,8 +819,9 @@ button{
   .tracker-field.full{grid-column:auto}
   .tracker-steps{grid-template-columns:1fr 1fr}
   .tracker-stats{grid-template-columns:1fr 1fr}
-  .tracker-task-row{grid-template-columns:minmax(0,1fr)}
-  .tracker-status{justify-self:start}
+  .tracker-task-row{grid-template-columns:118px minmax(0,1fr)}
+  .tracker-task-info{grid-column:1 / span 2}
+  .tracker-status{grid-column:1;grid-row:2;justify-self:start}
 }
 
 /* ---------- PASSWORD MODAL ---------- */
@@ -930,13 +934,17 @@ button{
 }
 </style>
 <style>
-.tracker-task-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
-.tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;max-width:100%;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-decoration:none;line-height:1.3}
+.tracker-homework-link{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;min-height:44px;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-align:center;text-decoration:none;line-height:1.3}
 .tracker-homework-note{margin-top:4px;color:var(--muted);font-size:13px;font-weight:600;line-height:1.4}
 .tracker-homework-arrow{display:inline-block;border-inline-start:1px solid #dedbea;padding-inline-start:9px;line-height:1}
 a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
-@media(max-width:700px){.tracker-task-actions{justify-content:flex-start}}
+@media(max-width:700px){.tracker-homework-link{grid-column:2;grid-row:2}}
+@media(max-width:440px){
+  .tracker-task-row{grid-template-columns:minmax(0,1fr)}
+  .tracker-task-info{grid-column:1}
+  .tracker-homework-link{grid-column:1;grid-row:auto}
+}
 </style><style>
 .tracker-quizlet-strip{grid-column:1/-1;justify-self:start;width:fit-content;max-width:100%;min-width:0;box-sizing:border-box;overflow-wrap:anywhere;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#eef5ff;color:#20304a}
 .tracker-quizlet-strip small{display:block;margin-top:3px;color:#455975}
@@ -1077,7 +1085,6 @@ a.tracker-homework-link:hover{text-decoration:underline}
           <div class="tracker-stat"><strong id="trackerTotal">0</strong><span>Toplam</span></div>
           <div class="tracker-stat"><strong id="trackerCompleted">0</strong><span>✅ Tamamlanan</span></div>
           <div class="tracker-stat"><strong id="trackerMissing">0</strong><span>❌ Eksik</span></div>
-          <div class="tracker-stat"><strong id="trackerPending">0</strong><span>🟡 Kontrol Bekleyen</span></div>
           <div class="tracker-stat average"><strong id="trackerAverage">—</strong><span>📊 Ödev Ortalaması</span></div>
         </div>
       </div>
@@ -1414,16 +1421,17 @@ async function checkHomeworkTracker(){
 }
 
 
-function extractHomeworkScore(value){
-  const text = String(value || '').replace(/,/g,'.');
-  // Öğretmenin kullandığı puan sistemleri: /20, /40, /50, /100
-  // Örn: 18/20, 37.5/50, 82/100. Tarihleri yanlışlıkla puan saymaz.
-  const matches = [...text.matchAll(/(?:^|\s|[^0-9])([0-9]+(?:\.[0-9]+)?)\s*\/\s*(20|40|50|100)(?=\s|$|[^0-9])/g)];
-  for(const match of matches){
-    const score = Number(match[1]);
-    const max = Number(match[2]);
-    if(Number.isFinite(score) && Number.isFinite(max) && max > 0 && score >= 0 && score <= max){
-      return (score / max) * 100;
+function findHomeworkScore(text){
+  const scores = text.matchAll(/(^|[^\p{L}\d.,/+−-])((?:📊[ \t]*)?(?:(?:Puan|Sonuç)[ \t]*:?[ \t]*)?(\d+(?:[.,]\d+)?)[ \t]*\/[ \t]*(\d+))(?![\p{L}\d]|[.,]\d|[ \t]*\/)/giu);
+  for(const match of scores){
+    const [ , boundary, label, earned, maximum] = match;
+    const start = match.index + boundary.length;
+    // Ignore fragments of slash-separated dates, including dates with spaces.
+    if(text.slice(0,start).trimEnd().endsWith('/')) continue;
+    const points = Number(earned.replace(',','.'));
+    const max = Number(maximum);
+    if(Number.isFinite(points) && Number.isFinite(max) && max > 0 && points <= max){
+      return {earned,maximum,start,end:start+label.length,normalized:(points/max)*100};
     }
   }
   return null;
@@ -1431,8 +1439,7 @@ function extractHomeworkScore(value){
 
 function calculateHomeworkAverage(assignments){
   const normalizedScores = (assignments || [])
-    .filter(item => item && item.status === 'completed')
-    .map(item => extractHomeworkScore(item.value))
+    .map(item => findHomeworkScore(String(item?.value ?? ''))?.normalized ?? null)
     .filter(score => score !== null);
 
   if(!normalizedScores.length){
@@ -1460,14 +1467,13 @@ function renderTrackerResults(data){
   document.getElementById('trackerTotal').textContent = summary.total || 0;
   document.getElementById('trackerCompleted').textContent = summary.completed || 0;
   document.getElementById('trackerMissing').textContent = summary.missing || 0;
-  document.getElementById('trackerPending').textContent = summary.pending || 0;
 
   const homeworkAverage = calculateHomeworkAverage(trackerAssignments);
   const averageEl = document.getElementById('trackerAverage');
   averageEl.textContent = formatHomeworkAverage(homeworkAverage.average);
   averageEl.title = homeworkAverage.count
-    ? homeworkAverage.count + ' puanlanmış tamamlanmış ödevin 100 üzerinden ortalaması'
-    : 'Henüz ortalamaya dahil edilecek puanlı tamamlanmış ödev yok';
+    ? homeworkAverage.count + ' puanlı ödev sonucunun 100 üzerinden ortalaması'
+    : 'Henüz ortalamaya dahil edilecek puanlı ödev yok';
 
   document.querySelectorAll('.tracker-filter').forEach(btn => btn.classList.remove('active'));
   const allBtn = document.querySelector('.tracker-filter[data-filter="all"]');
@@ -1999,10 +2005,11 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const status = item.status || 'missing';
   const statusText = status === 'completed' ? '✅ Tamamlandı' : '❌ Eksik';
   const statusBadge = status === 'pending' ? '' : `<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
-  const result = escapeHtml(item.value).replace(
-    /^[ \t]*(?:📊[ \t]*)?(?:(?:Puan|Sonuç)[ \t]*:?[ \t]*)?(\d+(?:[.,]\d+)?)[ \t]*\/[ \t]*(\d+)(?![ \t]*\/)(?=$|[ \t(·|])/im,
-    '<strong class="tracker-task-result">📊 Sonuç $1/$2</strong>'
-  );
+  const text = String(item.value ?? '');
+  const score = findHomeworkScore(text);
+  const result = score
+    ? `${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">📊 Sonuç ${score.earned}/${score.maximum}</strong>${escapeHtml(text.slice(score.end))}`
+    : escapeHtml(text);
   const value = result ? `<div class="tracker-task-value">${result}</div>` : '';
   const isEmbeddedWriting = level === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
   const homeworkNote = isEmbeddedWriting
@@ -2011,12 +2018,11 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
   const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
   const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
-  const actions = statusBadge || homeworkLink ? `<div class="tracker-task-actions">${statusBadge}${homeworkLink}</div>` : '';
-
   return `
     <div class="tracker-task-row">
-      <div>${heading}${homeworkNote}${value}</div>
-      ${actions}
+      <div class="tracker-task-info">${heading}${homeworkNote}${value}</div>
+      ${statusBadge}
+      ${homeworkLink}
     </div>`;
 }
 
