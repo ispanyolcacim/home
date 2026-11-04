@@ -1998,7 +1998,6 @@ function renderTrackerTasks(filter){
 
   const cards = new Map();
   for(const {item,details} of assignments){
-    if(filter !== 'all' && item.status !== filter) continue;
     const file = trackerHomeworkFile(level,details);
     const part = details ? trackerHomeworkPart(level,details,file) : '';
     const lesson = details ? details.lessonKey.replace('-','+') : '';
@@ -2006,24 +2005,30 @@ function renderTrackerTasks(filter){
     const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma'}[details?.type] || '';
     const lessonTitle = `${lesson}. Ders`;
     const activityTitle = type ? `${lessonTitle} ${type}` : lessonTitle;
-    const title = lesson
-      ? `${week}. Hafta ${level} ${part ? lessonTitle : activityTitle} Ödevi`
-      : item.title || '';
+    const title = lesson ? `${week}. Hafta ${level} ${lessonTitle}` : item.title || '';
     const buttonText = part ? `${lessonTitle} (${part}. Kısım) Ödevine Git` : `${activityTitle} Ödevine Git`;
-    const cardKey = part ? `${week}/${lesson}` : item;
+    const cardKey = lesson ? `${week}/${lesson}` : item;
     if(!cards.has(cardKey)){
-      cards.set(cardKey,{title,lesson,parts:[],split:Boolean(part)});
+      cards.set(cardKey,{title,lesson,entries:[]});
     }
-    cards.get(cardKey).parts.push({item,file,part,type,buttonText});
+    cards.get(cardKey).entries.push({item,file,part,type,buttonText});
   }
 
   const shownPreparations = new Set();
-  let html = Array.from(cards.values(), ({title,lesson,parts,split}) => {
-    const heading = `<div class="tracker-task-title"><span aria-hidden="true">📌</span> ${escapeHtml(title)}</div>`;
-    const rows = parts.sort((a,b) => Number(a.part)-Number(b.part)).map(row => {
-      const rowHeading = split
-        ? `<div class="tracker-task-part">${escapeHtml(row.part)}. Kısım${row.type ? ` · ${escapeHtml(row.type)}` : ''}</div>`
-        : heading;
+  const rowOrder = ({part,type}) => part ? Number(part) : type ? Number.MAX_SAFE_INTEGER : 0;
+  let html = Array.from(cards.values(), ({title,lesson,entries}) => {
+    const visibleEntries = entries.filter(({item}) => filter === 'all' || item.status === filter);
+    if(!visibleEntries.length) return '';
+
+    const grouped = entries.length > 1 || Boolean(entries[0].part);
+    const singleType = grouped ? '' : entries[0].type;
+    const headingText = lesson ? `${title}${singleType ? ` ${singleType}` : ''} Ödevi` : title;
+    const heading = `<div class="tracker-task-title"><span aria-hidden="true">📌</span> ${escapeHtml(headingText)}</div>`;
+    const rows = visibleEntries.sort((a,b) => rowOrder(a)-rowOrder(b)).map(row => {
+      const rowLabel = row.part
+        ? `${row.part}. Kısım${row.type ? ` · ${row.type}` : ''}`
+        : `${row.type || 'Ders'} Ödevi`;
+      const rowHeading = grouped ? `<div class="tracker-task-part">${escapeHtml(rowLabel)}</div>` : heading;
       return renderTrackerTaskRow(level,row,rowHeading);
     }).join('');
     const preparation = preparations[lesson];
@@ -2031,7 +2036,7 @@ function renderTrackerTasks(filter){
     if(preparation) shownPreparations.add(lesson);
     return `
       <div class="tracker-task">
-        ${split ? heading : ''}
+        ${grouped ? heading : ''}
         ${rows}
         ${quizletStrip}
       </div>`;
