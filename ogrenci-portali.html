@@ -939,7 +939,11 @@ button{
 .tracker-homework-arrow{display:inline-block;border-inline-start:1px solid #dedbea;padding-inline-start:9px;line-height:1}
 a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
-@media(max-width:700px){.tracker-homework-link{grid-column:2;grid-row:2}}
+.tracker-reading-link{grid-row:2}
+@media(max-width:700px){
+  .tracker-homework-link{grid-column:2;grid-row:2}
+  .tracker-reading-link{grid-row:3}
+}
 @media(max-width:440px){
   .tracker-task-row{grid-template-columns:minmax(0,1fr)}
   .tracker-task-info{grid-column:1}
@@ -2068,11 +2072,15 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
   const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
   const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
+  const readingLink = level === 'B1.1' && file === 'b11-1-2-ida.html'
+    ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MQd2ZwD7x6CE4wZFN8-vSOGIKJOc3tYd/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Frida Kahlo Kitabını Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
+    : '';
   return `
     <div class="tracker-task-row">
       <div class="tracker-task-info">${heading}${homeworkNote}${value}</div>
       ${statusBadge}
       ${homeworkLink}
+      ${readingLink}
     </div>`;
 }
 
