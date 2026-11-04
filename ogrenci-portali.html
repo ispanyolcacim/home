@@ -753,9 +753,8 @@ button{
 .tracker-list{display:flex;flex-direction:column;gap:11px}
 .tracker-task{
   display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-columns:minmax(0,1fr);
   gap:14px;
-  align-items:center;
   background:#fff;
   border-radius:20px;
   padding:16px 18px;
@@ -763,6 +762,14 @@ button{
   box-shadow:0 6px 18px rgba(32,48,74,.05);
 }
 .tracker-task-title{font-weight:1000;font-size:16px}
+.tracker-task-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px 14px;
+}
+.tracker-task-row+.tracker-task-row{border-top:1px solid rgba(32,48,74,.09);padding-top:12px}
+.tracker-task-part{font-size:14px;font-weight:900}
 .tracker-task-value{
   white-space:pre-line;
   margin-top:5px;
@@ -803,7 +810,7 @@ button{
   .tracker-field.full{grid-column:auto}
   .tracker-steps{grid-template-columns:1fr 1fr}
   .tracker-stats{grid-template-columns:1fr 1fr}
-  .tracker-task{grid-template-columns:1fr}
+  .tracker-task-row{grid-template-columns:minmax(0,1fr)}
   .tracker-status{justify-self:start}
 }
 
@@ -918,12 +925,12 @@ button{
 </style>
 <style>
 .tracker-task-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
-.tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-decoration:none;white-space:nowrap}
+.tracker-homework-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;max-width:100%;padding:8px 13px;border:1.5px solid transparent;border-radius:999px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#f6a5b1,#f5c9a5,#f5e7a0,#a9e0be,#a5dff3,#c1acf4) border-box;color:#202f45;font-weight:800;text-decoration:none;line-height:1.3}
 .tracker-homework-note{margin-top:4px;color:var(--muted);font-size:13px;font-weight:600;line-height:1.4}
 .tracker-homework-arrow{display:inline-block;border-inline-start:1px solid #dedbea;padding-inline-start:9px;line-height:1}
 a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-homework-link:focus-visible{outline:2px solid #20304a;outline-offset:3px}
-@media(max-width:600px){.tracker-task-actions{justify-content:flex-start}}
+@media(max-width:700px){.tracker-task-actions{justify-content:flex-start}}
 </style><style>
 .tracker-quizlet-strip{grid-column:1/-1;justify-self:start;width:fit-content;max-width:100%;min-width:0;box-sizing:border-box;overflow-wrap:anywhere;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#eef5ff;color:#20304a}
 .tracker-quizlet-strip small{display:block;margin-top:3px;color:#455975}
@@ -1225,17 +1232,37 @@ const trackerHomeworkFiles = {
 
 const trackerHomeworkRepos = {"A2.1":"a2.1-tareas-ida","A2.2":"tareas-a2.2","B1.1":"b11-las-tareas"};
 
-function trackerHomeworkUrl(level,title){
-  const files = trackerHomeworkFiles[level];
-  if(!files) return '';
+function parseTrackerHomeworkTitle(title){
   const label = String(title || '').toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ı','i');
   const lesson = label.match(/\b(\d+)\s*[-–—+\/]\s*(\d+)\b/);
-  if(!lesson) return '';
+  if(!lesson) return null;
   const part = label.match(/\b(\d+)(?:\s*\.+\s*|\s+)kisim\b/);
   const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura)\b/);
-  const suffix = part?.[1] || (type?.[1] === 'dikte' ? 'dictado' : type?.[1] === 'escritura' ? 'yazma' : type?.[1]);
-  const key = lesson[1]+'-'+lesson[2]+(suffix ? '/'+suffix : '');
-  return files[key] ? 'https://ispanyolcacim.github.io/'+(trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas')+'/'+files[key] : '';
+  const week = label.match(/^\s*(?:h\s*(\d+)\b|(\d+)\s*\.?\s*hafta\b)/);
+  return {
+    lessonKey: lesson[1]+'-'+lesson[2],
+    part: part?.[1] || '',
+    type: {dikte:'dictado',escritura:'yazma'}[type?.[1]] || type?.[1] || '',
+    week: week?.[1] || week?.[2] || '',
+    lessonWeek: Math.ceil(Number(lesson[1])/4)
+  };
+}
+
+function trackerHomeworkFile(level,details){
+  if(!details) return '';
+  const suffix = details.part || details.type;
+  const key = details.lessonKey+(suffix ? '/'+suffix : '');
+  return trackerHomeworkFiles[level]?.[key] || '';
+}
+
+function trackerHomeworkPart(level,details,file){
+  if(details.part || !file) return details.part;
+  // Some Sheets titles name the activity instead of the part number.
+  const filePart = file.match(/[-.](\d+)[-.]kisim\.html$/i)?.[1];
+  if(filePart) return filePart;
+  const splitKey = Object.keys(trackerHomeworkFiles[level]).find(key =>
+    key.startsWith(details.lessonKey+'/') && /\/\d+$/.test(key) && trackerHomeworkFiles[level][key] === file);
+  return splitKey?.split('/')[1] || '';
 }
 
 
@@ -1868,61 +1895,85 @@ function renderQuizletStrip(sets){
 
 function renderTrackerTasks(filter){
   const list = document.getElementById('trackerTaskList');
-  const filtered = filter === 'all'
-    ? trackerAssignments
-    : trackerAssignments.filter(item => item.status === filter);
+  const level = trackerHomeworkLevel;
+  const preparations = trackerQuizletPreparations[level] || {};
+  const assignments = trackerAssignments.map(item => ({item,details:parseTrackerHomeworkTitle(item.title)}));
+  const lessonWeeks = new Map();
+  for(const {details} of assignments){
+    if(details?.week) lessonWeeks.set(details.lessonKey,details.week);
+  }
 
-  if(!filtered.length && filter !== 'all'){
-    list.innerHTML = '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
-    return;
+  const cards = new Map();
+  for(const {item,details} of assignments){
+    if(filter !== 'all' && item.status !== filter) continue;
+    const file = trackerHomeworkFile(level,details);
+    const part = details ? trackerHomeworkPart(level,details,file) : '';
+    const lesson = details ? details.lessonKey.replace('-','+') : '';
+    const week = details?.week || lessonWeeks.get(details?.lessonKey) || details?.lessonWeek;
+    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma'}[details?.type] || '';
+    const lessonTitle = `${lesson}. Ders`;
+    const activityTitle = type ? `${lessonTitle} ${type}` : lessonTitle;
+    const title = lesson
+      ? `${week}. Hafta ${level} ${part ? lessonTitle : activityTitle} Ödevi`
+      : item.title || '';
+    const buttonText = part ? `${lessonTitle} (${part}. Kısım) Ödevine Git` : `${activityTitle} Ödevine Git`;
+    const cardKey = part ? `${week}/${lesson}` : item;
+    if(!cards.has(cardKey)){
+      cards.set(cardKey,{title,lesson,parts:[],split:Boolean(part)});
+    }
+    cards.get(cardKey).parts.push({item,file,part,type,buttonText});
   }
 
   const shownPreparations = new Set();
-  list.innerHTML = filtered.map(item => {
-    const status = item.status || 'missing';
-    const statusText = status === 'completed'
-      ? '✅ Tamamlandı'
-      : status === 'pending'
-        ? '🟡 Kontrol Bekliyor'
-        : '❌ Eksik';
-
-    const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
-
-    const lesson = String(item.title || '').match(/\b(\d+)\s*[-–—+]\s*(\d+)\b/);
-    const lessonKey = lesson ? lesson[1]+'+'+lesson[2] : '';
-    const preparation = trackerQuizletPreparations[trackerHomeworkLevel]?.[lessonKey];
-    let quizletStrip = '';
-    if(preparation && !shownPreparations.has(lessonKey)){
-      shownPreparations.add(lessonKey);
-      quizletStrip = renderQuizletStrip(preparation);
-    }
-
-    const homeworkUrl = trackerHomeworkUrl(trackerHomeworkLevel,item.title);
-    const isEmbeddedWriting = trackerHomeworkLevel === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
-    const homeworkNote = isEmbeddedWriting
-      ? '<div class="tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</div>'
-      : '';
-    const homeworkLink = homeworkUrl ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(homeworkUrl)}" target="_blank" rel="noopener noreferrer">Ödeve Git <span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
-
+  let html = Array.from(cards.values(), ({title,lesson,parts,split}) => {
+    const heading = `<div class="tracker-task-title"><span aria-hidden="true">📌</span> ${escapeHtml(title)}</div>`;
+    const rows = parts.sort((a,b) => Number(a.part)-Number(b.part)).map(row => {
+      const rowHeading = split
+        ? `<div class="tracker-task-part">${escapeHtml(row.part)}. Kısım${row.type ? ` · ${escapeHtml(row.type)}` : ''}</div>`
+        : heading;
+      return renderTrackerTaskRow(level,row,rowHeading);
+    }).join('');
+    const preparation = preparations[lesson];
+    const quizletStrip = preparation && !shownPreparations.has(lesson) ? renderQuizletStrip(preparation) : '';
+    if(preparation) shownPreparations.add(lesson);
     return `
       <div class="tracker-task">
-        <div>
-          <div class="tracker-task-title">${escapeHtml(item.title || '')}</div>
-          ${homeworkNote}
-          ${value}
-        </div>
-        <div class="tracker-task-actions"><span class="tracker-status ${status}">${statusText}</span>${homeworkLink}</div>
+        ${split ? heading : ''}
+        ${rows}
         ${quizletStrip}
       </div>`;
   }).join('');
 
   if(filter === 'all'){
-    const remaining = Object.entries(trackerQuizletPreparations[trackerHomeworkLevel] || {})
+    const remaining = Object.entries(preparations)
       .filter(([lesson]) => !shownPreparations.has(lesson))
       .sort(([a],[b]) => parseInt(a,10)-parseInt(b,10));
-    list.innerHTML += remaining.map(([lesson,sets]) => `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`).join('');
+    html += remaining.map(([lesson,sets]) => `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`).join('');
   }
-  if(!list.innerHTML) list.innerHTML = '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
+  list.innerHTML = html || '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
+}
+
+function renderTrackerTaskRow(level,{item,file,buttonText},heading){
+  const status = item.status || 'missing';
+  const statusText = status === 'completed'
+    ? '✅ Tamamlandı'
+    : status === 'pending'
+      ? '🟡 Kontrol Bekliyor'
+      : '❌ Eksik';
+  const value = item.value ? `<div class="tracker-task-value">${escapeHtml(item.value)}</div>` : '';
+  const isEmbeddedWriting = level === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
+  const homeworkNote = isEmbeddedWriting
+    ? '<div class="tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</div>'
+    : '';
+  const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
+  const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
+  const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
+
+  return `
+    <div class="tracker-task-row">
+      <div>${heading}${homeworkNote}${value}</div>
+      <div class="tracker-task-actions"><span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>${homeworkLink}</div>
+    </div>`;
 }
 
 function showTrackerMessage(text,type){
