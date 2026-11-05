@@ -2134,7 +2134,9 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
   const readingLink = level === 'B1.1' && file === 'b11-1-2-ida.html'
     ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MQd2ZwD7x6CE4wZFN8-vSOGIKJOc3tYd/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Frida Kahlo Kitabını Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
-    : '';
+    : level === 'A1.2' && file === '3-4-ida.html'
+      ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MfHh7iX92HN0d5wHq_aCExxzXOH2XBF-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Continentes de la Tierra PDF’ini Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
+      : '';
   return `
     <div class="tracker-task-row">
       <div class="tracker-task-info">${heading}${homeworkNote}${value}</div>
