@@ -1209,6 +1209,7 @@ const trackerHomeworkFiles = {
   },
   "A2.2": {
     "1-2": "1-2.html",
+    "5-6/video": "5-6-video.html",
     "11-12/dictado": "11-12-dikte.html",
     "11-12/yazma": "11-12-dikte.html",
     "11-12": "11-12.html",
@@ -2079,7 +2080,7 @@ function renderTrackerTasks(filter){
     const visibleEntries = entries.filter(({item}) => filter === 'all' || item.status === filter);
     if(!visibleEntries.length) return null;
 
-    const grouped = entries.length > 1 || Boolean(entries[0].part);
+    const grouped = entries.length > 1 || Boolean(entries[0].part) || entries[0].type === 'Video';
     const singleType = grouped ? '' : entries[0].type;
     const headingText = lesson ? `${title}${singleType ? ` ${singleType}` : ''} Ödevi` : title;
     const heading = `<div class="tracker-task-title"><span aria-hidden="true">📌</span> ${escapeHtml(headingText)}</div>`;
