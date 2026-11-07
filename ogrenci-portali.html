@@ -1197,6 +1197,7 @@ const trackerHomeworkFiles = {
     "31-32/3": "31-32-3-kisim.html",
     "5-6": "5-6.html",
     "7-8": "7-8.html",
+    "7-8/video": "7-8-video.html",
     "9-10/2": "9-10-2-kisim.html",
     "9-10": "9-10.html",
     "9-10/1": "9-10.html",
@@ -1257,7 +1258,7 @@ function parseTrackerHomeworkTitle(title){
   const lesson = label.match(/\b(\d+)\s*[-–—+\/]\s*(\d+)\b/);
   if(!lesson) return null;
   const part = label.match(/\b(\d+)(?:\s*\.+\s*|\s+)kisim\b/);
-  const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura)\b/);
+  const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura|video)\b/);
   const week = label.match(/^\s*(?:h\s*(\d+)\b|(\d+)\s*\.?\s*hafta\b)/);
   return {
     lessonKey: lesson[1]+'-'+lesson[2],
@@ -2059,11 +2060,11 @@ function renderTrackerTasks(filter){
     const part = details ? trackerHomeworkPart(level,details,file) : '';
     const lesson = details ? details.lessonKey.replace('-','+') : '';
     const week = details?.week || lessonWeeks.get(details?.lessonKey) || details?.lessonWeek;
-    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma'}[details?.type] || '';
+    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video'}[details?.type] || '';
     const lessonTitle = `${lesson}. Ders`;
     const activityTitle = type ? `${lessonTitle} ${type}` : lessonTitle;
     const title = lesson ? `${week}. Hafta ${level} ${lessonTitle}` : item.title || '';
-    const buttonText = part ? `${lessonTitle} (${part}. Kısım) Ödevine Git` : `${activityTitle} Ödevine Git`;
+    const buttonText = type === 'Video' ? `${lessonTitle} (Video Ödevi)` : part ? `${lessonTitle} (${part}. Kısım) Ödevine Git` : `${activityTitle} Ödevine Git`;
     const cardKey = lesson ? `${week}/${lesson}` : item;
     if(!cards.has(cardKey)){
       cards.set(cardKey,{title,lesson,entries:[]});
@@ -2084,7 +2085,7 @@ function renderTrackerTasks(filter){
     const rows = visibleEntries.sort((a,b) => rowOrder(a)-rowOrder(b)).map(row => {
       const rowLabel = row.part
         ? `${row.part}. Kısım${row.type ? ` · ${row.type}` : ''}`
-        : `${row.type || 'Ders'} Ödevi`;
+        : `${row.type || 'Ders'} Ödevi${row.type === 'Video' ? ':' : ''}`;
       const rowHeading = grouped ? `<div class="tracker-task-part">${escapeHtml(rowLabel)}</div>` : heading;
       return renderTrackerTaskRow(level,row,rowHeading);
     }).join('');
@@ -2116,7 +2117,7 @@ function renderTrackerTasks(filter){
   list.innerHTML = html || '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
 }
 
-function renderTrackerTaskRow(level,{item,file,buttonText},heading){
+function renderTrackerTaskRow(level,{item,file,buttonText,type},heading){
   const status = item.status || 'missing';
   const statusText = status === 'completed' ? '✅ Tamamlandı' : '❌ Eksik';
   const statusBadge = status === 'pending' ? '' : `<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
@@ -2125,7 +2126,10 @@ function renderTrackerTaskRow(level,{item,file,buttonText},heading){
   const result = score
     ? `${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">📊 Sonuç ${score.earned}/${score.maximum}</strong>${escapeHtml(text.slice(score.end))}`
     : escapeHtml(text);
-  const value = result ? `<div class="tracker-task-value">${result}</div>` : '';
+  const videoResult = type === 'Video' && !score
+    ? `<strong class="tracker-task-result">📊 Sonuç</strong>${result ? `<br>${result}` : ' —'}`
+    : result;
+  const value = videoResult ? `<div class="tracker-task-value">${videoResult}</div>` : '';
   const isEmbeddedWriting = level === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
   const homeworkNote = isEmbeddedWriting
     ? '<div class="tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</div>'
