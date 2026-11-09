@@ -1211,6 +1211,8 @@ const trackerHomeworkFiles = {
   "A2.2": {
     "1-2": "1-2.html",
     "5-6/video": "5-6-video.html",
+    "5-6/dele": "5-6-dele-dinleme.html",
+    "5-6/dinleme": "5-6-dele-dinleme.html",
     "11-12/dictado": "11-12-dikte.html",
     "11-12/yazma": "11-12-dikte.html",
     "11-12": "11-12.html",
@@ -1261,7 +1263,7 @@ function parseTrackerHomeworkTitle(title){
   const lesson = label.match(/\b(\d+)\s*[-–—+\/]\s*(\d+)\b/);
   if(!lesson) return null;
   const part = label.match(/\b(\d+)(?:\s*\.+\s*|\s+)kisim\b/);
-  const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura|video)\b/);
+  const type = label.match(/\b(dictado|dikte|dinleme|yazma|escritura|video|dele)\b/);
   const week = label.match(/^\s*(?:h\s*(\d+)\b|(\d+)\s*\.?\s*hafta\b)/);
   return {
     lessonKey: lesson[1]+'-'+lesson[2],
@@ -2063,7 +2065,7 @@ function renderTrackerTasks(filter){
     const part = details ? trackerHomeworkPart(level,details,file) : '';
     const lesson = details ? details.lessonKey.replace('-','+') : '';
     const week = details?.week || lessonWeeks.get(details?.lessonKey) || details?.lessonWeek;
-    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video'}[details?.type] || '';
+    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video',dele:'DELE Dinleme'}[details?.type] || '';
     const lessonTitle = `${lesson}. Ders`;
     const activityTitle = type ? `${lessonTitle} ${type}` : lessonTitle;
     const title = lesson ? `${week}. Hafta ${level} ${lessonTitle}` : item.title || '';
@@ -2189,3 +2191,4 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
