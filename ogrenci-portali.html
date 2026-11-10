@@ -762,6 +762,18 @@ button{
   box-shadow:0 6px 18px rgba(32,48,74,.05);
 }
 .tracker-task-title{font-weight:1000;font-size:16px}
+.tracker-chat-notice{
+  padding:14px 16px;
+  border:1px solid var(--yellow);
+  border-left:5px solid var(--yellow);
+  border-radius:14px;
+  background:var(--yellow-soft);
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+.tracker-chat-notice strong{font-weight:900}
 .tracker-task-row{
   display:grid;
   grid-template-columns:minmax(0,1fr) 118px 280px;
@@ -2097,9 +2109,13 @@ function renderTrackerTasks(filter){
     const preparation = preparations[lesson];
     const quizletStrip = preparation && !shownPreparations.has(lesson) ? renderQuizletStrip(preparation) : '';
     if(preparation) shownPreparations.add(lesson);
+    const chatNotice = level === 'A1.2' && lesson === '5+6'
+      ? '<div class="tracker-chat-notice" role="note">💬 <strong>Artık “-yor” zamanını öğrendiğimize göre</strong>, gün içerisinde ne yaptığınızı gösteren fotoğraflarla 📸 birlikte bunları anlatan İspanyolca cümleler yazarak WhatsApp üzerinden minik minik İspanyolca sohbet etmeye başlayabiliriz! 🇪🇸😊</div>'
+      : '';
     const html = `
       <div class="tracker-task">
         ${grouped ? heading : ''}
+        ${chatNotice}
         ${rows}
         ${quizletStrip}
       </div>`;
@@ -2191,4 +2207,5 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
 
