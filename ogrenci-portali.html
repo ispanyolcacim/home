@@ -1265,6 +1265,7 @@ const trackerHomeworkFiles = {
     "5-6/1": "b11-5-6-ida-1-kisim.html",
     "5-6/2": "b11-5-6-ida-2-kisim.html",
     "7-8": "b11-7-8-ida.html",
+    "7-8/video": "b11-7-8-ida.html",
     "9-10": "b11-9-10-ida.html",
     "13-14": "b11-13-14-ida-yazma-odevi.html"
   }
@@ -1286,6 +1287,15 @@ function parseTrackerHomeworkTitle(title){
     week: week?.[1] || week?.[2] || '',
     lessonWeek: Math.ceil(Number(lesson[1])/4)
   };
+}
+
+// Keep the original Sheets title and result cell when an existing task changes format.
+function trackerHomeworkDetails(level,title){
+  const details = parseTrackerHomeworkTitle(title);
+  if(level === 'B1.1' && details?.lessonKey === '7-8' && !details.part && !details.type){
+    return {...details,type:'video'};
+  }
+  return details;
 }
 
 function trackerHomeworkFile(level,details){
@@ -2067,7 +2077,7 @@ function renderTrackerTasks(filter){
   const list = document.getElementById('trackerTaskList');
   const level = trackerHomeworkLevel;
   const preparations = trackerQuizletPreparations[level] || {};
-  const assignments = trackerAssignments.map(item => ({item,details:parseTrackerHomeworkTitle(item.title)}));
+  const assignments = trackerAssignments.map(item => ({item,details:trackerHomeworkDetails(level,item.title)}));
   const lessonWeeks = new Map();
   for(const {details} of assignments){
     if(details?.week) lessonWeeks.set(details.lessonKey,details.week);
