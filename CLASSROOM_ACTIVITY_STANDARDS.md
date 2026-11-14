@@ -2,6 +2,10 @@
 
 Kullanıcının açık tercihleri; yeni ders içi etkinliklerde ve güncellemelerde uygulanır.
 
+- Üst bölüm sırası tüm seviyelerde aynıdır: solda “ESPAÑOL CON PROFE HAZEL”, sağda seviye ve ders numaraları; altında küçük şeffaf PNG logo; sonra “DERS İÇİ ETKİNLİK · (X+Y) SEVİYE” ve konu başlığı.
+- Logo A1.1 9–10 referansındaki PNG’dir: https://ispanyolcacim.github.io/a1.1-tareas/assets/a11-profe-hazel-logo-transparent.png . Görünen genişlik masaüstünde 180 px, mobilde 160 px; yükseklik oranı korunur.
+- Başlık düzeni A1.1 9–10 ile eşleşir; mevcut yazdır, tam ekran, başlat ve bitir kontrolleri korunur.
+
 - Her alıştırma boşluğunun hemen yanında ayrı bir 🔒 düğmesi bulunur. Yalnızca ilgili cevap, kendi boşluğuna yerleşir. 🔓 ile yeniden gizlenebilir.
 - Bu kural dinleme, çekim tabloları, okuma soruları, deyimler, çeviri ve açık uçlu alanlar dahil tüm bölümler için geçerlidir. Açık uçlu alanlarda açılan içerik örnek cevap olarak adlandırılır.
 - Toplu cevap gösterme düğmeleri, ayrı toplu cevap anahtarları ve puan/oyuncu kartları kullanılmaz.
