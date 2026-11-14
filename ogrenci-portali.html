@@ -1139,8 +1139,9 @@ const trackerHomeworkFiles = {
     "7-8/1": "a11-7-8-ida-1-kisim.html",
     "7-8/2": "a11-7-8-ida-2-kisim.html",
     "7-8/yazma": "a11-7-8-ida-yazma.html",
-    "9-10/1": "a11-9-10-ida-1-kisim.html",
-    "9-10/2": "a11-9-10-ida-2-kisim.html",
+    "9-10": "a11-9-10-ida.html",
+    "9-10/1": "a11-9-10-ida.html",
+    "9-10/2": "a11-9-10-ida.html",
     "11-12/1": "a11-11-12-ida-1-kisim.html",
     "11-12/2": "a11-11-12-ida-2-kisim.html",
     "19-20/1": "a11-19-20-ida-1-kisim.html",
@@ -1293,6 +1294,9 @@ function parseTrackerHomeworkTitle(title){
 // Keep the original Sheets title and result cell when an existing task changes format.
 function trackerHomeworkDetails(level,title){
   const details = parseTrackerHomeworkTitle(title);
+  if(level === 'A1.1' && details?.lessonKey === '9-10' && !details.type){
+    return {...details,part:''};
+  }
   if(level === 'A1.2' && details?.lessonKey === '7-8'){
     if(details.type === 'yazma') return {...details,part:''};
     if(details.part === '1' && !details.type) return {...details,part:''};
@@ -1311,6 +1315,7 @@ function trackerHomeworkFile(level,details){
 }
 
 function trackerHomeworkPart(level,details,file){
+  if(level === 'A1.1' && details.lessonKey === '9-10' && !details.type) return '';
   if(level === 'A1.2' && details.lessonKey === '7-8') return '';
   if(details.part || !file) return details.part;
   // Some Sheets titles name the activity instead of the part number.
@@ -1500,6 +1505,23 @@ function formatHomeworkAverage(value){
 }
 
 function normalizeTrackerAssignments(level,assignments){
+  if(level === 'A1.1'){
+    const lessonTasks = assignments.filter(item => {
+      const d = parseTrackerHomeworkTitle(item.title);
+      return d?.lessonKey === '9-10' && !d.type && (!d.part || d.part === '1' || d.part === '2');
+    });
+    if(!lessonTasks.length) return assignments;
+    const preferred = lessonTasks.find(item => parseTrackerHomeworkTitle(item.title).part === '1')
+      || lessonTasks.find(item => !parseTrackerHomeworkTitle(item.title).part)
+      || {title:'H3 – 9-10.Ders (1. KISIM)',value:'',status:'missing'};
+    let placed = false;
+    return assignments.flatMap(item => {
+      if(!lessonTasks.includes(item)) return [item];
+      if(placed) return [];
+      placed = true;
+      return [preferred];
+    });
+  }
   if(level !== 'A1.2') return assignments;
   let removedPart = false;
   const visible = assignments.filter(item => {
@@ -1524,7 +1546,7 @@ function renderTrackerResults(data){
     return details?.lessonKey === '7-8' && details.part === '2' && !details.type;
   });
   const completed = trackerAssignments.filter(item => item.status === 'completed').length;
-  const summary = correctedA12
+  const summary = (correctedA12 || trackerHomeworkLevel === 'A1.1')
     ? {total:trackerAssignments.length,completed,missing:trackerAssignments.length-completed,progress:trackerAssignments.length ? Math.round(completed/trackerAssignments.length*100) : 0}
     : data.summary || {};
 
