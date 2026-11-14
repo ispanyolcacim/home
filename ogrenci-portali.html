@@ -1173,7 +1173,8 @@ const trackerHomeworkFiles = {
     "5-6/1": "5-6-ida-1-kisim.html",
     "5-6/2": "5-6-ida-2-kisim.html",
     "7-8/1": "7-8-ida-1-kisim.html",
-    "7-8/2": "7-8-ida-2-kisim.html",
+    "7-8": "7-8-ida-1-kisim.html",
+    "7-8/yazma": "7-8-ida-2-kisim.html",
     "7-8/video": "7-8-video.html",
     "11-12/1": "11-12-ida-1-kisim.html",
     "11-12/2": "11-12-ida-2-kisim.html",
@@ -1292,6 +1293,10 @@ function parseTrackerHomeworkTitle(title){
 // Keep the original Sheets title and result cell when an existing task changes format.
 function trackerHomeworkDetails(level,title){
   const details = parseTrackerHomeworkTitle(title);
+  if(level === 'A1.2' && details?.lessonKey === '7-8'){
+    if(details.type === 'yazma') return {...details,part:''};
+    if(details.part === '1' && !details.type) return {...details,part:''};
+  }
   if(level === 'B1.1' && details?.lessonKey === '7-8' && !details.part && !details.type){
     return {...details,type:'video'};
   }
@@ -1306,6 +1311,7 @@ function trackerHomeworkFile(level,details){
 }
 
 function trackerHomeworkPart(level,details,file){
+  if(level === 'A1.2' && details.lessonKey === '7-8') return '';
   if(details.part || !file) return details.part;
   // Some Sheets titles name the activity instead of the part number.
   const filePart = file.match(/[-.](\d+)[-.]kisim\.html$/i)?.[1];
@@ -1493,9 +1499,34 @@ function formatHomeworkAverage(value){
   return (Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1).replace('.',',')) + '/100';
 }
 
+function normalizeTrackerAssignments(level,assignments){
+  if(level !== 'A1.2') return assignments;
+  let removedPart = false;
+  const visible = assignments.filter(item => {
+    const details = parseTrackerHomeworkTitle(item.title);
+    const obsolete = details?.lessonKey === '7-8' && details.part === '2' && !details.type;
+    if(obsolete) removedPart = true;
+    return !obsolete;
+  });
+  const hasWriting = visible.some(item => {
+    const details = parseTrackerHomeworkTitle(item.title);
+    return details?.lessonKey === '7-8' && details.type === 'yazma';
+  });
+  if(removedPart && !hasWriting) visible.push({title:'7-8 Escritura',value:'',status:'missing'});
+  return visible;
+}
+
 function renderTrackerResults(data){
-  const summary = data.summary || {};
-  trackerAssignments = Array.isArray(data.assignments) ? data.assignments : [];
+  const originalAssignments = Array.isArray(data.assignments) ? data.assignments : [];
+  trackerAssignments = normalizeTrackerAssignments(trackerHomeworkLevel,originalAssignments);
+  const correctedA12 = trackerHomeworkLevel === 'A1.2' && originalAssignments.some(item => {
+    const details = parseTrackerHomeworkTitle(item.title);
+    return details?.lessonKey === '7-8' && details.part === '2' && !details.type;
+  });
+  const completed = trackerAssignments.filter(item => item.status === 'completed').length;
+  const summary = correctedA12
+    ? {total:trackerAssignments.length,completed,missing:trackerAssignments.length-completed,progress:trackerAssignments.length ? Math.round(completed/trackerAssignments.length*100) : 0}
+    : data.summary || {};
 
   document.getElementById('trackerResultName').textContent = '👤 ' + (data.student || 'Öğrenci');
   document.getElementById('trackerResultLevel').textContent = '🎓 ' + (data.level || '');
@@ -2163,10 +2194,7 @@ function renderTrackerTaskRow(level,{item,file,buttonText,type},heading){
     ? `<strong class="tracker-task-result">📊 Sonuç</strong>${result ? `<br>${result}` : ' —'}`
     : result;
   const value = videoResult ? `<div class="tracker-task-value">${videoResult}</div>` : '';
-  const isEmbeddedWriting = level === 'A1.2' && /^\s*7\s*[-–—+]\s*8\s+escritura\s*$/i.test(item.title || '');
-  const homeworkNote = isEmbeddedWriting
-    ? '<div class="tracker-homework-note">Bu ödev H2 – 7-8.Ders (2. KISIM) içerisinde mevcut.</div>'
-    : '';
+  const homeworkNote = '';
   const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
   const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
   const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
@@ -2219,4 +2247,5 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
 
