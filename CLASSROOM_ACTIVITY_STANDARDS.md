@@ -20,3 +20,13 @@ Kullanıcının açık tercihleri; yeni ders içi etkinliklerde ve güncellemele
 - Görev bilgisi yalnızca dilbilgisel olarak desteklenen ayrıntıyla yazılır; belirsiz durumlarda daha dar ve güvenilir açıklama kullanılır.
 - Tıklanabilir sözlük varken ayrı “Yol arkadaşın kelimeler / Pequeño diccionario” kutusu eklenmez.
 - Tasarım sade ve okunabilir olur. A1.1 sarı; A1.2 mor; A2.1 gül pembesi; A2.2 şeftali-mercan; B1.1 peygamber çiçeği mavisi paletleri kullanılır.
+
+## Yazdırma ve ders sonrası ödevler
+
+- Her ders içi etkinlik HTML dosyasının üst bölümünde görünür bir “🖨️ Yazdır / PDF” düğmesi bulunur. Mevcut yazdırma kontrolü varsa korunur ve aynı işlev tekrarlanmaz.
+- Bölüm düğmelerinin en sonunda ders numarasıyla adlandırılan “📚 X–Y. Ders Ödevleri” düğmesi yer alır. Soru soru ilerleyen eski sayfalarda bu düğme etkinliğin sonunda bulunur.
+- Ödev ekranında yalnızca aynı seviye ve aynı ders çiftine ait güncel portal ödevleri gösterilir. Ders, yazma/çeviri, video, dikte ve çok parçalı ödevler kendi adları, kısa yönergeleri ve doğru bağlantılarıyla ayrı kartlar halinde yer alır; aynı dosyaya giden eşdeğer kayıtlar tekrarlanmaz.
+- Portalda ilgili derse atanmış Quizlet hazırlık setleri varsa “🧠 Sonraki derse hazırlık” başlığı altında ayrıca gösterilir. Setin kendi ders numarası ve adı korunur.
+- Ödev bağlantıları yeni sekmede açılır. Öğrenciye ait isim, puan, teslim durumu, giriş kodu veya portal şifresi bu sayfalara kopyalanmaz.
+- Ödev ekranı kapatıldığında mevcut etkinlik ve cevaplar korunur. Ödev ekranında da yazdırma düğmesi bulunur; yazdırılan ödev kartlarında bağlantı adresleri görünür olur.
+- Kartlar, yazı tipi, köşeler ve renkler ilgili seviyenin mevcut tasarım dilini izler; bölüm geçişlerinde ölçülü emojiler kullanılır.
