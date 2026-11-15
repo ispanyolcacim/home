@@ -30,3 +30,24 @@ Kullanıcının açık tercihleri; yeni ders içi etkinliklerde ve güncellemele
 - Ödev bağlantıları yeni sekmede açılır. Öğrenciye ait isim, puan, teslim durumu, giriş kodu veya portal şifresi bu sayfalara kopyalanmaz.
 - Ödev ekranı kapatıldığında mevcut etkinlik ve cevaplar korunur. Ödev ekranında da yazdırma düğmesi bulunur; yazdırılan ödev kartlarında bağlantı adresleri görünür olur.
 - Kartlar, yazı tipi, köşeler ve renkler ilgili seviyenin mevcut tasarım dilini izler; bölüm geçişlerinde ölçülü emojiler kullanılır.
+
+## Dosya adlandırma ve düzen
+
+Kullanıcının 15 Kasım 2026'da onayladığı dosya adı şablonu: `DD-DD-ders-ici-ispanyolcacim-SEVIYE.html`.
+
+- Her iki ders numarası da iki basamaklı yazılır: `01-02`, `03-04`, `07-08`, `09-10`, `11-12`.
+- Seviye son ekleri: A1.1 → `a11`, A1.2 → `a12`, A2.1 → `a21`, A2.2 → `a22`, B1.1 → `b11`. Son ek daima etkinliğin gerçek seviyesiyle eşleşir.
+- Her seviye kendi mevcut deposunda kalır; HTML giriş dosyası ana dizinde bulunur. Yeni içerik oluşturulurken bu ad şablonu kullanılır.
+- Eski bir etkinliğin adı standartlaştırıldığında önceki adresi sorgu parametrelerini ve bölüm kimliğini (`#...`) koruyan bir yönlendirme olarak tutulur. Asıl etkinlik yeni dosyada bulunur.
+- Dosya adı değişirken cevap kayıt anahtarları, içeriği ve kaynak yolları korunur; düzenlenen indeksler ve bağlantılar yeni adrese alınır.
+- Bu şablon ders içi etkinlikler içindir; ödev adlarını değiştirmez. Henüz hazırlanmamış dersler için boş etkinlik dosyası oluşturulmaz.
+
+Standart adlara taşınan 9–10. ders etkinlikleri:
+
+| Seviye | Güncel bağlantı |
+| --- | --- |
+| A1.1 | https://ispanyolcacim.github.io/a1.1-tareas/09-10-ders-ici-ispanyolcacim-a11.html |
+| A1.2 | https://ispanyolcacim.github.io/a1.2-tareas/09-10-ders-ici-ispanyolcacim-a12.html |
+| A2.1 | https://ispanyolcacim.github.io/a2.1-tareas-ida/09-10-ders-ici-ispanyolcacim-a21.html |
+| A2.2 | https://ispanyolcacim.github.io/tareas-a2.2/09-10-ders-ici-ispanyolcacim-a22.html |
+| B1.1 | https://ispanyolcacim.github.io/b11-las-tareas/09-10-ders-ici-ispanyolcacim-b11.html |
