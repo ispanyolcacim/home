@@ -1015,9 +1015,49 @@ a.tracker-homework-link:hover{text-decoration:underline}
 </style>
 <link rel="stylesheet" href="assets/word-of-day/daily-word.css?v=1" />
 <script type="module" src="assets/word-of-day/daily-word.mjs?v=2"></script>
+<style>
+.tracker-section-heading{display:flex;align-items:center;gap:13px;margin:0 0 17px}
+.tracker-section-heading h3,.tracker-resources .tracker-section-heading h3{margin:0;font-size:clamp(24px,3vw,31px);line-height:1.25;font-weight:1000;letter-spacing:-.7px;color:#29324e}
+.tracker-section-number{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:14px;background:#e9e0f6;color:#6e469b;font-size:20px;font-weight:1000}
+.tracker-lessons-section{margin-top:38px;padding-top:28px;border-top:1px solid #e8e0ec}
+.tracker-lessons-section .tracker-filters{margin-top:0;margin-bottom:18px}
+.tracker-resources-intro{margin-top:-6px;margin-bottom:20px;font-size:14px;line-height:1.6}
+.tracker-lesson-card{grid-template-columns:minmax(130px,.8fr) minmax(155px,.95fr) minmax(0,2.25fr);gap:18px;align-items:stretch;padding:21px;border-radius:25px}
+.tracker-lesson-meta{padding:8px 0;min-width:0}
+.tracker-lesson-week{display:block;font-size:14px;font-weight:900;line-height:1.5;color:#65718b}
+.tracker-lesson-meta h4{font-size:clamp(24px,2.4vw,30px);line-height:1.15;letter-spacing:-.6px;margin:10px 0 0;color:#25304b}
+.tracker-lesson-notes{min-width:0}
+.tracker-note-link,.tracker-note-unavailable{height:100%;min-height:150px;border-radius:18px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;padding:20px;text-decoration:none;background:linear-gradient(145deg,#f5f0fc,#eae0f8);color:#49315e;border:1px solid #dfd0ed;box-sizing:border-box;overflow-wrap:anywhere}
+.tracker-note-link:hover{background:linear-gradient(145deg,#ede1fa,#e0cff3)}
+.tracker-note-link:focus-visible{outline:3px solid #7250a1;outline-offset:4px}
+.tracker-note-icon{font-size:26px;line-height:1}
+.tracker-note-link strong,.tracker-note-unavailable strong{font-size:19px;line-height:1.3;font-weight:1000}
+.tracker-note-link>span:not(.tracker-note-icon),.tracker-note-unavailable>span:not(.tracker-note-icon){font-size:12px;font-weight:700;line-height:1.6}
+.tracker-note-link b{font-size:12px;margin-top:5px}
+.tracker-note-unavailable{background:#f7f6f3;border:1px dashed #e0ddd6;color:#737787;box-shadow:none}
+.tracker-lesson-homework{min-width:0;padding-left:18px;border-left:1px solid #eee7ed;display:flex;flex-direction:column;gap:12px}
+.tracker-lesson-homework h5{font-size:12px;line-height:1.5;margin:0 0 1px;text-transform:uppercase;letter-spacing:.7px;color:#737b8c;font-weight:1000}
+.tracker-assignment{display:grid;gap:8px;min-width:0}
+.tracker-assignment+.tracker-assignment{border-top:1px solid #ece9ef;padding-top:13px}
+.tracker-assignment-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tracker-assignment .tracker-status{width:auto;min-width:94px;grid-column:auto;grid-row:auto;white-space:nowrap;padding:6px 10px}
+.tracker-status.pending{background:#fff4d5;color:#8a661b}
+.tracker-assignment .tracker-task-value{margin:0;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.tracker-assignment .tracker-task-result{font-size:15px}
+.tracker-lesson-homework .tracker-homework-link{grid-column:auto;grid-row:auto;width:100%;font-size:13px;min-height:42px;box-sizing:border-box;justify-content:space-between;padding:9px 14px}
+.tracker-lesson-homework .tracker-quizlet-strip{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:9px;font-size:13px;padding:12px}
+.tracker-lesson-homework .tracker-quizlet-strip small{font-size:11px;line-height:1.55}
+.tracker-lesson-homework .tracker-quizlet-strip a{font-size:12px;min-height:36px}
+.tracker-no-assignment{margin:0;color:#828796;font-size:13px;line-height:1.6}
+.resource-bar{top:var(--portal-breadcrumb-height,58px)}
+.resource-frame{height:calc(100dvh - var(--portal-breadcrumb-height,58px) - var(--resource-bar-height,80px))}
+@media(max-width:950px){.tracker-lesson-card{grid-template-columns:minmax(160px,1fr) minmax(0,2fr)}.tracker-lesson-meta{grid-column:1/-1;display:flex;align-items:center;gap:18px;padding:0 0 5px}.tracker-lesson-meta h4{margin:0;font-size:26px}}
+@media(max-width:620px){.tracker-lesson-card{grid-template-columns:minmax(0,1fr);padding:17px;gap:16px}.tracker-lesson-meta{display:block}.tracker-lesson-meta h4{margin-top:6px}.tracker-lesson-homework{padding:16px 0 0;border-left:0;border-top:1px solid #eee7ed}.tracker-note-link,.tracker-note-unavailable{min-height:120px;padding:17px}.tracker-section-heading{gap:10px}.tracker-section-heading h3,.tracker-resources .tracker-section-heading h3{font-size:23px}.tracker-section-number{width:36px;height:36px;flex-basis:36px;border-radius:12px;font-size:18px}}
+</style>
 </head>
 
 <body>
+<script src="portal-breadcrumbs.js?v=20261115-1"></script>
 
 <!-- =========================================================
      HOME
@@ -1159,11 +1199,13 @@ a.tracker-homework-link:hover{text-decoration:underline}
       </div>
 
       <section id="trackerResources" class="tracker-resources" aria-labelledby="trackerResourcesTitle" hidden>
-        <h3 id="trackerResourcesTitle">📚 Ders ve tekrar alanın</h3>
+        <div class="tracker-section-heading"><span class="tracker-section-number" aria-hidden="true">1</span><h3 id="trackerResourcesTitle">📚 Konu ve tekrar alanın + Haftalık Çalışma Dosyaların</h3></div>
         <p class="tracker-resources-intro">Kendi seviyeni ve önceki seviyeleri tekrar et. Konulara ve haftalık çalışma dosyalarına ulaşmak için bir kutuya tıkla.</p>
         <div id="trackerResourceGrid" class="tracker-resource-grid"></div>
       </section>
 
+      <section class="tracker-lessons-section" aria-labelledby="trackerLessonsTitle">
+      <div class="tracker-section-heading"><span class="tracker-section-number" aria-hidden="true">2</span><h3 id="trackerLessonsTitle">📚 Ders notların ve Ödevlerin</h3></div>
       <div class="tracker-filters">
         <button class="tracker-filter active" data-filter="all" onclick="filterTrackerTasks('all',this)">Tümü</button>
         <button class="tracker-filter" data-filter="missing" onclick="filterTrackerTasks('missing',this)">❌ Eksikler</button>
@@ -1171,6 +1213,7 @@ a.tracker-homework-link:hover{text-decoration:underline}
       </div>
 
       <div id="trackerTaskList" class="tracker-list"></div>
+      </section>
     </div>
   </div>
 </section>
@@ -1183,6 +1226,7 @@ a.tracker-homework-link:hover{text-decoration:underline}
       <button type="button" id="resourceTopics" class="resource-nav-button" onclick="setPortalResourceTab('topics')">Konular</button>
       <button type="button" id="resourceWeeks" class="resource-nav-button" onclick="setPortalResourceTab('weeks')">Haftalık Çalışma Dosyaları</button>
       <button type="button" id="resourceToolbox" class="resource-nav-button" aria-current="page" hidden>Araç Kutusu</button>
+      <button type="button" id="resourceLessonNote" class="resource-nav-button" aria-current="page" hidden>Ders notun</button>
     </div>
     <span id="resourceLevelLabel" class="resource-level-label"></span>
   </nav>
@@ -1197,6 +1241,13 @@ function openScreen(id){
   document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0, behavior:'instant'});
+  updatePortalBreadcrumbs(id);
+}
+
+function updatePortalBreadcrumbs(view){
+  if(!window.portalBreadcrumbs) return;
+  if(view==='resource'&&portalResource)window.portalBreadcrumbs.set({view:'resource',level:portalResource.level,section:portalResource.kind==='notes'?'notes':portalResource.tab,lesson:portalResource.lesson});
+  else window.portalBreadcrumbs.set({view:view==='tracker'?'tracker':'home',level:view==='tracker'&&document.getElementById('trackerResults').classList.contains('show')?trackerHomeworkLevel:undefined});
 }
 
 const TRACKER_API_URL = "https://script.google.com/macros/s/AKfycbw7BdcjAuCuD2cem_q7ixdHPDl51_gC4tyGuv9OsAW-v1Qr1TO-gxkXxD7WX1h37vO7FA/exec";
@@ -1206,7 +1257,7 @@ let trackerVerificationRevision = 0;
 let portalResource = null;
 let trackerReturnScroll = 0;
 let resourceReady = false;
-const RESOURCE_NAV_VERSION = '20261115-2';
+const RESOURCE_NAV_VERSION = '20261115-3';
 
 function updateResourceBarHeight(){
   const bar = document.getElementById('resourceBar');
@@ -1222,8 +1273,9 @@ function openPortalResource(level, tab = 'topics', pushHistory = true){
   if(level !== 'toolbox' && (resourceIndex < 0 || resourceIndex > currentIndex)) return;
   const item = level === 'toolbox' ? {level:'toolbox',href:'toolbox.html'} : trackerResourceLevels[resourceIndex];
   if(!document.getElementById('resource').classList.contains('active')) trackerReturnScroll = window.scrollY;
-  const changed = portalResource?.level !== level;
-  portalResource = {level,tab:tab === 'weeks' ? 'weeks' : 'topics'};
+  const changed = portalResource?.level !== level || portalResource?.kind === 'notes';
+  portalResource = {kind:'course',level,tab:tab === 'weeks' ? 'weeks' : 'topics'};
+  document.getElementById('resourceLessonNote').hidden = true;
   document.getElementById('resourceTopics').hidden = level === 'toolbox';
   document.getElementById('resourceWeeks').hidden = level === 'toolbox';
   document.getElementById('resourceToolbox').hidden = level !== 'toolbox';
@@ -1244,6 +1296,7 @@ function openPortalResource(level, tab = 'topics', pushHistory = true){
 
 function setPortalResourceTab(tab){
   if(!portalResource) return;
+  if(portalResource.kind==='notes')return;
   portalResource.tab = tab === 'weeks' ? 'weeks' : 'topics';
   for(const [id,value] of [['resourceTopics','topics'],['resourceWeeks','weeks']]){
     const button = document.getElementById(id);
@@ -1252,6 +1305,24 @@ function setPortalResourceTab(tab){
   }
   if(resourceReady && portalResource.level !== 'toolbox') document.getElementById('resourceFrame').contentWindow.postMessage({type:'ispanyolcacim-resource-section',section:portalResource.tab},location.origin);
   if(history.state?.portalView === 'resource') history.replaceState({portalView:'resource',level:portalResource.level,tab:portalResource.tab},'',location.href);
+  updatePortalBreadcrumbs('resource');
+}
+
+function openTrackerLessonNote(level,lessonKey,pushHistory=true){
+  if(level!==trackerHomeworkLevel||!document.getElementById('trackerResults').classList.contains('show'))return;
+  const file=trackerClassroomFiles[level]?.[lessonKey];if(!file)return;
+  if(!document.getElementById('resource').classList.contains('active'))trackerReturnScroll=window.scrollY;
+  const repo=trackerHomeworkRepos[level]||level.toLowerCase()+'-tareas';
+  portalResource={kind:'notes',level,lessonKey,lesson:lessonKey.replace('-','+'),tab:'notes'};
+  for(const id of ['resourceTopics','resourceWeeks','resourceToolbox'])document.getElementById(id).hidden=true;
+  const noteButton=document.getElementById('resourceLessonNote');noteButton.hidden=false;noteButton.textContent=portalResource.lesson+'. Ders · Ders notun';
+  document.getElementById('resourceLevelLabel').textContent=level+' · Ders içi etkinlik';
+  const frame=document.getElementById('resourceFrame');frame.title=level+' '+portalResource.lesson+'. Ders · Ders notun';
+  resourceReady=false;document.getElementById('resourceLoading').hidden=false;
+  openScreen('resource');updateResourceBarHeight();
+  frame.src='https://ispanyolcacim.github.io/'+repo+'/'+file;
+  if(pushHistory)history.pushState({portalView:'resource',kind:'notes',level,lessonKey},'',location.href);
+  noteButton.focus({preventScroll:true});
 }
 
 function leavePortalResource(destination = 'tracker', replaceHistory = true){
@@ -1276,7 +1347,8 @@ window.addEventListener('message',event=>{
 });
 window.addEventListener('popstate',event=>{
   const state = event.state;
-  if(state?.portalView === 'resource') openPortalResource(state.level,state.tab,false);
+  if(state?.portalView === 'resource'&&state.kind==='notes')openTrackerLessonNote(state.level,state.lessonKey,false);
+  else if(state?.portalView === 'resource') openPortalResource(state.level,state.tab,false);
   else leavePortalResource(state?.portalView === 'home' ? 'home' : 'tracker',false);
 });
 
@@ -1299,6 +1371,7 @@ function resetTrackerResults(){
   clearTrackerResources();
   portalResource = null;resourceReady = false;
   document.getElementById('resourceFrame').removeAttribute('src');
+  updatePortalBreadcrumbs('tracker');
   hideTrackerMessage();
   const button = document.getElementById('trackerSubmit');
   button.disabled = false;
@@ -1477,6 +1550,39 @@ const trackerHomeworkFiles = {
 };
 
 const trackerHomeworkRepos = {"A2.1":"a2.1-tareas-ida","A2.2":"tareas-a2.2","B1.1":"b11-las-tareas"};
+
+const trackerClassroomFiles = {
+  "A1.1": {
+    "9-10": "09-10-ders-ici-ispanyolcacim-a11.html",
+    "31-32": "31-32-sinif-ici.html"
+  },
+  "A1.2": {
+    "9-10": "09-10-ders-ici-ispanyolcacim-a12.html",
+    "15-16": "15-16-ida-dersici-etkinlik.html",
+    "25-26": "25-26-dersici.html",
+    "31-32": "31-32-dersici.html",
+    "7-8": "estar-gerundio/index.html"
+  },
+  "A2.1": {
+    "9-10": "09-10-ders-ici-ispanyolcacim-a21.html",
+    "13-14": "13-14-ders-ici-etkinlik.html",
+    "29-30": "29-30-ders-ici.html",
+    "31-32": "31-32-ders-ici.html",
+    "7-8": "7-8-ders-ici-etkinlik.html"
+  },
+  "A2.2": {
+    "9-10": "09-10-ders-ici-ispanyolcacim-a22.html",
+    "25-26": "25-26-ders-ici.html",
+    "27-28": "27-28-ders-ici.html",
+    "29-30": "29-30-ders-ici.html",
+    "31-32": "31-32-ders-ici.html",
+    "7-8": "7-8-ders-ici.html"
+  },
+  "B1.1": {
+    "9-10": "09-10-ders-ici-ispanyolcacim-b11.html",
+    "11-12": "b11-7-8-ders-ici.html"
+  }
+};
 
 function parseTrackerHomeworkTitle(title){
   const label = String(title || '').toLocaleLowerCase('tr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll('ı','i');
@@ -1782,6 +1888,7 @@ function renderTrackerResults(data){
 
   const results = document.getElementById('trackerResults');
   results.classList.add('show');
+  updatePortalBreadcrumbs('tracker');
   setTimeout(() => results.scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
@@ -2336,113 +2443,101 @@ function renderQuizletStrip(sets){
     </div>`).join('');
 }
 
+function renderTrackerLessonCard(level,lesson,week,rows,extras='',fallbackTitle=''){
+  const lessonKey=String(lesson||'').replace('+','-').replace(/\b0(\d)/g,'$1');
+  const noteFile=trackerClassroomFiles[level]?.[lessonKey];
+  const repo=trackerHomeworkRepos[level]||level.toLowerCase()+'-tareas';
+  const noteUrl=noteFile?'https://ispanyolcacim.github.io/'+repo+'/'+noteFile:'';
+  const note=noteUrl
+    ? `<a class="tracker-note-link" href="${escapeHtmlAttr(noteUrl)}" data-note-level="${escapeHtmlAttr(level)}" data-note-lesson="${escapeHtmlAttr(lessonKey)}"><span class="tracker-note-icon" aria-hidden="true">📖</span><strong>Ders notun</strong><span>Ders içi etkinlik</span><b>Notunu aç →</b></a>`
+    : '<div class="tracker-note-unavailable"><span class="tracker-note-icon" aria-hidden="true">📖</span><strong>Ders notun</strong><span>Bu dersin notu henüz eklenmedi.</span></div>';
+  const weekLabel=week?`${week}. Hafta ${level}`:level;
+  const lessonLabel=lesson?`${lesson}. Ders`:fallbackTitle||'Diğer çalışmalar';
+  return `<article class="tracker-task tracker-lesson-card" data-lesson="${escapeHtmlAttr(lesson)}" aria-label="${escapeHtmlAttr(level+' '+lessonLabel)}">
+    <header class="tracker-lesson-meta"><span class="tracker-lesson-week">📌 ${escapeHtml(weekLabel)}</span><h4>${escapeHtml(lessonLabel)}</h4></header>
+    <div class="tracker-lesson-notes">${note}</div>
+    <section class="tracker-lesson-homework" aria-label="Ödevlerin ve sonuçların"><h5>Ödevlerin ve sonuçların</h5>${rows||'<p class="tracker-no-assignment">Bu ders için henüz ödev görünmüyor.</p>'}${extras}</section>
+  </article>`;
+}
+
 function renderTrackerTasks(filter){
-  const list = document.getElementById('trackerTaskList');
-  const level = trackerHomeworkLevel;
-  const preparations = trackerQuizletPreparations[level] || {};
-  const assignments = trackerAssignments.map(item => ({item,details:trackerHomeworkDetails(level,item.title)}));
-  const lessonWeeks = new Map();
-  for(const {details} of assignments){
-    if(details?.week) lessonWeeks.set(details.lessonKey,details.week);
+  const list=document.getElementById('trackerTaskList');
+  const level=trackerHomeworkLevel;
+  const preparations=trackerQuizletPreparations[level]||{};
+  const assignments=trackerAssignments.map(item=>({item,details:trackerHomeworkDetails(level,item.title)}));
+  const lessonWeeks=new Map();
+  for(const {details}of assignments)if(details?.week)lessonWeeks.set(details.lessonKey,details.week);
+  const cards=new Map();
+  for(const {item,details}of assignments){
+    const file=trackerHomeworkFile(level,details);
+    const part=details?trackerHomeworkPart(level,details,file):'';
+    const lesson=details?details.lessonKey.replace('-','+'):'';
+    const week=details?.week||lessonWeeks.get(details?.lessonKey)||details?.lessonWeek;
+    const type={dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video',dele:'DELE Dinleme'}[details?.type]||'';
+    const activityTitle=`${lesson}. Ders${type?' '+type:''}`;
+    const buttonText=type==='Video'?`${lesson}. Ders (Video Ödevi)`:part?`${lesson}. Ders (${part}. Kısım) Ödevine Git`:`${activityTitle} Ödevine Git`;
+    const key=lesson?`${week}/${lesson}`:item;
+    if(!cards.has(key))cards.set(key,{lesson,week,title:item.title||'',entries:[]});
+    cards.get(key).entries.push({item,file,part,type,buttonText});
   }
-
-  const cards = new Map();
-  for(const {item,details} of assignments){
-    const file = trackerHomeworkFile(level,details);
-    const part = details ? trackerHomeworkPart(level,details,file) : '';
-    const lesson = details ? details.lessonKey.replace('-','+') : '';
-    const week = details?.week || lessonWeeks.get(details?.lessonKey) || details?.lessonWeek;
-    const type = {dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video',dele:'DELE Dinleme'}[details?.type] || '';
-    const lessonTitle = `${lesson}. Ders`;
-    const activityTitle = type ? `${lessonTitle} ${type}` : lessonTitle;
-    const title = lesson ? `${week}. Hafta ${level} ${lessonTitle}` : item.title || '';
-    const buttonText = type === 'Video' ? `${lessonTitle} (Video Ödevi)` : part ? `${lessonTitle} (${part}. Kısım) Ödevine Git` : `${activityTitle} Ödevine Git`;
-    const cardKey = lesson ? `${week}/${lesson}` : item;
-    if(!cards.has(cardKey)){
-      cards.set(cardKey,{title,lesson,entries:[]});
-    }
-    cards.get(cardKey).entries.push({item,file,part,type,buttonText});
-  }
-
-  const shownPreparations = new Set();
-  const rowOrder = ({part,type}) => part ? Number(part) : type ? Number.MAX_SAFE_INTEGER : 0;
-  const renderedCards = Array.from(cards.values(), ({title,lesson,entries}) => {
-    const visibleEntries = entries.filter(({item}) => filter === 'all' || item.status === filter);
-    if(!visibleEntries.length) return null;
-
-    const grouped = entries.length > 1 || Boolean(entries[0].part) || entries[0].type === 'Video';
-    const singleType = grouped ? '' : entries[0].type;
-    const headingText = lesson ? `${title}${singleType ? ` ${singleType}` : ''} Ödevi` : title;
-    const heading = `<div class="tracker-task-title"><span aria-hidden="true">📌</span> ${escapeHtml(headingText)}</div>`;
-    const rows = visibleEntries.sort((a,b) => rowOrder(a)-rowOrder(b)).map(row => {
-      const rowLabel = row.part
-        ? `${row.part}. Kısım${row.type ? ` · ${row.type}` : ''}`
-        : `${row.type || 'Ders'} Ödevi${row.type === 'Video' ? ':' : ''}`;
-      const rowHeading = grouped ? `<div class="tracker-task-part">${escapeHtml(rowLabel)}</div>` : heading;
-      return renderTrackerTaskRow(level,row,rowHeading);
+  const shown=new Set();
+  const rowOrder=({part,type})=>part?Number(part):type?Number.MAX_SAFE_INTEGER:0;
+  const rendered=[];
+  for(const {lesson,week,title,entries}of cards.values()){
+    const visible=entries.filter(({item})=>filter==='all'||item.status===filter);
+    if(!visible.length)continue;
+    const rows=visible.sort((a,b)=>rowOrder(a)-rowOrder(b)).map(row=>{
+      const label=row.part?`${row.part}. Kısım${row.type?' · '+row.type:''}`:`${row.type||'Ders'} Ödevi`;
+      return renderTrackerTaskRow(level,row,`<div class="tracker-task-part">${escapeHtml(label)}</div>`);
     }).join('');
-    const preparation = preparations[lesson];
-    const quizletStrip = preparation && !shownPreparations.has(lesson) ? renderQuizletStrip(preparation) : '';
-    if(preparation) shownPreparations.add(lesson);
-    const chatNotice = level === 'A1.2' && lesson === '5+6'
-      ? '<div class="tracker-chat-notice" role="note">💬 <strong>Artık “-yor” zamanını öğrendiğimize göre</strong>, gün içerisinde ne yaptığınızı gösteren fotoğraflarla 📸 birlikte bunları anlatan İspanyolca cümleler yazarak WhatsApp üzerinden minik minik İspanyolca sohbet etmeye başlayabiliriz! 🇪🇸😊</div>'
-      : '';
-    const html = `
-      <div class="tracker-task">
-        ${grouped ? heading : ''}
-        ${chatNotice}
-        ${rows}
-        ${quizletStrip}
-      </div>`;
-    return {lesson,html};
-  }).filter(Boolean);
-
-  if(filter === 'all'){
-    const remaining = Object.entries(preparations)
-      .filter(([lesson]) => !shownPreparations.has(lesson))
-      .sort(([a],[b]) => parseInt(a,10)-parseInt(b,10));
-    for(const [lesson,sets] of remaining){
-      const html = `<div class="tracker-task"><div class="tracker-task-title">${escapeHtml(lesson)} · Quizlet çalışması</div>${renderQuizletStrip(sets)}</div>`;
-      const nextCard = level === 'A2.2'
-        ? renderedCards.findIndex(card => parseInt(card.lesson,10) > parseInt(lesson,10))
-        : -1;
-      renderedCards.splice(nextCard < 0 ? renderedCards.length : nextCard,0,{lesson,html});
+    const sets=preparations[lesson];
+    const quizlet=sets&&!shown.has(lesson)?renderQuizletStrip(sets):'';
+    if(sets)shown.add(lesson);
+    const notice=level==='A1.2'&&lesson==='5+6'
+      ? '<div class="tracker-chat-notice" role="note">💬 <strong>Artık “-yor” zamanını öğrendiğimize göre</strong>, gün içerisinde ne yaptığınızı gösteren fotoğraflarla 📸 birlikte bunları anlatan İspanyolca cümleler yazarak WhatsApp üzerinden minik minik İspanyolca sohbet etmeye başlayabiliriz! 🇪🇸😊</div>':'';
+    rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,notice+rows,quizlet,title)});
+  }
+  if(filter==='all'){
+    for(const[lesson,sets]of Object.entries(preparations)){
+      if(shown.has(lesson))continue;
+      const week=Math.ceil(parseInt(lesson,10)/4);
+      rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,'',renderQuizletStrip(sets))});
+    }
+    const included=new Set(rendered.map(card=>card.lesson));
+    for(const lessonKey of Object.keys(trackerClassroomFiles[level]||{})){
+      const lesson=lessonKey.replace('-','+');
+      if(included.has(lesson))continue;
+      rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,Math.ceil(parseInt(lesson,10)/4),'' )});
     }
   }
-  const html = renderedCards.map(card => card.html).join('');
-  list.innerHTML = html || '<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
+  rendered.sort((a,b)=>(parseInt(a.lesson,10)||Number.MAX_SAFE_INTEGER)-(parseInt(b.lesson,10)||Number.MAX_SAFE_INTEGER));
+  list.innerHTML=rendered.map(card=>card.html).join('')||'<div class="tracker-empty">Bu bölümde gösterilecek ödev yok. 🌸</div>';
 }
 
 function renderTrackerTaskRow(level,{item,file,buttonText,type},heading){
-  const status = item.status || 'missing';
-  const statusText = status === 'completed' ? '✅ Tamamlandı' : '❌ Eksik';
-  const statusBadge = status === 'pending' ? '' : `<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
-  const text = String(item.value ?? '');
-  const score = findHomeworkScore(text);
-  const result = score
-    ? `${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">📊 Sonuç ${score.earned}/${score.maximum}</strong>${escapeHtml(text.slice(score.end))}`
-    : escapeHtml(text);
-  const videoResult = type === 'Video' && !score
-    ? `<strong class="tracker-task-result">📊 Sonuç</strong>${result ? `<br>${result}` : ' —'}`
-    : result;
-  const value = videoResult ? `<div class="tracker-task-value">${videoResult}</div>` : '';
-  const homeworkNote = '';
-  const repo = trackerHomeworkRepos[level] || level.toLowerCase()+'-tareas';
-  const url = file ? `https://ispanyolcacim.github.io/${repo}/${file}` : '';
-  const homeworkLink = url ? `<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>` : '';
-  const readingLink = level === 'B1.1' && file === 'b11-1-2-ida.html'
+  const status=item.status||'missing';
+  const statusText=status==='completed'?'✅ Tamamlandı':status==='pending'?'⏳ Değerlendirmede':'❌ Eksik';
+  const badge=`<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
+  const text=String(item.value??'');
+  const score=findHomeworkScore(text);
+  const result=score?`${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">📊 Sonuç ${score.earned}/${score.maximum}</strong>${escapeHtml(text.slice(score.end))}`:escapeHtml(text);
+  const videoResult=type==='Video'&&!score?`<strong class="tracker-task-result">📊 Sonuç</strong>${result?'<br>'+result:' —'}`:result;
+  const value=videoResult?`<div class="tracker-task-value">${videoResult}</div>`:'';
+  const repo=trackerHomeworkRepos[level]||level.toLowerCase()+'-tareas';
+  const url=file?`https://ispanyolcacim.github.io/${repo}/${file}`:'';
+  const link=url?`<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>`:'';
+  const reading=level==='B1.1'&&file==='b11-1-2-ida.html'
     ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MQd2ZwD7x6CE4wZFN8-vSOGIKJOc3tYd/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Frida Kahlo Kitabını Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
-    : level === 'A1.2' && file === '3-4-ida.html'
-      ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MfHh7iX92HN0d5wHq_aCExxzXOH2XBF-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Continentes de la Tierra PDF’ini Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
-      : '';
-  return `
-    <div class="tracker-task-row">
-      <div class="tracker-task-info">${heading}${homeworkNote}${value}</div>
-      ${statusBadge}
-      ${homeworkLink}
-      ${readingLink}
-    </div>`;
+    :level==='A1.2'&&file==='3-4-ida.html'
+      ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MfHh7iX92HN0d5wHq_aCExxzXOH2XBF-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Continentes de la Tierra PDF’ini Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>':'';
+  return `<div class="tracker-assignment"><div class="tracker-assignment-head">${heading}${badge}</div>${value}${link}${reading}</div>`;
 }
+
+document.getElementById('trackerTaskList').addEventListener('click',event=>{
+  const note=event.target.closest('[data-note-level][data-note-lesson]');
+  if(!note||event.button||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();openTrackerLessonNote(note.dataset.noteLevel,note.dataset.noteLesson);
+});
 
 function showTrackerMessage(text,type){
   const el = document.getElementById('trackerMessage');
@@ -2475,10 +2570,13 @@ function toggleTopic(btn){
   topic.classList.toggle('open');
 }
 
+if(new URLSearchParams(location.search).get("view")==="student")openTracker();
+else updatePortalBreadcrumbs("home");
 </script>
 
 </body>
 </html>
+
 
 
 

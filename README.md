@@ -33,3 +33,10 @@ Seviye HTML dosyalarını doğrudan düzenleyin; kullanıcı yeniden istemedikç
 ### Kaynaklar içinde gezinme
 
 Seviye ve Araç Kutusu kartları “İçin tıkla” açıklamasıyla aynı portal sayfasında açılır. Üst çubuktaki Portal ve Ödevlerim düğmeleri, doğrulanmış öğrenci sonuçlarını bellekte koruyarak geri döner. Seviye kaynaklarında Konuları ve Haftalık Çalışma Dosyaları sekmeleri vardır. `seviye-menu.js`, gömülü kaynaklarda yalnızca aynı origin ve doğru üst pencereden gelen bölüm mesajlarını işler. Kişisel kodlar, öğrenci adları ve ödev sonuçları bu gezinme için URL, history veya tarayıcı depolamasına yazılmaz. PDF dosyalarının mevcut Google Drive bağlantıları korunur.
+
+
+### Ders ve ödev kartları
+
+Öğrenci sonuçlarında 1. bölüm “Konu ve tekrar alanın + Haftalık Çalışma Dosyaların”, 2. bölüm “Ders notların ve Ödevlerin” olarak görünür. Her ders kartı hafta/seviye ve ders numarası, hazır ders içi etkinliğe bağlı Ders notun alanı, ödevler ve sonuçlar olmak üzere üç sütundan oluşur. Hazır notu bulunmayan dersler açıkça belirtilir; yanlış bir etkinliğe yönlendirilmez. Not bağlantıları yalnızca güncel herkese açık seviye depolarından doğrulanır. Notları aynı portal içinde açmak kişisel ödev durumunu değiştirmez.
+
+`portal-breadcrumbs.js`, Ana sayfa → Portal → Öğrenci Portalı → Seviye → İçerik yolunu sağlar. Hem portalın iç kaynak görünümünde hem doğrudan açılan seviye sayfalarında kullanılır. Kişisel öğrenci bilgileri bu gezinme yoluna veya history kaydına eklenmez.

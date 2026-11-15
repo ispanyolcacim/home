@@ -131,6 +131,7 @@
 
   const panels = ['sw-choose', 'sw-files', 'sw-empty'];
   function showPanel(id) {
+    window.portalBreadcrumbs?.set({view:'resource',level,section:id==='sw-choose'?'choose':id==='sw-files'?'weeks':'topics'});
     root.style.display = '';
     document.body.classList.add('sw-menu-active');
     for (const pid of panels) document.getElementById(pid).hidden = pid !== id;
@@ -139,6 +140,7 @@
   }
   document.getElementById('sw-open-weeks').addEventListener('click', () => showPanel('sw-files'));
   function showTopics() {
+    window.portalBreadcrumbs?.set({view:'resource',level,section:'topics'});
     if (level === 'B1.1') {
       showPanel('sw-empty');
       return;
@@ -151,6 +153,11 @@
   document.getElementById('sw-open-topics').addEventListener('click', showTopics);
   root.querySelectorAll('[data-sw-back]').forEach(button => button.addEventListener('click', () => showPanel('sw-choose')));
   topicReturn.addEventListener('click', () => showPanel('sw-choose'));
+  window.addEventListener('ispanyolcacim-course-nav',event=>{
+    if(event.detail?.section==='choose')showPanel('sw-choose');
+    else if(event.detail?.section==='topics')showTopics();
+    else if(event.detail?.section==='weeks')showPanel('sw-files');
+  });
   if(embedded){
     const style = document.createElement('style');
     style.textContent = '.topbar,.sw-top,.sw-mini-back,.sw-topic-return{display:none!important}.sw-inner{padding-top:24px;padding-bottom:40px}';
@@ -174,3 +181,4 @@
     window.parent.postMessage({type:'ispanyolcacim-resource-ready'},location.origin);
   }else showPanel('sw-choose');
 })();
+

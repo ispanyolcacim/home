@@ -57,3 +57,10 @@ User instruction, 15 November 2026: maintain 365 distinct vocabulary entries tar
 User instruction, 15 November 2026: omit visible level and word-kind badges from the daily word card, including “A2+ · B1.1” and “fiil”. Keep the word bank, original calendar, examples, translations and audio controls unchanged.
 
 
+
+
+## Student lesson dashboard layout
+
+User instruction, 15 November 2026: use prominent numbered headings “📚 Konu ve tekrar alanın + Haftalık Çalışma Dosyaların” and “📚 Ders notların ve Ödevlerin”. Each lesson card has three areas: week and level on one line with the lesson pair below; a separate Ders notun box linking to that exact lesson’s existing classroom activity; and homework entries with their statuses and results. Preserve every existing homework part, reading/PDF attachment, Quizlet preparation, score and server verification behavior. If no classroom activity exists, label the missing note clearly instead of inventing a link. The public student-note mapping is explicitly authorized and must be verified from public repository files, independently of the encrypted teacher dashboard.
+
+Provide clickable pill breadcrumbs “Ana sayfa → Portal → Öğrenci Portalı → Level → Content” on the portal and all five level pages. Keep navigation in the same portal page when entered from a verified student dashboard, preserving the in-memory student results. Never put names, codes or homework results in breadcrumbs, URLs or history state.
