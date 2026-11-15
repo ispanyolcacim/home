@@ -1,39 +1,1042 @@
 <!DOCTYPE html>
-<html lang="tr"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-<title>İspanyolca Araç Kutusu · Şifre — İspanyolcacım</title>
-<style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#fff8f2;color:#20304a;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;place-items:center;padding:24px}
-.panel{background:white;width:min(100%,450px);border-radius:26px;box-shadow:0 16px 50px #20304a16;border:1px solid #fae5ee;padding:36px;text-align:center}
-.brand{font-size:14px;font-weight:800;color:#b44875;margin-bottom:14px}.emoji{font-size:44px;margin:8px auto 18px}h1{font-size:26px;line-height:1.2;margin:0 0 12px}p{font-size:15px;line-height:1.6;color:#667085;margin:0 0 23px}
-input{font:inherit;display:block;width:100%;padding:15px 16px;border-radius:14px;border:2px solid #eee5e8;margin-bottom:13px;outline-offset:2px}
-button{font:inherit;font-weight:800;border:0;border-radius:14px;background:#f196ba;color:#20304a;padding:14px 20px;cursor:pointer;width:100%;}
-button:disabled{opacity:.6;cursor:wait}.error{color:#b72d4a;margin-top:15px;font-weight:600;min-height:20px}.back{font-size:14px;color:#a33a6d;display:inline-block;margin-top:22px;text-decoration:none;font-weight:700}
+<html lang="tr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><title>İspanyolca Araç Kutusu — İspanyolcacım</title><style>
+:root{
+  --ink:#20304a;
+  --muted:#68778d;
+  --bg:#fffaf5;
+  --white:#ffffff;
+  --pink:#ff82b0;
+  --pink-soft:#fff0f5;
+  --blue:#72c4ff;
+  --blue-soft:#eef8ff;
+  --green:#82d8a5;
+  --green-soft:#effbf4;
+  --purple:#ad93f7;
+  --purple-soft:#f4f0ff;
+  --orange:#ffb65f;
+  --orange-soft:#fff4e5;
+  --yellow:#ffd76c;
+  --yellow-soft:#fff9df;
+  --shadow:0 14px 34px rgba(32,48,74,.10);
+  --shadow2:0 24px 60px rgba(32,48,74,.15);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(255,130,176,.11), transparent 24%),
+    radial-gradient(circle at 92% 8%, rgba(114,196,255,.12), transparent 24%),
+    radial-gradient(circle at 12% 92%, rgba(130,216,165,.10), transparent 24%),
+    radial-gradient(circle at 88% 88%, rgba(173,147,247,.10), transparent 24%),
+    var(--bg);
+  min-height:100vh;
+}
+
+button{
+  font:inherit;
+}
+
+/* ---------- SCREEN SYSTEM ---------- */
+.screen{
+  display:none;
+  min-height:100vh;
+}
+.screen.active{
+  display:block;
+}
+
+/* ---------- HOME ---------- */
+.home{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.home-head{
+  text-align:center;
+  padding:68px 24px 30px;
+}
+
+.brand{
+  display:inline-block;
+  padding:9px 15px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  font-size:14px;
+  font-weight:900;
+}
+
+.home-head h1{
+  margin:18px 0 10px;
+  font-size:clamp(40px,6vw,82px);
+  line-height:1.02;
+}
+
+.home-head p{
+  max-width:750px;
+  margin:0 auto;
+  color:var(--muted);
+  font-weight:700;
+  font-size:clamp(17px,2vw,21px);
+}
+
+.levels{
+  width:min(1150px,calc(100% - 36px));
+  margin:28px auto 70px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+
+.level-card{
+  border:none;
+  cursor:pointer;
+  position:relative;
+  min-height:245px;
+  border-radius:34px;
+  padding:30px;
+  text-align:left;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+  transition:.22s ease;
+  overflow:hidden;
+}
+
+.level-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow2);
+}
+
+.level-card::after{
+  content:"→";
+  position:absolute;
+  right:28px;
+  bottom:23px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.78);
+  font-size:30px;
+  font-weight:900;
+}
+
+.level-card .big{
+  display:block;
+  font-size:clamp(48px,5vw,70px);
+  font-weight:1000;
+  line-height:1;
+}
+
+.level-card .label{
+  display:block;
+  margin-top:12px;
+  font-size:20px;
+  font-weight:900;
+}
+
+.level-card .desc{
+  display:block;
+  margin-top:8px;
+  color:#617087;
+  font-weight:700;
+  max-width:82%;
+}
+
+.a11{background:linear-gradient(145deg,#fff0f5,#ffdce9)}
+.a12{background:linear-gradient(145deg,#edf8ff,#d9efff)}
+.a21{background:linear-gradient(145deg,#eefbf3,#d8f5e4)}
+.a22{background:linear-gradient(145deg,#f4f0ff,#e7deff)}
+
+.home-foot{
+  margin-top:auto;
+  text-align:center;
+  padding:22px;
+  color:#6b778b;
+  font-weight:800;
+}
+
+/* ---------- LEVEL PAGE ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding:14px 22px;
+  background:rgba(255,250,245,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(32,48,74,.08);
+}
+
+.back{
+  border:none;
+  background:#fff;
+  border-radius:999px;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:900;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+}
+
+.top-title{
+  font-weight:1000;
+}
+
+.hero{
+  text-align:center;
+  padding:48px 24px 30px;
+}
+
+.hero .pill{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  font-size:13px;
+  font-weight:900;
+}
+
+.hero h2{
+  margin:16px 0 8px;
+  font-size:clamp(38px,5vw,66px);
+}
+
+.hero p{
+  max-width:800px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
+  font-weight:700;
+}
+
+/* ---------- ACCORDION LIST ---------- */
+.topic-list{
+  width:min(1180px,calc(100% - 36px));
+  margin:20px auto 70px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.topic{
+  background:#fff;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  border:1px solid rgba(32,48,74,.07);
+}
+
+.topic-btn{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  background:transparent;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:20px 22px;
+  text-align:left;
+}
+
+.topic-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.topic-num{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-weight:900;
+}
+
+.topic-title{
+  font-size:21px;
+  font-weight:1000;
+}
+
+.topic-sub{
+  display:block;
+  margin-top:4px;
+  color:#748196;
+  font-size:13px;
+  font-weight:700;
+}
+
+.arrow{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#f6f7fa;
+  font-size:20px;
+  font-weight:900;
+  transition:.2s ease;
+}
+
+.topic.open .arrow{
+  transform:rotate(180deg);
+}
+
+.topic-content{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .45s ease, opacity .25s ease;
+}
+
+.topic.open .topic-content{
+  max-height:5000px;
+  opacity:1;
+}
+
+.inner{
+  padding:0 22px 24px;
+}
+
+/* ---------- DETAIL ELEMENTS ---------- */
+.section-box{
+  border-radius:22px;
+  padding:18px;
+  background:#fbfbfd;
+  border:1px solid rgba(32,48,74,.07);
+  margin-top:14px;
+}
+
+.section-box h3{
+  margin:0 0 12px;
+  font-size:19px;
+}
+
+.alpha-grid{
+  display:grid;
+  grid-template-columns:repeat(9,minmax(0,1fr));
+  gap:8px;
+}
+
+.letter{
+  text-align:center;
+  background:#fff;
+  border-radius:14px;
+  padding:10px 4px;
+  box-shadow:0 5px 14px rgba(32,48,74,.06);
+  font-weight:900;
+}
+
+.letter span{
+  display:block;
+  font-size:12px;
+  color:#6e7b8f;
+  margin-top:4px;
+}
+
+.sound-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.sound{
+  background:#fff;
+  border-radius:18px;
+  padding:14px;
+  border-left:5px solid var(--pink);
+}
+
+.sound strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.sound small{
+  color:#65758b;
+  font-weight:700;
+}
+
+.verb-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:6px;
+  font-size:14px;
+}
+
+.verb-table th,.verb-table td{
+  padding:10px 8px;
+  border-radius:10px;
+  text-align:center;
+  background:#f7f8fb;
+}
+
+.verb-table th{
+  font-weight:1000;
+}
+
+.rule-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.rule{
+  border-radius:20px;
+  padding:16px;
+  background:#fff;
+  border:1px solid rgba(32,48,74,.07);
+}
+
+.rule .rnum{
+  display:inline-grid;
+  width:32px;
+  height:32px;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+  background:var(--ink);
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.rule h4{
+  margin:0 0 8px;
+  font-size:17px;
+}
+
+.rule p{
+  margin:0;
+  color:#5f6f86;
+  font-weight:700;
+  line-height:1.55;
+}
+
+.mini-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+
+.chip{
+  display:inline-block;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#f4f6f9;
+  font-size:13px;
+  font-weight:900;
+}
+
+.alert{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:16px;
+  background:var(--yellow-soft);
+  border:1px solid rgba(255,215,108,.7);
+  font-weight:900;
+}
+
+.usage-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.usage-card{
+  background:#fff;
+  border:1px solid rgba(32,48,74,.07);
+  border-radius:18px;
+  padding:14px;
+}
+.usage-card strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:15px;
+}
+.usage-card p{
+  margin:0;
+  color:#607087;
+  font-size:13px;
+  line-height:1.5;
+  font-weight:700;
+}
+.example-box{
+  margin-top:8px;
+  padding:9px 11px;
+  border-radius:13px;
+  background:#f7f8fb;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.45;
+}
+.quick-profile{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.profile-line{
+  background:#fff;
+  border-radius:16px;
+  padding:12px 14px;
+  border:1px solid rgba(32,48,74,.07);
+}
+.profile-line b{
+  display:block;
+  margin-bottom:4px;
+}
+
+.pink{border-top:6px solid var(--pink)}
+.blue{border-top:6px solid var(--blue)}
+.green{border-top:6px solid var(--green)}
+.purple{border-top:6px solid var(--purple)}
+.orange{border-top:6px solid var(--orange)}
+.yellow{border-top:6px solid var(--yellow)}
+
+.placeholder{
+  text-align:center;
+  padding:40px 20px 10px;
+  color:#758197;
+  font-weight:800;
+}
+
+/* ---------- OTHER LEVELS ---------- */
+.empty-wrap{
+  width:min(850px,calc(100% - 36px));
+  margin:80px auto;
+  background:#fff;
+  box-shadow:var(--shadow);
+  border-radius:30px;
+  padding:44px 30px;
+  text-align:center;
+}
+
+.empty-wrap .emoji{
+  font-size:56px;
+}
+
+.empty-wrap h3{
+  margin:12px 0 6px;
+  font-size:34px;
+}
+
+.empty-wrap p{
+  margin:0;
+  color:#6a788d;
+  font-weight:700;
+}
+
+
+/* ---------- PASSWORD MODAL ---------- */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(32,48,74,.34);
+  backdrop-filter:blur(7px);
+}
+.modal.show{display:flex}
+.modal-card{
+  width:min(430px,100%);
+  background:#fff;
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 30px 90px rgba(32,48,74,.28);
+  text-align:center;
+  border:1px solid rgba(32,48,74,.08);
+}
+.modal-icon{
+  width:68px;
+  height:68px;
+  margin:0 auto 12px;
+  border-radius:22px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,var(--pink-soft),var(--purple-soft));
+  font-size:34px;
+}
+.modal-card h3{
+  margin:6px 0 7px;
+  font-size:27px;
+}
+.modal-card p{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-weight:700;
+  line-height:1.5;
+}
+.password-input{
+  width:100%;
+  border:2px solid #e8ebf1;
+  border-radius:16px;
+  padding:14px 15px;
+  font-size:17px;
+  outline:none;
+  color:var(--ink);
+  background:#fbfcfe;
+}
+.password-input:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 4px rgba(173,147,247,.12);
+}
+.modal-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.modal-btn{
+  border:none;
+  border-radius:15px;
+  padding:12px 14px;
+  font-weight:900;
+  cursor:pointer;
+}
+.modal-btn.cancel{
+  background:#f3f5f8;
+  color:var(--ink);
+}
+.modal-btn.enter{
+  background:var(--ink);
+  color:white;
+}
+.password-error{
+  display:none;
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:13px;
+  background:#fff0f2;
+  color:#b23349;
+  font-size:13px;
+  font-weight:900;
+}
+.password-error.show{display:block}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .levels{grid-template-columns:1fr}
+  .alpha-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .sound-grid{grid-template-columns:1fr 1fr}
+  .rule-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:620px){
+  .home-head{padding-top:42px}
+  .level-card{min-height:205px}
+  .topic-title{font-size:18px}
+  .alpha-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sound-grid{grid-template-columns:1fr}
+  .usage-grid,.quick-profile{grid-template-columns:1fr}
+  .verb-table{font-size:12px}
+  .verb-table th,.verb-table td{padding:8px 4px}
+  .top-title{font-size:14px}
+}
 </style></head><body>
-<main class="panel"><div class="brand">🇪🇸 @ispanyolcacim · Profe Hazel</div><div class="emoji">🧰</div>
-<h1>İspanyolca Araç Kutusu</h1><p>Tüm seviyeler için ortak başvuru alanı. Devam etmek için şifreni gir.</p>
-<form id="login"><input type="password" id="password" autocomplete="off" placeholder="Araç Kutusu şifresi" required aria-label="Araç Kutusu şifresi"><button id="submit" type="submit">Araç Kutusunu Aç</button></form>
-<div class="error" id="error" role="alert" aria-live="polite"></div><a class="back" href="ogrenci-portali.html">← Öğrenci Portalına Dön</a></main>
+<section id="toolbox" class="screen active">
+  <div class="topbar">
+    <button class="back" onclick="openScreen('home')">← Ana Sayfa</button>
+    <div class="top-title">🧰 İspanyolca Araç Kutusu</div>
+    <div></div>
+  </div>
+
+  <div class="hero">
+    <div class="pill">✨ TÜM SEVİYELER İÇİN ORTAK BAŞVURU ALANI</div>
+    <h2>İspanyolca Araç Kutusu</h2>
+    <p>Seviye fark etmeksizin dönüp bakabileceğin temel konu özetleri.</p>
+  </div>
+
+  <div class="topic-list">
+
+    <!-- TOOLBOX 1 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">1</span>
+          <div>
+            <div class="topic-title">📍 Yer-Yön Zarfları ve Edatları</div>
+            <span class="topic-sub">¿Dónde está? · en · debajo de · delante de · cerca de...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+
+          <div class="section-box">
+            <h3>🧭 Temel Yapı</h3>
+            <div class="alert">
+              <strong>SUJETO + ESTAR + EXPRESIÓN DE LUGAR + LUGAR / OBJETO</strong><br>
+              El gato está debajo de la mesa. → Kedi masanın altında.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>📌 En Temel Yer İfadeleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>en</strong><p>-de / -da, içinde</p><div class="example-box">Estoy en casa. → Evdeyim.</div></div>
+              <div class="usage-card"><strong>dentro de</strong><p>içinde</p><div class="example-box">El móvil está dentro del bolso.</div></div>
+              <div class="usage-card"><strong>fuera de</strong><p>dışında</p><div class="example-box">El perro está fuera de la casa.</div></div>
+              <div class="usage-card"><strong>encima de / sobre</strong><p>üstünde / üzerinde</p><div class="example-box">El libro está encima de la mesa.</div></div>
+              <div class="usage-card"><strong>debajo de / bajo</strong><p>altında</p><div class="example-box">El gato está debajo de la cama.</div></div>
+              <div class="usage-card"><strong>delante de</strong><p>önünde</p><div class="example-box">El coche está delante de la casa.</div></div>
+              <div class="usage-card"><strong>detrás de</strong><p>arkasında</p><div class="example-box">El jardín está detrás de la casa.</div></div>
+              <div class="usage-card"><strong>al lado de / junto a</strong><p>yanında / bitişiğinde</p><div class="example-box">La farmacia está al lado del banco.</div></div>
+              <div class="usage-card"><strong>enfrente de</strong><p>karşısında</p><div class="example-box">El banco está enfrente del supermercado.</div></div>
+              <div class="usage-card"><strong>a la derecha de</strong><p>sağında</p><div class="example-box">El banco está a la derecha del café.</div></div>
+              <div class="usage-card"><strong>a la izquierda de</strong><p>solunda</p><div class="example-box">La farmacia está a la izquierda del banco.</div></div>
+              <div class="usage-card"><strong>cerca de / lejos de</strong><p>yakınında / uzağında</p><div class="example-box">Vivo cerca de la universidad.</div></div>
+              <div class="usage-card"><strong>entre</strong><p>arasında</p><div class="example-box">La farmacia está entre el banco y el supermercado.</div></div>
+              <div class="usage-card"><strong>en medio de</strong><p>ortasında</p><div class="example-box">La mesa está en medio de la habitación.</div></div>
+              <div class="usage-card"><strong>en el centro de</strong><p>merkezinde</p><div class="example-box">Hay una fuente en el centro de la plaza.</div></div>
+              <div class="usage-card"><strong>alrededor de</strong><p>etrafında</p><div class="example-box">Hay árboles alrededor de la casa.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🧭 Tek Başına Kullanılabilen Yer Zarfları</h3>
+            <div class="mini-chips">
+              <span class="chip">aquí → burada</span>
+              <span class="chip">ahí → orada</span>
+              <span class="chip">allí → orada</span>
+              <span class="chip">allá → ötede</span>
+              <span class="chip">acá → burada</span>
+              <span class="chip">arriba → yukarıda</span>
+              <span class="chip">abajo → aşağıda</span>
+              <span class="chip">dentro → içeride</span>
+              <span class="chip">fuera → dışarıda</span>
+              <span class="chip">delante → önde</span>
+              <span class="chip">detrás → arkada</span>
+              <span class="chip">cerca → yakında</span>
+              <span class="chip">lejos → uzakta</span>
+            </div>
+            <div class="alert">⚠️ Ardından isim geliyorsa çoğunlukla <strong>de</strong> gerekir: fuera de, cerca de, delante de...<br><strong>de + el = del</strong> · <strong>a + el = al</strong></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 2 -->
+    <article class="topic blue">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">2</span>
+          <div>
+            <div class="topic-title">🔢 Sayılar 0–1000 + Sayı Oluşturma Mantığı</div>
+            <span class="topic-sub">cero · diez · veinte · treinta · cien · mil</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>0–15 · Temel Ezber</h3>
+            <div class="mini-chips">
+              <span class="chip">0 cero</span><span class="chip">1 uno</span><span class="chip">2 dos</span><span class="chip">3 tres</span>
+              <span class="chip">4 cuatro</span><span class="chip">5 cinco</span><span class="chip">6 seis</span><span class="chip">7 siete</span>
+              <span class="chip">8 ocho</span><span class="chip">9 nueve</span><span class="chip">10 diez</span><span class="chip">11 once</span>
+              <span class="chip">12 doce</span><span class="chip">13 trece</span><span class="chip">14 catorce</span><span class="chip">15 quince</span>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>16–29 · Birleşik Yazım</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>16–19 → dieci + sayı</strong><div class="example-box">16 dieciséis<br>17 diecisiete<br>18 dieciocho<br>19 diecinueve</div></div>
+              <div class="usage-card"><strong>20–29 → veinti + sayı</strong><div class="example-box">20 veinte<br>21 veintiuno<br>22 veintidós<br>23 veintitrés<br>26 veintiséis</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>30–99 · “y” Mantığı</h3>
+            <div class="alert"><strong>onluk + y + birlik</strong></div>
+            <div class="mini-chips">
+              <span class="chip">30 treinta</span><span class="chip">40 cuarenta</span><span class="chip">50 cincuenta</span>
+              <span class="chip">60 sesenta</span><span class="chip">70 setenta</span><span class="chip">80 ochenta</span><span class="chip">90 noventa</span>
+            </div>
+            <div class="example-box" style="margin-top:12px;">31 → treinta y uno<br>48 → cuarenta y ocho<br>57 → cincuenta y siete<br>99 → noventa y nueve</div>
+          </div>
+
+          <div class="section-box">
+            <h3>100–1000</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>100 = cien</strong><p>Tam 100.</p><div class="example-box">cien</div></div>
+              <div class="usage-card"><strong>101+ = ciento...</strong><p>100'den sonra sayı devam ediyorsa.</p><div class="example-box">101 ciento uno<br>125 ciento veinticinco</div></div>
+              <div class="usage-card"><strong>200 doscientos</strong><p>300 trescientos · 400 cuatrocientos...</p></div>
+              <div class="usage-card"><strong>500 quinientos</strong><p>700 setecientos · 900 novecientos</p></div>
+              <div class="usage-card"><strong>1000 = mil</strong><div class="example-box">999 novecientos noventa y nueve<br>1000 mil</div></div>
+            </div>
+            <div class="alert">🧠 Büyük sayı oluştururken soldan sağa ilerle: <strong>347 = trescientos cuarenta y siete</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 3 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">3</span>
+          <div>
+            <div class="topic-title">🔗 Bağlaçlar · Conectores</div>
+            <span class="topic-sub">y · o · pero · porque · además · sin embargo...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧩 Temel Bağlaçlar</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>y → ve</strong><div class="example-box">Quiero una manzana y una pera.</div></div>
+              <div class="usage-card"><strong>o → veya</strong><div class="example-box">¿Quieres té o café?</div></div>
+              <div class="usage-card"><strong>ni...ni → ne...ne de</strong><div class="example-box">No quiero ni té ni café.</div></div>
+              <div class="usage-card"><strong>pero → ama</strong><div class="example-box">Quiero ir, pero tengo que estudiar.</div></div>
+              <div class="usage-card"><strong>sino → ama / aksine</strong><div class="example-box">No es blanco, sino negro.</div></div>
+              <div class="usage-card"><strong>porque → çünkü</strong><div class="example-box">No salgo porque estoy enfermo.</div></div>
+              <div class="usage-card"><strong>así que → bu yüzden / öyleyse</strong><div class="example-box">Tengo trabajo, así que no salgo.</div></div>
+              <div class="usage-card"><strong>sin embargo → ancak / buna rağmen</strong><div class="example-box">Estoy cansado; sin embargo, sigo trabajando.</div></div>
+              <div class="usage-card"><strong>además → ayrıca</strong><div class="example-box">Me gusta leer; además, me gusta escribir.</div></div>
+              <div class="usage-card"><strong>mientras → -iken</strong><div class="example-box">Mientras estudio, escucho música.</div></div>
+              <div class="usage-card"><strong>cuando → -dığında</strong><div class="example-box">Cuando llego a casa, descanso.</div></div>
+              <div class="usage-card"><strong>antes de / después de</strong><p>önce / sonra</p><div class="example-box">Antes de salir...<br>Después de trabajar...</div></div>
+              <div class="usage-card"><strong>si → eğer</strong><div class="example-box">Si llueve, no salimos.</div></div>
+              <div class="usage-card"><strong>por lo tanto</strong><p>bu nedenle</p><div class="example-box">Tengo hambre, por lo tanto voy a comer.</div></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>✍️ Yazı Yazarken Kullanışlı İfadeler</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>Giriş</strong><p>En primer lugar...<br>Desde mi punto de vista...<br>Hoy en día...<br>El propósito de este ensayo es...</p></div>
+              <div class="usage-card"><strong>Gelişme</strong><p>Además...<br>Por ejemplo...<br>Por otro lado...<br>En cuanto a...<br>De acuerdo con...</p></div>
+              <div class="usage-card"><strong>Sonuç</strong><p>En conclusión...<br>En resumen...<br>Para concluir...<br>En definitiva...<br>Por estas razones...</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 4 -->
+    <article class="topic purple">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">4</span>
+          <div>
+            <div class="topic-title">❓ Soru Kelimeleri</div>
+            <span class="topic-sub">qué · quién · dónde · cuándo · cómo · cuál · cuánto · por qué</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🧠 Temel Soru Kelimeleri</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué?</strong><p>Ne?</p><div class="example-box">¿Qué haces? → Ne yapıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Quién? / ¿Quiénes?</strong><p>Kim? / Kimler?</p><div class="example-box">¿Quién es? → Kim?</div></div>
+              <div class="usage-card"><strong>¿Dónde?</strong><p>Nerede?</p><div class="example-box">¿Dónde vives? → Nerede yaşıyorsun?</div></div>
+              <div class="usage-card"><strong>¿Adónde?</strong><p>Nereye?</p><div class="example-box">¿Adónde vas? → Nereye gidiyorsun?</div></div>
+              <div class="usage-card"><strong>¿De dónde?</strong><p>Nereden?</p><div class="example-box">¿De dónde eres? → Nerelisin?</div></div>
+              <div class="usage-card"><strong>¿Cuándo?</strong><p>Ne zaman?</p><div class="example-box">¿Cuándo vienes? → Ne zaman geliyorsun?</div></div>
+              <div class="usage-card"><strong>¿Cómo?</strong><p>Nasıl?</p><div class="example-box">¿Cómo estás? → Nasılsın?</div></div>
+              <div class="usage-card"><strong>¿Cuál? / ¿Cuáles?</strong><p>Hangisi / Hangileri?</p></div>
+              <div class="usage-card"><strong>¿Cuánto/a/os/as?</strong><p>Ne kadar / Kaç?</p><div class="example-box">¿Cuántos años tienes?</div></div>
+              <div class="usage-card"><strong>¿Por qué?</strong><p>Neden?</p><div class="example-box">¿Por qué estudias español?</div></div>
+            </div>
+            <div class="alert">✍️ Soru anlamında kullanıldıklarında tildeyi unutma: <strong>qué, quién, dónde, cuándo, cómo, cuál, cuánto, por qué</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 5 -->
+    <article class="topic pink">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">5</span>
+          <div>
+            <div class="topic-title">📅 Günler · Aylar · Tarihler</div>
+            <span class="topic-sub">lunes · enero · 21 de junio · en verano...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>📆 Los días de la semana</h3>
+            <div class="mini-chips">
+              <span class="chip">lunes</span><span class="chip">martes</span><span class="chip">miércoles</span>
+              <span class="chip">jueves</span><span class="chip">viernes</span><span class="chip">sábado</span><span class="chip">domingo</span>
+            </div>
+          </div>
+          <div class="section-box">
+            <h3>🗓️ Los meses</h3>
+            <div class="mini-chips">
+              <span class="chip">enero</span><span class="chip">febrero</span><span class="chip">marzo</span><span class="chip">abril</span>
+              <span class="chip">mayo</span><span class="chip">junio</span><span class="chip">julio</span><span class="chip">agosto</span>
+              <span class="chip">septiembre</span><span class="chip">octubre</span><span class="chip">noviembre</span><span class="chip">diciembre</span>
+            </div>
+          </div>
+          <div class="section-box">
+            <h3>✍️ Tarih Söyleme</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>Hoy es lunes.</strong><p>Bugün pazartesi.</p></div>
+              <div class="usage-card"><strong>Hoy es 21 de junio.</strong><p>Bugün 21 Haziran.</p></div>
+              <div class="usage-card"><strong>Nací el 21 de junio.</strong><p>21 Haziran'da doğdum.</p></div>
+              <div class="usage-card"><strong>Nací en junio / en verano / en 1999.</strong><p>Ay / mevsim / yıl → <strong>en</strong></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 6 -->
+    <article class="topic yellow">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">6</span>
+          <div>
+            <div class="topic-title">🕐 Saatler</div>
+            <span class="topic-sub">Es la una · Son las dos · y cuarto · y media · menos cuarto</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>⏰ Temel Kalıplar</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>¿Qué hora es?</strong><p>Saat kaç?</p></div>
+              <div class="usage-card"><strong>01:00 → Es la una.</strong></div>
+              <div class="usage-card"><strong>02:00 → Son las dos.</strong></div>
+              <div class="usage-card"><strong>03:15 → Son las tres y cuarto.</strong></div>
+              <div class="usage-card"><strong>04:30 → Son las cuatro y media.</strong></div>
+              <div class="usage-card"><strong>05:45 → Son las seis menos cuarto.</strong></div>
+              <div class="usage-card"><strong>en punto</strong><p>tam</p></div>
+              <div class="usage-card"><strong>de la mañana / tarde / noche</strong><p>sabah / öğleden sonra / gece</p></div>
+            </div>
+            <div class="alert">📌 Sadece saat 1 için <strong>Es la una</strong>; diğerlerinde <strong>Son las...</strong></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 7 -->
+    <article class="topic orange">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">7</span>
+          <div>
+            <div class="topic-title">🎨 Renkler</div>
+            <span class="topic-sub">rojo · amarillo · verde · azul · negro · blanco...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>🌈 Los Colores</h3>
+            <div class="mini-chips">
+              <span class="chip">rojo → kırmızı</span>
+              <span class="chip">amarillo → sarı</span>
+              <span class="chip">naranja → turuncu</span>
+              <span class="chip">rosa → pembe</span>
+              <span class="chip">morado / violeta → mor</span>
+              <span class="chip">verde → yeşil</span>
+              <span class="chip">azul → mavi</span>
+              <span class="chip">azul claro → açık mavi</span>
+              <span class="chip">azul oscuro → koyu mavi</span>
+              <span class="chip">negro → siyah</span>
+              <span class="chip">blanco → beyaz</span>
+              <span class="chip">gris → gri</span>
+              <span class="chip">marrón → kahverengi</span>
+            </div>
+            <div class="alert">🎯 Renk sıfat olduğunda çoğu zaman isimle uyum yapar: <strong>coche rojo · casa roja · coches rojos · casas rojas</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- TOOLBOX 8 -->
+    <article class="topic green">
+      <button class="topic-btn" onclick="toggleTopic(this)">
+        <div class="topic-left">
+          <span class="topic-num">8</span>
+          <div>
+            <div class="topic-title">👥 Temel Kişi ve Aile Kelimeleri</div>
+            <span class="topic-sub">madre · padre · hermano · abuela · marido · mujer...</span>
+          </div>
+        </div>
+        <span class="arrow">⌄</span>
+      </button>
+      <div class="topic-content">
+        <div class="inner">
+          <div class="section-box">
+            <h3>👨‍👩‍👧‍👦 La Familia</h3>
+            <div class="usage-grid">
+              <div class="usage-card"><strong>madre / padre</strong><p>anne / baba</p></div>
+              <div class="usage-card"><strong>hermano / hermana</strong><p>erkek kardeş / kız kardeş</p></div>
+              <div class="usage-card"><strong>hijo / hija</strong><p>oğul / kız evlat</p></div>
+              <div class="usage-card"><strong>abuelo / abuela</strong><p>dede / büyükanne</p></div>
+              <div class="usage-card"><strong>nieto / nieta</strong><p>erkek torun / kız torun</p></div>
+              <div class="usage-card"><strong>tío / tía</strong><p>amca-dayı / hala-teyze</p></div>
+              <div class="usage-card"><strong>primo / prima</strong><p>erkek kuzen / kız kuzen</p></div>
+              <div class="usage-card"><strong>sobrino / sobrina</strong><p>erkek yeğen / kız yeğen</p></div>
+              <div class="usage-card"><strong>marido / esposo</strong><p>koca / eş</p></div>
+              <div class="usage-card"><strong>mujer / esposa</strong><p>eş / kadın eş</p></div>
+              <div class="usage-card"><strong>novio / novia</strong><p>erkek arkadaş / kız arkadaş</p></div>
+              <div class="usage-card"><strong>padres</strong><p>anne-baba / ebeveynler</p></div>
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h3>🗣️ Temel Kişi Kelimeleri</h3>
+            <div class="mini-chips">
+              <span class="chip">hombre → erkek / adam</span>
+              <span class="chip">mujer → kadın</span>
+              <span class="chip">niño / niña → erkek / kız çocuk</span>
+              <span class="chip">amigo / amiga → arkadaş</span>
+              <span class="chip">persona → kişi</span>
+              <span class="chip">gente → insanlar / halk</span>
+              <span class="chip">compañero/a → arkadaş / meslektaş</span>
+              <span class="chip">vecino/a → komşu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
 <script>
-const SALT="23ZywMwLCifEJ3uwMFvRDQ==";
-const NONCE="+nBQY/yGGNUJlfub";
-const ENCRYPTED="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";
-const fromBase64=(str)=>Uint8Array.from(atob(str),c=>c.charCodeAt(0));
-const form=document.getElementById('login');
-form.addEventListener('submit',async e=>{
- e.preventDefault();
- const button=document.getElementById('submit');const error=document.getElementById('error');
- button.disabled=true;button.textContent='Açılıyor…';error.textContent='';
- try{
-  const pass=document.getElementById('password').value;
-  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
-  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:fromBase64(SALT),iterations:600000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
-  const zipped=await crypto.subtle.decrypt({name:'AES-GCM',iv:fromBase64(NONCE)},key,fromBase64(ENCRYPTED));
-  const decompressed=new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'));
-  const html=await new Response(decompressed).text();
-  document.open();document.write(html);document.close();
- }catch(err){error.textContent='Şifre yanlış veya sayfa açılamadı. Lütfen tekrar dene.';button.disabled=false;button.textContent='Araç Kutusunu Aç';}
-});
+function openScreen(id){if(id==='home')window.location.href='ogrenci-portali.html';}
+function toggleTopic(btn){const topic=btn.closest('.topic');topic.classList.toggle('open');}
 </script></body></html>

@@ -42,4 +42,11 @@ User instruction, 15 November 2026: share and display classroom URLs ending in `
 
 User instruction, 15 November 2026: the teacher panel must keep its password unreadable in source code. Respect the user’s explicit password choice and never change it without authorization. `ogretmen-paneli.html` contains only a login UI and an AES-256-GCM encrypted payload (PBKDF2-HMAC-SHA-256, 600,000 iterations). Never commit the teacher password, a derived key, decrypted panel HTML, or its plaintext activity catalog to this public repository, including history, comments, logs and auxiliary assets. Preserve the current password on content updates; obtain it from the user when needed, decrypt only in private temporary work, and publish only re-encrypted output with fresh random salt and IV. See README.md for the payload format. Verify wrong-password and tamper rejection, no plaintext leakage, level and lesson navigation, clean activity links, and lock/reload behavior. The public student portal may link to the encrypted login page; it must not embed the decrypted teacher catalog.
 
+## Student portal navigation and resources
+
+User instruction, 15 November 2026: the portal landing page has Öğretmen Portalı first and Öğrenci Ödev/Ders Takip Merkezi second. After a successful existing student-name/code verification, show resource cards directly below the student development card. Show the student's selected level and every earlier level in this order: A1.1, A1.2, A2.1, A2.2, B1.1. Show İspanyolca Araç Kutusu for every level. Keep these cards out of the landing page and clear them when the selected student or level changes or verification fails.
+
+The user explicitly removed the separate passwords from all five level pages and toolbox.html. Preserve their existing content and seviye-menu.js integration; do not restore separate resource passwords unless requested. Shared course resource URLs are consequently public; student-name/code verification still protects personal homework and progress results through the existing Apps Script. The teacher dashboard remains encrypted and is excluded from the removal of resource passwords. Preserve its file and credential.
+
+
 

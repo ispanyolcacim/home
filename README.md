@@ -2,10 +2,18 @@
 
 ## Öğrenci portalı
 
-- `ogrenci-portali.html`: seviye seçimi, mevcut Araç Kutusu ve Ödev Takip Merkezi.
-- `a11.html`, `a12.html`, `a21.html`, `a22.html`: her biri kendi seviye şifresiyle StatiCrypt 3.5.4 kullanılarak şifrelenmiştir.
-- Ödev Takip Merkezi ve 4 haneli öğrenci kodlarının doğrulanması mevcut Apps Script üzerinden çalışır.
-- `ogretmen-paneli.html`: öğretmen şifresiyle açılan ders içi etkinlik indeksi; ana portaldaki Öğretmen Paneli kartından erişilir.
+- `ogrenci-portali.html`: girişte solda Öğretmen Portalı, sağda Öğrenci Ödev/Ders Takip Merkezi bulunur.
+- Öğrenci adı, seviye ve 4 haneli öğrenci kodu mevcut Apps Script üzerinden doğrulanır. Kişisel ödev ve gelişim sonuçlarının altında öğrencinin kendi seviyesi ve önceki seviyelerin kaynak kartları görünür.
+- `a11.html`, `a12.html`, `a21.html`, `a22.html`, `b11.html` ve `toolbox.html`: kullanıcının 15 Kasım 2026 talebiyle ayrı kaynak şifreleri kaldırılmış ortak ders içerikleri. Doğrudan bağlantıları da şifresiz açılır; kişisel ödev ve gelişim bilgileri bu dosyalara taşınmaz.
+- `ogretmen-paneli.html`: öğretmen şifresiyle açılan ders içi etkinlik indeksi; ana portaldaki Öğretmen Portalı kartından erişilir. Şifreleme korunur.
+
+| Öğrencinin seviyesi | Gelişim kartının altındaki seviye kartları | Ortak kaynak |
+| --- | --- | --- |
+| A1.1 | A1.1 | Araç Kutusu |
+| A1.2 | A1.1, A1.2 | Araç Kutusu |
+| A2.1 | A1.1, A1.2, A2.1 | Araç Kutusu |
+| A2.2 | A1.1, A1.2, A2.1, A2.2 | Araç Kutusu |
+| B1.1 | A1.1, A1.2, A2.1, A2.2, B1.1 | Araç Kutusu |
 
 ### Öğretmen panelini güncelleme
 
@@ -17,7 +25,6 @@ Bu koruma panel içeriğine aittir; bağlantı verilen mevcut GitHub Pages etkin
 
 ### Seviye içeriğini güncelleme
 
-Şifrelenmemiş dosyaları ve şifreleri bu herkese açık repoya eklemeyin. İlgili HTML dosyasını ve ona ait `staticrypt-a11.json` yapılandırmasını repo dışında özel bir çalışma klasörüne kopyalayın. Bu yapılandırma yalnızca gizli olmayan salt değerini içerir. StatiCrypt 3.5.4 ile `npx staticrypt a11.html --decrypt --config staticrypt-a11.json` komutunu çalıştırın; sorulduğunda seviye şifresini girin. Oluşan `decrypted/a11.html` dosyasını düzenleyin. `npx staticrypt decrypted/a11.html -d encrypted --config staticrypt-a11.json --remember false` ile yeniden şifreleyin. Şifre giriş ekranının Türkçe metinlerini StatiCrypt `--template-*` seçenekleriyle ayarlayabilirsiniz. Yalnızca `encrypted/a11.html` çıktısını repodaki aynı dosyanın yerine koyun. Diğer seviyelerde aynı işlemi ilgili dosya adıyla uygulayın.
+Seviye HTML dosyalarını doğrudan düzenleyin; kullanıcı yeniden istemedikçe ayrı seviye şifresi eklemeyin. Mevcut konu özetlerini, gömülü kaynakları ve depolama anahtarlarını koruyun. `seviye-menu.js`, her seviyede Konular ve Haftalık Çalışma Dosyaları seçeneklerini, 8 haftalık Google Drive PDF bağlantılarını sağlar. Araç Kutusu bütün seviyelerde görünür. Ana portala ders içeriklerini kopyalamayın; gelişim kartının altındaki bağlantıları koruyun.
 
-Şifre değişikliği için mevcut dosyayı eski şifreyle çözün ve yeni şifreyle tekrar şifreleyin. Ana portal dosyasına ders içeriklerini geri eklemeyin.
 
