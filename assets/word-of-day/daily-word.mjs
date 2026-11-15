@@ -84,7 +84,6 @@ function mountDailyWord() {
     const e=selection.entry;
     $('dailyWordDate').textContent=selection.dateText;
     $('dailyWordDate').dateTime=selection.key;
-    $('dailyWordKind').textContent=e.kind;
     $('dailyWordText').textContent=e.word;
     $('dailyWordTurkish').textContent=e.tr;
     $('dailyWordEnglish').textContent=e.en;
@@ -120,3 +119,4 @@ function mountDailyWord() {
 }
 
 if(typeof document!=='undefined')mountDailyWord();
+

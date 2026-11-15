@@ -3,7 +3,7 @@
 Kullanıcı talebi, 15 Kasım 2026: 365 farklı kelime / sözlük birimi; hedef aralık A2+–B1.1. Kelimeler bu hedefe göre pedagojik olarak seçilmiştir; tek tek resmî CEFR sertifikalı bir kelime listesi olarak sunulmaz.
 
 - Kart `ogrenci-portali.html` içinde hoş geldin yazısının hemen altında, portalın giriş kartlarından önce bulunur; açılır pencere kullanılmaz.
-- İspanyolca sözlük biçimi (isimlerde artikel), kelime türü, Türkçe ve İngilizce anlam; özgün İspanyolca örnek ve aynı örneğin Türkçe / İngilizce çevirisi gösterilir.
+- İspanyolca sözlük biçimi (isimlerde artikel), Türkçe ve İngilizce anlam; özgün İspanyolca örnek ve aynı örneğin Türkçe / İngilizce çevirisi gösterilir. Kullanıcının 15 Kasım 2026 düzenlemesiyle seviye ve kelime türü etiketleri kartta gösterilmez; hedef seviye ve `kind` bilgisi veri bankasında korunur.
 - `assets/word-of-day/words.json` 365 benzersiz kayıt içerir. Örnekler ve çeviriler bu portal için hazırlanmıştır; SpanishDict içeriği çekilmez veya kopyalanmaz.
 - Konular: günlük kararlar, iş, öğrenme, ilişkiler, duygular, seyahat, şehir, ev, alışveriş, sağlık, çevre, kültür ve dijital yaşam. Yayımlanan sıra sabittir ve konular karıştırılmıştır.
 - İlk döngü: 15 Kasım 2026–14 Kasım 2027. Her takvim gününde tek kayıt, tüm öğrenciler için aynı seçim; saat dilimi `Europe/Istanbul`. 365 gün sonra aynı sıra yeniden başlar. Kullanıcının konumu veya cihaz dili seçimi değiştirmez.
@@ -19,3 +19,4 @@ Kullanıcı talebi, 15 Kasım 2026: 365 farklı kelime / sözlük birimi; hedef 
 - Takvim testleri: 365 günün tamamı, İstanbul gece yarısı sınırı, yıl sonu ve döngü tekrarı. Ses testleri: İspanyolca ses seçimi, metin, durdurma, bitiş / hata geri dönüşü. Tarayıcı kontrolü: masaüstü ve 390 px görünüm, yeniden yükleme, eski portal kontrolleri.
 
 Başvuru çerçevesi: Instituto Cervantes Plan Curricular, iletişimsel konu alanları (A1–A2 / B1–B2). Bu çerçeve, yukarıdaki daha dar ders hedefi için editoryal seçim yaparken kullanılmıştır; örnek cümlelerin kaynağı değildir.
+

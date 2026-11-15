@@ -7,8 +7,6 @@
 .daily-word-top time{font-size:12px;line-height:1.5;font-weight:700;color:#68778d;white-space:nowrap}
 .daily-word-main{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);gap:30px;padding:23px 0}
 .daily-word-vocabulary{align-self:center;min-width:0}
-.daily-word-meta{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:11px;font-weight:800;color:#68778d}
-.daily-word-meta>span:first-child{background:#f2edff;color:#64469b;padding:5px 9px;border-radius:8px;letter-spacing:.02em}
 .daily-word-title-row{display:flex;align-items:center;gap:13px}
 .daily-word-title{font-size:clamp(29px,3vw,39px);font-weight:900;line-height:1.15;letter-spacing:-.025em;margin:0 0 9px;overflow-wrap:anywhere}
 .daily-word-audio{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:42px;min-height:42px;border:1px solid #e2d6f8;border-radius:50%;background:#f6f2ff;color:#7250a6;cursor:pointer;padding:9px;transition:background .15s,color .15s}
@@ -36,3 +34,4 @@
 .daily-word .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:650px){.daily-word{padding:20px 20px 15px;border-radius:23px}.daily-word-main{grid-template-columns:minmax(0,1fr);gap:22px;padding:20px 0}.daily-word-example{padding:19px 0 0;border-left:0;border-top:1px solid #ece6f1}.daily-word-title{font-size:33px}.daily-word-top{gap:8px;padding-bottom:14px}.daily-word-top h2 [lang=es]{display:none}.daily-word-example-es{font-size:18px}.daily-word-bottom{gap:5px}.daily-word-bottom>span{display:none}}
 @media print{.daily-word{break-inside:avoid;box-shadow:none}.daily-word-audio,.daily-word-retry,.daily-word-status{display:none!important}}
+

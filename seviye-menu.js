@@ -11,6 +11,7 @@
   const file = window.location.pathname.split('/').pop().toLowerCase();
   const level = levels[file];
   if (!level || document.getElementById('sw-level-menu')) return;
+  const embedded = window.parent !== window && new URLSearchParams(location.search).get('portal') === '1';
 
   const styles = document.createElement('style');
   styles.id = 'sw-menu-styles';
@@ -137,17 +138,39 @@
     root.scrollTop = 0;
   }
   document.getElementById('sw-open-weeks').addEventListener('click', () => showPanel('sw-files'));
-  document.getElementById('sw-open-topics').addEventListener('click', () => {
+  function showTopics() {
     if (level === 'B1.1') {
       showPanel('sw-empty');
       return;
     }
     root.style.display = 'none';
     document.body.classList.remove('sw-menu-active');
-    topicReturn.hidden = false;
+    topicReturn.hidden = embedded;
     window.scrollTo({top: 0, behavior: 'instant'});
-  });
+  }
+  document.getElementById('sw-open-topics').addEventListener('click', showTopics);
   root.querySelectorAll('[data-sw-back]').forEach(button => button.addEventListener('click', () => showPanel('sw-choose')));
   topicReturn.addEventListener('click', () => showPanel('sw-choose'));
-  showPanel('sw-choose');
+  if(embedded){
+    const style = document.createElement('style');
+    style.textContent = '.topbar,.sw-top,.sw-mini-back,.sw-topic-return{display:none!important}.sw-inner{padding-top:24px;padding-bottom:40px}';
+    document.head.appendChild(style);
+    window.addEventListener('message',event=>{
+      if(event.origin !== location.origin || event.source !== window.parent || event.data?.type !== 'ispanyolcacim-resource-section') return;
+      if(event.data.section === 'weeks') showPanel('sw-files');
+      if(event.data.section === 'topics') showTopics();
+    });
+    document.addEventListener('click',event=>{
+      const element = event.target.closest('a[href],button[onclick]');
+      if(!element) return;
+      const destination = element.getAttribute('href') || element.getAttribute('onclick') || '';
+      if(destination.includes('ogrenci-portali.html')){
+        event.preventDefault();event.stopImmediatePropagation();
+        window.parent.postMessage({type:'ispanyolcacim-resource-return'},location.origin);
+      }
+    },true);
+    if(new URLSearchParams(location.search).get('bolum') === 'weeks') showPanel('sw-files');
+    else showTopics();
+    window.parent.postMessage({type:'ispanyolcacim-resource-ready'},location.origin);
+  }else showPanel('sw-choose');
 })();

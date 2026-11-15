@@ -1037,6 +1037,16 @@ button{
   </div>
 </section>
 <script>
-function openScreen(id){if(id==='home')window.location.href='ogrenci-portali.html';}
+const portalEmbedded = window.parent !== window && new URLSearchParams(location.search).get('portal') === '1';
+if(portalEmbedded){
+  const style = document.createElement('style');
+  style.textContent = '.topbar{display:none!important}';
+  document.head.appendChild(style);
+  window.parent.postMessage({type:'ispanyolcacim-resource-ready'},location.origin);
+}
+function openScreen(id){if(id==='home'){
+  if(portalEmbedded)window.parent.postMessage({type:'ispanyolcacim-resource-return'},location.origin);
+  else window.location.href='ogrenci-portali.html';
+}}
 function toggleTopic(btn){const topic=btn.closest('.topic');topic.classList.toggle('open');}
 </script></body></html>

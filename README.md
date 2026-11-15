@@ -28,3 +28,8 @@ Bu koruma panel içeriğine aittir; bağlantı verilen mevcut GitHub Pages etkin
 Seviye HTML dosyalarını doğrudan düzenleyin; kullanıcı yeniden istemedikçe ayrı seviye şifresi eklemeyin. Mevcut konu özetlerini, gömülü kaynakları ve depolama anahtarlarını koruyun. `seviye-menu.js`, her seviyede Konular ve Haftalık Çalışma Dosyaları seçeneklerini, 8 haftalık Google Drive PDF bağlantılarını sağlar. Araç Kutusu bütün seviyelerde görünür. Ana portala ders içeriklerini kopyalamayın; gelişim kartının altındaki bağlantıları koruyun.
 
 
+
+
+### Kaynaklar içinde gezinme
+
+Seviye ve Araç Kutusu kartları “İçin tıkla” açıklamasıyla aynı portal sayfasında açılır. Üst çubuktaki Portal ve Ödevlerim düğmeleri, doğrulanmış öğrenci sonuçlarını bellekte koruyarak geri döner. Seviye kaynaklarında Konuları ve Haftalık Çalışma Dosyaları sekmeleri vardır. `seviye-menu.js`, gömülü kaynaklarda yalnızca aynı origin ve doğru üst pencereden gelen bölüm mesajlarını işler. Kişisel kodlar, öğrenci adları ve ödev sonuçları bu gezinme için URL, history veya tarayıcı depolamasına yazılmaz. PDF dosyalarının mevcut Google Drive bağlantıları korunur.

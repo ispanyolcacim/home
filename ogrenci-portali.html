@@ -574,9 +574,11 @@ button{
 
 /* ---------- HOMEWORK TRACKER ---------- */
 .tracker-home-card{
-  background:linear-gradient(145deg,#2b405c,#415f80);
-  color:#fff;
+  background:linear-gradient(145deg,#e3f2ff,#b6d8fb);
+  color:#203b61;
+  border:1px solid #a8ccef;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
@@ -585,16 +587,19 @@ button{
   margin:0;
   font-size:clamp(27px,3vw,40px);
   max-width:100%;
-  color:#fff;
+  color:#203b61;
 }
 .tracker-home-card::after{display:none}
+.home-card-emojis{display:block;font-size:42px;line-height:1.2;letter-spacing:5px;margin-bottom:17px}
 
 .teacher-home-card{
-  background:linear-gradient(145deg,#fffdf9,#eee8f6);
-  border:1px solid #ded6e7;
+  background:linear-gradient(145deg,#eee2ff,#cbb1ee);
+  border:1px solid #c3a4e6;
+  color:#3e285c;
 }
 .teacher-home-card .big{font-size:48px}
 .teacher-home-card .label{font-size:clamp(25px,3vw,36px)}
+.teacher-home-card .desc{color:#614d78}
 
 .tracker-resources{margin-top:24px}
 .tracker-resources[hidden]{display:none}
@@ -612,6 +617,18 @@ button{
 .tracker-resource-grid .a22{background:linear-gradient(145deg,#fff1e9,#ffd1bc)}
 .tracker-resource-grid .b11{background:linear-gradient(145deg,#eef3ff,#d2defb)}
 .tracker-resource-grid a:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.tracker-resource-grid .resource-card-action{display:block;font-size:12px;font-weight:900;margin-top:12px;color:#43516b}
+.resource-bar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;background:#fffaf8f5;backdrop-filter:blur(12px);border-bottom:1px solid #e5dfea;min-height:80px}
+.resource-breadcrumbs{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.resource-nav-button{font-size:13px;font-weight:800;font-family:inherit;border:1px solid #ddd4e8;background:#fff;border-radius:999px;color:#4e3d66;padding:10px 15px;min-height:42px;cursor:pointer;line-height:1.3}
+.resource-nav-button[aria-current="page"]{background:#7250a1;color:white;border-color:#7250a1}
+.resource-nav-button:focus-visible{outline:3px solid #375c9e;outline-offset:3px}
+.resource-level-label{font-size:12px;font-weight:900;color:#7250a1;white-space:nowrap}
+.resource-frame-wrap{position:relative;background:var(--bg)}
+.resource-loading{position:absolute;z-index:1;left:50%;top:25px;transform:translateX(-50%);padding:12px 18px;border:1px solid #e2d6ee;border-radius:16px;background:#fff;font-size:14px;font-weight:800;color:#7250a1}
+.resource-loading[hidden]{display:none}
+.resource-frame{display:block;width:100%;height:calc(100dvh - var(--resource-bar-height,80px));min-height:360px;border:0;background:var(--bg)}
+@media(max-width:650px){.resource-bar{padding:11px 14px;gap:8px;align-items:start}.resource-nav-button{padding:9px 11px;font-size:12px}.resource-level-label{display:none}.home-card-emojis{font-size:36px}}
 #tracker .hero h2{font-size:clamp(30px,5vw,52px);max-width:1000px;margin-left:auto;margin-right:auto;line-height:1.15}
 @media(max-width:850px){.tracker-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.tracker-resource-grid{grid-template-columns:1fr}.tracker-resource-grid .level-card{min-height:155px}.tracker-resources h3{font-size:21px}}
@@ -997,7 +1014,7 @@ a.tracker-homework-link:hover{text-decoration:underline}
 @media(max-width:600px){.tracker-quizlet-strip{flex-direction:column;align-items:flex-start}}
 </style>
 <link rel="stylesheet" href="assets/word-of-day/daily-word.css?v=1" />
-<script type="module" src="assets/word-of-day/daily-word.mjs?v=1"></script>
+<script type="module" src="assets/word-of-day/daily-word.mjs?v=2"></script>
 </head>
 
 <body>
@@ -1022,7 +1039,6 @@ a.tracker-homework-link:hover{text-decoration:underline}
       <p class="daily-word-loading" id="dailyWordLoading" role="status">Bugünün kelimesi yükleniyor…</p>
       <div class="daily-word-main" id="dailyWordContent" hidden>
         <div class="daily-word-vocabulary">
-          <p class="daily-word-meta"><span>A2+ · B1.1</span><span id="dailyWordKind"></span></p>
           <div class="daily-word-title-row">
             <p class="daily-word-title" id="dailyWordText" lang="es"></p>
             <button type="button" class="daily-word-audio" id="dailyWordSpeak" aria-label="İspanyolca kelimeyi dinle" aria-pressed="false" title="Kelimeyi dinle">
@@ -1047,13 +1063,14 @@ a.tracker-homework-link:hover{text-decoration:underline}
 
     <div class="levels">
       <button class="level-card teacher-home-card" onclick="location.href='ogretmen-paneli.html'" aria-label="Öğretmen Portalı, öğretmen şifresi gerektirir">
-        <span class="big" aria-hidden="true">🔒</span>
+        <span class="home-card-emojis" aria-hidden="true">👩🏻‍💻 🇪🇸</span>
         <span class="label">Öğretmen Portalı</span>
         <span class="desc">Ders içi etkinlikler · Öğretmene özel giriş</span>
       </button>
 
       <button class="level-card tracker-home-card" onclick="openTracker()">
-        <span class="label">📝 Öğrenci Ödev/Ders Takip Merkezi</span>
+        <span class="home-card-emojis" aria-hidden="true">💃 📝 🕺</span>
+        <span class="label">Öğrenci Ödev/Ders Takip Merkezi</span>
       </button>
     </div>
 
@@ -1080,7 +1097,7 @@ a.tracker-homework-link:hover{text-decoration:underline}
   <div class="hero">
     <div class="pill">📚 DERSLERİN VE GELİŞİMİN TEK YERDE</div>
     <h2>Öğrenci Ödev/Ders Takip Merkezi</h2>
-    <p>Ödev durumunu ve gelişimini takip et; seviyene uygun konu özetlerine, haftalık dosyalara ve Araç Kutusu’na ulaş.</p>
+    <p>Ödev durumunu ve gelişimini takip et; seviyene uygun konu özetlerine, haftalık dosyalara ve Araç Kutusu gibi senin için özel hazırlanmış birçok detaya buradan ulaşabilirsin.</p>
   </div>
 
   <div class="tracker-wrap">
@@ -1143,7 +1160,7 @@ a.tracker-homework-link:hover{text-decoration:underline}
 
       <section id="trackerResources" class="tracker-resources" aria-labelledby="trackerResourcesTitle" hidden>
         <h3 id="trackerResourcesTitle">📚 Ders ve tekrar alanın</h3>
-        <p class="tracker-resources-intro">Kendi seviyeni ve önceki seviyeleri tekrar et. Kutular yeni sekmede açılır.</p>
+        <p class="tracker-resources-intro">Kendi seviyeni ve önceki seviyeleri tekrar et. Konulara ve haftalık çalışma dosyalarına ulaşmak için bir kutuya tıkla.</p>
         <div id="trackerResourceGrid" class="tracker-resource-grid"></div>
       </section>
 
@@ -1158,6 +1175,23 @@ a.tracker-homework-link:hover{text-decoration:underline}
   </div>
 </section>
 
+<section id="resource" class="screen" aria-label="Ders kaynakları">
+  <nav id="resourceBar" class="resource-bar" aria-label="Portal ve ders gezintisi">
+    <div class="resource-breadcrumbs">
+      <button type="button" class="resource-nav-button" onclick="leavePortalResource('home')">Portal</button>
+      <button type="button" class="resource-nav-button" onclick="leavePortalResource('tracker')">Ödevlerim</button>
+      <button type="button" id="resourceTopics" class="resource-nav-button" onclick="setPortalResourceTab('topics')">Konular</button>
+      <button type="button" id="resourceWeeks" class="resource-nav-button" onclick="setPortalResourceTab('weeks')">Haftalık Çalışma Dosyaları</button>
+      <button type="button" id="resourceToolbox" class="resource-nav-button" aria-current="page" hidden>Araç Kutusu</button>
+    </div>
+    <span id="resourceLevelLabel" class="resource-level-label"></span>
+  </nav>
+  <div class="resource-frame-wrap">
+    <div id="resourceLoading" class="resource-loading" role="status" hidden>İçerik açılıyor…</div>
+    <iframe id="resourceFrame" class="resource-frame" title="Ders kaynağı" referrerpolicy="same-origin"></iframe>
+  </div>
+</section>
+
 <script>
 function openScreen(id){
   document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
@@ -1169,6 +1203,82 @@ const TRACKER_API_URL = "https://script.google.com/macros/s/AKfycbw7BdcjAuCuD2ce
 let trackerAssignments = [];
 let trackerHomeworkLevel = '';
 let trackerVerificationRevision = 0;
+let portalResource = null;
+let trackerReturnScroll = 0;
+let resourceReady = false;
+const RESOURCE_NAV_VERSION = '20261115-2';
+
+function updateResourceBarHeight(){
+  const bar = document.getElementById('resourceBar');
+  if(bar.offsetHeight) document.documentElement.style.setProperty('--resource-bar-height',bar.offsetHeight+'px');
+}
+if(typeof ResizeObserver !== 'undefined') new ResizeObserver(updateResourceBarHeight).observe(document.getElementById('resourceBar'));
+window.addEventListener('resize',updateResourceBarHeight);
+
+function openPortalResource(level, tab = 'topics', pushHistory = true){
+  if(!document.getElementById('trackerResults').classList.contains('show')) return;
+  const currentIndex = trackerResourceLevels.findIndex(item => item.level === trackerHomeworkLevel);
+  const resourceIndex = trackerResourceLevels.findIndex(item => item.level === level);
+  if(level !== 'toolbox' && (resourceIndex < 0 || resourceIndex > currentIndex)) return;
+  const item = level === 'toolbox' ? {level:'toolbox',href:'toolbox.html'} : trackerResourceLevels[resourceIndex];
+  if(!document.getElementById('resource').classList.contains('active')) trackerReturnScroll = window.scrollY;
+  const changed = portalResource?.level !== level;
+  portalResource = {level,tab:tab === 'weeks' ? 'weeks' : 'topics'};
+  document.getElementById('resourceTopics').hidden = level === 'toolbox';
+  document.getElementById('resourceWeeks').hidden = level === 'toolbox';
+  document.getElementById('resourceToolbox').hidden = level !== 'toolbox';
+  document.getElementById('resourceTopics').textContent = level+' Konuları';
+  document.getElementById('resourceWeeks').textContent = level+' Haftalık Çalışma Dosyaları';
+  document.getElementById('resourceLevelLabel').textContent = level === 'toolbox' ? 'İspanyolca Araç Kutusu' : level+' · Öğrenci Alanı';
+  const frame = document.getElementById('resourceFrame');
+  frame.title = level === 'toolbox' ? 'İspanyolca Araç Kutusu' : level+' ders kaynakları';
+  openScreen('resource');updateResourceBarHeight();
+  if(changed || !frame.getAttribute('src')){
+    resourceReady = false;document.getElementById('resourceLoading').hidden = false;
+    frame.src = item.href+'?portal=1&bolum='+portalResource.tab+'&v='+RESOURCE_NAV_VERSION;
+  }
+  setPortalResourceTab(portalResource.tab);
+  if(pushHistory) history.pushState({portalView:'resource',level,tab:portalResource.tab},'',location.href);
+  document.getElementById(level === 'toolbox' ? 'resourceToolbox' : portalResource.tab === 'weeks' ? 'resourceWeeks' : 'resourceTopics').focus({preventScroll:true});
+}
+
+function setPortalResourceTab(tab){
+  if(!portalResource) return;
+  portalResource.tab = tab === 'weeks' ? 'weeks' : 'topics';
+  for(const [id,value] of [['resourceTopics','topics'],['resourceWeeks','weeks']]){
+    const button = document.getElementById(id);
+    if(portalResource.level !== 'toolbox' && portalResource.tab === value) button.setAttribute('aria-current','page');
+    else button.removeAttribute('aria-current');
+  }
+  if(resourceReady && portalResource.level !== 'toolbox') document.getElementById('resourceFrame').contentWindow.postMessage({type:'ispanyolcacim-resource-section',section:portalResource.tab},location.origin);
+  if(history.state?.portalView === 'resource') history.replaceState({portalView:'resource',level:portalResource.level,tab:portalResource.tab},'',location.href);
+}
+
+function leavePortalResource(destination = 'tracker', replaceHistory = true){
+  if(destination === 'tracker' && !document.getElementById('trackerResults').classList.contains('show')) destination = 'home';
+  openScreen(destination);
+  if(replaceHistory) history.replaceState({portalView:destination},'',location.href);
+  if(destination === 'tracker') requestAnimationFrame(()=>window.scrollTo({top:trackerReturnScroll,behavior:'instant'}));
+}
+
+document.getElementById('resourceFrame').addEventListener('load',()=>{
+  if(!portalResource) return;
+  resourceReady = true;document.getElementById('resourceLoading').hidden = true;
+  setPortalResourceTab(portalResource.tab);
+});
+window.addEventListener('message',event=>{
+  const frame = document.getElementById('resourceFrame');
+  if(event.origin !== location.origin || event.source !== frame.contentWindow) return;
+  if(event.data?.type === 'ispanyolcacim-resource-return') leavePortalResource('tracker');
+  if(event.data?.type === 'ispanyolcacim-resource-ready'){
+    resourceReady = true;document.getElementById('resourceLoading').hidden = true;setPortalResourceTab(portalResource?.tab);
+  }
+});
+window.addEventListener('popstate',event=>{
+  const state = event.state;
+  if(state?.portalView === 'resource') openPortalResource(state.level,state.tab,false);
+  else leavePortalResource(state?.portalView === 'home' ? 'home' : 'tracker',false);
+});
 
 const trackerResourceLevels = [
   {level:'A1.1',className:'a11',href:'a11.html',label:'Başlangıç Seviyesi'},
@@ -1187,6 +1297,8 @@ function resetTrackerResults(){
   trackerVerificationRevision++;
   document.getElementById('trackerResults').classList.remove('show');
   clearTrackerResources();
+  portalResource = null;resourceReady = false;
+  document.getElementById('resourceFrame').removeAttribute('src');
   hideTrackerMessage();
   const button = document.getElementById('trackerSubmit');
   button.disabled = false;
@@ -1197,18 +1309,24 @@ function renderTrackerResources(level){
   const index = trackerResourceLevels.findIndex(item => item.level === level);
   if(index < 0){ clearTrackerResources(); return; }
   const cards = trackerResourceLevels.slice(0,index + 1).map(item => `
-    <a class="level-card ${item.className}" href="${item.href}" target="_blank" rel="noopener noreferrer" data-resource-level="${item.level}" aria-label="${item.level} konuları ve haftalık çalışma dosyaları, yeni sekmede açılır">
+    <a class="level-card ${item.className}" href="${item.href}" data-resource-level="${item.level}" aria-label="${item.level} ${item.label}, konular ve haftalık çalışma dosyaları için tıkla">
       <span class="big">${item.level}</span>
       <span class="label">${item.label}</span>
       <span class="desc">Konular · Haftalık çalışma dosyaları</span>
+      <span class="resource-card-action">İçin tıkla →</span>
     </a>`);
   cards.push(`
-    <a class="level-card toolbox-home-card" href="toolbox.html" target="_blank" rel="noopener noreferrer" data-resource-level="toolbox" aria-label="İspanyolca Araç Kutusu, yeni sekmede açılır">
+    <a class="level-card toolbox-home-card" href="toolbox.html" data-resource-level="toolbox" aria-label="İspanyolca Araç Kutusu için tıkla">
       <span class="big" aria-hidden="true">🧰</span>
       <span class="label">İspanyolca Araç Kutusu</span>
       <span class="desc">Tüm seviyeler için ortak başvuru alanı</span>
+      <span class="resource-card-action">İçin tıkla →</span>
     </a>`);
   document.getElementById('trackerResourceGrid').innerHTML = cards.join('');
+  for(const card of document.querySelectorAll('#trackerResourceGrid [data-resource-level]')) card.addEventListener('click',event=>{
+    if(event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();openPortalResource(card.dataset.resourceLevel);
+  });
   document.getElementById('trackerResources').hidden = false;
 }
 
@@ -2361,6 +2479,7 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
 
 
 
