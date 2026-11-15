@@ -589,6 +589,12 @@ button{
 }
 .tracker-home-card::after{display:none}
 
+.teacher-home-card{
+  background:linear-gradient(145deg,#fffdf9,#eee8f6);
+  border:1px solid #ded6e7;
+}
+.teacher-home-card .big{font-size:48px}
+
 .tracker-wrap{
   width:min(1120px,calc(100% - 36px));
   margin:24px auto 70px;
@@ -1018,6 +1024,12 @@ a.tracker-homework-link:hover{text-decoration:underline}
       <button class="level-card b11" onclick="location.href='b11.html'" aria-label="B1.1 Orta seviye, şifreli öğrenci sayfası">
         <span class="big">B1.1</span>
         <span class="label">Orta Seviye Devam</span>
+      </button>
+
+      <button class="level-card teacher-home-card" onclick="location.href='ogretmen-paneli.html'" aria-label="Öğretmen Paneli, öğretmen şifresi gerektirir">
+        <span class="big" aria-hidden="true">🔒</span>
+        <span class="label">Öğretmen Paneli</span>
+        <span class="desc">Ders içi etkinlikler · Öğretmene özel giriş</span>
       </button>
     </div>
 
@@ -2269,5 +2281,6 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
 
 

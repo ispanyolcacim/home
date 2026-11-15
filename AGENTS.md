@@ -37,3 +37,8 @@ User instruction, 15 November 2026: use `DD-DD-ders-ici-ispanyolcacim-LEVEL.html
 ## Clean classroom activity URLs
 
 User instruction, 15 November 2026: share and display classroom URLs ending in `.html`, without section fragments such as `#dictation-1`, `#estructura`, `#futuro` or `#bolum-2`, at every level. Tabs, keyboard navigation and previous/next controls must update the activity directly without adding a fragment. Honor an incoming legacy fragment for the initial section, then remove it with `history.replaceState` while preserving the path, query string, existing history state, answers and storage keys. Never append a default section on load. Use clean canonical URLs in messages, indexes and maintained activity links.
+
+## Encrypted teacher panel
+
+User instruction, 15 November 2026: the teacher panel must use a strong password that cannot be read from source code. `ogretmen-paneli.html` contains only a login UI and an AES-256-GCM encrypted payload (PBKDF2-HMAC-SHA-256, 600,000 iterations). Never commit the teacher password, a derived key, decrypted panel HTML, or its plaintext activity catalog to this public repository, including history, comments, logs and auxiliary assets. Preserve the current password on content updates; obtain it from the user when needed, decrypt only in private temporary work, and publish only re-encrypted output with fresh random salt and IV. See README.md for the payload format. Verify wrong-password and tamper rejection, no plaintext leakage, level and lesson navigation, clean activity links, and lock/reload behavior. The public student portal may link to the encrypted login page; it must not embed the decrypted teacher catalog.
+
