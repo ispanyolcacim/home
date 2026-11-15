@@ -1,0 +1,4753 @@
+{
+  "version": 1,
+  "timeZone": "Europe/Istanbul",
+  "startDate": "2026-11-15",
+  "targetLevel": "A2+ · B1.1",
+  "entries": [
+    {
+      "id": "aprovechar",
+      "word": "aprovechar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "değerlendirmek; yararlanmak",
+      "en": "to make the most of",
+      "example": {
+        "es": "Quiero aprovechar el viaje para practicar español.",
+        "tr": "İspanyolca pratik yapmak için yolculuğu değerlendirmek istiyorum.",
+        "en": "I want to make the most of the trip to practise Spanish."
+      }
+    },
+    {
+      "id": "recuperacion",
+      "word": "la recuperación",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "iyileşme; toparlanma",
+      "en": "recovery",
+      "example": {
+        "es": "La recuperación fue más rápida de lo esperado.",
+        "tr": "İyileşme beklenenden hızlı oldu.",
+        "en": "The recovery was faster than expected."
+      }
+    },
+    {
+      "id": "estrenar",
+      "word": "estrenar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "ilk kez kullanmak; ilk gösterimini yapmak",
+      "en": "to use for the first time; to premiere",
+      "example": {
+        "es": "Hoy voy a estrenar las botas que compré ayer.",
+        "tr": "Bugün dün aldığım çizmeleri ilk kez giyeceğim.",
+        "en": "Today I am going to wear the boots I bought yesterday for the first time."
+      }
+    },
+    {
+      "id": "archivo",
+      "word": "el archivo",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "dosya",
+      "en": "file",
+      "example": {
+        "es": "Te enviaré el archivo cuando termine de revisarlo.",
+        "tr": "Kontrol etmeyi bitirince dosyayı sana göndereceğim.",
+        "en": "I will send you the file when I have finished checking it."
+      }
+    },
+    {
+      "id": "util",
+      "word": "útil",
+      "kind": "sıfat",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "faydalı; kullanışlı",
+      "en": "useful",
+      "example": {
+        "es": "Este consejo me ha resultado muy útil.",
+        "tr": "Bu tavsiye benim için çok faydalı oldu.",
+        "en": "I have found this advice very useful."
+      }
+    },
+    {
+      "id": "equipaje",
+      "word": "el equipaje",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "bagaj",
+      "en": "luggage",
+      "example": {
+        "es": "El equipaje de mano debe caber debajo del asiento.",
+        "tr": "El bagajı koltuğun altına sığmalı.",
+        "en": "Hand luggage must fit under the seat."
+      }
+    },
+    {
+      "id": "invitacion",
+      "word": "la invitación",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "davet",
+      "en": "invitation",
+      "example": {
+        "es": "Agradecí la invitación, pero no pude asistir.",
+        "tr": "Davet için teşekkür ettim ama katılamadım.",
+        "en": "I thanked them for the invitation, but I could not attend."
+      }
+    },
+    {
+      "id": "decision",
+      "word": "la decisión",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "karar",
+      "en": "decision",
+      "example": {
+        "es": "Tomamos la decisión de mudarnos a otra ciudad.",
+        "tr": "Başka bir şehre taşınma kararı aldık.",
+        "en": "We made the decision to move to another city."
+      }
+    },
+    {
+      "id": "anden",
+      "word": "el andén",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "peron",
+      "en": "platform",
+      "example": {
+        "es": "El tren hacia Sevilla sale del andén cuatro.",
+        "tr": "Sevilla'ya giden tren dördüncü perondan kalkıyor.",
+        "en": "The train to Seville departs from platform four."
+      }
+    },
+    {
+      "id": "critica",
+      "word": "la crítica",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "eleştiri; değerlendirme",
+      "en": "criticism; review",
+      "example": {
+        "es": "La película recibió buenas críticas por sus actores.",
+        "tr": "Film oyuncuları sayesinde olumlu eleştiriler aldı.",
+        "en": "The film received good reviews for its actors."
+      }
+    },
+    {
+      "id": "factura",
+      "word": "la factura",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "fatura",
+      "en": "invoice; bill",
+      "example": {
+        "es": "Necesito una factura a nombre de la empresa.",
+        "tr": "Şirket adına bir faturaya ihtiyacım var.",
+        "en": "I need an invoice in the company's name."
+      }
+    },
+    {
+      "id": "promesa",
+      "word": "la promesa",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "söz; vaat",
+      "en": "promise",
+      "example": {
+        "es": "Hizo la promesa de llamar cada semana.",
+        "tr": "Her hafta arayacağına söz verdi.",
+        "en": "He made a promise to call every week."
+      }
+    },
+    {
+      "id": "reserva",
+      "word": "la reserva",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "rezervasyon",
+      "en": "reservation; booking",
+      "example": {
+        "es": "Llamé al hotel para confirmar la reserva.",
+        "tr": "Rezervasyonu onaylamak için oteli aradım.",
+        "en": "I called the hotel to confirm the booking."
+      }
+    },
+    {
+      "id": "quejarse",
+      "word": "quejarse",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "şikâyet etmek",
+      "en": "to complain",
+      "example": {
+        "es": "Los vecinos se quejaron del ruido de la fiesta.",
+        "tr": "Komşular partinin gürültüsünden şikâyet etti.",
+        "en": "The neighbours complained about the noise from the party."
+      }
+    },
+    {
+      "id": "disponible",
+      "word": "disponible",
+      "kind": "sıfat",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "uygun; kullanılabilir",
+      "en": "available",
+      "example": {
+        "es": "¿Hay alguna mesa disponible junto a la ventana?",
+        "tr": "Pencerenin yanında uygun bir masa var mı?",
+        "en": "Is there a table available by the window?"
+      }
+    },
+    {
+      "id": "recuperarse",
+      "word": "recuperarse",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "iyileşmek; toparlanmak",
+      "en": "to recover",
+      "example": {
+        "es": "Todavía se está recuperando de la operación.",
+        "tr": "Ameliyattan sonra hâlâ iyileşme sürecinde.",
+        "en": "She is still recovering from the operation."
+      }
+    },
+    {
+      "id": "argumento",
+      "word": "el argumento",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "konu örgüsü; gerekçe",
+      "en": "plot; argument",
+      "example": {
+        "es": "El argumento de la novela me pareció original.",
+        "tr": "Romanın konusunu özgün buldum.",
+        "en": "I found the plot of the novel original."
+      }
+    },
+    {
+      "id": "corregir",
+      "word": "corregir",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "düzeltmek",
+      "en": "to correct",
+      "example": {
+        "es": "Podemos corregir el ejercicio juntos al final.",
+        "tr": "Sonunda alıştırmayı birlikte düzeltebiliriz.",
+        "en": "We can correct the exercise together at the end."
+      }
+    },
+    {
+      "id": "contexto",
+      "word": "el contexto",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "bağlam",
+      "en": "context",
+      "example": {
+        "es": "Es más fácil recordar palabras dentro de un contexto.",
+        "tr": "Kelimeleri bir bağlam içinde hatırlamak daha kolaydır.",
+        "en": "It is easier to remember words in context."
+      }
+    },
+    {
+      "id": "recibo",
+      "word": "el recibo",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "ödeme belgesi; fatura",
+      "en": "receipt; bill",
+      "example": {
+        "es": "Guardo los recibos de la luz en una carpeta.",
+        "tr": "Elektrik faturalarını bir dosyada saklıyorum.",
+        "en": "I keep the electricity bills in a folder."
+      }
+    },
+    {
+      "id": "prohibir",
+      "word": "prohibir",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "yasaklamak",
+      "en": "to prohibit; to ban",
+      "example": {
+        "es": "Han prohibido aparcar delante de la entrada.",
+        "tr": "Girişin önüne park etmeyi yasakladılar.",
+        "en": "They have banned parking in front of the entrance."
+      }
+    },
+    {
+      "id": "servicio",
+      "word": "el servicio",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "hizmet",
+      "en": "service",
+      "example": {
+        "es": "Este servicio de autobús conecta varios barrios.",
+        "tr": "Bu otobüs hizmeti birkaç mahalleyi birbirine bağlıyor.",
+        "en": "This bus service connects several neighbourhoods."
+      }
+    },
+    {
+      "id": "despedir",
+      "word": "despedir",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "işten çıkarmak",
+      "en": "to dismiss; to fire",
+      "example": {
+        "es": "La empresa despidió a varios empleados el año pasado.",
+        "tr": "Şirket geçen yıl birkaç çalışanını işten çıkardı.",
+        "en": "The company dismissed several employees last year."
+      }
+    },
+    {
+      "id": "comprension",
+      "word": "la comprensión",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "anlama; kavrama",
+      "en": "comprehension",
+      "example": {
+        "es": "Los vídeos cortos me ayudan con la comprensión oral.",
+        "tr": "Kısa videolar dinlediğimi anlamama yardımcı oluyor.",
+        "en": "Short videos help me with listening comprehension."
+      }
+    },
+    {
+      "id": "ventaja",
+      "word": "la ventaja",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "avantaj",
+      "en": "advantage",
+      "example": {
+        "es": "Vivir cerca del trabajo tiene muchas ventajas.",
+        "tr": "İşe yakın oturmanın birçok avantajı var.",
+        "en": "Living near work has many advantages."
+      }
+    },
+    {
+      "id": "postura",
+      "word": "la postura",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "duruş; vücut pozisyonu",
+      "en": "posture",
+      "example": {
+        "es": "Cambiar de postura me ayudó a trabajar más cómoda.",
+        "tr": "Duruşumu değiştirmek daha rahat çalışmama yardımcı oldu.",
+        "en": "Changing my posture helped me work more comfortably."
+      }
+    },
+    {
+      "id": "meta",
+      "word": "la meta",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "hedef",
+      "en": "goal",
+      "example": {
+        "es": "Nuestra meta es terminar el proyecto este mes.",
+        "tr": "Hedefimiz projeyi bu ay bitirmek.",
+        "en": "Our goal is to finish the project this month."
+      }
+    },
+    {
+      "id": "optimista",
+      "word": "optimista",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "iyimser",
+      "en": "optimistic",
+      "example": {
+        "es": "A pesar de los problemas, sigue siendo optimista.",
+        "tr": "Sorunlara rağmen iyimserliğini koruyor.",
+        "en": "Despite the problems, she remains optimistic."
+      }
+    },
+    {
+      "id": "consumir",
+      "word": "consumir",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "tüketmek",
+      "en": "to consume",
+      "example": {
+        "es": "Intentamos consumir productos de temporada.",
+        "tr": "Mevsimlik ürünler tüketmeye çalışıyoruz.",
+        "en": "We try to consume seasonal products."
+      }
+    },
+    {
+      "id": "plazo",
+      "word": "el plazo",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "son tarih; süre",
+      "en": "deadline; time limit",
+      "example": {
+        "es": "El plazo para enviar la solicitud termina el viernes.",
+        "tr": "Başvuruyu gönderme süresi cuma günü doluyor.",
+        "en": "The deadline for sending the application is Friday."
+      }
+    },
+    {
+      "id": "aliviado",
+      "word": "aliviado",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "rahatlamış",
+      "en": "relieved",
+      "example": {
+        "es": "Me sentí aliviada cuando supe que todo iba bien.",
+        "tr": "Her şeyin yolunda olduğunu öğrenince rahatladım.",
+        "en": "I felt relieved when I learned that everything was going well."
+      }
+    },
+    {
+      "id": "marearse",
+      "word": "marearse",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "başı dönmek; midesi bulanmak",
+      "en": "to feel dizzy; to get travel sick",
+      "example": {
+        "es": "Me mareo si leo durante los viajes en coche.",
+        "tr": "Araba yolculuklarında bir şey okursam midem bulanır.",
+        "en": "I get travel sick if I read during car journeys."
+      }
+    },
+    {
+      "id": "enlace",
+      "word": "el enlace",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "bağlantı",
+      "en": "link",
+      "example": {
+        "es": "El enlace del mensaje lleva a la página del curso.",
+        "tr": "Mesajdaki bağlantı kurs sayfasına gidiyor.",
+        "en": "The link in the message takes you to the course page."
+      }
+    },
+    {
+      "id": "guardar",
+      "word": "guardar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kaydetmek; saklamak",
+      "en": "to save; to keep",
+      "example": {
+        "es": "Guarda los cambios antes de cerrar el programa.",
+        "tr": "Programı kapatmadan önce değişiklikleri kaydet.",
+        "en": "Save the changes before closing the program."
+      }
+    },
+    {
+      "id": "desventaja",
+      "word": "la desventaja",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "dezavantaj",
+      "en": "disadvantage",
+      "example": {
+        "es": "La principal desventaja del piso es el ruido.",
+        "tr": "Dairenin başlıca dezavantajı gürültü.",
+        "en": "The main disadvantage of the flat is the noise."
+      }
+    },
+    {
+      "id": "grabar",
+      "word": "grabar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kaydetmek; kayıt yapmak",
+      "en": "to record",
+      "example": {
+        "es": "Grabé mi presentación para escucharla después.",
+        "tr": "Daha sonra dinlemek için sunumumu kaydettim.",
+        "en": "I recorded my presentation to listen to it later."
+      }
+    },
+    {
+      "id": "dedicar",
+      "word": "dedicar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "ayırmak; adamak",
+      "en": "to devote",
+      "example": {
+        "es": "Dedico los domingos a descansar y leer.",
+        "tr": "Pazar günlerini dinlenmeye ve okumaya ayırıyorum.",
+        "en": "I devote Sundays to resting and reading."
+      }
+    },
+    {
+      "id": "aconsejar",
+      "word": "aconsejar",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "tavsiye etmek",
+      "en": "to advise",
+      "example": {
+        "es": "Me aconsejó descansar antes de tomar una decisión.",
+        "tr": "Karar vermeden önce dinlenmemi tavsiye etti.",
+        "en": "She advised me to rest before making a decision."
+      }
+    },
+    {
+      "id": "recorrido",
+      "word": "el recorrido",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "gezi rotası; güzergâh",
+      "en": "route; tour",
+      "example": {
+        "es": "El recorrido incluye el puerto y el casco antiguo.",
+        "tr": "Gezi rotası limanı ve eski şehir merkezini kapsıyor.",
+        "en": "The tour includes the harbour and the old town."
+      }
+    },
+    {
+      "id": "transferencia",
+      "word": "la transferencia",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "banka havalesi",
+      "en": "bank transfer",
+      "example": {
+        "es": "Te haré una transferencia para pagar mi parte.",
+        "tr": "Payımı ödemek için sana havale yapacağım.",
+        "en": "I will make a bank transfer to pay my share."
+      }
+    },
+    {
+      "id": "cruce",
+      "word": "el cruce",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "kavşak; kesişim",
+      "en": "junction; crossing",
+      "example": {
+        "es": "La farmacia está justo después del cruce.",
+        "tr": "Eczane kavşaktan hemen sonra.",
+        "en": "The pharmacy is just after the junction."
+      }
+    },
+    {
+      "id": "subrayar",
+      "word": "subrayar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "altını çizmek",
+      "en": "to underline",
+      "example": {
+        "es": "Subraya las ideas principales del texto.",
+        "tr": "Metindeki ana fikirlerin altını çiz.",
+        "en": "Underline the main ideas in the text."
+      }
+    },
+    {
+      "id": "discutir",
+      "word": "discutir",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "tartışmak",
+      "en": "to argue; to discuss",
+      "example": {
+        "es": "No quiero discutir por algo tan poco importante.",
+        "tr": "Bu kadar önemsiz bir şey için tartışmak istemiyorum.",
+        "en": "I do not want to argue over something so unimportant."
+      }
+    },
+    {
+      "id": "efectivo",
+      "word": "el efectivo",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "nakit para",
+      "en": "cash",
+      "example": {
+        "es": "En este mercado solo se puede pagar en efectivo.",
+        "tr": "Bu pazarda yalnızca nakit ödeme yapılabiliyor.",
+        "en": "At this market, you can only pay in cash."
+      }
+    },
+    {
+      "id": "apoyar",
+      "word": "apoyar",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "desteklemek",
+      "en": "to support",
+      "example": {
+        "es": "Mis padres me apoyaron cuando cambié de trabajo.",
+        "tr": "İş değiştirdiğimde anne babam beni destekledi.",
+        "en": "My parents supported me when I changed jobs."
+      }
+    },
+    {
+      "id": "rebajas",
+      "word": "las rebajas",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "sezon indirimleri",
+      "en": "sales",
+      "example": {
+        "es": "Durante las rebajas encontré unas botas a mitad de precio.",
+        "tr": "Sezon indirimlerinde yarı fiyatına bir çift çizme buldum.",
+        "en": "During the sales, I found a pair of boots at half price."
+      }
+    },
+    {
+      "id": "desvio",
+      "word": "el desvío",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "yol sapması; alternatif güzergâh",
+      "en": "diversion; detour",
+      "example": {
+        "es": "Hay un desvío porque están arreglando el puente.",
+        "tr": "Köprüyü onardıkları için yol başka bir güzergâha yönlendiriliyor.",
+        "en": "There is a diversion because they are repairing the bridge."
+      }
+    },
+    {
+      "id": "senal",
+      "word": "la señal",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "işaret; tabela",
+      "en": "sign; signal",
+      "example": {
+        "es": "La señal indica que no se puede girar a la izquierda.",
+        "tr": "Tabela sola dönülemeyeceğini gösteriyor.",
+        "en": "The sign indicates that you cannot turn left."
+      }
+    },
+    {
+      "id": "descanso",
+      "word": "el descanso",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "mola; dinlenme",
+      "en": "break; rest",
+      "example": {
+        "es": "Después de dos horas hicimos un descanso.",
+        "tr": "İki saat sonra mola verdik.",
+        "en": "After two hours, we took a break."
+      }
+    },
+    {
+      "id": "reducir",
+      "word": "reducir",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "azaltmak",
+      "en": "to reduce",
+      "example": {
+        "es": "Podemos reducir el plástico que usamos cada día.",
+        "tr": "Her gün kullandığımız plastik miktarını azaltabiliriz.",
+        "en": "We can reduce the amount of plastic we use each day."
+      }
+    },
+    {
+      "id": "preocupado",
+      "word": "preocupado",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "endişeli",
+      "en": "worried",
+      "example": {
+        "es": "Estaba preocupada porque no encontraba su pasaporte.",
+        "tr": "Pasaportunu bulamadığı için endişeliydi.",
+        "en": "She was worried because she could not find her passport."
+      }
+    },
+    {
+      "id": "noticia",
+      "word": "la noticia",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "haber",
+      "en": "news; news item",
+      "example": {
+        "es": "Me enteré de la noticia por la radio.",
+        "tr": "Haberi radyodan öğrendim.",
+        "en": "I heard the news on the radio."
+      }
+    },
+    {
+      "id": "escaso",
+      "word": "escaso",
+      "kind": "sıfat",
+      "theme": "Doğa ve çevre",
+      "tr": "az; kıt; yetersiz",
+      "en": "scarce; limited",
+      "example": {
+        "es": "El agua es escasa en esta región durante el verano.",
+        "tr": "Bu bölgede yazın su kıt oluyor.",
+        "en": "Water is scarce in this region during the summer."
+      }
+    },
+    {
+      "id": "reutilizar",
+      "word": "reutilizar",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "yeniden kullanmak",
+      "en": "to reuse",
+      "example": {
+        "es": "Reutilizo los tarros de cristal para guardar alimentos.",
+        "tr": "Cam kavanozları yiyecek saklamak için yeniden kullanıyorum.",
+        "en": "I reuse glass jars to store food."
+      }
+    },
+    {
+      "id": "estreno",
+      "word": "el estreno",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "ilk gösterim; vizyona giriş",
+      "en": "premiere; release",
+      "example": {
+        "es": "Fuimos al estreno de una película española.",
+        "tr": "Bir İspanyol filminin ilk gösterimine gittik.",
+        "en": "We went to the premiere of a Spanish film."
+      }
+    },
+    {
+      "id": "acento",
+      "word": "el acento",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "aksan; vurgu",
+      "en": "accent; stress",
+      "example": {
+        "es": "Me cuesta entender algunos acentos cuando hablan rápido.",
+        "tr": "Hızlı konuştuklarında bazı aksanları anlamakta zorlanıyorum.",
+        "en": "I find some accents difficult to understand when people speak quickly."
+      }
+    },
+    {
+      "id": "vivienda",
+      "word": "la vivienda",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "konut",
+      "en": "housing; home",
+      "example": {
+        "es": "El precio de la vivienda ha subido en esta zona.",
+        "tr": "Bu bölgede konut fiyatları arttı.",
+        "en": "Housing prices have risen in this area."
+      }
+    },
+    {
+      "id": "sintoma",
+      "word": "el síntoma",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "belirti",
+      "en": "symptom",
+      "example": {
+        "es": "El médico me preguntó cuándo empezaron los síntomas.",
+        "tr": "Doktor belirtilerin ne zaman başladığını sordu.",
+        "en": "The doctor asked me when the symptoms started."
+      }
+    },
+    {
+      "id": "repartir",
+      "word": "repartir",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "paylaştırmak; dağıtmak",
+      "en": "to divide up; to distribute",
+      "example": {
+        "es": "Repartimos los gastos de la cena entre todos.",
+        "tr": "Akşam yemeğinin masrafını hepimiz paylaştık.",
+        "en": "We split the cost of dinner between everyone."
+      }
+    },
+    {
+      "id": "compartir",
+      "word": "compartir",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "paylaşmak",
+      "en": "to share",
+      "example": {
+        "es": "Compartimos los gastos del viaje entre cuatro personas.",
+        "tr": "Yolculuk masraflarını dört kişi paylaştık.",
+        "en": "We shared the travel expenses between four people."
+      }
+    },
+    {
+      "id": "organizar",
+      "word": "organizar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "düzenlemek; planlamak",
+      "en": "to organise",
+      "example": {
+        "es": "He organizado la semana para tener más tiempo libre.",
+        "tr": "Daha fazla boş zamanım olsun diye haftamı planladım.",
+        "en": "I have organised my week to have more free time."
+      }
+    },
+    {
+      "id": "actuacion",
+      "word": "la actuación",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "gösteri; performans",
+      "en": "performance",
+      "example": {
+        "es": "La actuación del grupo duró casi dos horas.",
+        "tr": "Grubun performansı neredeyse iki saat sürdü.",
+        "en": "The band's performance lasted almost two hours."
+      }
+    },
+    {
+      "id": "aprendizaje",
+      "word": "el aprendizaje",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "öğrenme süreci",
+      "en": "learning",
+      "example": {
+        "es": "La práctica frecuente facilita el aprendizaje de idiomas.",
+        "tr": "Sık pratik yapmak dil öğrenmeyi kolaylaştırır.",
+        "en": "Frequent practice makes language learning easier."
+      }
+    },
+    {
+      "id": "baja",
+      "word": "la baja",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "raporlu izin",
+      "en": "sick leave",
+      "example": {
+        "es": "Está de baja porque se ha roto una pierna.",
+        "tr": "Bacağını kırdığı için raporlu.",
+        "en": "She is on sick leave because she has broken a leg."
+      }
+    },
+    {
+      "id": "embarcar",
+      "word": "embarcar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "uçağa veya gemiye binmek",
+      "en": "to board",
+      "example": {
+        "es": "Los pasajeros empezaron a embarcar a las siete.",
+        "tr": "Yolcular saat yedide uçağa binmeye başladı.",
+        "en": "The passengers began boarding at seven."
+      }
+    },
+    {
+      "id": "permiso",
+      "word": "el permiso",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "izin",
+      "en": "permission; leave",
+      "example": {
+        "es": "Necesito pedir permiso para salir antes.",
+        "tr": "Erken çıkmak için izin istemem gerekiyor.",
+        "en": "I need to ask for permission to leave early."
+      }
+    },
+    {
+      "id": "ahorro",
+      "word": "el ahorro",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "tasarruf; birikim",
+      "en": "saving; savings",
+      "example": {
+        "es": "Gracias al ahorro mensual pudimos hacer el viaje.",
+        "tr": "Aylık birikimimiz sayesinde yolculuğa çıkabildik.",
+        "en": "Thanks to our monthly savings, we were able to take the trip."
+      }
+    },
+    {
+      "id": "equilibrio",
+      "word": "el equilibrio",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "denge",
+      "en": "balance",
+      "example": {
+        "es": "Busco un equilibrio entre el trabajo y el descanso.",
+        "tr": "Çalışmakla dinlenmek arasında denge arıyorum.",
+        "en": "I am looking for a balance between work and rest."
+      }
+    },
+    {
+      "id": "ahorrar",
+      "word": "ahorrar",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "biriktirmek; tasarruf etmek",
+      "en": "to save",
+      "example": {
+        "es": "Estamos ahorrando para pasar un mes en España.",
+        "tr": "İspanya'da bir ay geçirmek için para biriktiriyoruz.",
+        "en": "We are saving up to spend a month in Spain."
+      }
+    },
+    {
+      "id": "norma",
+      "word": "la norma",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "kural",
+      "en": "rule",
+      "example": {
+        "es": "Hay que leer las normas antes de utilizar la piscina.",
+        "tr": "Havuzu kullanmadan önce kuralları okumak gerekiyor.",
+        "en": "You need to read the rules before using the pool."
+      }
+    },
+    {
+      "id": "preocupacion",
+      "word": "la preocupación",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "endişe",
+      "en": "worry; concern",
+      "example": {
+        "es": "Su mayor preocupación era encontrar alojamiento.",
+        "tr": "En büyük endişesi kalacak bir yer bulmaktı.",
+        "en": "Her main concern was finding accommodation."
+      }
+    },
+    {
+      "id": "copia",
+      "word": "la copia",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kopya",
+      "en": "copy",
+      "example": {
+        "es": "Guardo una copia de los documentos en otro dispositivo.",
+        "tr": "Belgelerin bir kopyasını başka bir cihazda saklıyorum.",
+        "en": "I keep a copy of the documents on another device."
+      }
+    },
+    {
+      "id": "mantener",
+      "word": "mantener",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "korumak; sürdürmek",
+      "en": "to maintain; to keep",
+      "example": {
+        "es": "Intento mantener un horario regular de estudio.",
+        "tr": "Düzenli bir çalışma programını sürdürmeye çalışıyorum.",
+        "en": "I try to maintain a regular study schedule."
+      }
+    },
+    {
+      "id": "amistad",
+      "word": "la amistad",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "arkadaşlık; dostluk",
+      "en": "friendship",
+      "example": {
+        "es": "Nuestra amistad empezó durante un viaje de estudios.",
+        "tr": "Arkadaşlığımız bir okul gezisinde başladı.",
+        "en": "Our friendship began during a study trip."
+      }
+    },
+    {
+      "id": "orgullo",
+      "word": "el orgullo",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "gurur",
+      "en": "pride",
+      "example": {
+        "es": "Siento orgullo por todo lo que he aprendido.",
+        "tr": "Öğrendiğim her şeyle gurur duyuyorum.",
+        "en": "I feel proud of everything I have learned."
+      }
+    },
+    {
+      "id": "conseguir",
+      "word": "conseguir",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "elde etmek; başarmak",
+      "en": "to obtain; to manage to",
+      "example": {
+        "es": "Por fin he conseguido una cita para mañana.",
+        "tr": "Sonunda yarın için bir randevu alabildim.",
+        "en": "I have finally managed to get an appointment for tomorrow."
+      }
+    },
+    {
+      "id": "solicitud",
+      "word": "la solicitud",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "başvuru; talep",
+      "en": "application; request",
+      "example": {
+        "es": "He enviado una solicitud de trabajo por internet.",
+        "tr": "İnternet üzerinden bir iş başvurusu gönderdim.",
+        "en": "I have sent a job application online."
+      }
+    },
+    {
+      "id": "emitir",
+      "word": "emitir",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "yayınlamak",
+      "en": "to broadcast",
+      "example": {
+        "es": "El canal emitirá el documental esta noche.",
+        "tr": "Kanal belgeseli bu akşam yayınlayacak.",
+        "en": "The channel will broadcast the documentary tonight."
+      }
+    },
+    {
+      "id": "alojamiento",
+      "word": "el alojamiento",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "konaklama; kalacak yer",
+      "en": "accommodation",
+      "example": {
+        "es": "Buscamos alojamiento cerca de la estación.",
+        "tr": "İstasyonun yakınında kalacak bir yer arıyoruz.",
+        "en": "We are looking for accommodation near the station."
+      }
+    },
+    {
+      "id": "despegar",
+      "word": "despegar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "havalanmak",
+      "en": "to take off",
+      "example": {
+        "es": "El avión no pudo despegar por la niebla.",
+        "tr": "Uçak sis yüzünden havalanamadı.",
+        "en": "The plane could not take off because of the fog."
+      }
+    },
+    {
+      "id": "llegada",
+      "word": "la llegada",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "varış",
+      "en": "arrival",
+      "example": {
+        "es": "Avisaré a mis padres de nuestra llegada.",
+        "tr": "Vardığımızı anne babama bildireceğim.",
+        "en": "I will let my parents know when we arrive."
+      }
+    },
+    {
+      "id": "expresion",
+      "word": "la expresión",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ifade",
+      "en": "expression",
+      "example": {
+        "es": "Esta expresión se usa mucho en conversaciones informales.",
+        "tr": "Bu ifade samimi konuşmalarda çok kullanılıyor.",
+        "en": "This expression is often used in informal conversations."
+      }
+    },
+    {
+      "id": "proponer",
+      "word": "proponer",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "önermek",
+      "en": "to propose; to suggest",
+      "example": {
+        "es": "Mi compañera propuso una forma más sencilla de trabajar.",
+        "tr": "İş arkadaşım daha basit bir çalışma yöntemi önerdi.",
+        "en": "My colleague suggested a simpler way of working."
+      }
+    },
+    {
+      "id": "apetito",
+      "word": "el apetito",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "iştah",
+      "en": "appetite",
+      "example": {
+        "es": "Con el resfriado he perdido un poco el apetito.",
+        "tr": "Soğuk algınlığı yüzünden iştahım biraz azaldı.",
+        "en": "I have lost some of my appetite because of the cold."
+      }
+    },
+    {
+      "id": "atrevido",
+      "word": "atrevido",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "cesur; çekinmeyen",
+      "en": "daring; bold",
+      "example": {
+        "es": "Su elección de colores me parece muy atrevida.",
+        "tr": "Renk seçimini çok cesur buluyorum.",
+        "en": "I find her choice of colours very daring."
+      }
+    },
+    {
+      "id": "empeorar",
+      "word": "empeorar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "kötüleşmek",
+      "en": "to get worse",
+      "example": {
+        "es": "El tráfico empeora cuando empieza a llover.",
+        "tr": "Yağmur yağmaya başlayınca trafik kötüleşiyor.",
+        "en": "The traffic gets worse when it starts to rain."
+      }
+    },
+    {
+      "id": "sendero",
+      "word": "el sendero",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "patika; yürüyüş yolu",
+      "en": "path; trail",
+      "example": {
+        "es": "Seguimos un sendero que llegaba hasta el río.",
+        "tr": "Nehre kadar uzanan bir patikayı takip ettik.",
+        "en": "We followed a trail that led to the river."
+      }
+    },
+    {
+      "id": "error",
+      "word": "el error",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "hata",
+      "en": "mistake",
+      "example": {
+        "es": "Cometer errores forma parte del aprendizaje.",
+        "tr": "Hata yapmak öğrenmenin bir parçasıdır.",
+        "en": "Making mistakes is part of learning."
+      }
+    },
+    {
+      "id": "seguridad",
+      "word": "la seguridad",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "güvenlik",
+      "en": "safety; security",
+      "example": {
+        "es": "La nueva iluminación mejora la seguridad de la calle.",
+        "tr": "Yeni aydınlatma sokağın güvenliğini artırıyor.",
+        "en": "The new lighting improves safety in the street."
+      }
+    },
+    {
+      "id": "proteger",
+      "word": "proteger",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "korumak",
+      "en": "to protect",
+      "example": {
+        "es": "El parque se creó para proteger el bosque.",
+        "tr": "Park ormanı korumak için oluşturuldu.",
+        "en": "The park was created to protect the forest."
+      }
+    },
+    {
+      "id": "tristeza",
+      "word": "la tristeza",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "üzüntü",
+      "en": "sadness",
+      "example": {
+        "es": "Sintió tristeza al despedirse de sus compañeros.",
+        "tr": "Arkadaşlarına veda ederken üzüntü hissetti.",
+        "en": "She felt sadness when saying goodbye to her colleagues."
+      }
+    },
+    {
+      "id": "intento",
+      "word": "el intento",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "deneme; girişim",
+      "en": "attempt",
+      "example": {
+        "es": "Pude abrir la puerta en el segundo intento.",
+        "tr": "Kapıyı ikinci denemede açabildim.",
+        "en": "I managed to open the door on the second attempt."
+      }
+    },
+    {
+      "id": "vinculo",
+      "word": "el vínculo",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "bağ",
+      "en": "bond; connection",
+      "example": {
+        "es": "El viaje creó un vínculo especial entre nosotros.",
+        "tr": "Yolculuk aramızda özel bir bağ oluşturdu.",
+        "en": "The trip created a special bond between us."
+      }
+    },
+    {
+      "id": "orgulloso",
+      "word": "orgulloso",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "gururlu",
+      "en": "proud",
+      "example": {
+        "es": "Estoy orgullosa de haber terminado el curso.",
+        "tr": "Kursu bitirmiş olmaktan gurur duyuyorum.",
+        "en": "I am proud to have finished the course."
+      }
+    },
+    {
+      "id": "plantilla",
+      "word": "la plantilla",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "çalışan kadrosu",
+      "en": "staff; workforce",
+      "example": {
+        "es": "La empresa aumentará su plantilla en primavera.",
+        "tr": "Şirket ilkbaharda çalışan sayısını artıracak.",
+        "en": "The company will increase its workforce in spring."
+      }
+    },
+    {
+      "id": "relacionar",
+      "word": "relacionar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ilişkilendirmek",
+      "en": "to connect; to relate",
+      "example": {
+        "es": "Relaciona cada palabra con una situación de tu vida.",
+        "tr": "Her kelimeyi hayatından bir durumla ilişkilendir.",
+        "en": "Connect each word with a situation from your life."
+      }
+    },
+    {
+      "id": "alergia",
+      "word": "la alergia",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "alerji",
+      "en": "allergy",
+      "example": {
+        "es": "Avisé al camarero de mi alergia a los frutos secos.",
+        "tr": "Garsona kuruyemiş alerjim olduğunu söyledim.",
+        "en": "I told the waiter about my nut allergy."
+      }
+    },
+    {
+      "id": "habito",
+      "word": "el hábito",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "alışkanlık",
+      "en": "habit",
+      "example": {
+        "es": "Caminar hasta el trabajo se ha convertido en un hábito.",
+        "tr": "İşe yürüyerek gitmek bir alışkanlığa dönüştü.",
+        "en": "Walking to work has become a habit."
+      }
+    },
+    {
+      "id": "compromiso",
+      "word": "el compromiso",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "söz; yükümlülük",
+      "en": "commitment",
+      "example": {
+        "es": "No puedo ir porque ya tengo otro compromiso.",
+        "tr": "Gidemem çünkü önceden verdiğim başka bir sözüm var.",
+        "en": "I cannot go because I already have another commitment."
+      }
+    },
+    {
+      "id": "mejorar",
+      "word": "mejorar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "geliştirmek; iyileşmek",
+      "en": "to improve",
+      "example": {
+        "es": "Su pronunciación ha mejorado mucho este año.",
+        "tr": "Telaffuzu bu yıl çok gelişti.",
+        "en": "Her pronunciation has improved a lot this year."
+      }
+    },
+    {
+      "id": "usuario",
+      "word": "el usuario",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kullanıcı",
+      "en": "user",
+      "example": {
+        "es": "Cada usuario puede elegir su propio nombre de perfil.",
+        "tr": "Her kullanıcı kendi profil adını seçebilir.",
+        "en": "Each user can choose their own profile name."
+      }
+    },
+    {
+      "id": "pedido",
+      "word": "el pedido",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "sipariş",
+      "en": "order",
+      "example": {
+        "es": "Mi pedido llegará entre el martes y el jueves.",
+        "tr": "Siparişim salı ile perşembe arasında gelecek.",
+        "en": "My order will arrive between Tuesday and Thursday."
+      }
+    },
+    {
+      "id": "contrato",
+      "word": "el contrato",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "sözleşme",
+      "en": "contract",
+      "example": {
+        "es": "Antes de firmar el contrato, leí todas las condiciones.",
+        "tr": "Sözleşmeyi imzalamadan önce bütün koşulları okudum.",
+        "en": "Before signing the contract, I read all the conditions."
+      }
+    },
+    {
+      "id": "entretener",
+      "word": "entretener",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "eğlendirmek; hoşça vakit geçirtmek",
+      "en": "to entertain",
+      "example": {
+        "es": "El documental me entretuvo y aprendí cosas nuevas.",
+        "tr": "Belgeselle keyifli vakit geçirdim ve yeni şeyler öğrendim.",
+        "en": "The documentary entertained me, and I learned new things."
+      }
+    },
+    {
+      "id": "timido",
+      "word": "tímido",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "utangaç",
+      "en": "shy",
+      "example": {
+        "es": "Aunque es tímida, participa mucho en clase.",
+        "tr": "Utangaç olmasına rağmen derse çok katılıyor.",
+        "en": "Although she is shy, she participates a lot in class."
+      }
+    },
+    {
+      "id": "contribuir",
+      "word": "contribuir",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "katkıda bulunmak",
+      "en": "to contribute",
+      "example": {
+        "es": "Cada vecino puede contribuir con una pequeña cantidad.",
+        "tr": "Her komşu küçük bir miktarla katkıda bulunabilir.",
+        "en": "Each neighbour can contribute a small amount."
+      }
+    },
+    {
+      "id": "voluntario",
+      "word": "el voluntario",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "gönüllü",
+      "en": "volunteer",
+      "example": {
+        "es": "Los voluntarios limpiaron la playa el domingo.",
+        "tr": "Gönüllüler pazar günü sahili temizledi.",
+        "en": "The volunteers cleaned the beach on Sunday."
+      }
+    },
+    {
+      "id": "repasar",
+      "word": "repasar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "tekrar etmek; gözden geçirmek",
+      "en": "to revise; to review",
+      "example": {
+        "es": "Voy a repasar los verbos antes de la clase.",
+        "tr": "Dersten önce fiilleri tekrar edeceğim.",
+        "en": "I am going to revise the verbs before class."
+      }
+    },
+    {
+      "id": "rotonda",
+      "word": "la rotonda",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "dönel kavşak",
+      "en": "roundabout",
+      "example": {
+        "es": "En la rotonda, toma la segunda salida.",
+        "tr": "Dönel kavşakta ikinci çıkıştan çık.",
+        "en": "At the roundabout, take the second exit."
+      }
+    },
+    {
+      "id": "renovable",
+      "word": "renovable",
+      "kind": "sıfat",
+      "theme": "Doğa ve çevre",
+      "tr": "yenilenebilir",
+      "en": "renewable",
+      "example": {
+        "es": "Cada vez más hogares utilizan energía renovable.",
+        "tr": "Giderek daha fazla ev yenilenebilir enerji kullanıyor.",
+        "en": "More and more households use renewable energy."
+      }
+    },
+    {
+      "id": "entorno",
+      "word": "el entorno",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "çevre; içinde bulunulan ortam",
+      "en": "surroundings; environment",
+      "example": {
+        "es": "Un entorno tranquilo me ayuda a concentrarme.",
+        "tr": "Sakin bir ortam odaklanmama yardımcı oluyor.",
+        "en": "Quiet surroundings help me concentrate."
+      }
+    },
+    {
+      "id": "consejo",
+      "word": "el consejo",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "tavsiye",
+      "en": "advice; piece of advice",
+      "example": {
+        "es": "Mi hermana me dio un consejo muy práctico.",
+        "tr": "Kız kardeşim bana çok işe yarar bir tavsiye verdi.",
+        "en": "My sister gave me a very practical piece of advice."
+      }
+    },
+    {
+      "id": "oferta",
+      "word": "la oferta",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "özel fiyat; teklif",
+      "en": "special offer; offer",
+      "example": {
+        "es": "Compré la chaqueta porque estaba de oferta.",
+        "tr": "Montu indirimde olduğu için aldım.",
+        "en": "I bought the jacket because it was on special offer."
+      }
+    },
+    {
+      "id": "temperatura",
+      "word": "la temperatura",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "sıcaklık",
+      "en": "temperature",
+      "example": {
+        "es": "La temperatura cambió mucho durante el día.",
+        "tr": "Sıcaklık gün içinde çok değişti.",
+        "en": "The temperature changed a lot during the day."
+      }
+    },
+    {
+      "id": "tejido",
+      "word": "el tejido",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "kumaş; dokuma",
+      "en": "fabric",
+      "example": {
+        "es": "El tejido de esta camisa es suave y resistente.",
+        "tr": "Bu gömleğin kumaşı yumuşak ve dayanıklı.",
+        "en": "The fabric of this shirt is soft and durable."
+      }
+    },
+    {
+      "id": "animarse",
+      "word": "animarse",
+      "kind": "fiil",
+      "theme": "Duygular ve kişilik",
+      "tr": "cesaretini toplamak; heveslenmek",
+      "en": "to feel encouraged; to give it a try",
+      "example": {
+        "es": "Al final me animé a participar en el concurso.",
+        "tr": "Sonunda cesaretimi toplayıp yarışmaya katıldım.",
+        "en": "In the end, I plucked up the courage to enter the competition."
+      }
+    },
+    {
+      "id": "explicacion",
+      "word": "la explicación",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "açıklama",
+      "en": "explanation",
+      "example": {
+        "es": "Tu explicación me ha ayudado a entender la diferencia.",
+        "tr": "Açıklaman farkı anlamama yardımcı oldu.",
+        "en": "Your explanation has helped me understand the difference."
+      }
+    },
+    {
+      "id": "ayuntamiento",
+      "word": "el ayuntamiento",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "belediye",
+      "en": "town council; town hall",
+      "example": {
+        "es": "El ayuntamiento ha abierto una nueva biblioteca.",
+        "tr": "Belediye yeni bir kütüphane açtı.",
+        "en": "The town council has opened a new library."
+      }
+    },
+    {
+      "id": "casco-antiguo",
+      "word": "el casco antiguo",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "eski şehir merkezi",
+      "en": "old town",
+      "example": {
+        "es": "El casco antiguo conserva muchas calles de piedra.",
+        "tr": "Eski şehir merkezinde pek çok taş sokak korunmuş.",
+        "en": "The old town still has many stone streets."
+      }
+    },
+    {
+      "id": "verguenza",
+      "word": "la vergüenza",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "utanma; utanç",
+      "en": "embarrassment; shame",
+      "example": {
+        "es": "Al principio me daba vergüenza hablar delante del grupo.",
+        "tr": "Başlangıçta grubun önünde konuşmaktan utanıyordum.",
+        "en": "At first, I felt embarrassed about speaking in front of the group."
+      }
+    },
+    {
+      "id": "tratamiento",
+      "word": "el tratamiento",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "tedavi",
+      "en": "treatment",
+      "example": {
+        "es": "El médico me explicó cuánto duraría el tratamiento.",
+        "tr": "Doktor tedavinin ne kadar süreceğini açıkladı.",
+        "en": "The doctor explained how long the treatment would last."
+      }
+    },
+    {
+      "id": "acontecimiento",
+      "word": "el acontecimiento",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "olay; önemli etkinlik",
+      "en": "event",
+      "example": {
+        "es": "El festival es el acontecimiento más esperado del año.",
+        "tr": "Festival yılın en çok beklenen etkinliği.",
+        "en": "The festival is the most eagerly awaited event of the year."
+      }
+    },
+    {
+      "id": "agotado",
+      "word": "agotado",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "bitkin; tükenmiş",
+      "en": "exhausted",
+      "example": {
+        "es": "Después de la mudanza estábamos completamente agotados.",
+        "tr": "Taşınmadan sonra tamamen bitkindik.",
+        "en": "After the move, we were completely exhausted."
+      }
+    },
+    {
+      "id": "bienvenida",
+      "word": "la bienvenida",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "hoş geldin karşılaması",
+      "en": "welcome",
+      "example": {
+        "es": "Nos dieron una bienvenida muy cariñosa.",
+        "tr": "Bizi çok sıcak karşıladılar.",
+        "en": "They gave us a very warm welcome."
+      }
+    },
+    {
+      "id": "pronostico",
+      "word": "el pronóstico",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "hava tahmini; öngörü",
+      "en": "forecast",
+      "example": {
+        "es": "Según el pronóstico, mañana bajarán las temperaturas.",
+        "tr": "Hava tahminine göre yarın sıcaklıklar düşecek.",
+        "en": "According to the forecast, temperatures will drop tomorrow."
+      }
+    },
+    {
+      "id": "salida",
+      "word": "la salida",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "kalkış; çıkış",
+      "en": "departure; exit",
+      "example": {
+        "es": "La salida del vuelo está prevista para las ocho.",
+        "tr": "Uçağın kalkışı saat sekiz için planlanmış.",
+        "en": "The flight is scheduled to depart at eight."
+      }
+    },
+    {
+      "id": "consumo",
+      "word": "el consumo",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "tüketim",
+      "en": "consumption",
+      "example": {
+        "es": "El consumo de agua aumenta durante el verano.",
+        "tr": "Su tüketimi yazın artıyor.",
+        "en": "Water consumption increases during the summer."
+      }
+    },
+    {
+      "id": "solicitar",
+      "word": "solicitar",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "talep etmek; başvurmak",
+      "en": "to request; to apply for",
+      "example": {
+        "es": "Puedes solicitar más información por correo.",
+        "tr": "E-postayla daha fazla bilgi talep edebilirsin.",
+        "en": "You can request more information by email."
+      }
+    },
+    {
+      "id": "paso-de-peatones",
+      "word": "el paso de peatones",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "yaya geçidi",
+      "en": "pedestrian crossing",
+      "example": {
+        "es": "Cruzamos por el paso de peatones que está junto al parque.",
+        "tr": "Parkın yanındaki yaya geçidinden karşıya geçtik.",
+        "en": "We crossed at the pedestrian crossing next to the park."
+      }
+    },
+    {
+      "id": "borrar",
+      "word": "borrar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "silmek",
+      "en": "to delete; to erase",
+      "example": {
+        "es": "Borré una foto sin querer y luego la recuperé.",
+        "tr": "Bir fotoğrafı yanlışlıkla sildim, sonra geri getirdim.",
+        "en": "I deleted a photo by accident and then recovered it."
+      }
+    },
+    {
+      "id": "cansancio",
+      "word": "el cansancio",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "yorgunluk",
+      "en": "tiredness; fatigue",
+      "example": {
+        "es": "Después de tantos viajes empezó a notar el cansancio.",
+        "tr": "Bu kadar yolculuktan sonra yorgunluğu hissetmeye başladı.",
+        "en": "After so many trips, she began to feel tired."
+      }
+    },
+    {
+      "id": "mudanza",
+      "word": "la mudanza",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "taşınma",
+      "en": "move; house move",
+      "example": {
+        "es": "La mudanza nos llevó todo el fin de semana.",
+        "tr": "Taşınma bütün hafta sonumuzu aldı.",
+        "en": "The move took us the whole weekend."
+      }
+    },
+    {
+      "id": "confirmar",
+      "word": "confirmar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "onaylamak; teyit etmek",
+      "en": "to confirm",
+      "example": {
+        "es": "¿Podría confirmar la hora de salida del autobús?",
+        "tr": "Otobüsün kalkış saatini teyit edebilir misiniz?",
+        "en": "Could you confirm the bus departure time?"
+      }
+    },
+    {
+      "id": "receta",
+      "word": "la receta",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "reçete; tarif",
+      "en": "prescription; recipe",
+      "example": {
+        "es": "La farmacéutica me pidió la receta del médico.",
+        "tr": "Eczacı benden doktorun reçetesini istedi.",
+        "en": "The pharmacist asked me for the doctor's prescription."
+      }
+    },
+    {
+      "id": "igualdad",
+      "word": "la igualdad",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "eşitlik",
+      "en": "equality",
+      "example": {
+        "es": "La campaña promueve la igualdad de oportunidades.",
+        "tr": "Kampanya fırsat eşitliğini destekliyor.",
+        "en": "The campaign promotes equal opportunities."
+      }
+    },
+    {
+      "id": "electrodomestico",
+      "word": "el electrodoméstico",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "ev aleti; beyaz eşya",
+      "en": "household appliance",
+      "example": {
+        "es": "Este electrodoméstico consume menos energía.",
+        "tr": "Bu ev aleti daha az enerji tüketiyor.",
+        "en": "This household appliance uses less energy."
+      }
+    },
+    {
+      "id": "significado",
+      "word": "el significado",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "anlam",
+      "en": "meaning",
+      "example": {
+        "es": "El significado de la palabra cambia según el contexto.",
+        "tr": "Kelimenin anlamı bağlama göre değişiyor.",
+        "en": "The meaning of the word changes depending on the context."
+      }
+    },
+    {
+      "id": "actualizacion",
+      "word": "la actualización",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "güncelleme",
+      "en": "update",
+      "example": {
+        "es": "La última actualización ha solucionado varios errores.",
+        "tr": "Son güncelleme birkaç hatayı giderdi.",
+        "en": "The latest update has fixed several errors."
+      }
+    },
+    {
+      "id": "exposicion",
+      "word": "la exposición",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "sergi",
+      "en": "exhibition",
+      "example": {
+        "es": "La exposición reúne fotografías de varios países.",
+        "tr": "Sergi birkaç ülkeden fotoğrafları bir araya getiriyor.",
+        "en": "The exhibition brings together photographs from several countries."
+      }
+    },
+    {
+      "id": "carino",
+      "word": "el cariño",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "sevgi; şefkat",
+      "en": "affection",
+      "example": {
+        "es": "Recuerdo a mi antigua profesora con mucho cariño.",
+        "tr": "Eski öğretmenimi büyük bir sevgiyle hatırlıyorum.",
+        "en": "I remember my former teacher with great affection."
+      }
+    },
+    {
+      "id": "fregadero",
+      "word": "el fregadero",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "mutfak evyesi",
+      "en": "kitchen sink",
+      "example": {
+        "es": "Dejé los platos en el fregadero después de cenar.",
+        "tr": "Akşam yemeğinden sonra tabakları evyeye bıraktım.",
+        "en": "I left the plates in the sink after dinner."
+      }
+    },
+    {
+      "id": "humedad",
+      "word": "la humedad",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "nem; rutubet",
+      "en": "humidity; damp",
+      "example": {
+        "es": "Hay humedad en la pared que da al patio.",
+        "tr": "Avluya bakan duvarda rutubet var.",
+        "en": "There is damp on the wall facing the courtyard."
+      }
+    },
+    {
+      "id": "gastar",
+      "word": "gastar",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "harcamak",
+      "en": "to spend",
+      "example": {
+        "es": "Este año gasto menos dinero en ropa.",
+        "tr": "Bu yıl kıyafete daha az para harcıyorum.",
+        "en": "This year I am spending less money on clothes."
+      }
+    },
+    {
+      "id": "respeto",
+      "word": "el respeto",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "saygı",
+      "en": "respect",
+      "example": {
+        "es": "Podemos tener opiniones diferentes y tratarnos con respeto.",
+        "tr": "Farklı fikirlerimiz olabilir ve birbirimize saygılı davranabiliriz.",
+        "en": "We can have different opinions and treat each other with respect."
+      }
+    },
+    {
+      "id": "fianza",
+      "word": "la fianza",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "depozito; güvence bedeli",
+      "en": "deposit",
+      "example": {
+        "es": "Dejamos un mes de alquiler como fianza.",
+        "tr": "Depozito olarak bir aylık kira bıraktık.",
+        "en": "We paid one month's rent as a deposit."
+      }
+    },
+    {
+      "id": "alquiler",
+      "word": "el alquiler",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "kira; kiralama",
+      "en": "rent; rental",
+      "example": {
+        "es": "El alquiler no incluye los gastos de electricidad.",
+        "tr": "Kiraya elektrik masrafları dâhil değil.",
+        "en": "The rent does not include electricity bills."
+      }
+    },
+    {
+      "id": "escenario",
+      "word": "el escenario",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "sahne",
+      "en": "stage",
+      "example": {
+        "es": "Los músicos subieron al escenario entre aplausos.",
+        "tr": "Müzisyenler alkışlar arasında sahneye çıktı.",
+        "en": "The musicians went on stage to applause."
+      }
+    },
+    {
+      "id": "encargarse",
+      "word": "encargarse",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "sorumluluğunu üstlenmek; ilgilenmek",
+      "en": "to take care of",
+      "example": {
+        "es": "Yo me encargo de reservar la sala.",
+        "tr": "Salonu ayırtma işini ben üstleniyorum.",
+        "en": "I will take care of booking the room."
+      }
+    },
+    {
+      "id": "cancelar",
+      "word": "cancelar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "iptal etmek",
+      "en": "to cancel",
+      "example": {
+        "es": "Tuvimos que cancelar el viaje por una avería.",
+        "tr": "Bir arıza yüzünden yolculuğu iptal etmek zorunda kaldık.",
+        "en": "We had to cancel the trip because of a breakdown."
+      }
+    },
+    {
+      "id": "inseguridad",
+      "word": "la inseguridad",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "özgüvensizlik; güvensizlik",
+      "en": "insecurity",
+      "example": {
+        "es": "La práctica me ayuda a superar la inseguridad al hablar.",
+        "tr": "Pratik yapmak konuşurken hissettiğim özgüvensizliği aşmama yardımcı oluyor.",
+        "en": "Practice helps me overcome my insecurity when speaking."
+      }
+    },
+    {
+      "id": "permiso-de-conducir",
+      "word": "el permiso de conducir",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "sürücü belgesi; ehliyet",
+      "en": "driving licence",
+      "example": {
+        "es": "Saqué el permiso de conducir el año pasado.",
+        "tr": "Geçen yıl ehliyet aldım.",
+        "en": "I got my driving licence last year."
+      }
+    },
+    {
+      "id": "garantia",
+      "word": "la garantía",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "garanti",
+      "en": "guarantee; warranty",
+      "example": {
+        "es": "La lavadora todavía está en garantía.",
+        "tr": "Çamaşır makinesinin garantisi hâlâ devam ediyor.",
+        "en": "The washing machine is still under warranty."
+      }
+    },
+    {
+      "id": "trastero",
+      "word": "el trastero",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "depo odası",
+      "en": "storage room",
+      "example": {
+        "es": "Guardamos las maletas en el trastero.",
+        "tr": "Bavulları depo odasında saklıyoruz.",
+        "en": "We keep the suitcases in the storage room."
+      }
+    },
+    {
+      "id": "gasto",
+      "word": "el gasto",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "masraf; harcama",
+      "en": "expense; spending",
+      "example": {
+        "es": "Este mes hemos reducido los gastos de transporte.",
+        "tr": "Bu ay ulaşım masraflarını azalttık.",
+        "en": "This month we have reduced our transport expenses."
+      }
+    },
+    {
+      "id": "empresa",
+      "word": "la empresa",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "şirket",
+      "en": "company",
+      "example": {
+        "es": "La empresa ha abierto una oficina en Valencia.",
+        "tr": "Şirket Valencia'da bir ofis açtı.",
+        "en": "The company has opened an office in Valencia."
+      }
+    },
+    {
+      "id": "jubilarse",
+      "word": "jubilarse",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "emekli olmak",
+      "en": "to retire",
+      "example": {
+        "es": "Mi padre se jubilará el año que viene.",
+        "tr": "Babam gelecek yıl emekli olacak.",
+        "en": "My father will retire next year."
+      }
+    },
+    {
+      "id": "herida",
+      "word": "la herida",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "yara",
+      "en": "wound; cut",
+      "example": {
+        "es": "La enfermera limpió la herida con cuidado.",
+        "tr": "Hemşire yarayı dikkatlice temizledi.",
+        "en": "The nurse carefully cleaned the wound."
+      }
+    },
+    {
+      "id": "soledad",
+      "word": "la soledad",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "yalnızlık",
+      "en": "loneliness; solitude",
+      "example": {
+        "es": "La soledad puede ser agradable cuando la eliges.",
+        "tr": "Kendin seçtiğinde yalnızlık hoş olabilir.",
+        "en": "Solitude can be pleasant when you choose it."
+      }
+    },
+    {
+      "id": "perdonar",
+      "word": "perdonar",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "affetmek",
+      "en": "to forgive",
+      "example": {
+        "es": "Le perdoné porque reconoció su error.",
+        "tr": "Hatasını kabul ettiği için onu affettim.",
+        "en": "I forgave him because he admitted his mistake."
+      }
+    },
+    {
+      "id": "pesimista",
+      "word": "pesimista",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "kötümser",
+      "en": "pessimistic",
+      "example": {
+        "es": "No seas tan pesimista; todavía tenemos tiempo.",
+        "tr": "Bu kadar kötümser olma; hâlâ zamanımız var.",
+        "en": "Do not be so pessimistic; we still have time."
+      }
+    },
+    {
+      "id": "resultado",
+      "word": "el resultado",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "sonuç",
+      "en": "result",
+      "example": {
+        "es": "Los resultados del curso han sido muy positivos.",
+        "tr": "Kursun sonuçları çok olumlu oldu.",
+        "en": "The results of the course have been very positive."
+      }
+    },
+    {
+      "id": "perderse",
+      "word": "perderse",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "yolunu kaybetmek",
+      "en": "to get lost",
+      "example": {
+        "es": "Nos perdimos al buscar el camino de vuelta.",
+        "tr": "Dönüş yolunu ararken kaybolduk.",
+        "en": "We got lost while looking for the way back."
+      }
+    },
+    {
+      "id": "generoso",
+      "word": "generoso",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "cömert",
+      "en": "generous",
+      "example": {
+        "es": "Es generoso con su tiempo y siempre ayuda.",
+        "tr": "Zamanını paylaşmakta cömerttir ve her zaman yardım eder.",
+        "en": "He is generous with his time and always helps."
+      }
+    },
+    {
+      "id": "contrasena",
+      "word": "la contraseña",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "şifre; parola",
+      "en": "password",
+      "example": {
+        "es": "He cambiado la contraseña de mi correo electrónico.",
+        "tr": "E-posta hesabımın şifresini değiştirdim.",
+        "en": "I have changed the password for my email account."
+      }
+    },
+    {
+      "id": "recurso",
+      "word": "el recurso",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "kaynak; imkân",
+      "en": "resource",
+      "example": {
+        "es": "El agua es un recurso que debemos cuidar.",
+        "tr": "Su, korumamız gereken bir kaynaktır.",
+        "en": "Water is a resource that we must protect."
+      }
+    },
+    {
+      "id": "cuota",
+      "word": "la cuota",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "taksit; üyelik ücreti",
+      "en": "instalment; membership fee",
+      "example": {
+        "es": "La cuota del gimnasio se paga a principios de mes.",
+        "tr": "Spor salonu üyelik ücreti ayın başında ödeniyor.",
+        "en": "The gym membership fee is paid at the beginning of the month."
+      }
+    },
+    {
+      "id": "contenedor",
+      "word": "el contenedor",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "büyük çöp veya geri dönüşüm kutusu",
+      "en": "bin; container",
+      "example": {
+        "es": "Dejamos el papel en el contenedor azul.",
+        "tr": "Kâğıtları mavi geri dönüşüm kutusuna bıraktık.",
+        "en": "We put the paper in the blue recycling bin."
+      }
+    },
+    {
+      "id": "dificultad",
+      "word": "la dificultad",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "zorluk",
+      "en": "difficulty",
+      "example": {
+        "es": "Al principio tuve dificultades para entender el acento.",
+        "tr": "Başlangıçta aksanı anlamakta zorlandım.",
+        "en": "At first, I had difficulty understanding the accent."
+      }
+    },
+    {
+      "id": "sostenible",
+      "word": "sostenible",
+      "kind": "sıfat",
+      "theme": "Doğa ve çevre",
+      "tr": "sürdürülebilir",
+      "en": "sustainable",
+      "example": {
+        "es": "Buscamos formas más sostenibles de viajar.",
+        "tr": "Seyahat etmenin daha sürdürülebilir yollarını arıyoruz.",
+        "en": "We are looking for more sustainable ways to travel."
+      }
+    },
+    {
+      "id": "descargar",
+      "word": "descargar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "indirmek",
+      "en": "to download",
+      "example": {
+        "es": "Puedes descargar el material antes de la clase.",
+        "tr": "Materyali dersten önce indirebilirsin.",
+        "en": "You can download the material before class."
+      }
+    },
+    {
+      "id": "bombilla",
+      "word": "la bombilla",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "ampul",
+      "en": "light bulb",
+      "example": {
+        "es": "Tengo que cambiar la bombilla del pasillo.",
+        "tr": "Koridorun ampulünü değiştirmem gerekiyor.",
+        "en": "I need to change the light bulb in the hallway."
+      }
+    },
+    {
+      "id": "consulta",
+      "word": "la consulta",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "muayene; doktor görüşmesi",
+      "en": "medical consultation; appointment",
+      "example": {
+        "es": "La consulta duró unos veinte minutos.",
+        "tr": "Muayene yaklaşık yirmi dakika sürdü.",
+        "en": "The consultation lasted about twenty minutes."
+      }
+    },
+    {
+      "id": "solucion",
+      "word": "la solución",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "çözüm",
+      "en": "solution",
+      "example": {
+        "es": "Encontramos una solución que nos viene bien a todos.",
+        "tr": "Hepimize uyan bir çözüm bulduk.",
+        "en": "We found a solution that works for all of us."
+      }
+    },
+    {
+      "id": "trayecto",
+      "word": "el trayecto",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "güzergâh; yolculuk",
+      "en": "journey; route",
+      "example": {
+        "es": "El trayecto hasta el aeropuerto dura una hora.",
+        "tr": "Havaalanına yolculuk bir saat sürüyor.",
+        "en": "The journey to the airport takes an hour."
+      }
+    },
+    {
+      "id": "agenda",
+      "word": "la agenda",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "ajanda; gündem",
+      "en": "diary; agenda",
+      "example": {
+        "es": "He apuntado la cita en mi agenda.",
+        "tr": "Randevuyu ajandama yazdım.",
+        "en": "I have written the appointment in my diary."
+      }
+    },
+    {
+      "id": "comunidad",
+      "word": "la comunidad",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "topluluk",
+      "en": "community",
+      "example": {
+        "es": "La comunidad organiza actividades para todas las edades.",
+        "tr": "Topluluk her yaşa uygun etkinlikler düzenliyor.",
+        "en": "The community organises activities for all ages."
+      }
+    },
+    {
+      "id": "animo",
+      "word": "el ánimo",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "moral; ruh hâli",
+      "en": "mood; spirits",
+      "example": {
+        "es": "Un paseo por el mar me levantó el ánimo.",
+        "tr": "Deniz kenarında yürümek moralimi yükseltti.",
+        "en": "A walk by the sea lifted my spirits."
+      }
+    },
+    {
+      "id": "peaje",
+      "word": "el peaje",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "yol geçiş ücreti",
+      "en": "toll",
+      "example": {
+        "es": "Esta carretera tiene peaje, pero es más rápida.",
+        "tr": "Bu yol ücretli ama daha hızlı.",
+        "en": "This road has a toll, but it is faster."
+      }
+    },
+    {
+      "id": "confiar",
+      "word": "confiar",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "güvenmek",
+      "en": "to trust",
+      "example": {
+        "es": "Confío en ella porque siempre cumple su palabra.",
+        "tr": "Her zaman sözünü tuttuğu için ona güveniyorum.",
+        "en": "I trust her because she always keeps her word."
+      }
+    },
+    {
+      "id": "temporada",
+      "word": "la temporada",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "sezon; dönem",
+      "en": "season",
+      "example": {
+        "es": "La segunda temporada empieza el mes que viene.",
+        "tr": "İkinci sezon gelecek ay başlıyor.",
+        "en": "The second season starts next month."
+      }
+    },
+    {
+      "id": "fuente",
+      "word": "la fuente",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kaynak",
+      "en": "source",
+      "example": {
+        "es": "Compruebo la fuente antes de compartir una noticia.",
+        "tr": "Bir haberi paylaşmadan önce kaynağını kontrol ederim.",
+        "en": "I check the source before sharing a news story."
+      }
+    },
+    {
+      "id": "malentendido",
+      "word": "el malentendido",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "yanlış anlaşılma",
+      "en": "misunderstanding",
+      "example": {
+        "es": "Aclaramos el malentendido durante la cena.",
+        "tr": "Akşam yemeğinde yanlış anlaşılmayı giderdik.",
+        "en": "We cleared up the misunderstanding during dinner."
+      }
+    },
+    {
+      "id": "grifo",
+      "word": "el grifo",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "musluk",
+      "en": "tap; faucet",
+      "example": {
+        "es": "El grifo de la cocina pierde agua.",
+        "tr": "Mutfak musluğu su damlatıyor.",
+        "en": "The kitchen tap is leaking."
+      }
+    },
+    {
+      "id": "quemadura",
+      "word": "la quemadura",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "yanık",
+      "en": "burn",
+      "example": {
+        "es": "Me hice una pequeña quemadura al sacar la bandeja.",
+        "tr": "Tepsiyi çıkarırken elimde küçük bir yanık oluştu.",
+        "en": "I got a small burn when taking out the tray."
+      }
+    },
+    {
+      "id": "transbordo",
+      "word": "el transbordo",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "aktarma",
+      "en": "transfer; change",
+      "example": {
+        "es": "Para llegar al centro tienes que hacer un transbordo.",
+        "tr": "Merkeze varmak için aktarma yapman gerekiyor.",
+        "en": "To get to the centre, you have to change trains."
+      }
+    },
+    {
+      "id": "obligacion",
+      "word": "la obligación",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "zorunluluk; yükümlülük",
+      "en": "obligation",
+      "example": {
+        "es": "Es nuestra obligación respetar las normas del edificio.",
+        "tr": "Binanın kurallarına uymak bizim yükümlülüğümüz.",
+        "en": "It is our responsibility to respect the building rules."
+      }
+    },
+    {
+      "id": "colaborar",
+      "word": "colaborar",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "iş birliği yapmak",
+      "en": "to collaborate",
+      "example": {
+        "es": "Colaboramos con otra escuela en este proyecto.",
+        "tr": "Bu projede başka bir okulla iş birliği yapıyoruz.",
+        "en": "We are collaborating with another school on this project."
+      }
+    },
+    {
+      "id": "pendiente",
+      "word": "pendiente",
+      "kind": "sıfat",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "bekleyen; tamamlanmamış",
+      "en": "pending; unfinished",
+      "example": {
+        "es": "Tengo dos tareas pendientes para esta tarde.",
+        "tr": "Bu öğleden sonra yapmam gereken iki iş var.",
+        "en": "I have two tasks left to do this afternoon."
+      }
+    },
+    {
+      "id": "apuntar",
+      "word": "apuntar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "not etmek",
+      "en": "to note down",
+      "example": {
+        "es": "Apunté la palabra nueva para buscarla después.",
+        "tr": "Sonra bakmak için yeni kelimeyi not ettim.",
+        "en": "I noted down the new word to look it up later."
+      }
+    },
+    {
+      "id": "reclamar",
+      "word": "reclamar",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "hakkını aramak; talep etmek",
+      "en": "to claim; to complain formally",
+      "example": {
+        "es": "Los vecinos reclaman una solución para el ruido.",
+        "tr": "Komşular gürültü sorununa çözüm talep ediyor.",
+        "en": "The neighbours are calling for a solution to the noise problem."
+      }
+    },
+    {
+      "id": "entregar",
+      "word": "entregar",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "teslim etmek",
+      "en": "to hand in; to deliver",
+      "example": {
+        "es": "Tenemos que entregar el informe antes del jueves.",
+        "tr": "Raporu perşembeden önce teslim etmemiz gerekiyor.",
+        "en": "We have to hand in the report before Thursday."
+      }
+    },
+    {
+      "id": "bienestar",
+      "word": "el bienestar",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "iyi olma hâli; esenlik",
+      "en": "well-being",
+      "example": {
+        "es": "Dormir bien es importante para nuestro bienestar.",
+        "tr": "İyi uyumak iyi olma hâlimiz için önemlidir.",
+        "en": "Sleeping well is important for our well-being."
+      }
+    },
+    {
+      "id": "reunion",
+      "word": "la reunión",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "toplantı",
+      "en": "meeting",
+      "example": {
+        "es": "La reunión se ha retrasado media hora.",
+        "tr": "Toplantı yarım saat gecikti.",
+        "en": "The meeting has been delayed by half an hour."
+      }
+    },
+    {
+      "id": "turno",
+      "word": "el turno",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "vardiya; sıra",
+      "en": "shift; turn",
+      "example": {
+        "es": "Esta semana trabajo en el turno de tarde.",
+        "tr": "Bu hafta öğleden sonra vardiyasında çalışıyorum.",
+        "en": "This week I am working the afternoon shift."
+      }
+    },
+    {
+      "id": "jornada",
+      "word": "la jornada",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "iş günü; çalışma süresi",
+      "en": "working day",
+      "example": {
+        "es": "Mi jornada laboral termina a las cinco.",
+        "tr": "İş günüm saat beşte bitiyor.",
+        "en": "My working day ends at five."
+      }
+    },
+    {
+      "id": "alimentacion",
+      "word": "la alimentación",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "beslenme",
+      "en": "diet; nutrition",
+      "example": {
+        "es": "Quiero prestar más atención a mi alimentación.",
+        "tr": "Beslenmeme daha fazla dikkat etmek istiyorum.",
+        "en": "I want to pay more attention to my diet."
+      }
+    },
+    {
+      "id": "toser",
+      "word": "toser",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "öksürmek",
+      "en": "to cough",
+      "example": {
+        "es": "Anoche tosí tanto que apenas pude dormir.",
+        "tr": "Dün gece o kadar öksürdüm ki neredeyse hiç uyuyamadım.",
+        "en": "Last night I coughed so much that I could hardly sleep."
+      }
+    },
+    {
+      "id": "suspender",
+      "word": "suspender",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "sınavdan kalmak",
+      "en": "to fail an exam",
+      "example": {
+        "es": "Suspendí el examen, pero volveré a intentarlo.",
+        "tr": "Sınavdan kaldım ama yeniden deneyeceğim.",
+        "en": "I failed the exam, but I will try again."
+      }
+    },
+    {
+      "id": "personaje",
+      "word": "el personaje",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "karakter; kurmaca kişi",
+      "en": "character",
+      "example": {
+        "es": "Mi personaje favorito cambia mucho a lo largo de la historia.",
+        "tr": "En sevdiğim karakter hikâye boyunca çok değişiyor.",
+        "en": "My favourite character changes a lot throughout the story."
+      }
+    },
+    {
+      "id": "acostumbrarse",
+      "word": "acostumbrarse",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "alışmak",
+      "en": "to get used to",
+      "example": {
+        "es": "Todavía me estoy acostumbrando al nuevo horario.",
+        "tr": "Yeni çalışma saatlerine hâlâ alışıyorum.",
+        "en": "I am still getting used to the new schedule."
+      }
+    },
+    {
+      "id": "acera",
+      "word": "la acera",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "kaldırım",
+      "en": "pavement; sidewalk",
+      "example": {
+        "es": "La acera es demasiado estrecha para pasar con el carrito.",
+        "tr": "Kaldırım bebek arabasıyla geçmek için fazla dar.",
+        "en": "The pavement is too narrow to get through with the pushchair."
+      }
+    },
+    {
+      "id": "egoista",
+      "word": "egoísta",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "bencil",
+      "en": "selfish",
+      "example": {
+        "es": "Fue egoísta decidir sin escuchar a los demás.",
+        "tr": "Diğerlerini dinlemeden karar vermek bencilceydi.",
+        "en": "It was selfish to decide without listening to the others."
+      }
+    },
+    {
+      "id": "estornudar",
+      "word": "estornudar",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "hapşırmak",
+      "en": "to sneeze",
+      "example": {
+        "es": "No podía dejar de estornudar durante la reunión.",
+        "tr": "Toplantı boyunca durmadan hapşırıyordum.",
+        "en": "I could not stop sneezing during the meeting."
+      }
+    },
+    {
+      "id": "contaminar",
+      "word": "contaminar",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "kirletmek",
+      "en": "to pollute",
+      "example": {
+        "es": "Algunas actividades industriales contaminan el agua.",
+        "tr": "Bazı sanayi faaliyetleri suyu kirletiyor.",
+        "en": "Some industrial activities pollute the water."
+      }
+    },
+    {
+      "id": "sueldo",
+      "word": "el sueldo",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "maaş",
+      "en": "salary",
+      "example": {
+        "es": "El sueldo incluye una ayuda para el transporte.",
+        "tr": "Maaşa ulaşım desteği de dâhil.",
+        "en": "The salary includes a transport allowance."
+      }
+    },
+    {
+      "id": "redaccion",
+      "word": "la redacción",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "kompozisyon; yazılı metin",
+      "en": "composition; piece of writing",
+      "example": {
+        "es": "La profesora corrigió mi redacción y me dio consejos.",
+        "tr": "Öğretmen kompozisyonumu düzeltti ve bana tavsiyeler verdi.",
+        "en": "The teacher corrected my composition and gave me advice."
+      }
+    },
+    {
+      "id": "intercambio",
+      "word": "el intercambio",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "değişim; karşılıklı paylaşım",
+      "en": "exchange",
+      "example": {
+        "es": "Participo en un intercambio de idiomas los jueves.",
+        "tr": "Perşembeleri bir dil değişimi etkinliğine katılıyorum.",
+        "en": "I take part in a language exchange on Thursdays."
+      }
+    },
+    {
+      "id": "orientarse",
+      "word": "orientarse",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "yönünü bulmak",
+      "en": "to find one's way",
+      "example": {
+        "es": "Me resulta fácil orientarme con este mapa.",
+        "tr": "Bu haritayla yönümü bulmak bana kolay geliyor.",
+        "en": "I find it easy to find my way with this map."
+      }
+    },
+    {
+      "id": "desperdiciar",
+      "word": "desperdiciar",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "israf etmek",
+      "en": "to waste",
+      "example": {
+        "es": "Planificar las comidas ayuda a no desperdiciar alimentos.",
+        "tr": "Öğünleri planlamak yiyecekleri israf etmemeye yardımcı oluyor.",
+        "en": "Planning meals helps to avoid wasting food."
+      }
+    },
+    {
+      "id": "formacion",
+      "word": "la formación",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "mesleki eğitim",
+      "en": "training",
+      "example": {
+        "es": "La empresa ofrece formación a sus nuevos empleados.",
+        "tr": "Şirket yeni çalışanlarına eğitim sunuyor.",
+        "en": "The company offers training to its new employees."
+      }
+    },
+    {
+      "id": "destino",
+      "word": "el destino",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "varış yeri; gidilecek yer",
+      "en": "destination",
+      "example": {
+        "es": "Todavía no hemos elegido el destino de las vacaciones.",
+        "tr": "Tatil için gideceğimiz yeri henüz seçmedik.",
+        "en": "We have not chosen our holiday destination yet."
+      }
+    },
+    {
+      "id": "respirar",
+      "word": "respirar",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "nefes almak",
+      "en": "to breathe",
+      "example": {
+        "es": "Salimos al patio para respirar aire fresco.",
+        "tr": "Temiz hava almak için avluya çıktık.",
+        "en": "We went out into the courtyard to breathe some fresh air."
+      }
+    },
+    {
+      "id": "ilusion",
+      "word": "la ilusión",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "heyecanlı beklenti; heves",
+      "en": "excitement; hopeful anticipation",
+      "example": {
+        "es": "Me hace mucha ilusión volver a ver a mis amigos.",
+        "tr": "Arkadaşlarımı yeniden görecek olmak beni çok heyecanlandırıyor.",
+        "en": "I am really excited about seeing my friends again."
+      }
+    },
+    {
+      "id": "cobrar",
+      "word": "cobrar",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "ücret almak; maaş almak",
+      "en": "to charge; to get paid",
+      "example": {
+        "es": "¿Cuánto cobran por entregar el pedido en casa?",
+        "tr": "Siparişi eve getirmek için ne kadar ücret alıyorlar?",
+        "en": "How much do they charge for home delivery?"
+      }
+    },
+    {
+      "id": "obra",
+      "word": "la obra",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "inşaat; yapım veya onarım işi",
+      "en": "construction work",
+      "example": {
+        "es": "La calle está cortada porque hay obras.",
+        "tr": "Yol çalışması olduğu için sokak kapalı.",
+        "en": "The street is closed because of construction work."
+      }
+    },
+    {
+      "id": "acuerdo",
+      "word": "el acuerdo",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "anlaşma; uzlaşma",
+      "en": "agreement",
+      "example": {
+        "es": "Después de hablar, llegamos a un acuerdo.",
+        "tr": "Konuştuktan sonra bir anlaşmaya vardık.",
+        "en": "After talking, we reached an agreement."
+      }
+    },
+    {
+      "id": "planchar",
+      "word": "planchar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "ütülemek",
+      "en": "to iron",
+      "example": {
+        "es": "No suelo planchar las camisetas.",
+        "tr": "Genellikle tişörtleri ütülemem.",
+        "en": "I do not usually iron T-shirts."
+      }
+    },
+    {
+      "id": "reunirse",
+      "word": "reunirse",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "bir araya gelmek",
+      "en": "to meet up",
+      "example": {
+        "es": "Nos reunimos una vez al mes para cocinar juntos.",
+        "tr": "Birlikte yemek yapmak için ayda bir kez buluşuyoruz.",
+        "en": "We meet up once a month to cook together."
+      }
+    },
+    {
+      "id": "despedida",
+      "word": "la despedida",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "veda",
+      "en": "farewell; goodbye",
+      "example": {
+        "es": "Organizamos una cena de despedida para nuestra compañera.",
+        "tr": "Arkadaşımız için bir veda yemeği düzenledik.",
+        "en": "We organised a farewell dinner for our colleague."
+      }
+    },
+    {
+      "id": "residuo",
+      "word": "el residuo",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "atık",
+      "en": "waste; waste material",
+      "example": {
+        "es": "La fábrica ha reducido la cantidad de residuos.",
+        "tr": "Fabrika atık miktarını azalttı.",
+        "en": "The factory has reduced the amount of waste."
+      }
+    },
+    {
+      "id": "expresar",
+      "word": "expresar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ifade etmek",
+      "en": "to express",
+      "example": {
+        "es": "Ya puedo expresar mis opiniones con más claridad.",
+        "tr": "Artık fikirlerimi daha açık ifade edebiliyorum.",
+        "en": "I can now express my opinions more clearly."
+      }
+    },
+    {
+      "id": "ventilar",
+      "word": "ventilar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "havalandırmak",
+      "en": "to air; to ventilate",
+      "example": {
+        "es": "Abro las ventanas para ventilar la casa cada mañana.",
+        "tr": "Evi havalandırmak için her sabah pencereleri açıyorum.",
+        "en": "I open the windows to air the house every morning."
+      }
+    },
+    {
+      "id": "retrasarse",
+      "word": "retrasarse",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "gecikmek",
+      "en": "to be delayed",
+      "example": {
+        "es": "El vuelo se ha retrasado por el mal tiempo.",
+        "tr": "Uçuş kötü hava nedeniyle gecikti.",
+        "en": "The flight has been delayed because of bad weather."
+      }
+    },
+    {
+      "id": "puesto",
+      "word": "el puesto",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "iş pozisyonu; görev",
+      "en": "position; job",
+      "example": {
+        "es": "Han ofrecido el puesto a una persona con experiencia.",
+        "tr": "Pozisyonu deneyimli birine teklif ettiler.",
+        "en": "They have offered the position to someone with experience."
+      }
+    },
+    {
+      "id": "devolver",
+      "word": "devolver",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "geri vermek; iade etmek",
+      "en": "to return; to give back",
+      "example": {
+        "es": "Voy a devolver los zapatos porque me hacen daño.",
+        "tr": "Ayağımı acıttıkları için ayakkabıları iade edeceğim.",
+        "en": "I am going to return the shoes because they hurt my feet."
+      }
+    },
+    {
+      "id": "mareo",
+      "word": "el mareo",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "baş dönmesi; mide bulantısı",
+      "en": "dizziness; travel sickness",
+      "example": {
+        "es": "El mareo empezó durante el viaje en barco.",
+        "tr": "Baş dönmesi tekne yolculuğu sırasında başladı.",
+        "en": "The dizziness started during the boat trip."
+      }
+    },
+    {
+      "id": "distinguir",
+      "word": "distinguir",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ayırt etmek",
+      "en": "to distinguish",
+      "example": {
+        "es": "Al principio no podía distinguir estos dos sonidos.",
+        "tr": "Başlangıçta bu iki sesi ayırt edemiyordum.",
+        "en": "At first, I could not distinguish these two sounds."
+      }
+    },
+    {
+      "id": "reembolso",
+      "word": "el reembolso",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "para iadesi",
+      "en": "refund",
+      "example": {
+        "es": "Solicité el reembolso porque el producto llegó roto.",
+        "tr": "Ürün kırık geldiği için para iadesi istedim.",
+        "en": "I requested a refund because the product arrived broken."
+      }
+    },
+    {
+      "id": "ensayo",
+      "word": "el ensayo",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "prova; deneme yazısı",
+      "en": "rehearsal; essay",
+      "example": {
+        "es": "El ensayo general será la tarde anterior al concierto.",
+        "tr": "Genel prova konserden önceki gün öğleden sonra yapılacak.",
+        "en": "The dress rehearsal will be the afternoon before the concert."
+      }
+    },
+    {
+      "id": "llevarse",
+      "word": "llevarse",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "geçinmek; anlaşmak",
+      "en": "to get along",
+      "example": {
+        "es": "Me llevo bien con mis compañeros de piso.",
+        "tr": "Ev arkadaşlarımla iyi anlaşıyorum.",
+        "en": "I get along well with my flatmates."
+      }
+    },
+    {
+      "id": "espectador",
+      "word": "el espectador",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "izleyici",
+      "en": "spectator; viewer",
+      "example": {
+        "es": "Los espectadores se levantaron al final de la actuación.",
+        "tr": "İzleyiciler gösterinin sonunda ayağa kalktı.",
+        "en": "The audience members stood up at the end of the performance."
+      }
+    },
+    {
+      "id": "cumplir",
+      "word": "cumplir",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "yerine getirmek; uymak",
+      "en": "to fulfil; to meet",
+      "example": {
+        "es": "Siempre intenta cumplir los plazos acordados.",
+        "tr": "Her zaman kararlaştırılan sürelere uymaya çalışıyor.",
+        "en": "She always tries to meet the agreed deadlines."
+      }
+    },
+    {
+      "id": "inseguro",
+      "word": "inseguro",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "kendinden emin olmayan; güvensiz",
+      "en": "insecure; unsure",
+      "example": {
+        "es": "Me siento inseguro cuando no entiendo las instrucciones.",
+        "tr": "Yönergeleri anlamadığımda kendime güvenemiyorum.",
+        "en": "I feel unsure of myself when I do not understand the instructions."
+      }
+    },
+    {
+      "id": "parrafo",
+      "word": "el párrafo",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "paragraf",
+      "en": "paragraph",
+      "example": {
+        "es": "Cada párrafo presenta una idea diferente.",
+        "tr": "Her paragraf farklı bir fikir sunuyor.",
+        "en": "Each paragraph presents a different idea."
+      }
+    },
+    {
+      "id": "traducir",
+      "word": "traducir",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "tercüme etmek; çevirmek",
+      "en": "to translate",
+      "example": {
+        "es": "No hace falta traducir cada palabra del texto.",
+        "tr": "Metindeki her kelimeyi çevirmek gerekmiyor.",
+        "en": "There is no need to translate every word in the text."
+      }
+    },
+    {
+      "id": "disculparse",
+      "word": "disculparse",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "özür dilemek",
+      "en": "to apologise",
+      "example": {
+        "es": "Se disculpó por llegar tarde a la reunión.",
+        "tr": "Toplantıya geç geldiği için özür diledi.",
+        "en": "He apologised for arriving late to the meeting."
+      }
+    },
+    {
+      "id": "ocio",
+      "word": "el ocio",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "boş zaman; serbest zaman etkinlikleri",
+      "en": "leisure",
+      "example": {
+        "es": "El centro ofrece actividades de ocio para adultos.",
+        "tr": "Merkez yetişkinler için boş zaman etkinlikleri sunuyor.",
+        "en": "The centre offers leisure activities for adults."
+      }
+    },
+    {
+      "id": "entrevista",
+      "word": "la entrevista",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "mülakat; röportaj",
+      "en": "interview",
+      "example": {
+        "es": "Mañana tengo una entrevista para un nuevo trabajo.",
+        "tr": "Yarın yeni bir iş için mülakatım var.",
+        "en": "Tomorrow I have an interview for a new job."
+      }
+    },
+    {
+      "id": "resfriado",
+      "word": "el resfriado",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "soğuk algınlığı",
+      "en": "cold",
+      "example": {
+        "es": "No fui a trabajar porque tenía un resfriado fuerte.",
+        "tr": "Ağır bir soğuk algınlığım olduğu için işe gitmedim.",
+        "en": "I did not go to work because I had a bad cold."
+      }
+    },
+    {
+      "id": "capitulo",
+      "word": "el capítulo",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "bölüm",
+      "en": "chapter; episode",
+      "example": {
+        "es": "Ayer vimos el último capítulo de la serie.",
+        "tr": "Dün dizinin son bölümünü izledik.",
+        "en": "Yesterday we watched the final episode of the series."
+      }
+    },
+    {
+      "id": "evitar",
+      "word": "evitar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "kaçınmak; önlemek",
+      "en": "to avoid",
+      "example": {
+        "es": "Salimos temprano para evitar el tráfico.",
+        "tr": "Trafiğe takılmamak için erken çıktık.",
+        "en": "We left early to avoid the traffic."
+      }
+    },
+    {
+      "id": "decepcion",
+      "word": "la decepción",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "hayal kırıklığı",
+      "en": "disappointment",
+      "example": {
+        "es": "Fue una decepción descubrir que el museo estaba cerrado.",
+        "tr": "Müzenin kapalı olduğunu öğrenmek hayal kırıklığıydı.",
+        "en": "It was a disappointment to discover that the museum was closed."
+      }
+    },
+    {
+      "id": "derecho",
+      "word": "el derecho",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "hak",
+      "en": "right",
+      "example": {
+        "es": "Todo el mundo tiene derecho a recibir educación.",
+        "tr": "Herkesin eğitim alma hakkı vardır.",
+        "en": "Everyone has the right to receive an education."
+      }
+    },
+    {
+      "id": "tramite",
+      "word": "el trámite",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "resmî işlem",
+      "en": "administrative procedure",
+      "example": {
+        "es": "Puedes hacer este trámite sin salir de casa.",
+        "tr": "Bu işlemi evden çıkmadan yapabilirsin.",
+        "en": "You can complete this procedure without leaving home."
+      }
+    },
+    {
+      "id": "tension",
+      "word": "la tensión",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "gerginlik; tansiyon",
+      "en": "tension; blood pressure",
+      "example": {
+        "es": "La enfermera me tomó la tensión antes de la consulta.",
+        "tr": "Hemşire muayeneden önce tansiyonumu ölçtü.",
+        "en": "The nurse took my blood pressure before the consultation."
+      }
+    },
+    {
+      "id": "esfuerzo",
+      "word": "el esfuerzo",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "çaba",
+      "en": "effort",
+      "example": {
+        "es": "Aprender otro idioma requiere tiempo y esfuerzo.",
+        "tr": "Başka bir dil öğrenmek zaman ve çaba gerektirir.",
+        "en": "Learning another language requires time and effort."
+      }
+    },
+    {
+      "id": "aterrizar",
+      "word": "aterrizar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "iniş yapmak",
+      "en": "to land",
+      "example": {
+        "es": "El avión aterrizó antes de lo previsto.",
+        "tr": "Uçak beklenenden önce iniş yaptı.",
+        "en": "The plane landed earlier than expected."
+      }
+    },
+    {
+      "id": "importe",
+      "word": "el importe",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "tutar",
+      "en": "amount; total",
+      "example": {
+        "es": "El importe total aparece al final de la factura.",
+        "tr": "Toplam tutar faturanın sonunda yazıyor.",
+        "en": "The total amount appears at the bottom of the invoice."
+      }
+    },
+    {
+      "id": "reparacion",
+      "word": "la reparación",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "tamir; onarım",
+      "en": "repair",
+      "example": {
+        "es": "La reparación de la lavadora costó menos de lo esperado.",
+        "tr": "Çamaşır makinesinin tamiri beklenenden daha ucuza mal oldu.",
+        "en": "The washing machine repair cost less than expected."
+      }
+    },
+    {
+      "id": "adjuntar",
+      "word": "adjuntar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "dosya eklemek",
+      "en": "to attach",
+      "example": {
+        "es": "Olvidé adjuntar el documento al correo.",
+        "tr": "Belgeyi e-postaya eklemeyi unuttum.",
+        "en": "I forgot to attach the document to the email."
+      }
+    },
+    {
+      "id": "tormenta",
+      "word": "la tormenta",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "fırtına",
+      "en": "storm",
+      "example": {
+        "es": "La tormenta nos obligó a volver al alojamiento.",
+        "tr": "Fırtına bizi konakladığımız yere dönmek zorunda bıraktı.",
+        "en": "The storm forced us to return to our accommodation."
+      }
+    },
+    {
+      "id": "reciclaje",
+      "word": "el reciclaje",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "geri dönüşüm",
+      "en": "recycling",
+      "example": {
+        "es": "En el barrio hay un nuevo punto de reciclaje.",
+        "tr": "Mahallede yeni bir geri dönüşüm noktası var.",
+        "en": "There is a new recycling point in the neighbourhood."
+      }
+    },
+    {
+      "id": "proposito",
+      "word": "el propósito",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "amaç; niyet",
+      "en": "purpose; resolution",
+      "example": {
+        "es": "Mi propósito es dedicar diez minutos al español cada día.",
+        "tr": "Amacım her gün İspanyolcaya on dakika ayırmak.",
+        "en": "My goal is to spend ten minutes on Spanish every day."
+      }
+    },
+    {
+      "id": "estanteria",
+      "word": "la estantería",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "raflı dolap; kitaplık",
+      "en": "shelving unit; bookcase",
+      "example": {
+        "es": "Montamos una estantería para ordenar los libros.",
+        "tr": "Kitapları düzenlemek için bir kitaplık kurduk.",
+        "en": "We assembled a bookcase to organise the books."
+      }
+    },
+    {
+      "id": "duda",
+      "word": "la duda",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "soru işareti; tereddüt",
+      "en": "doubt; question",
+      "example": {
+        "es": "Si tienes alguna duda, puedes preguntarme al final.",
+        "tr": "Aklına takılan bir şey varsa sonunda bana sorabilirsin.",
+        "en": "If you have any questions, you can ask me at the end."
+      }
+    },
+    {
+      "id": "envio",
+      "word": "el envío",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "gönderim; kargo",
+      "en": "shipping; shipment",
+      "example": {
+        "es": "El envío es gratuito a partir de cincuenta euros.",
+        "tr": "Elli avrodan itibaren kargo ücretsiz.",
+        "en": "Shipping is free on orders of fifty euros or more."
+      }
+    },
+    {
+      "id": "ascenso",
+      "word": "el ascenso",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "terfi",
+      "en": "promotion",
+      "example": {
+        "es": "Después de tres años, recibió un ascenso.",
+        "tr": "Üç yıl sonra terfi aldı.",
+        "en": "After three years, she received a promotion."
+      }
+    },
+    {
+      "id": "retraso",
+      "word": "el retraso",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "gecikme",
+      "en": "delay",
+      "example": {
+        "es": "El tren llegó con veinte minutos de retraso.",
+        "tr": "Tren yirmi dakika gecikmeyle geldi.",
+        "en": "The train arrived twenty minutes late."
+      }
+    },
+    {
+      "id": "descuento",
+      "word": "el descuento",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "indirim",
+      "en": "discount",
+      "example": {
+        "es": "Los estudiantes tienen un descuento en la entrada.",
+        "tr": "Öğrencilere giriş biletinde indirim var.",
+        "en": "Students get a discount on admission."
+      }
+    },
+    {
+      "id": "aislamiento",
+      "word": "el aislamiento",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "yalıtım",
+      "en": "insulation",
+      "example": {
+        "es": "El buen aislamiento mantiene la casa caliente.",
+        "tr": "İyi yalıtım evi sıcak tutuyor.",
+        "en": "Good insulation keeps the house warm."
+      }
+    },
+    {
+      "id": "ciudadano",
+      "word": "el ciudadano",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "vatandaş; kent sakini",
+      "en": "citizen",
+      "example": {
+        "es": "Los ciudadanos pueden participar en la reunión del barrio.",
+        "tr": "Kent sakinleri mahalle toplantısına katılabilir.",
+        "en": "Local residents can take part in the neighbourhood meeting."
+      }
+    },
+    {
+      "id": "inundacion",
+      "word": "la inundación",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "sel; su baskını",
+      "en": "flood",
+      "example": {
+        "es": "Las lluvias provocaron inundaciones en varios pueblos.",
+        "tr": "Yağmurlar birkaç kasabada sele neden oldu.",
+        "en": "The rains caused flooding in several towns."
+      }
+    },
+    {
+      "id": "experiencia",
+      "word": "la experiencia",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "deneyim",
+      "en": "experience",
+      "example": {
+        "es": "Tiene experiencia en atención al cliente.",
+        "tr": "Müşteri hizmetlerinde deneyimi var.",
+        "en": "She has experience in customer service."
+      }
+    },
+    {
+      "id": "apuntes",
+      "word": "los apuntes",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ders notları",
+      "en": "class notes",
+      "example": {
+        "es": "Repasé los apuntes antes de empezar el ejercicio.",
+        "tr": "Alıştırmaya başlamadan önce ders notlarını gözden geçirdim.",
+        "en": "I reviewed my class notes before starting the exercise."
+      }
+    },
+    {
+      "id": "paciencia",
+      "word": "la paciencia",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "sabır",
+      "en": "patience",
+      "example": {
+        "es": "Hace falta paciencia para cambiar una costumbre.",
+        "tr": "Bir alışkanlığı değiştirmek için sabır gerekir.",
+        "en": "It takes patience to change a habit."
+      }
+    },
+    {
+      "id": "acceder",
+      "word": "acceder",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "erişmek; giriş yapmak",
+      "en": "to access",
+      "example": {
+        "es": "Puedes acceder al portal desde el móvil.",
+        "tr": "Portala telefonundan erişebilirsin.",
+        "en": "You can access the portal from your phone."
+      }
+    },
+    {
+      "id": "propietario",
+      "word": "el propietario",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "mülk sahibi",
+      "en": "owner; landlord",
+      "example": {
+        "es": "El propietario cambiará las ventanas del piso.",
+        "tr": "Ev sahibi dairenin pencerelerini değiştirecek.",
+        "en": "The landlord will replace the flat's windows."
+      }
+    },
+    {
+      "id": "apoyo",
+      "word": "el apoyo",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "destek",
+      "en": "support",
+      "example": {
+        "es": "El apoyo de mis amigos fue muy importante.",
+        "tr": "Arkadaşlarımın desteği çok önemliydi.",
+        "en": "My friends' support was very important."
+      }
+    },
+    {
+      "id": "acceso",
+      "word": "el acceso",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "erişim; giriş",
+      "en": "access; entrance",
+      "example": {
+        "es": "El museo tiene un acceso adaptado para sillas de ruedas.",
+        "tr": "Müzenin tekerlekli sandalyeye uygun bir girişi var.",
+        "en": "The museum has a wheelchair-accessible entrance."
+      }
+    },
+    {
+      "id": "reciclar",
+      "word": "reciclar",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "geri dönüştürmek",
+      "en": "to recycle",
+      "example": {
+        "es": "En casa reciclamos el papel y los envases.",
+        "tr": "Evde kâğıtları ve ambalajları geri dönüştürüyoruz.",
+        "en": "At home, we recycle paper and packaging."
+      }
+    },
+    {
+      "id": "atasco",
+      "word": "el atasco",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "trafik sıkışıklığı",
+      "en": "traffic jam",
+      "example": {
+        "es": "Perdimos media hora en un atasco a la entrada de la ciudad.",
+        "tr": "Şehrin girişindeki trafik sıkışıklığında yarım saat kaybettik.",
+        "en": "We lost half an hour in a traffic jam at the entrance to the city."
+      }
+    },
+    {
+      "id": "sorprender",
+      "word": "sorprender",
+      "kind": "fiil",
+      "theme": "Duygular ve kişilik",
+      "tr": "şaşırtmak",
+      "en": "to surprise",
+      "example": {
+        "es": "Me sorprendió la tranquilidad de aquella ciudad.",
+        "tr": "O şehrin sakinliği beni şaşırttı.",
+        "en": "I was surprised by how peaceful that city was."
+      }
+    },
+    {
+      "id": "devolucion",
+      "word": "la devolución",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "ürün iadesi",
+      "en": "return",
+      "example": {
+        "es": "El plazo de devolución es de treinta días.",
+        "tr": "Ürün iade süresi otuz gündür.",
+        "en": "The return period is thirty days."
+      }
+    },
+    {
+      "id": "inquilino",
+      "word": "el inquilino",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "kiracı",
+      "en": "tenant",
+      "example": {
+        "es": "El nuevo inquilino se mudará el lunes.",
+        "tr": "Yeni kiracı pazartesi günü taşınacak.",
+        "en": "The new tenant will move in on Monday."
+      }
+    },
+    {
+      "id": "especie",
+      "word": "la especie",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "tür",
+      "en": "species",
+      "example": {
+        "es": "En esta zona viven varias especies de aves.",
+        "tr": "Bu bölgede birkaç kuş türü yaşıyor.",
+        "en": "Several species of birds live in this area."
+      }
+    },
+    {
+      "id": "aficion",
+      "word": "la afición",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "hobi; ilgi",
+      "en": "hobby; interest",
+      "example": {
+        "es": "Mi afición por la fotografía empezó durante un viaje.",
+        "tr": "Fotoğrafçılığa ilgim bir yolculuk sırasında başladı.",
+        "en": "My interest in photography began during a trip."
+      }
+    },
+    {
+      "id": "orilla",
+      "word": "la orilla",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "kıyı; kenar",
+      "en": "shore; bank",
+      "example": {
+        "es": "Paseamos por la orilla del lago antes de volver.",
+        "tr": "Dönmeden önce göl kıyısında yürüdük.",
+        "en": "We walked along the shore of the lake before returning."
+      }
+    },
+    {
+      "id": "participar",
+      "word": "participar",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "katılmak",
+      "en": "to participate",
+      "example": {
+        "es": "Este año quiero participar en la carrera del barrio.",
+        "tr": "Bu yıl mahalle koşusuna katılmak istiyorum.",
+        "en": "This year I want to take part in the neighbourhood race."
+      }
+    },
+    {
+      "id": "confianza",
+      "word": "la confianza",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "güven",
+      "en": "trust; confidence",
+      "example": {
+        "es": "La confianza se construye con tiempo y sinceridad.",
+        "tr": "Güven zamanla ve samimiyetle oluşur.",
+        "en": "Trust is built with time and honesty."
+      }
+    },
+    {
+      "id": "adecuado",
+      "word": "adecuado",
+      "kind": "sıfat",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "uygun",
+      "en": "suitable; appropriate",
+      "example": {
+        "es": "Buscamos un lugar adecuado para trabajar en grupo.",
+        "tr": "Grup halinde çalışmaya uygun bir yer arıyoruz.",
+        "en": "We are looking for a suitable place to work in a group."
+      }
+    },
+    {
+      "id": "elegir",
+      "word": "elegir",
+      "kind": "fiil",
+      "theme": "Alışveriş ve para",
+      "tr": "seçmek",
+      "en": "to choose",
+      "example": {
+        "es": "Elegí este modelo porque era más cómodo.",
+        "tr": "Daha rahat olduğu için bu modeli seçtim.",
+        "en": "I chose this model because it was more comfortable."
+      }
+    },
+    {
+      "id": "equivocarse",
+      "word": "equivocarse",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "yanılmak; hata yapmak",
+      "en": "to make a mistake",
+      "example": {
+        "es": "Me equivoqué de página y empecé otro ejercicio.",
+        "tr": "Yanlış sayfayı açıp başka bir alıştırmaya başladım.",
+        "en": "I opened the wrong page and started a different exercise."
+      }
+    },
+    {
+      "id": "desaparecer",
+      "word": "desaparecer",
+      "kind": "fiil",
+      "theme": "Doğa ve çevre",
+      "tr": "yok olmak; ortadan kaybolmak",
+      "en": "to disappear",
+      "example": {
+        "es": "Muchos caminos antiguos han desaparecido con los años.",
+        "tr": "Birçok eski yol yıllar içinde kayboldu.",
+        "en": "Many old paths have disappeared over the years."
+      }
+    },
+    {
+      "id": "talla",
+      "word": "la talla",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "giysi bedeni",
+      "en": "clothing size",
+      "example": {
+        "es": "Esta talla me queda pequeña; necesito una más.",
+        "tr": "Bu beden bana küçük geliyor; bir büyüğü gerekiyor.",
+        "en": "This size is too small for me; I need the next size up."
+      }
+    },
+    {
+      "id": "alivio",
+      "word": "el alivio",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "rahatlama",
+      "en": "relief",
+      "example": {
+        "es": "Fue un alivio encontrar las llaves en el bolso.",
+        "tr": "Anahtarları çantada bulmak içimi rahatlattı.",
+        "en": "It was a relief to find the keys in the bag."
+      }
+    },
+    {
+      "id": "fluidez",
+      "word": "la fluidez",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "akıcılık",
+      "en": "fluency",
+      "example": {
+        "es": "Hablar un poco cada día mejora la fluidez.",
+        "tr": "Her gün biraz konuşmak akıcılığı geliştirir.",
+        "en": "Speaking a little every day improves fluency."
+      }
+    },
+    {
+      "id": "agotarse",
+      "word": "agotarse",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "tükenmek; bitmek",
+      "en": "to run out; to become exhausted",
+      "example": {
+        "es": "El agua de la botella se agotó antes del final del camino.",
+        "tr": "Şişedeki su yol bitmeden tükendi.",
+        "en": "The water in the bottle ran out before the end of the walk."
+      }
+    },
+    {
+      "id": "lavavajillas",
+      "word": "el lavavajillas",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "bulaşık makinesi",
+      "en": "dishwasher",
+      "example": {
+        "es": "El lavavajillas está lleno, pero todavía falta un vaso.",
+        "tr": "Bulaşık makinesi dolu ama bir bardak daha var.",
+        "en": "The dishwasher is full, but there is still one more glass."
+      }
+    },
+    {
+      "id": "calefaccion",
+      "word": "la calefacción",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "ısıtma sistemi",
+      "en": "heating",
+      "example": {
+        "es": "Encendimos la calefacción porque hacía mucho frío.",
+        "tr": "Hava çok soğuk olduğu için ısıtmayı açtık.",
+        "en": "We turned on the heating because it was very cold."
+      }
+    },
+    {
+      "id": "afueras",
+      "word": "las afueras",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "şehir dışındaki yerleşim bölgesi",
+      "en": "outskirts",
+      "example": {
+        "es": "Viven en las afueras, cerca de un bosque.",
+        "tr": "Şehrin dış kesimlerinde, bir ormanın yakınında yaşıyorlar.",
+        "en": "They live on the outskirts, near a forest."
+      }
+    },
+    {
+      "id": "enchufar",
+      "word": "enchufar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "fişe takmak",
+      "en": "to plug in",
+      "example": {
+        "es": "Voy a enchufar el portátil antes de la reunión.",
+        "tr": "Toplantıdan önce dizüstü bilgisayarı fişe takacağım.",
+        "en": "I am going to plug in the laptop before the meeting."
+      }
+    },
+    {
+      "id": "departamento",
+      "word": "el departamento",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "bölüm; departman",
+      "en": "department",
+      "example": {
+        "es": "Trabajo en el departamento de ventas desde enero.",
+        "tr": "Ocak ayından beri satış bölümünde çalışıyorum.",
+        "en": "I have worked in the sales department since January."
+      }
+    },
+    {
+      "id": "taquilla",
+      "word": "la taquilla",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "bilet gişesi",
+      "en": "ticket office; box office",
+      "example": {
+        "es": "Recogimos las entradas en la taquilla del teatro.",
+        "tr": "Biletleri tiyatronun gişesinden aldık.",
+        "en": "We collected the tickets at the theatre's box office."
+      }
+    },
+    {
+      "id": "decepcionado",
+      "word": "decepcionado",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "hayal kırıklığına uğramış",
+      "en": "disappointed",
+      "example": {
+        "es": "Salimos decepcionados porque la película no nos gustó.",
+        "tr": "Filmi beğenmediğimiz için hayal kırıklığıyla çıktık.",
+        "en": "We left disappointed because we did not like the film."
+      }
+    },
+    {
+      "id": "sorpresa",
+      "word": "la sorpresa",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "şaşkınlık; sürpriz",
+      "en": "surprise",
+      "example": {
+        "es": "Mi visita fue una sorpresa para toda la familia.",
+        "tr": "Ziyaretim bütün aile için sürpriz oldu.",
+        "en": "My visit was a surprise for the whole family."
+      }
+    },
+    {
+      "id": "costumbre",
+      "word": "la costumbre",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "alışkanlık; gelenek",
+      "en": "habit; custom",
+      "example": {
+        "es": "Tenemos la costumbre de pasear después de cenar.",
+        "tr": "Akşam yemeğinden sonra yürüyüş yapma alışkanlığımız var.",
+        "en": "We have a habit of going for a walk after dinner."
+      }
+    },
+    {
+      "id": "cinturon",
+      "word": "el cinturón",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "kemer; emniyet kemeri",
+      "en": "belt; seat belt",
+      "example": {
+        "es": "Me puse el cinturón antes de arrancar el coche.",
+        "tr": "Arabayı çalıştırmadan önce emniyet kemerimi taktım.",
+        "en": "I put on my seat belt before starting the car."
+      }
+    },
+    {
+      "id": "enchufe",
+      "word": "el enchufe",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "priz; fiş",
+      "en": "socket; plug",
+      "example": {
+        "es": "Hay un enchufe detrás del sofá.",
+        "tr": "Kanepenin arkasında bir priz var.",
+        "en": "There is a socket behind the sofa."
+      }
+    },
+    {
+      "id": "permitir",
+      "word": "permitir",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "izin vermek; mümkün kılmak",
+      "en": "to allow",
+      "example": {
+        "es": "El abono permite utilizar todos los autobuses urbanos.",
+        "tr": "Abonman bütün şehir içi otobüslerini kullanmayı sağlıyor.",
+        "en": "The pass allows you to use all city buses."
+      }
+    },
+    {
+      "id": "lograr",
+      "word": "lograr",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "başarmak",
+      "en": "to achieve",
+      "example": {
+        "es": "Con práctica diaria logró hablar con más seguridad.",
+        "tr": "Günlük pratikle daha özgüvenli konuşmayı başardı.",
+        "en": "With daily practice, she managed to speak more confidently."
+      }
+    },
+    {
+      "id": "cambio",
+      "word": "el cambio",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "para üstü; değişiklik",
+      "en": "change",
+      "example": {
+        "es": "Pagué con un billete y esperé el cambio.",
+        "tr": "Banknotla ödeyip para üstünü bekledim.",
+        "en": "I paid with a banknote and waited for my change."
+      }
+    },
+    {
+      "id": "sequia",
+      "word": "la sequía",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "kuraklık",
+      "en": "drought",
+      "example": {
+        "es": "La sequía ha afectado a los campos de la región.",
+        "tr": "Kuraklık bölgedeki tarlaları etkiledi.",
+        "en": "The drought has affected the fields in the region."
+      }
+    },
+    {
+      "id": "resolver",
+      "word": "resolver",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "çözmek",
+      "en": "to solve",
+      "example": {
+        "es": "Podemos resolver el problema con un poco de paciencia.",
+        "tr": "Biraz sabırla sorunu çözebiliriz.",
+        "en": "We can solve the problem with a little patience."
+      }
+    },
+    {
+      "id": "responsabilidad",
+      "word": "la responsabilidad",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "sorumluluk",
+      "en": "responsibility",
+      "example": {
+        "es": "Organizar los pedidos es mi responsabilidad.",
+        "tr": "Siparişleri düzenlemek benim sorumluluğum.",
+        "en": "Organising the orders is my responsibility."
+      }
+    },
+    {
+      "id": "agradecer",
+      "word": "agradecer",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "minnettar olmak; teşekkür etmek",
+      "en": "to thank; to appreciate",
+      "example": {
+        "es": "Te agradezco mucho la ayuda con la mudanza.",
+        "tr": "Taşınmadaki yardımın için sana çok teşekkür ederim.",
+        "en": "I really appreciate your help with the move."
+      }
+    },
+    {
+      "id": "envase",
+      "word": "el envase",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "ambalaj; kap",
+      "en": "packaging; container",
+      "example": {
+        "es": "Este envase se puede utilizar varias veces.",
+        "tr": "Bu kap birkaç kez kullanılabilir.",
+        "en": "This container can be used several times."
+      }
+    },
+    {
+      "id": "comisaria",
+      "word": "la comisaría",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "polis merkezi; karakol",
+      "en": "police station",
+      "example": {
+        "es": "Preguntamos en la comisaría por los objetos perdidos.",
+        "tr": "Karakolda kayıp eşyalar hakkında bilgi sorduk.",
+        "en": "We asked at the police station about lost property."
+      }
+    },
+    {
+      "id": "publicar",
+      "word": "publicar",
+      "kind": "fiil",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "yayımlamak; paylaşmak",
+      "en": "to publish; to post",
+      "example": {
+        "es": "Publicaron las fotos del concierto en su página.",
+        "tr": "Konser fotoğraflarını sayfalarında yayımladılar.",
+        "en": "They posted the concert photos on their page."
+      }
+    },
+    {
+      "id": "denunciar",
+      "word": "denunciar",
+      "kind": "fiil",
+      "theme": "Şehir ve toplum",
+      "tr": "resmî şikâyette bulunmak; ihbar etmek",
+      "en": "to report",
+      "example": {
+        "es": "Fue a la comisaría para denunciar el robo.",
+        "tr": "Hırsızlığı bildirmek için karakola gitti.",
+        "en": "She went to the police station to report the theft."
+      }
+    },
+    {
+      "id": "alquilar",
+      "word": "alquilar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "kiralamak",
+      "en": "to rent",
+      "example": {
+        "es": "Alquilamos un coche para recorrer la costa.",
+        "tr": "Sahili gezmek için bir araba kiraladık.",
+        "en": "We rented a car to explore the coast."
+      }
+    },
+    {
+      "id": "estancia",
+      "word": "la estancia",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "konaklama süresi",
+      "en": "stay",
+      "example": {
+        "es": "Durante nuestra estancia visitamos varios pueblos.",
+        "tr": "Konakladığımız süre boyunca birkaç kasabayı ziyaret ettik.",
+        "en": "During our stay, we visited several towns."
+      }
+    },
+    {
+      "id": "abono",
+      "word": "el abono",
+      "kind": "isim",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "abonman; dönemlik ulaşım kartı",
+      "en": "season ticket; travel pass",
+      "example": {
+        "es": "Con el abono mensual gasto menos en transporte.",
+        "tr": "Aylık abonmanla ulaşıma daha az para harcıyorum.",
+        "en": "With a monthly pass, I spend less on transport."
+      }
+    },
+    {
+      "id": "comparar",
+      "word": "comparar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "karşılaştırmak",
+      "en": "to compare",
+      "example": {
+        "es": "Comparamos las dos respuestas para encontrar diferencias.",
+        "tr": "Farkları bulmak için iki cevabı karşılaştırdık.",
+        "en": "We compared the two answers to find differences."
+      }
+    },
+    {
+      "id": "persiana",
+      "word": "la persiana",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "panjur",
+      "en": "blind; shutter",
+      "example": {
+        "es": "Bajé la persiana porque entraba demasiada luz.",
+        "tr": "İçeri çok fazla ışık girdiği için panjuru indirdim.",
+        "en": "I lowered the blind because too much light was coming in."
+      }
+    },
+    {
+      "id": "pronunciacion",
+      "word": "la pronunciación",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "telaffuz",
+      "en": "pronunciation",
+      "example": {
+        "es": "Escuchar y repetir ayuda a mejorar la pronunciación.",
+        "tr": "Dinleyip tekrar etmek telaffuzu geliştirmeye yardımcı olur.",
+        "en": "Listening and repeating helps to improve pronunciation."
+      }
+    },
+    {
+      "id": "pareja",
+      "word": "la pareja",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "eş; sevgili; çift",
+      "en": "partner; couple",
+      "example": {
+        "es": "Mi pareja y yo compartimos los gastos de casa.",
+        "tr": "Eşimle ev masraflarını paylaşıyoruz.",
+        "en": "My partner and I share the household expenses."
+      }
+    },
+    {
+      "id": "trato",
+      "word": "el trato",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "davranış; muamele",
+      "en": "treatment; manner",
+      "example": {
+        "es": "En esa tienda siempre recibimos un trato amable.",
+        "tr": "O mağazada bize her zaman nazik davranılıyor.",
+        "en": "We always receive friendly treatment in that shop."
+      }
+    },
+    {
+      "id": "contratar",
+      "word": "contratar",
+      "kind": "fiil",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "işe almak; hizmet satın almak",
+      "en": "to hire",
+      "example": {
+        "es": "Van a contratar a dos personas para el verano.",
+        "tr": "Yaz için iki kişiyi işe alacaklar.",
+        "en": "They are going to hire two people for the summer."
+      }
+    },
+    {
+      "id": "energia",
+      "word": "la energía",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "enerji",
+      "en": "energy",
+      "example": {
+        "es": "Las ventanas nuevas nos ayudan a gastar menos energía.",
+        "tr": "Yeni pencereler daha az enerji harcamamıza yardımcı oluyor.",
+        "en": "The new windows help us use less energy."
+      }
+    },
+    {
+      "id": "adelantar",
+      "word": "adelantar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "öne almak; sollamak",
+      "en": "to bring forward; to overtake",
+      "example": {
+        "es": "Han adelantado la salida del tren diez minutos.",
+        "tr": "Trenin kalkışını on dakika öne aldılar.",
+        "en": "They have brought the train departure forward by ten minutes."
+      }
+    },
+    {
+      "id": "ingreso",
+      "word": "el ingreso",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "gelir; hesaba para yatırma",
+      "en": "income; deposit",
+      "example": {
+        "es": "Sus ingresos cambian según la cantidad de trabajo.",
+        "tr": "Geliri iş miktarına göre değişiyor.",
+        "en": "Her income changes depending on the amount of work."
+      }
+    },
+    {
+      "id": "aliviar",
+      "word": "aliviar",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "hafifletmek; rahatlatmak",
+      "en": "to relieve",
+      "example": {
+        "es": "El descanso alivió el dolor que sentía en la espalda.",
+        "tr": "Dinlenmek sırtında hissettiği ağrıyı hafifletti.",
+        "en": "Rest relieved the pain she felt in her back."
+      }
+    },
+    {
+      "id": "alegria",
+      "word": "la alegría",
+      "kind": "isim",
+      "theme": "Duygular ve kişilik",
+      "tr": "sevinç",
+      "en": "joy",
+      "example": {
+        "es": "Recibimos la noticia con mucha alegría.",
+        "tr": "Haberi büyük bir sevinçle karşıladık.",
+        "en": "We received the news with great joy."
+      }
+    },
+    {
+      "id": "arreglar",
+      "word": "arreglar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "tamir etmek; düzenlemek",
+      "en": "to fix; to tidy",
+      "example": {
+        "es": "El técnico vendrá mañana a arreglar la caldera.",
+        "tr": "Teknisyen yarın kombiyi tamir etmeye gelecek.",
+        "en": "The technician will come tomorrow to fix the boiler."
+      }
+    },
+    {
+      "id": "cuidarse",
+      "word": "cuidarse",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "kendine bakmak",
+      "en": "to take care of oneself",
+      "example": {
+        "es": "Este año quiero cuidarme y descansar más.",
+        "tr": "Bu yıl kendime bakmak ve daha çok dinlenmek istiyorum.",
+        "en": "This year I want to take care of myself and rest more."
+      }
+    },
+    {
+      "id": "resumen",
+      "word": "el resumen",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "özet",
+      "en": "summary",
+      "example": {
+        "es": "Escribí un resumen del artículo con mis propias palabras.",
+        "tr": "Makaleyi kendi kelimelerimle özetledim.",
+        "en": "I wrote a summary of the article in my own words."
+      }
+    },
+    {
+      "id": "renunciar",
+      "word": "renunciar",
+      "kind": "fiil",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "vazgeçmek",
+      "en": "to give up",
+      "example": {
+        "es": "No quiero renunciar a mis planes por un pequeño problema.",
+        "tr": "Küçük bir sorun yüzünden planlarımdan vazgeçmek istemiyorum.",
+        "en": "I do not want to give up my plans because of a small problem."
+      }
+    },
+    {
+      "id": "multa",
+      "word": "la multa",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "para cezası",
+      "en": "fine",
+      "example": {
+        "es": "Le pusieron una multa por aparcar en doble fila.",
+        "tr": "Aracını ikinci sıraya park ettiği için ceza yazdılar.",
+        "en": "He was fined for double parking."
+      }
+    },
+    {
+      "id": "necesario",
+      "word": "necesario",
+      "kind": "sıfat",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "gerekli",
+      "en": "necessary",
+      "example": {
+        "es": "No es necesario imprimir todos los documentos.",
+        "tr": "Bütün belgeleri yazdırmak gerekli değil.",
+        "en": "It is not necessary to print all the documents."
+      }
+    },
+    {
+      "id": "acompanar",
+      "word": "acompañar",
+      "kind": "fiil",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "eşlik etmek",
+      "en": "to accompany",
+      "example": {
+        "es": "¿Puedes acompañarme a recoger los resultados?",
+        "tr": "Sonuçları almaya giderken bana eşlik edebilir misin?",
+        "en": "Can you come with me to collect the results?"
+      }
+    },
+    {
+      "id": "saludable",
+      "word": "saludable",
+      "kind": "sıfat",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "sağlıklı",
+      "en": "healthy",
+      "example": {
+        "es": "Quiero mantener una rutina saludable durante el curso.",
+        "tr": "Kurs boyunca sağlıklı bir rutin sürdürmek istiyorum.",
+        "en": "I want to maintain a healthy routine during the course."
+      }
+    },
+    {
+      "id": "instalacion",
+      "word": "la instalación",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "tesis; kurulum",
+      "en": "facility; installation",
+      "example": {
+        "es": "Las instalaciones deportivas abren los fines de semana.",
+        "tr": "Spor tesisleri hafta sonları açılıyor.",
+        "en": "The sports facilities open at weekends."
+      }
+    },
+    {
+      "id": "facturar",
+      "word": "facturar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "bagajı teslim etmek",
+      "en": "to check in luggage",
+      "example": {
+        "es": "Solo voy a facturar una maleta.",
+        "tr": "Sadece bir bavulu bagaja vereceğim.",
+        "en": "I am only going to check in one suitcase."
+      }
+    },
+    {
+      "id": "sincero",
+      "word": "sincero",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "samimi; dürüst",
+      "en": "sincere; honest",
+      "example": {
+        "es": "Prefiero una opinión sincera a una respuesta agradable.",
+        "tr": "Hoş bir cevaptansa dürüst bir fikri tercih ederim.",
+        "en": "I prefer an honest opinion to a pleasant answer."
+      }
+    },
+    {
+      "id": "discusion",
+      "word": "la discusión",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "tartışma",
+      "en": "argument; discussion",
+      "example": {
+        "es": "La discusión empezó por un pequeño malentendido.",
+        "tr": "Tartışma küçük bir yanlış anlaşılma yüzünden başladı.",
+        "en": "The argument started because of a small misunderstanding."
+      }
+    },
+    {
+      "id": "comprobar",
+      "word": "comprobar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "kontrol etmek; doğrulamak",
+      "en": "to check",
+      "example": {
+        "es": "Comprueba la respuesta antes de pasar a la siguiente pregunta.",
+        "tr": "Sonraki soruya geçmeden önce cevabı kontrol et.",
+        "en": "Check the answer before moving on to the next question."
+      }
+    },
+    {
+      "id": "preocuparse",
+      "word": "preocuparse",
+      "kind": "fiil",
+      "theme": "Duygular ve kişilik",
+      "tr": "endişelenmek",
+      "en": "to worry",
+      "example": {
+        "es": "No te preocupes por llegar unos minutos tarde.",
+        "tr": "Birkaç dakika geç kalacağın için endişelenme.",
+        "en": "Do not worry about arriving a few minutes late."
+      }
+    },
+    {
+      "id": "averia",
+      "word": "la avería",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "arıza",
+      "en": "breakdown; fault",
+      "example": {
+        "es": "Una avería nos dejó sin agua caliente.",
+        "tr": "Bir arıza yüzünden sıcak susuz kaldık.",
+        "en": "A fault left us without hot water."
+      }
+    },
+    {
+      "id": "deuda",
+      "word": "la deuda",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "borç",
+      "en": "debt",
+      "example": {
+        "es": "Prefiere pagar la deuda antes de comprar otra cosa.",
+        "tr": "Başka bir şey almadan önce borcunu ödemeyi tercih ediyor.",
+        "en": "She prefers to pay off the debt before buying anything else."
+      }
+    },
+    {
+      "id": "calidad",
+      "word": "la calidad",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "kalite",
+      "en": "quality",
+      "example": {
+        "es": "Prefiero comprar menos cosas, pero de mejor calidad.",
+        "tr": "Daha az ama daha kaliteli eşya almayı tercih ederim.",
+        "en": "I prefer to buy fewer things, but of better quality."
+      }
+    },
+    {
+      "id": "asequible",
+      "word": "asequible",
+      "kind": "sıfat",
+      "theme": "Alışveriş ve para",
+      "tr": "fiyatı uygun; karşılanabilir",
+      "en": "affordable",
+      "example": {
+        "es": "Buscamos un restaurante asequible cerca del centro.",
+        "tr": "Merkeze yakın, fiyatı uygun bir restoran arıyoruz.",
+        "en": "We are looking for an affordable restaurant near the centre."
+      }
+    },
+    {
+      "id": "superar",
+      "word": "superar",
+      "kind": "fiil",
+      "theme": "Duygular ve kişilik",
+      "tr": "aşmak; üstesinden gelmek",
+      "en": "to overcome",
+      "example": {
+        "es": "Poco a poco superó el miedo a hablar en público.",
+        "tr": "Topluluk önünde konuşma korkusunu yavaş yavaş aştı.",
+        "en": "She gradually overcame her fear of public speaking."
+      }
+    },
+    {
+      "id": "asignatura",
+      "word": "la asignatura",
+      "kind": "isim",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "ders; ders konusu",
+      "en": "school subject",
+      "example": {
+        "es": "La historia era mi asignatura favorita en el instituto.",
+        "tr": "Lisede en sevdiğim ders tarihti.",
+        "en": "History was my favourite subject at secondary school."
+      }
+    },
+    {
+      "id": "asociacion",
+      "word": "la asociación",
+      "kind": "isim",
+      "theme": "Şehir ve toplum",
+      "tr": "dernek",
+      "en": "association",
+      "example": {
+        "es": "La asociación recoge ropa para familias que la necesitan.",
+        "tr": "Dernek ihtiyacı olan aileler için giysi topluyor.",
+        "en": "The association collects clothes for families in need."
+      }
+    },
+    {
+      "id": "posibilidad",
+      "word": "la posibilidad",
+      "kind": "isim",
+      "theme": "Günlük yaşam ve kararlar",
+      "tr": "olasılık; imkân",
+      "en": "possibility",
+      "example": {
+        "es": "Existe la posibilidad de cambiar la fecha.",
+        "tr": "Tarihi değiştirme imkânı var.",
+        "en": "There is a possibility of changing the date."
+      }
+    },
+    {
+      "id": "encargado",
+      "word": "el encargado",
+      "kind": "isim",
+      "theme": "İş ve meslek yaşamı",
+      "tr": "sorumlu kişi; görevli",
+      "en": "person in charge",
+      "example": {
+        "es": "El encargado de la tienda nos ayudó con el pedido.",
+        "tr": "Mağazanın sorumlusu sipariş konusunda bize yardımcı oldu.",
+        "en": "The person in charge of the shop helped us with the order."
+      }
+    },
+    {
+      "id": "ordenar",
+      "word": "ordenar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "düzenlemek; sıraya koymak",
+      "en": "to tidy; to arrange",
+      "example": {
+        "es": "Ordené los documentos antes de guardar las cajas.",
+        "tr": "Kutuları kaldırmadan önce belgeleri düzenledim.",
+        "en": "I organised the documents before putting the boxes away."
+      }
+    },
+    {
+      "id": "aprobar",
+      "word": "aprobar",
+      "kind": "fiil",
+      "theme": "Öğrenme ve iletişim",
+      "tr": "sınavı geçmek; onaylamak",
+      "en": "to pass; to approve",
+      "example": {
+        "es": "Aprobó el examen después de varias semanas de estudio.",
+        "tr": "Birkaç hafta çalıştıktan sonra sınavı geçti.",
+        "en": "She passed the exam after several weeks of studying."
+      }
+    },
+    {
+      "id": "contaminacion",
+      "word": "la contaminación",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "kirlilik",
+      "en": "pollution",
+      "example": {
+        "es": "El uso del transporte público ayuda a reducir la contaminación.",
+        "tr": "Toplu taşıma kullanmak kirliliği azaltmaya yardımcı oluyor.",
+        "en": "Using public transport helps to reduce pollution."
+      }
+    },
+    {
+      "id": "convivencia",
+      "word": "la convivencia",
+      "kind": "isim",
+      "theme": "İlişkiler ve birlikte yaşam",
+      "tr": "birlikte yaşama",
+      "en": "living together",
+      "example": {
+        "es": "Repartir las tareas mejora la convivencia.",
+        "tr": "İşleri paylaşmak birlikte yaşamayı kolaylaştırıyor.",
+        "en": "Sharing the chores makes living together easier."
+      }
+    },
+    {
+      "id": "estropearse",
+      "word": "estropearse",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "bozulmak",
+      "en": "to break down",
+      "example": {
+        "es": "La nevera se estropeó durante las vacaciones.",
+        "tr": "Tatil sırasında buzdolabı bozuldu.",
+        "en": "The fridge broke down during the holidays."
+      }
+    },
+    {
+      "id": "revision",
+      "word": "la revisión",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "kontrol; muayene",
+      "en": "check-up; inspection",
+      "example": {
+        "es": "Tengo una revisión con el dentista el martes.",
+        "tr": "Salı günü diş hekiminde kontrolüm var.",
+        "en": "I have a dental check-up on Tuesday."
+      }
+    },
+    {
+      "id": "titular",
+      "word": "el titular",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "haber başlığı; manşet",
+      "en": "headline",
+      "example": {
+        "es": "El titular no explica todos los detalles de la noticia.",
+        "tr": "Başlık haberin bütün ayrıntılarını açıklamıyor.",
+        "en": "The headline does not explain all the details of the news story."
+      }
+    },
+    {
+      "id": "niebla",
+      "word": "la niebla",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "sis",
+      "en": "fog",
+      "example": {
+        "es": "Había tanta niebla que apenas veíamos la carretera.",
+        "tr": "O kadar çok sis vardı ki yolu güçlükle görüyorduk.",
+        "en": "There was so much fog that we could hardly see the road."
+      }
+    },
+    {
+      "id": "sombra",
+      "word": "la sombra",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "gölge",
+      "en": "shade; shadow",
+      "example": {
+        "es": "Buscamos una mesa a la sombra para descansar.",
+        "tr": "Dinlenmek için gölgede bir masa aradık.",
+        "en": "We looked for a table in the shade to rest."
+      }
+    },
+    {
+      "id": "reservar",
+      "word": "reservar",
+      "kind": "fiil",
+      "theme": "Seyahat ve ulaşım",
+      "tr": "ayırtmak; rezervasyon yapmak",
+      "en": "to book; to reserve",
+      "example": {
+        "es": "Es mejor reservar con tiempo en temporada alta.",
+        "tr": "Yoğun sezonda önceden rezervasyon yapmak daha iyi.",
+        "en": "It is better to book in advance in high season."
+      }
+    },
+    {
+      "id": "paisaje",
+      "word": "el paisaje",
+      "kind": "isim",
+      "theme": "Doğa ve çevre",
+      "tr": "manzara",
+      "en": "landscape; scenery",
+      "example": {
+        "es": "Desde el tren disfrutamos de un paisaje lleno de montañas.",
+        "tr": "Trenden dağlarla dolu manzaranın keyfini çıkardık.",
+        "en": "From the train, we enjoyed scenery full of mountains."
+      }
+    },
+    {
+      "id": "limpieza",
+      "word": "la limpieza",
+      "kind": "isim",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "temizlik",
+      "en": "cleaning; cleanliness",
+      "example": {
+        "es": "Nos turnamos para hacer la limpieza de las zonas comunes.",
+        "tr": "Ortak alanları sırayla temizliyoruz.",
+        "en": "We take turns cleaning the shared areas."
+      }
+    },
+    {
+      "id": "resfriarse",
+      "word": "resfriarse",
+      "kind": "fiil",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "soğuk algınlığına yakalanmak",
+      "en": "to catch a cold",
+      "example": {
+        "es": "Me resfrié y tuve que cambiar mis planes.",
+        "tr": "Soğuk algınlığına yakalandım ve planlarımı değiştirmek zorunda kaldım.",
+        "en": "I caught a cold and had to change my plans."
+      }
+    },
+    {
+      "id": "convencido",
+      "word": "convencido",
+      "kind": "sıfat",
+      "theme": "Duygular ve kişilik",
+      "tr": "ikna olmuş; emin",
+      "en": "convinced",
+      "example": {
+        "es": "Estoy convencido de que la práctica diaria ayuda.",
+        "tr": "Günlük pratiğin faydalı olduğuna eminim.",
+        "en": "I am convinced that daily practice helps."
+      }
+    },
+    {
+      "id": "tender",
+      "word": "tender",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "çamaşır asmak; sermek",
+      "en": "to hang out; to spread",
+      "example": {
+        "es": "He tendido la ropa en la terraza.",
+        "tr": "Çamaşırları terasa astım.",
+        "en": "I have hung the washing out on the terrace."
+      }
+    },
+    {
+      "id": "seguro",
+      "word": "el seguro",
+      "kind": "isim",
+      "theme": "Sağlık ve iyi olma",
+      "tr": "sigorta",
+      "en": "insurance",
+      "example": {
+        "es": "Antes del viaje contraté un seguro médico.",
+        "tr": "Yolculuktan önce sağlık sigortası yaptırdım.",
+        "en": "Before the trip, I took out health insurance."
+      }
+    },
+    {
+      "id": "presupuesto",
+      "word": "el presupuesto",
+      "kind": "isim",
+      "theme": "Alışveriş ve para",
+      "tr": "bütçe; fiyat teklifi",
+      "en": "budget; estimate",
+      "example": {
+        "es": "El presupuesto no nos permite comprar un coche nuevo.",
+        "tr": "Bütçemiz yeni bir araba almamıza izin vermiyor.",
+        "en": "Our budget does not allow us to buy a new car."
+      }
+    },
+    {
+      "id": "resena",
+      "word": "la reseña",
+      "kind": "isim",
+      "theme": "Kültür, medya ve dijital yaşam",
+      "tr": "kısa inceleme; değerlendirme yazısı",
+      "en": "review",
+      "example": {
+        "es": "Leí varias reseñas antes de comprar el libro.",
+        "tr": "Kitabı almadan önce birkaç değerlendirme yazısı okudum.",
+        "en": "I read several reviews before buying the book."
+      }
+    },
+    {
+      "id": "desenchufar",
+      "word": "desenchufar",
+      "kind": "fiil",
+      "theme": "Ev ve yaşam alanı",
+      "tr": "fişten çekmek",
+      "en": "to unplug",
+      "example": {
+        "es": "Desenchufé la plancha antes de salir de casa.",
+        "tr": "Evden çıkmadan önce ütünün fişini çektim.",
+        "en": "I unplugged the iron before leaving home."
+      }
+    }
+  ]
+}

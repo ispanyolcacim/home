@@ -996,6 +996,8 @@ a.tracker-homework-link:hover{text-decoration:underline}
 .tracker-quizlet-strip a:focus-visible{outline:2px solid #173b73;outline-offset:2px}
 @media(max-width:600px){.tracker-quizlet-strip{flex-direction:column;align-items:flex-start}}
 </style>
+<link rel="stylesheet" href="assets/word-of-day/daily-word.css?v=1" />
+<script type="module" src="assets/word-of-day/daily-word.mjs?v=1"></script>
 </head>
 
 <body>
@@ -1011,6 +1013,37 @@ a.tracker-homework-link:hover{text-decoration:underline}
       <h1>Öğrenci Portalı</h1>
       <p>Öğrenci portalına hoş geldin! 🌈 Dil edinimi tekrar, temas ve kullanım ister; her küçük tekrar büyük bir birikimin parçasıdır.</p>
     </header>
+
+    <section class="daily-word" id="dailyWordCard" aria-labelledby="dailyWordHeading" aria-busy="true">
+      <div class="daily-word-top">
+        <h2 id="dailyWordHeading"><span aria-hidden="true">✨</span> Günün kelimesi <span lang="es">La palabra del día</span></h2>
+        <time id="dailyWordDate">Bugün</time>
+      </div>
+      <p class="daily-word-loading" id="dailyWordLoading" role="status">Bugünün kelimesi yükleniyor…</p>
+      <div class="daily-word-main" id="dailyWordContent" hidden>
+        <div class="daily-word-vocabulary">
+          <p class="daily-word-meta"><span>A2+ · B1.1</span><span id="dailyWordKind"></span></p>
+          <div class="daily-word-title-row">
+            <p class="daily-word-title" id="dailyWordText" lang="es"></p>
+            <button type="button" class="daily-word-audio" id="dailyWordSpeak" aria-label="İspanyolca kelimeyi dinle" aria-pressed="false" title="Kelimeyi dinle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg>
+            </button>
+          </div>
+          <p class="daily-word-meaning"><span aria-hidden="true">🇹🇷</span><span class="sr-only">Türkçe: </span><span id="dailyWordTurkish"></span></p>
+          <p class="daily-word-meaning daily-word-english" lang="en"><span aria-hidden="true">🇬🇧</span><span class="sr-only">English: </span><span id="dailyWordEnglish"></span></p>
+        </div>
+        <div class="daily-word-example">
+          <div class="daily-word-example-head"><p>Cümle içinde keşfet</p><button type="button" class="daily-word-audio daily-word-sentence-audio" id="dailyWordSentenceSpeak" aria-label="İspanyolca örnek cümleyi dinle" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></svg><span class="daily-word-audio-label">Cümleyi dinle</span></button></div>
+          <p class="daily-word-example-es" id="dailyWordExampleSpanish" lang="es"></p>
+          <p class="daily-word-example-translation"><span aria-hidden="true">🇹🇷</span><span class="sr-only">Türkçe: </span><span id="dailyWordExampleTurkish"></span></p>
+          <p class="daily-word-example-translation" lang="en"><span aria-hidden="true">🇬🇧</span><span class="sr-only">English: </span><span id="dailyWordExampleEnglish"></span></p>
+        </div>
+      </div>
+      <div class="daily-word-bottom" id="dailyWordFooter" hidden><p>✍️ Şimdi bu kelimeyle kendi cümleni kur.</p><span>Her gün yeni bir kelime.</span></div>
+      <p class="daily-word-status" id="dailyWordStatus" role="status" aria-live="polite" hidden></p>
+      <button type="button" class="daily-word-retry" id="dailyWordRetry" hidden>Yeniden yükle</button>
+      <noscript><p class="daily-word-loading">Günün kelimesini görmek için tarayıcında JavaScript'i etkinleştir.</p></noscript>
+    </section>
 
     <div class="levels">
       <button class="level-card teacher-home-card" onclick="location.href='ogretmen-paneli.html'" aria-label="Öğretmen Portalı, öğretmen şifresi gerektirir">
@@ -2328,6 +2361,7 @@ function toggleTopic(btn){
 
 </body>
 </html>
+
 
 
 
