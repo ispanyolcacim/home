@@ -38,7 +38,7 @@ Kullanıcının 15 Kasım 2026'da onayladığı dosya adı şablonu: `DD-DD-ders
 - Her iki ders numarası da iki basamaklı yazılır: `01-02`, `03-04`, `07-08`, `09-10`, `11-12`.
 - Seviye son ekleri: A1.1 → `a11`, A1.2 → `a12`, A2.1 → `a21`, A2.2 → `a22`, B1.1 → `b11`. Son ek daima etkinliğin gerçek seviyesiyle eşleşir.
 - Her seviye kendi mevcut deposunda kalır; HTML giriş dosyası ana dizinde bulunur. Yeni içerik oluşturulurken bu ad şablonu kullanılır.
-- Eski bir etkinliğin adı standartlaştırıldığında önceki adresi sorgu parametrelerini ve bölüm kimliğini (`#...`) koruyan bir yönlendirme olarak tutulur. Asıl etkinlik yeni dosyada bulunur.
+- Eski bir etkinliğin adı standartlaştırıldığında önceki adresi sorgu parametrelerini ve varsa eski bölüm seçimini aktaran bir yönlendirme olarak tutulur; etkinlik bu bölümü açtıktan sonra `#...` ekini adresten kaldırır. Asıl etkinlik yeni dosyada bulunur.
 - Dosya adı değişirken cevap kayıt anahtarları, içeriği ve kaynak yolları korunur; düzenlenen indeksler ve bağlantılar yeni adrese alınır.
 - Bu şablon ders içi etkinlikler içindir; ödev adlarını değiştirmez. Henüz hazırlanmamış dersler için boş etkinlik dosyası oluşturulmaz.
 
@@ -51,3 +51,10 @@ Standart adlara taşınan 9–10. ders etkinlikleri:
 | A2.1 | https://ispanyolcacim.github.io/a2.1-tareas-ida/09-10-ders-ici-ispanyolcacim-a21.html |
 | A2.2 | https://ispanyolcacim.github.io/tareas-a2.2/09-10-ders-ici-ispanyolcacim-a22.html |
 | B1.1 | https://ispanyolcacim.github.io/b11-las-tareas/09-10-ders-ici-ispanyolcacim-b11.html |
+
+## Sade etkinlik bağlantıları
+
+- Tüm seviyelerde paylaşılan ve tarayıcıda görünen etkinlik adresi `.html` ile biter. `#dictation-1`, `#estructura`, `#futuro`, `#bolum-2` gibi bölüm ekleri kullanılmaz.
+- Sekmelere, önceki/sonraki düğmelerine veya klavye yön tuşlarına basıldığında bölüm doğrudan değiştirilir; adresin sonuna bölüm adı eklenmez. İlk açılışta da varsayılan bölüm eki eklenmez.
+- Eski bir bağlantı bölüm eki içeriyorsa ilgili bölüm açılır, ardından ek `history.replaceState` ile adresten kaldırılır. Mevcut sorgu parametreleri, tarayıcı geçmişi verisi, cevaplar ve kayıt anahtarları korunur.
+- Kullanıcıya verilen bağlantılar, indeksler ve yeni etkinlikler bu sade adres standardını izler.
