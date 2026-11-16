@@ -68,3 +68,12 @@ Provide clickable pill breadcrumbs “Ana sayfa → Portal → Öğrenci Portal�
 ## Required student and teacher portal registration
 
 User instruction, 15 November 2026: every new classroom activity must be registered and verified in BOTH the student portal's lesson-note mapping and the encrypted teacher portal catalog. This applies at every level. Updating an existing activity at its current URL is reflected by both portals' existing links; adding a new lesson requires updating both indexes explicitly. Treat portal registration as part of completing the activity, and do not claim automatic discovery. Preserve the teacher password and encrypted catalog, merge the new lesson without removing other entries, and publish only the re-encrypted teacher panel. Verify the correct level, lesson and clean activity URL in both portals before reporting completion.
+
+
+## Teacher progress dashboard and palette
+
+User instruction, 16 November 2026: use the A1.1 homework/classroom bright yellow (`#ffdb53`, light yellow, black text) in the teacher portal; do not restore brown A1.1 labels. Keep the teacher portal's pastel rainbow background. Every level has an Öğrenci takibi yap button, a period selector, two independent descending rankings (assignment completion percentage and normalized 100-point homework average), and a student selector/open action that shows that student's existing portal inside the teacher panel.
+
+Keep the enrollment/period/code registry inside the encrypted teacher payload only. Refresh it from the authorized tracking Sheet whenever students, codes or periods change; preserve all existing classroom catalog entries. Do not infer a student's period just from appearance in the API roster. Exclude the teacher test account from rankings. Reuse the student portal's current assignment normalization and score parser. Distinguish an ungraded result from zero and a network failure from missing homework. Keep live reads read-only and preserve all student authentication, results, assignments and grade records.
+
+The student-view bridge may accept verified result data only from its exact same-origin parent and current request handshake; do not place student names/codes/results in navigation URLs, history or persistent browser storage. Normal top-level student login must continue requiring the student's existing name/code verification. Preserve the teacher password, AES-GCM encryption, new random salt/IV, and CSP constraints when editing the dashboard.
