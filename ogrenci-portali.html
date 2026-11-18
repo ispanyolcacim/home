@@ -1585,8 +1585,8 @@ const trackerClassroomFiles = {
     "7-8": "7-8-ders-ici.html"
   },
   "B1.1": {
-    "9-10": "09-10-ders-ici-ispanyolcacim-b11.html",
-    "11-12": "b11-7-8-ders-ici.html"
+    "7-8": "b11-7-8-ders-ici.html",
+    "9-10": "09-10-ders-ici-ispanyolcacim-b11.html"
   }
 };
 
@@ -1795,6 +1795,7 @@ async function checkHomeworkTracker(){
 
 function findHomeworkScore(text){
   const scores = text.matchAll(/(^|[^\p{L}\d.,/+−-])((?:📊[ \t]*)?(?:(?:Puan|Sonuç)[ \t]*:?[ \t]*)?(\d+(?:[.,]\d+)?)[ \t]*\/[ \t]*(\d+))(?![\p{L}\d]|[.,]\d|[ \t]*\/)/giu);
+  let firstScore = null;
   for(const match of scores){
     const [ , boundary, label, earned, maximum] = match;
     const start = match.index + boundary.length;
@@ -1803,10 +1804,13 @@ function findHomeworkScore(text){
     const points = Number(earned.replace(',','.'));
     const max = Number(maximum);
     if(Number.isFinite(points) && Number.isFinite(max) && max > 0 && points <= max){
-      return {earned,maximum,start,end:start+label.length,normalized:(points/max)*100};
+      const result = {earned,maximum,start,end:start+label.length,normalized:(points/max)*100};
+      const lineStart = text.lastIndexOf('\n',start-1)+1;
+      if (max === 100 && /^\s*Toplam\s*:\s*$/i.test(text.slice(lineStart,start))) return result;
+      firstScore ??= result;
     }
   }
-  return null;
+  return firstScore;
 }
 
 function calculateHomeworkAverage(assignments){
@@ -2527,9 +2531,14 @@ function renderTrackerTaskRow(level,{item,file,buttonText,type},heading){
   const status=item.status||'missing';
   const statusText=status==='completed'?'✅ Tamamlandı':status==='pending'?'⏳ Değerlendirmede':'❌ Eksik';
   const badge=`<span class="tracker-status ${escapeHtmlAttr(status)}">${statusText}</span>`;
-  const text=String(item.value??'');
+  let text=String(item.value??'');
+  if(level==='A2.1' && parseTrackerHomeworkTitle(item.title)?.lessonKey==='13-14'){
+    text=text.replace(/^Dikte: ([\d.,]+)\/20\r?\nTest: ([\d.,]+)\/80\r?\nToplam: ([\d.,]+)\/100(?=\r?\n|$)/,
+      '✅ $3/100 (Toplam Puan)\nDikte puanı ($1/20)\nDiğer Bölümler ($2/80)');
+  }
   const score=findHomeworkScore(text);
-  const result=score?`${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">📊 Sonuç ${score.earned}/${score.maximum}</strong>${escapeHtml(text.slice(score.end))}`:escapeHtml(text);
+  const scoreText=score && (text.slice(score.end).startsWith(' (Toplam Puan)') ? `${score.earned}/${score.maximum}` : `📊 Sonuç ${score.earned}/${score.maximum}`);
+  const result=score?`${escapeHtml(text.slice(0,score.start))}<strong class="tracker-task-result">${scoreText}</strong>${escapeHtml(text.slice(score.end))}`:escapeHtml(text);
   const videoResult=type==='Video'&&!score?`<strong class="tracker-task-result">📊 Sonuç</strong>${result?'<br>'+result:' —'}`:result;
   const value=videoResult?`<div class="tracker-task-value">${videoResult}</div>`:'';
   const repo=trackerHomeworkRepos[level]||level.toLowerCase()+'-tareas';
