@@ -1616,6 +1616,9 @@ function trackerHomeworkDetails(level,title){
     if(details.type === 'yazma') return {...details,part:''};
     if(details.part === '1' && !details.type) return {...details,part:''};
   }
+  if(level === 'A2.2' && details?.lessonKey === '11-12' && details.type === 'yazma'){
+    return {...details,type:'dictado'};
+  }
   if(level === 'B1.1' && details?.lessonKey === '7-8' && !details.part && !details.type){
     return {...details,type:'video'};
   }
