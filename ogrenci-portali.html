@@ -2530,13 +2530,18 @@ function renderTrackerTaskRow(level,{item,file,buttonText,type},heading){
   const repo=trackerHomeworkRepos[level]||level.toLowerCase()+'-tareas';
   const url=file?`https://ispanyolcacim.github.io/${repo}/${file}`:'';
   const link=url?`<a class="tracker-homework-link" href="${escapeHtmlAttr(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(buttonText)}</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>`:'';
+  const sectionSummary=level==='A1.2'?{
+    '11-12-ida-1-kisim.html':'50 soru · S 1–40: Gastar el Dinero – Kitap soruları · S 41–50: Sıfat Uyumu – Boşluk doldurma',
+    '11-12-ida-2-kisim.html':'50 soru · S 1–20: Sıfat Uyumu – Boşluk doldurma · S 21–40: Buena Gente S1 E1 – Dinleme · S 41–50: Buena Gente S1 E2 – Dinleme'
+  }[file]||'':'';
+  const sections=sectionSummary?'<p class="tracker-homework-note">'+escapeHtml(sectionSummary)+'</p>':'';
   const reading=level==='A1.2'&&['11-12-ida-1-kisim.html','11-12-ida.html'].includes(file)
     ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1lENFaCnRc4gICTcqdTZaoy4HRjzc_ERU/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><span>📖 Gastar el dinero PDF’ini Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
     :level==='B1.1'&&file==='b11-1-2-ida.html'
     ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MQd2ZwD7x6CE4wZFN8-vSOGIKJOc3tYd/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Frida Kahlo Kitabını Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>'
     :level==='A1.2'&&file==='3-4-ida.html'
       ? '<a class="tracker-homework-link tracker-reading-link" href="https://drive.google.com/file/d/1MfHh7iX92HN0d5wHq_aCExxzXOH2XBF-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📖 Continentes de la Tierra PDF’ini Aç</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a>':'';
-  return `<div class="tracker-assignment"><div class="tracker-assignment-head">${heading}${badge}</div>${value}${link}${reading}</div>`;
+  return `<div class="tracker-assignment"><div class="tracker-assignment-head">${heading}${badge}</div>${sections}${value}${link}${reading}</div>`;
 }
 
 document.getElementById('trackerTaskList').addEventListener('click',event=>{
