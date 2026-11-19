@@ -1472,7 +1472,8 @@ const trackerHomeworkFiles = {
     "1-2": "1-2.html",
     "11-12": "11-12.html",
     "13-14": "13-14.html",
-    "15-16": "15-16.html",
+    "15-16/1": "15-16-1-kisim.html",
+    "15-16/2": "15-16-2-kisim.html",
     "17-18": "17-18.html",
     "19-20/yazma": "19-20-yazma.html",
     "19-20": "19-20.html",
@@ -2494,7 +2495,10 @@ function renderTrackerTasks(filter){
     const part=details?trackerHomeworkPart(level,details,file):'';
     const lesson=details?details.lessonKey.replace('-','+'):'';
     const week=details?.week||lessonWeeks.get(details?.lessonKey)||details?.lessonWeek;
-    const type={dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video',dele:'DELE Dinleme'}[details?.type]||'';
+    const baseType={dictado:'Dikte',dinleme:'Dinleme',yazma:'Yazma',video:'Video',dele:'DELE Dinleme'}[details?.type]||'';
+    const type=level==='A2.1'&&details?.lessonKey==='15-16'
+      ? ({'1':'Dinleme ve Kelime Bilgisi','2':'Cümle Dönüştürme ve Yanlış Soruyu Bulma'}[part]||baseType)
+      : baseType;
     const activityTitle=`${lesson}. Ders${type?' '+type:''}`;
     const buttonText=type==='Video'?`${lesson}. Ders (Video Ödevi)`:part?`${lesson}. Ders (${part}. Kısım) Ödevine Git`:`${activityTitle} Ödevine Git`;
     const key=lesson?`${week}/${lesson}`:item;
