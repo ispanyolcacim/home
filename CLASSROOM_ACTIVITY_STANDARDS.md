@@ -31,6 +31,18 @@ Kullanıcının açık tercihleri; yeni ders içi etkinliklerde ve güncellemele
 - Ödev ekranı kapatıldığında mevcut etkinlik ve cevaplar korunur. Ödev ekranında da yazdırma düğmesi bulunur; yazdırılan ödev kartlarında bağlantı adresleri görünür olur.
 - Kartlar, yazı tipi, köşeler ve renkler ilgili seviyenin mevcut tasarım dilini izler; bölüm geçişlerinde ölçülü emojiler kullanılır.
 
+## 15–16. ders yarı dönem hatırlatması
+
+Kullanıcı tercihi, 19 Kasım 2026: A1.1 15–16 ders içi etkinliğindeki **📣 Önemli hatırlatma** düğmesini A1.2, A2.1, A2.2 ve B1.1 seviyelerinin 15–16. ders içi etkinlikleri hazırlanırken de ekle. Düğmeyi ders bölümlerinin yanında, ödev düğmesinin önüne yerleştir. Açılan kutuda aşağıdaki başlığı ve öğrenciye hitap eden metni aynen kullan.
+
+**🎉 Yolun yarısına geldik!**
+
+15–16. dersle birlikte bugün **8 haftalık yolculuğumuzun ilk yarısını tamamlıyoruz.** Dört haftada öğrendiklerinizi kutlamak için bir an durun. 💛
+
+📝 Ödev Takip Merkezi’ne uğrayıp eksik ödevlerinizi tamamlayın. 📚 Genel tekrar dosyalarınızı bir kez daha gözden geçirin ve aklınıza takılan yerleri not alın.
+
+✨ Kalan dört haftaya eksiklerimizi kapatıp aynı merakla devam edelim.
+
 ## Dosya adlandırma ve düzen
 
 Kullanıcının 15 Kasım 2026'da onayladığı dosya adı şablonu: `DD-DD-ders-ici-ispanyolcacim-SEVIYE.html`.
