@@ -161,6 +161,27 @@
 @media(max-width:700px){#slider-section .slider-track-wrap{border-radius:20px}#slider-section .story-slide{grid-template-columns:1fr;min-height:0;padding:14px;gap:17px}#slider-section .story-slide .story-visual,#slider-section .story-slide-reverse .story-visual{order:1;aspect-ratio:4/3}#slider-section .story-slide .story-slide-copy,#slider-section .story-slide-reverse .story-slide-copy{order:2;padding:4px 9px 11px}#slider-section .story-slide-copy h3{font-size:1.7rem;margin-bottom:12px}#slider-section .story-slide-copy>p{font-size:.86rem}#slider-section .story-tags{margin-top:15px}#slider-section .story-slide-cta{margin-top:17px}#slider-section .story-phone{width:min(60%,260px)}#slider-section .slider-btn{top:26%;width:38px;height:38px}#slider-section .slider-btn.prev{left:-8px}#slider-section .slider-btn.next{right:-8px}}
 @media(prefers-reduced-motion:reduce){#slider-section .slider-track{transition:none}#slider-section .slide.is-active .story-slide-copy>*{animation:none}}
 
+
+/* Gerçek fotoğrafta bir kişinin elindeki telefona yerleştirilmiş temsili sohbet */
+#slider-section .story-chat-scene{background:#EFE8E5}
+#slider-section .story-chat-glow{display:none}
+#slider-section .story-photo-real-hand{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-width:none;max-height:none;border-radius:0;box-shadow:none}
+#slider-section .story-phone{position:absolute;left:33.7%;top:2.7%;width:31%;height:92.8%;margin:0;transform:none;z-index:2;border:none;border-radius:9px;box-shadow:none;background:#F3EEE7;overflow:hidden}
+#slider-section .story-phone-speaker{display:none}
+#slider-section .story-phone-header{min-height:41px;padding:6px 4px 4px;gap:4px}
+#slider-section .story-phone-header strong{font-size:.56rem}
+#slider-section .story-phone-header small{font-size:.45rem}
+#slider-section .story-phone-avatar{width:18px;height:18px;font-size:.68rem;flex:0 0 18px}
+#slider-section .story-phone-back{font-size:1rem}
+#slider-section .story-phone-menu{font-size:.95rem}
+#slider-section .story-phone-chat{gap:4px;padding:5px 4px;overflow:hidden}
+#slider-section .chat-line{font-size:.48rem;line-height:1.28;max-width:97%;gap:2px;padding:4px 5px;border-radius:6px}
+#slider-section .chat-line .chat-name{font-size:.49rem}
+#slider-section .story-phone-input{font-size:.46rem;padding:5px 7px}
+#slider-section .story-phone-input>span:last-child{width:16px;height:16px;font-size:.59rem}
+#slider-section .story-phone-home{display:none}
+#slider-section .story-chat-note{z-index:4;bottom:9px;right:9px;background:rgba(255,250,253,.95);color:#855773;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+@media(max-width:420px){#slider-section .story-phone-header{min-height:35px;padding:4px 3px 3px}#slider-section .story-phone-chat{gap:2px;padding:3px}#slider-section .chat-line{font-size:.42rem;padding:3px}#slider-section .chat-line .chat-name{font-size:.42rem}}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -337,10 +358,10 @@
   <p class="section-sub">Orijinal tanıtım içeriklerimden yola çıkan, ders içinde ve dışında İspanyolcayı anlatan bir yolculuk.</p>
   <div class="slider-outer" id="courseSlider" aria-label="İspanyolcacım ders deneyimi">
     <button type="button" class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Önceki slayt">←</button>
-    <div class="slider-track-wrap"><div class="slider-track" id="sliderTrack"><article class="slide is-active" aria-label="1 / 5 · 01 · GRUP DERSLERİMDE"><div class="story-slide">
+    <div class="slider-track-wrap"><div class="slider-track" id="sliderTrack"><article class="slide is-active" aria-label="1 / 5 · GRUP DERSLERİMDE"><div class="story-slide">
   <div class="story-visual story-photo story-photo-intro"><img src="images/slide-1.webp" width="1200" height="629" decoding="async" alt="Profe Hazel, bilgisayar başında İspanyolca dersinde" /><span class="story-sticker">🇪🇸 ¡Hola, bienvenidos!</span></div>
   <div class="story-slide-copy">
-    <div class="story-eyebrow">01 · GRUP DERSLERİMDE</div>
+    <div class="story-eyebrow">GRUP DERSLERİMDE</div>
     <h3>İspanyolca öğrenirken asla <em>yalnız kalmayacağın</em> bir yolculuğa hazır mısın?</h3>
     
     <p>A1.1, A1.2, A2.1, A2.2 ve B1.1 seviyelerindeki grup derslerimde neler mi yapıyoruz?</p>
@@ -349,10 +370,10 @@
     <a href="#gruplar" class="story-slide-cta">Açık Grupları İncele <span aria-hidden="true">→</span></a>
   </div>
 </div></article>
-<article class="slide" aria-label="2 / 5 · 02 · HER HAFTA YANINDAYIM" aria-hidden="true" inert><div class="story-slide story-slide-reverse">
+<article class="slide" aria-label="2 / 5 · HER HAFTA YANINDAYIM" aria-hidden="true" inert><div class="story-slide story-slide-reverse">
   <div class="story-visual story-book-scene"><div class="story-book-top"><span>📚 HAFTALIK ÇALIŞMA KİTAPÇIKLARIM</span><small>Özenle hazırlanmış özgün kaynaklar</small></div><div class="story-books-crop"><img src="images/slide-3.webp" width="1200" height="629" loading="lazy" decoding="async" alt="A1.1, A1.2, A2.1 ve A2.2 seviyeleri için renkli haftalık çalışma kitapçıkları" /></div><div class="story-book-labels"><span>A1.1</span><span>A1.2</span><span>A2.1</span><span>A2.2</span></div></div>
   <div class="story-slide-copy">
-    <div class="story-eyebrow">02 · HER HAFTA YANINDAYIM</div>
+    <div class="story-eyebrow">HER HAFTA YANINDAYIM</div>
     <h3>Bugün ne çalışacağım <em>kaygısına son!</em></h3>
     
     <p>Sadece ders saatinde değil, haftanın 7 günü yanındayım. Her haftaya özel hazırladığım çalışma kitapçıkları, minik aktiviteler ve çalışma programıyla ne yapacağını bilerek ilerle.</p>
@@ -361,17 +382,10 @@
     <a href="#ogrenci-portali-kesfet" class="story-slide-cta">Öğrenci Portalını Keşfet <span aria-hidden="true">→</span></a>
   </div>
 </div></article>
-<article class="slide" aria-label="3 / 5 · 03 · DERS DIŞINDA DA" aria-hidden="true" inert><div class="story-slide">
+<article class="slide" aria-label="3 / 5 · DERS DIŞINDA DA" aria-hidden="true" inert><div class="story-slide">
   <div class="story-visual story-chat-scene" aria-label="Elde tutulan telefonda Dilara, Sedef, Emre ve Hazel Hoca arasında örnek grup sohbeti">
       <div class="story-chat-glow" aria-hidden="true"></div>
-      <svg class="story-hand" viewBox="0 0 470 520" role="img" aria-label="Telefonu tutan el çizimi" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="chatSkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8CCB5"/><stop offset=".52" stop-color="#E8AA95"/><stop offset="1" stop-color="#D88D7D"/></linearGradient></defs>
-        <path d="M76 519 C61 493 56 450 73 420 C91 388 106 376 127 367 L162 385 L202 433 C216 415 245 402 262 407 C281 410 308 444 329 460 C351 475 368 497 379 519 Z" fill="url(#chatSkin)" stroke="#D49481" stroke-width="3"/>
-        <path d="M108 389 C82 356 71 321 88 307 C103 295 121 309 137 332 L168 390" fill="url(#chatSkin)" stroke="#D49481" stroke-width="3" stroke-linecap="round"/>
-        <path d="M269 348 C307 344 325 361 332 381 C335 398 322 412 312 409 L270 391" fill="url(#chatSkin)" stroke="#D49481" stroke-width="3"/>
-        <path d="M286 393 C321 385 345 399 348 418 C350 436 338 448 320 442" fill="url(#chatSkin)" stroke="#D49481" stroke-width="3"/>
-        <path d="M108 431 C137 452 164 465 195 471" fill="none" stroke="#C88676" stroke-width="3" opacity=".5"/>
-      </svg>
+      <img class="story-photo-real-hand" src="https://images.unsplash.com/photo-1663524789649-c7abbb378561?auto=format&fit=crop&w=1000&q=85" alt="Gerçek fotoğrafta elde tutulan bir akıllı telefon" width="1000" height="1000" loading="lazy" decoding="async" />
       <div class="story-phone">
         <div class="story-phone-speaker" aria-hidden="true"></div>
         <div class="story-phone-header"><span class="story-phone-back" aria-hidden="true">‹</span><span class="story-phone-avatar" aria-hidden="true">🇪🇸</span><span><strong>İspanyolcacım · Grup</strong><small>Hazel Hoca ve öğrenciler</small></span><span class="story-phone-menu" aria-hidden="true">⋮</span></div>
@@ -389,7 +403,7 @@
       <span class="story-chat-note">Temsili sohbet · Örnek mesajlar</span>
     </div>
   <div class="story-slide-copy">
-    <div class="story-eyebrow">03 · DERS DIŞINDA DA</div>
+    <div class="story-eyebrow">DERS DIŞINDA DA</div>
     <h3>Öğrenirken <em>yalnız değilsin.</em></h3>
     
     <p>7/24 yaşayan İspanyolca grubumuzda paylaşmaya, soru sormaya ve pratik yapmaya devam ediyoruz. Yazma ve konuşma çalışmalarına Hazel Hoca olarak bizzat geri bildirim veriyorum.</p>
@@ -398,10 +412,10 @@
     <a href="#hizmetler" class="story-slide-cta">Hizmetleri Keşfet <span aria-hidden="true">→</span></a>
   </div>
 </div></article>
-<article class="slide" aria-label="4 / 5 · 04 · SADECE BİR DERS DEĞİL" aria-hidden="true" inert><div class="story-slide story-slide-reverse">
+<article class="slide" aria-label="4 / 5 · SADECE BİR DERS DEĞİL" aria-hidden="true" inert><div class="story-slide story-slide-reverse">
   <div class="story-visual story-photo story-photo-system"><img src="images/slide-5.webp" width="1200" height="629" loading="lazy" decoding="async" alt="Profe Hazel, bilgisayar başında dijital İspanyolca eğitim kaynaklarıyla" /><span class="story-sticker">✨ İspanyolca ve Ötesi</span></div>
   <div class="story-slide-copy">
-    <div class="story-eyebrow">04 · SADECE BİR DERS DEĞİL</div>
+    <div class="story-eyebrow">SADECE BİR DERS DEĞİL</div>
     <h3><em>İspanyolca ve Ötesi</em></h3>
     <div class="story-subheading">Sadece haftalık ders değil, tam bir sistem!</div>
     <p>Kaçırdığın derslerin kayıtları, derse özel PDF kaynaklar, Quizlet ile hazırlık, Wordwall ile pratik ve kişisel ödev takibi bir arada. Öğrenmeyi şansa bırakmayan dijital bir altyapı.</p>
@@ -410,10 +424,10 @@
     <a href="#ogrenci-portali-kesfet" class="story-slide-cta">Sistemi Keşfet <span aria-hidden="true">→</span></a>
   </div>
 </div></article>
-<article class="slide" aria-label="5 / 5 · 05 · PROFE HAZEL" aria-hidden="true" inert><div class="story-slide">
+<article class="slide" aria-label="5 / 5 · PROFE HAZEL" aria-hidden="true" inert><div class="story-slide">
   <div class="story-visual story-photo story-photo-hazel"><img src="images/profe-hazel.jpg" width="1000" height="1250" loading="lazy" decoding="async" alt="İspanyolca eğitmeni Profe Hazel, ders anlatırken" /><span class="story-sticker">💗 Profe Hazel</span></div>
   <div class="story-slide-copy">
-    <div class="story-eyebrow">05 · PROFE HAZEL</div>
+    <div class="story-eyebrow">PROFE HAZEL</div>
     <h3>Aradığın İspanyolca eğitimi <em>tam burada!</em></h3>
     <div class="story-subheading">Hayalindeki İspanyolca için sadece bir mesaj uzağındayım.</div>
     <p>İspanyol Dili ve Edebiyatı bölüm birincisiyim. 9 yıllık öğretim deneyimimle tüm derslere bizzat giriyor, kaynaklarımı kendim hazırlıyor ve gelişimini geri bildirimlerimle destekliyorum.</p>
