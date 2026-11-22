@@ -162,26 +162,40 @@
 @media(prefers-reduced-motion:reduce){#slider-section .slider-track{transition:none}#slider-section .slide.is-active .story-slide-copy>*{animation:none}}
 
 
-/* Gerçek fotoğrafta bir kişinin elindeki telefona yerleştirilmiş temsili sohbet */
-#slider-section .story-chat-scene{background:#EFE8E5}
-#slider-section .story-chat-glow{display:none}
-#slider-section .story-photo-real-hand{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;max-width:none;max-height:none;border-radius:0;box-shadow:none}
-#slider-section .story-phone{position:absolute;left:33.7%;top:2.7%;width:31%;height:92.8%;margin:0;transform:none;z-index:2;border:none;border-radius:9px;box-shadow:none;background:#F3EEE7;overflow:hidden}
-#slider-section .story-phone-speaker{display:none}
-#slider-section .story-phone-header{min-height:41px;padding:6px 4px 4px;gap:4px}
-#slider-section .story-phone-header strong{font-size:.56rem}
-#slider-section .story-phone-header small{font-size:.45rem}
-#slider-section .story-phone-avatar{width:18px;height:18px;font-size:.68rem;flex:0 0 18px}
-#slider-section .story-phone-back{font-size:1rem}
-#slider-section .story-phone-menu{font-size:.95rem}
-#slider-section .story-phone-chat{gap:4px;padding:5px 4px;overflow:hidden}
-#slider-section .chat-line{font-size:.48rem;line-height:1.28;max-width:97%;gap:2px;padding:4px 5px;border-radius:6px}
-#slider-section .chat-line .chat-name{font-size:.49rem}
-#slider-section .story-phone-input{font-size:.46rem;padding:5px 7px}
-#slider-section .story-phone-input>span:last-child{width:16px;height:16px;font-size:.59rem}
-#slider-section .story-phone-home{display:none}
-#slider-section .story-chat-note{z-index:4;bottom:9px;right:9px;background:rgba(255,250,253,.95);color:#855773;box-shadow:0 3px 10px rgba(0,0,0,.12)}
-@media(max-width:420px){#slider-section .story-phone-header{min-height:35px;padding:4px 3px 3px}#slider-section .story-phone-chat{gap:2px;padding:3px}#slider-section .chat-line{font-size:.42rem;padding:3px}#slider-section .chat-line .chat-name{font-size:.42rem}}
+/* İspanyolcacım A1.1 - telefon içindeki grup mesajlaşması */
+#slider-section .story-chat-scene{display:grid;place-items:center;background:linear-gradient(130deg,#EEE9E7,#F7EBF2 53%,#EFE9EF);overflow:hidden}
+#slider-section .story-chat-scene:before{content:"✦";position:absolute;right:6%;top:8%;font-size:92px;color:#FFFFFF70;transform:rotate(-12deg)}
+#slider-section .story-wa-device{position:relative;display:flex;flex-direction:column;height:96%;width:min(70%,288px);border:6px solid #262328;border-radius:27px;background:#F0ECE5;overflow:hidden;box-shadow:0 12px 28px rgba(35,20,33,.23);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#slider-section .story-wa-status{height:25px;min-height:25px;background:#F8F8F9;display:flex;justify-content:space-between;align-items:center;padding:5px 13px 2px;color:#192025;font-size:.65rem}
+#slider-section .story-wa-status>span{font-size:.57rem;white-space:nowrap}
+#slider-section .story-wa-heading{min-height:48px;display:flex;align-items:center;gap:6px;padding:6px 8px;background:#F8F8F9;border-bottom:1px solid #E8E7E5;color:#171E23}
+#slider-section .story-wa-back{font-size:1.35rem;font-weight:400;color:#333;line-height:1}
+#slider-section .story-wa-group-avatar{flex-shrink:0;display:grid;place-items:center;width:26px;height:26px;font-size:.97rem;background:#FCE9F2;border-radius:50%}
+#slider-section .story-wa-heading-copy{flex:1;min-width:0}
+#slider-section .story-wa-heading-copy strong{display:block;font-size:.65rem;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#slider-section .story-wa-heading-copy small{display:block;margin-top:2px;font-size:.48rem;color:#787D7E;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#slider-section .story-wa-actions{font-size:.85rem;white-space:nowrap;letter-spacing:1px}
+#slider-section .story-wa-messages{min-height:0;flex:1;padding:9px 7px;display:flex;flex-direction:column;gap:5px;overflow:hidden;background-color:#EDE7DE;background-image:radial-gradient(#C2B8AC25 1px,transparent 1px),radial-gradient(#C2B8AC15 1px,transparent 1px);background-size:20px 20px,32px 32px;background-position:0 0,10px 7px}
+#slider-section .story-wa-day{display:flex;justify-content:center;margin-bottom:3px}
+#slider-section .story-wa-day span{border-radius:100px;background:#F7F9FAE8;color:#7D7C7B;padding:3px 10px;font-size:.52rem}
+#slider-section .story-wa-bubble{position:relative;padding:6px 7px 13px;max-width:89%;box-shadow:0 1px 2px #00000013;display:flex;flex-direction:column;gap:3px;line-height:1.27;font-size:.59rem;color:#242729}
+#slider-section .story-wa-incoming{align-self:flex-start;background:#FFF;border-radius:9px 9px 9px 3px}
+#slider-section .story-wa-outgoing{align-self:flex-end;background:#DCF8D4;border-radius:9px 9px 3px 9px}
+#slider-section .story-wa-sender{font-size:.57rem;font-weight:850}
+#slider-section .story-wa-emre{color:#C42C7C}#slider-section .story-wa-sedef{color:#6960B5}#slider-section .story-wa-ece{color:#238F9C}
+#slider-section .story-wa-bubble small{position:absolute;bottom:2px;right:6px;font-size:.43rem;color:#8F9192;white-space:nowrap}
+#slider-section .story-wa-audio{display:flex;flex-direction:row;align-items:center;gap:5px;padding:7px 7px 14px;min-width:76%}
+#slider-section .story-wa-audio-play{color:#7D9D8A;font-size:.84rem}
+#slider-section .story-wa-wave{font-size:.62rem;color:#7B9E8B;letter-spacing:.4px;overflow:hidden;white-space:nowrap}
+#slider-section .story-wa-audio-time{position:absolute;left:18px;bottom:1px;font-size:.45rem;color:#81958C}
+#slider-section .story-wa-audio img{height:25px;width:25px;min-width:25px;border-radius:50%;object-fit:cover;position:relative;top:auto;left:auto;box-shadow:none;max-width:none;max-height:none}
+#slider-section .story-wa-bottom{min-height:32px;background:#F5F0E9;display:flex;align-items:center;gap:6px;padding:5px 8px;color:#61717A;font-size:.75rem}
+#slider-section .story-wa-plus{font-size:1.1rem}
+#slider-section .story-wa-compose{background:#FFF;border:1px solid #E0E2E3;flex:1;display:flex;justify-content:space-between;align-items:center;border-radius:30px;padding:5px 10px;font-size:.53rem;color:#A3A5A7}
+#slider-section .story-wa-home{width:62px;height:3px;min-height:3px;border-radius:10px;background:#333;margin:0 auto 5px}
+@media(max-width:900px){#slider-section .story-wa-device{width:min(74%,266px)}}
+@media(max-width:700px){#slider-section .story-wa-device{width:min(70%,288px)}}
+@media(max-width:400px){#slider-section .story-wa-device{width:min(79%,270px)}#slider-section .story-wa-bubble{font-size:.53rem}#slider-section .story-wa-messages{gap:3px;padding:6px}#slider-section .story-wa-heading{min-height:42px}}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -383,25 +397,28 @@
   </div>
 </div></article>
 <article class="slide" aria-label="3 / 5 · DERS DIŞINDA DA" aria-hidden="true" inert><div class="story-slide">
-  <div class="story-visual story-chat-scene" aria-label="Elde tutulan telefonda Dilara, Sedef, Emre ve Hazel Hoca arasında örnek grup sohbeti">
-      <div class="story-chat-glow" aria-hidden="true"></div>
-      <img class="story-photo-real-hand" src="https://images.unsplash.com/photo-1663524789649-c7abbb378561?auto=format&fit=crop&w=1000&q=85" alt="Gerçek fotoğrafta elde tutulan bir akıllı telefon" width="1000" height="1000" loading="lazy" decoding="async" />
-      <div class="story-phone">
-        <div class="story-phone-speaker" aria-hidden="true"></div>
-        <div class="story-phone-header"><span class="story-phone-back" aria-hidden="true">‹</span><span class="story-phone-avatar" aria-hidden="true">🇪🇸</span><span><strong>İspanyolcacım · Grup</strong><small>Hazel Hoca ve öğrenciler</small></span><span class="story-phone-menu" aria-hidden="true">⋮</span></div>
-        <div class="story-phone-chat">
-          <div class="chat-line"><span class="chat-name">Dilara</span><span>Hocam, neden “me gusta” diyoruz? 🤔</span></div>
-          <div class="chat-line chat-hazel"><span class="chat-name">Hazel Hoca 🌸</span><span>Çünkü fiil, hoşuna giden şeye göre uyum sağlıyor. Birlikte bir örnek daha yapalım 💗</span></div>
-          <div class="chat-line"><span class="chat-name">Sedef</span><span>Yazma ödevimi gönderdim hocam! ✍️</span></div>
-          <div class="chat-line chat-hazel"><span class="chat-name">Hazel Hoca 🌸</span><span>Harika Sedef, geri bildirimini paylaşacağım ✨</span></div>
-          <div class="chat-line"><span class="chat-name">Emre</span><span>Bugün kendi kendime İspanyolca cümle kurdum! 🙌</span></div>
-          <div class="chat-line chat-hazel"><span class="chat-name">Hazel Hoca 🌸</span><span>İşte hedefimiz tam da bu! 🇪🇸</span></div>
-        </div>
-        <div class="story-phone-input"><span>Mesaj yaz...</span><span aria-hidden="true">➤</span></div>
-        <div class="story-phone-home" aria-hidden="true"></div>
-      </div>
-      <span class="story-chat-note">Temsili sohbet · Örnek mesajlar</span>
+  <div class="story-visual story-chat-scene" aria-label="İspanyolcacım'2026 A1.1 grubunda Emre, Sedef, Ece ve Hazel Hoca arasında örnek WhatsApp tarzı sohbet">
+  <div class="story-wa-device" role="img" aria-label="İspanyolcacım'2026 A1.1 grubunda soru ve cevapların yer aldığı telefon ekranı">
+    <div class="story-wa-status"><b>9:41</b><span aria-hidden="true">▂▄▆ ᴡɪғɪ ▰</span></div>
+    <div class="story-wa-heading">
+      <span class="story-wa-back" aria-hidden="true">‹</span>
+      <span class="story-wa-group-avatar" aria-hidden="true">🇪🇸</span>
+      <div class="story-wa-heading-copy"><strong>İspanyolcacım'2026 A1.1</strong><small>Emre, Sedef, Ece, Hazel Hoca</small></div>
+      <span class="story-wa-actions" aria-hidden="true">◻︎ ☎</span>
     </div>
+    <div class="story-wa-messages">
+      <div class="story-wa-day"><span>22 Kasım 2026</span></div>
+      <div class="story-wa-bubble story-wa-incoming"><strong class="story-wa-sender story-wa-emre">Emre</strong><span>Hocam neden “me gusta” diyoruz? 🤔</span><small>09:41</small></div>
+      <div class="story-wa-bubble story-wa-outgoing story-wa-audio"><span class="story-wa-audio-play" aria-hidden="true">▶</span><span class="story-wa-wave" aria-label="Ses kaydı">▏▎▍▉▌▏▍▏▎▉▏▍▎▏▌</span><span class="story-wa-audio-time">0:24</span><img src="images/profe-hazel.jpg" alt="" loading="lazy" width="24" height="24"/><small>09:42 ✓✓</small></div>
+      <div class="story-wa-bubble story-wa-outgoing"><span>Ses kaydında detaylıca anlattım! 💗</span><small>09:42 ✓✓</small></div>
+      <div class="story-wa-bubble story-wa-incoming"><strong class="story-wa-sender story-wa-sedef">Sedef</strong><span>Yazma ödevimi gönderdim hocam ✨</span><small>09:43</small></div>
+      <div class="story-wa-bubble story-wa-incoming"><strong class="story-wa-sender story-wa-ece">Ece</strong><span>Yani özne sevilen şey oluyor, değil mi?</span><small>09:44</small></div>
+      <div class="story-wa-bubble story-wa-outgoing"><span>Aynen! 🌸 <b>Me gusta el café</b> ama <b>me gustan los libros.</b></span><small>09:45 ✓✓</small></div>
+    </div>
+    <div class="story-wa-bottom"><span class="story-wa-plus" aria-hidden="true">＋</span><div class="story-wa-compose"><span>Mesaj</span><span aria-hidden="true">▢</span></div><span aria-hidden="true">◉ ♩</span></div>
+    <div class="story-wa-home" aria-hidden="true"></div>
+  </div>
+</div>
   <div class="story-slide-copy">
     <div class="story-eyebrow">DERS DIŞINDA DA</div>
     <h3>Öğrenirken <em>yalnız değilsin.</em></h3>
