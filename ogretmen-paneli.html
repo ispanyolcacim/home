@@ -36,7 +36,33 @@
       const decrypted = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(payload.iv), additionalData: new TextEncoder().encode(payload.aad), tagLength: 128 }, key, bytes(payload.ciphertext));
       const html = new TextDecoder('utf-8', { fatal: true }).decode(decrypted);
       new Uint8Array(decrypted).fill(0);
-      document.open(); document.write(html); document.close();
+      // Teacher dashboard visual normalization: remove A2.1 homework shortcuts
+      // below the lesson cards. The homework pages and encrypted catalog are unchanged.
+      const teacherPanelA21ExtraLinks = [
+        '/a2.1-tareas-ida/13-14.html',
+        '/a2.1-tareas-ida/15-16-1-kisim.html',
+        '/a2.1-tareas-ida/15-16-2-kisim.html'
+      ];
+      const teacherPanelA21Cleanup = [
+        '<scr', 'ipt>',
+        '(()=>{',
+        'const targets=new Set(', JSON.stringify(teacherPanelA21ExtraLinks), ');',
+        'const clean=()=>{',
+        'for(const link of document.querySelectorAll("a[href]")){',
+        'let path="";try{path=new URL(link.href,location.href).pathname.toLowerCase()}catch{}',
+        'if(!targets.has(path))continue;',
+        'const parent=link.parentElement;',
+        'link.remove();',
+        'if(parent&&parent.children.length===0&&!parent.textContent.trim()&&parent.tagName!=="BODY")parent.remove();',
+        '}',
+        '};',
+        'clean();',
+        'new MutationObserver(clean).observe(document.documentElement,{subtree:true,childList:true});',
+        '})();',
+        '</scr', 'ipt>'
+      ].join('');
+      const teacherPanelA21Html = html.replace(/<\/body\s*>/i, teacherPanelA21Cleanup + '</body>');
+      document.open(); document.write(teacherPanelA21Html === html ? html + teacherPanelA21Cleanup : teacherPanelA21Html); document.close();
     } catch {
       material = null; message.textContent = 'Şifre yanlış veya şifreli dosya açılamadı. Lütfen tekrar dene.'; message.hidden = false;
       enter.disabled = false; enter.textContent = 'Paneli aç →'; input.type = 'password'; show.textContent = 'Göster'; show.setAttribute('aria-pressed', 'false'); show.setAttribute('aria-label', 'Şifreyi göster'); input.focus();
