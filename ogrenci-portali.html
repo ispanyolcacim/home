@@ -1533,6 +1533,7 @@ const trackerHomeworkFiles = {
     "11-12": "b11-11-12-ida.html",
     "11-12/yazma": "b11-11-12-ida-yazma.html",
     "13-14/yazma": "b11-13-14-ida-yazma-odevi.html",
+    "15-16": "b11-15-16-ida.html",
     "17-18": "b11-17-18-ida.html",
     "19-20": "b11-19-20-ida.html",
     "21-22": "b11-21-22-ida.html",
@@ -2453,6 +2454,14 @@ const trackerQuizletPreparations = {
         "review": false,
         "url": "https://quizlet.com/tr/988505137/b11-1112-ders-hazirlik-seti-flash-cards"
       }
+    ],
+    "15+16": [
+      {
+        "title": "B1.1 - 17+18. DERS HAZIRLIK SETİ",
+        "count": 108,
+        "review": false,
+        "url": "https://quizlet.com/tr/1238793456/b11-1718-ders-hazirlik-seti-flash-cards?funnelUUID=b5828a71-261b-4a0d-aeef-c761dd9e4b13"
+      }
     ]
   }
 };
@@ -2527,7 +2536,11 @@ function renderTrackerTasks(filter){
     for(const[lesson,sets]of Object.entries(preparations)){
       if(shown.has(lesson))continue;
       const week=Math.ceil(parseInt(lesson,10)/4);
-      rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,'',renderQuizletStrip(sets))});
+      // B1.1 H4 link remains visible even before its Sheets result column is provisioned.
+      const b11H4Link = level === 'B1.1' && lesson === '15+16'
+        ? '<div class="tracker-assignment"><div class="tracker-assignment-head"><div class="tracker-task-part">15+16. Ders Ödevi · Estilo directo e indirecto</div></div><a class="tracker-homework-link" href="https://ispanyolcacim.github.io/b11-las-tareas/b11-15-16-ida.html" target="_blank" rel="noopener noreferrer"><span>15+16. Ders Ödevine Git · 50 Soru</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a></div>'
+        : '';
+      rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,b11H4Link,renderQuizletStrip(sets))});
     }
     const included=new Set(rendered.map(card=>card.lesson));
     for(const lessonKey of Object.keys(trackerClassroomFiles[level]||{})){
