@@ -166,7 +166,22 @@
       } catch (extensionError) {
         console.error('A1.1 classroom extension could not be loaded', extensionError);
       }
-      const teacherPanelA21Html = html.replace(/<\/body\s*>/i, teacherPanelA21Cleanup + teacherPanelB11H4Links + teacherPanelA11EncryptedAddition + '</body>');
+      
+      let teacherPanelA11Lesson1920 = '';
+      try {
+        const a11Extra1920 = {"iv":"2ZfPF1y+Ki9DJJni","aad":"ispanyolcacim-a11-1920-extension-v1","ciphertext":"0CjlrmVWq0z/SECP5+IQoCjJ+r6suwjpBWkxL/smxvG2H/XUoppV8BwDEDTE7mem1m41b3Rh8gpNqUlAALPg/RqBK5Ltu/RndXWnok3vC3q+M/jusrMBQsb2xKqQovio6UgDDbo3BYw9P45fSa1oHG3u4sxDpfPSkDrYz3d05FFv4QJxTwfkpBPLEQG4PHtHdr0bYGAvjL/pYZJVh9QPUY1+H8UdNWW6SoCVkJwyXnrzUtvfcoH61QULOeZ4rriJsfxxdqv+AbmEvtkkoBfQM/sSD+3qSUfRuHbzBRscmstvDbktB51uhvV1k9emK2MPyHGE47SR7CAl6v0M+eqlh5ec4VcIarC7U/PAvo9xe06askZzyAPX6ecC7SXpYO1XLjaDFqwWPsD9qWd9ZbP/gVFA4fDjx247YletZ28NEMem7DyFZQP29g5DkCSWSZr7f22gmkAkt1SWveKTvWoeR6ptT+ur1WZtObv5WsNTaDosaaIDFsx7hv3Toy4ztRNWwTQEzYQdCuL4nlYDSZUnlssdQ9+fPsfoU4T015SwpomK6Pf78pzc+2Bp9buGqoc9WVP7CTfHBRTJ3IAyrDJ7aAHiarSWTKqMxVQdOsStfUaUqrwLFsRsom+4IcC7hiRDKbx5TY5cAQaU/JZqvSMgEUTVcVoD6CPWInoaMknUqZ/r4+w63RrQIQzJpkYUy/EmWGs2UZpptGQErUQ2fdpS/ALiNScm4O6N+qSEYRQMPTIHE8ADAtjyok/7y+kwt4NTBhR3/A4w5Nm1/eVBa5xy/uwIXpv8U4UYb9hBP/5RdgoZeRdGWGkhRUmNm9+gWopVhkNb9bZnFCIi/5zE6lVaLFBt1T+oKa/L6GFEgo+Ng6TXX6/4wdQfDyXovuu21c5I0jXrD7FbyyfWqUh4Nfz4EJbMLWzdMfeJJ2FSfDSbv4gtxArjRoNCLVaMHDhWK7jKM7hgg/DquVL6Ze3gzqdfqHbiGWrGBr6iuzCAxjJLMuLusL+tUN1sYV+AGtLIGWfcR+3QA75EhiMyWdBmr9SYI0AAAxmSmOmRQ9prht3TxKd+reSMNWsmZ/8DVZpOFOdqJoGGC7yyJ2KC60YzRtJd6G6mT+2VsSfc4V+DydJQsAphKJjC0In97LvKc0yGi7bbSDJ268Qb5d1yV2AsOwtzajzKYgv7l+C/ge1oIeV/3fT0KNNYNP/V/lnXS0oVNBk8+t8eefDiB3uZro7nz8Yo56ZqmrxN3U7nZT2wOF0iM139RHG5MnMMTuC4WN9I0kodtzqRpdBmTZCZmuN6uvi6raygOjhMPMJUzsSE8SNrvtul3lqAzrrLHeOWRqtr00H8G5vdtuS3FWoa1WFRprZvdWijD7++dYYFT7PlOR0CyEDEES7iPwaOUxFtXnRoAnY8gudyHb321J+IGAnlVYNnoC1ySeitZJxx4zVXgNbzTpGhqV8KH+DT7arj2zchVuItBBtZfnHDiR3wbvf7cg7MQGHrAHCznJPfWY2ltfTKx0QZRHAS3+fb+/IxnF1yFfCLZaSLVm3aEj2Sq+sVAbGaRc8eJsw4zN3NOHkpzSHeI4yToRnthD44JITbfQfV0dtLHsfBN+eEo+HiKAbzYGts8uiMkMoWujoawpYL8MU8YGKQsVaZd6phxxg6civvnkTmJUQREAM0PbcuD9ehrMG9zVbjw0JC8WhynXpFxEXAQ0h5kRRklfb0NxvpXgKYd9SamqOa47hAIDg/lspv2PFv5sQEMwzvdUoKXH2V8qBGgHmGJ1PqzaBweTP0XP31vOuG6CQtKa9uz++e31LpgsgVYA10kMWQGTKj+NqLQfF3ONY4UVJdRbhiBOpknw2a1FDfNltNDPBhJ1/H79JD6YDWTlw0owy6a2Gz1t5lX3wyWvgLgFw9W/0A9zcA7M0D5A=="};
+        const bytes1920 = await crypto.subtle.decrypt(
+          { name: 'AES-GCM', iv: bytes(a11Extra1920.iv),
+            additionalData: new TextEncoder().encode(a11Extra1920.aad), tagLength: 128 },
+          key, bytes(a11Extra1920.ciphertext)
+        );
+        const stream1920 = new Blob([bytes1920]).stream().pipeThrough(new DecompressionStream('deflate'));
+        teacherPanelA11Lesson1920 = '<scr' + 'ipt>' + await new Response(stream1920).text() + '</scr' + 'ipt>';
+        new Uint8Array(bytes1920).fill(0);
+      } catch (error1920) {
+        console.error('A1.1 19-20 classroom registration failed', error1920);
+      }
+      const teacherPanelA21Html = html.replace(/<\/body\s*>/i, teacherPanelA21Cleanup + teacherPanelB11H4Links + teacherPanelA11EncryptedAddition + teacherPanelA11Lesson1920 + '</body>');
       document.open(); document.write(teacherPanelA21Html === html ? html + teacherPanelA21Cleanup + teacherPanelB11H4Links : teacherPanelA21Html); document.close();
     } catch {
       material = null; message.textContent = 'Şifre yanlış veya şifreli dosya açılamadı. Lütfen tekrar dene.'; message.hidden = false;
