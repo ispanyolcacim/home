@@ -61,8 +61,38 @@
         '})();',
         '</scr', 'ipt>'
       ].join('');
-      const teacherPanelA21Html = html.replace(/<\/body\s*>/i, teacherPanelA21Cleanup + '</body>');
-      document.open(); document.write(teacherPanelA21Html === html ? html + teacherPanelA21Cleanup : teacherPanelA21Html); document.close();
+      // Add B1.1 H4 links inside its existing teacher lesson entry, after decryption.
+      // The encrypted teacher content and existing lesson layout remain untouched.
+      const teacherPanelB11H4Links = [
+        '<scr','ipt>',
+        '(()=>{',
+        'const hw="https://ispanyolcacim.github.io/b11-las-tareas/b11-15-16-ida.html";',
+        'const quiz="https://quizlet.com/tr/1238793456/b11-1718-ders-hazirlik-seti-flash-cards?funnelUUID=b5828a71-261b-4a0d-aeef-c761dd9e4b13";',
+        'function apply(){',
+        'if(document.querySelector("[data-b11-h4-quiz-links]"))return;',
+        'const all=Array.from(document.querySelectorAll("a[href]"));',
+        'let source=all.find(a=>/\\/b11-las-tareas\\/(?:15-16-ders-ici-ispanyolcacim-b11|b11-15-16-ida)\\.html(?:$|[?#])/i.test(a.href));',
+        'if(!source){',
+        'source=all.find(a=>/15\\s*[-+–]\\s*16/.test(a.textContent||"") && /b1[.]?1/i.test((a.parentElement&&a.parentElement.parentElement&&a.parentElement.parentElement.textContent||"").slice(0,180)));',
+        '}',
+        'if(!source)return;',
+        'const parent=source.closest("article,.lesson-card,.card,[class*=lesson],li")||source.parentElement;',
+        'if(!parent)return;',
+        'const box=document.createElement("div");box.dataset.b11H4QuizLinks="1";',
+        'box.style.cssText="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center";',
+        'for(const [url,label] of [[hw,"📚 15–16. Ders Ödevi · 50 Soru"],[quiz,"📘 17–18. Ders Quizlet · 108 Terim"]]){',
+        'const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=label;',
+        'a.style.cssText="display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid #b6c9ed;background:#edf3ff;color:#2d4e9f;font-size:12px;font-weight:800;text-decoration:none";',
+        'box.appendChild(a);',
+        '}',
+        'source.insertAdjacentElement("afterend",box);',
+        '}',
+        'apply();new MutationObserver(apply).observe(document.documentElement,{subtree:true,childList:true});',
+        '})();',
+        '</scr','ipt>'
+      ].join('');
+      const teacherPanelA21Html = html.replace(/<\/body\s*>/i, teacherPanelA21Cleanup + teacherPanelB11H4Links + '</body>');
+      document.open(); document.write(teacherPanelA21Html === html ? html + teacherPanelA21Cleanup + teacherPanelB11H4Links : teacherPanelA21Html); document.close();
     } catch {
       material = null; message.textContent = 'Şifre yanlış veya şifreli dosya açılamadı. Lütfen tekrar dene.'; message.hidden = false;
       enter.disabled = false; enter.textContent = 'Paneli aç →'; input.type = 'password'; show.textContent = 'Göster'; show.setAttribute('aria-pressed', 'false'); show.setAttribute('aria-label', 'Şifreyi göster'); input.focus();
