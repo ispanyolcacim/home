@@ -1509,6 +1509,7 @@ const trackerHomeworkFiles = {
     "11-12": "11-12.html",
     "13-14": "13-14.html",
     "15-16": "15-16.html",
+    "17-18": "17-18.html",
     "19-20/yazma": "19-20-yazma.html",
     "19-20": "19-20.html",
     "21-22": "21-22.html",
@@ -1588,6 +1589,7 @@ const trackerClassroomFiles = {
     "11-12": "11-12-ders-ici-ispanyolcacim-a22.html",
     "13-14": "13-14-ders-ici-ispanyolcacim-a22.html",
     "15-16": "15-16-ders-ici-ispanyolcacim-a22.html",
+    "17-18": "17-18-ders-ici-ispanyolcacim-a22.html",
     "25-26": "25-26-ders-ici.html",
     "27-28": "27-28-ders-ici.html",
     "29-30": "29-30-ders-ici.html",
@@ -2499,6 +2501,10 @@ function renderTrackerTasks(filter){
   const level=trackerHomeworkLevel;
   const preparations=trackerQuizletPreparations[level]||{};
   const assignments=trackerAssignments.map(item=>({item,details:trackerHomeworkDetails(level,item.title)}));
+  if(level==='A2.2'&&!assignments.some(x=>x.details?.lessonKey==='17-18')){
+    const item={title:'H5 – 17-18.Ders',status:'missing',value:''};
+    assignments.push({item,details:trackerHomeworkDetails(level,item.title)});
+  }
   const lessonWeeks=new Map();
   for(const {details}of assignments)if(details?.week)lessonWeeks.set(details.lessonKey,details.week);
   const cards=new Map();
