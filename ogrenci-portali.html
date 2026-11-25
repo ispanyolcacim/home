@@ -1535,7 +1535,8 @@ const trackerHomeworkFiles = {
     "11-12/yazma": "b11-11-12-ida-yazma.html",
     "13-14/yazma": "b11-13-14-ida-yazma-odevi.html",
     "15-16": "b11-15-16-ida.html",
-    "17-18": "b11-17-18-ida.html",
+    "17-18/1": "b11-17-18-ida.html",
+    "17-18/2": "b11-17-18-ida-2-kisim.html",
     "19-20": "b11-19-20-ida.html",
     "21-22": "b11-21-22-ida.html",
     "23-24": "b11-23-24-ida.html",
@@ -1852,6 +1853,19 @@ function formatHomeworkAverage(value){
 }
 
 function normalizeTrackerAssignments(level,assignments){
+  if(level === 'B1.1'){
+    // Preserve the separate Sheets results; never copy the legacy 100-question score to either new part.
+    const result=assignments.filter(item=>{
+      const d=parseTrackerHomeworkTitle(item.title);
+      return !(d?.lessonKey==='17-18'&&!d.part&&!d.type);
+    });
+    for(const part of ['1','2']){
+      if(!result.some(item=>{const d=parseTrackerHomeworkTitle(item.title);return d?.lessonKey==='17-18'&&d.part===part;})){
+        result.push({title:'H5 – 17-18.Ders ('+part+'. KISIM)',value:'',status:'missing'});
+      }
+    }
+    return result;
+  }
   if(level === 'A1.1'){
     const lessonTasks = assignments.filter(item => {
       const d = parseTrackerHomeworkTitle(item.title);
