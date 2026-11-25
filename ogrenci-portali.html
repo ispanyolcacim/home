@@ -1604,7 +1604,8 @@ const trackerClassroomFiles = {
     "9-10": "09-10-ders-ici-ispanyolcacim-b11.html",
     "11-12": "11-12-ders-ici-ispanyolcacim-b11.html",
     "13-14": "13-14-ders-ici-ispanyolcacim-b11.html",
-    "15-16": "15-16-ders-ici-ispanyolcacim-b11.html"
+    "15-16": "15-16-ders-ici-ispanyolcacim-b11.html",
+    "17-18": "17-18-ders-ici-ispanyolcacim-b11.html"
   }
 };
 
@@ -2504,7 +2505,7 @@ function renderTrackerTasks(filter){
   const level=trackerHomeworkLevel;
   const preparations=trackerQuizletPreparations[level]||{};
   const assignments=trackerAssignments.map(item=>({item,details:trackerHomeworkDetails(level,item.title)}));
-  if((level==='A2.1'||level==='A2.2')&&!assignments.some(x=>x.details?.lessonKey==='17-18')){
+  if((level==='A2.1'||level==='A2.2'||level==='B1.1')&&!assignments.some(x=>x.details?.lessonKey==='17-18')){
     const item={title:'H5 – 17-18.Ders',status:'missing',value:''};
     assignments.push({item,details:trackerHomeworkDetails(level,item.title)});
   }
