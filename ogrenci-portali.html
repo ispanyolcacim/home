@@ -1476,7 +1476,9 @@ const trackerHomeworkFiles = {
     "15-16/2": "15-16-2-kisim.html",
     "17-18": "17-18.html",
     "19-20/yazma": "19-20-yazma.html",
-    "19-20": "19-20.html",
+    "19-20/3": "19-20-yazma.html",
+    "19-20/1": "19-20.html",
+    "19-20/2": "19-20-2-kisim.html",
     "21-22": "21-22.html",
     "23-24": "23-24.html",
     "25-26": "25-26.html",
@@ -1633,6 +1635,9 @@ function parseTrackerHomeworkTitle(title){
 // Keep the original Sheets title and result cell when an existing task changes format.
 function trackerHomeworkDetails(level,title){
   const details = parseTrackerHomeworkTitle(title);
+  if(level==='A2.1'&&details?.lessonKey==='19-20'&&(details.type==='yazma'||details.part==='3')){
+    return {...details,part:'3',type:'yazma'};
+  }
   if(level === 'A1.1' && details?.lessonKey === '9-10' && !details.type){
     return {...details,part:''};
   }
@@ -1857,6 +1862,21 @@ function formatHomeworkAverage(value){
 }
 
 function normalizeTrackerAssignments(level,assignments){
+  if(level === 'A2.1'){
+    const result=assignments.filter(item=>{
+      const d=parseTrackerHomeworkTitle(item.title);
+      return !(d?.lessonKey==='19-20'&&!d.part&&!d.type);
+    });
+    for(const part of ['1','2']){
+      if(!result.some(item=>{const d=parseTrackerHomeworkTitle(item.title);return d?.lessonKey==='19-20'&&d.part===part&&!d.type;})){
+        result.push({title:'H5 – 19-20.Ders ('+part+'. KISIM)',value:'',status:'missing'});
+      }
+    }
+    if(!result.some(item=>{const d=parseTrackerHomeworkTitle(item.title);return d?.lessonKey==='19-20'&&(d.type==='yazma'||d.part==='3');})){
+      result.push({title:'H5 – 19-20.Ders (Yazma)',value:'',status:'missing'});
+    }
+    return result;
+  }
   if(level === 'B1.1'){
     // Preserve the separate Sheets results; never copy the legacy 100-question score to either new part.
     const result=assignments.filter(item=>{
@@ -1913,7 +1933,7 @@ function renderTrackerResults(data){
     return details?.lessonKey === '7-8' && details.part === '2' && !details.type;
   });
   const completed = trackerAssignments.filter(item => item.status === 'completed').length;
-  const summary = (correctedA12 || trackerHomeworkLevel === 'A1.1')
+  const summary = (correctedA12 || trackerHomeworkLevel === 'A1.1' || trackerHomeworkLevel === 'A2.1')
     ? {total:trackerAssignments.length,completed,missing:trackerAssignments.length-completed,progress:trackerAssignments.length ? Math.round(completed/trackerAssignments.length*100) : 0}
     : data.summary || {};
 
