@@ -1576,6 +1576,7 @@ const trackerClassroomFiles = {
   },
   "A1.2": {
     "1-2": "01-02-ders-ici-ispanyolcacim-a12.html",
+    "3-4": "03-04-ders-ici-ispanyolcacim-a12.html",
     "9-10": "09-10-ders-ici-ispanyolcacim-a12.html",
     "11-12": "11-12-ders-ici-ispanyolcacim-a12.html",
     "13-14": "13-14-ders-ici-ispanyolcacim-a12.html",
@@ -2536,7 +2537,8 @@ function renderTrackerLessonCard(level,lesson,week,rows,extras='',fallbackTitle=
   const note=noteUrl
     ? `<a class="tracker-note-link" href="${escapeHtmlAttr(noteUrl)}" data-note-level="${escapeHtmlAttr(level)}" data-note-lesson="${escapeHtmlAttr(lessonKey)}"><span class="tracker-note-icon" aria-hidden="true">📖</span><strong>Ders notun</strong><span>Ders içi etkinlik</span><b>Notunu aç →</b></a>`
     : '<div class="tracker-note-unavailable"><span class="tracker-note-icon" aria-hidden="true">📖</span><strong>Ders notun</strong><span>Bu dersin notu henüz eklenmedi.</span></div>';
-  if(level==='A1.2'&&lessonKey==='1-2'&&noteUrl)extras='<div class="tracker-quizlet-strip"><div><strong>💬 Konuşma hazırlığı</strong><small>20 tercih çiftini incele ve nedenlerini İspanyolca anlatmaya hazırlan.</small></div><a href="'+escapeHtmlAttr(noteUrl)+'#deberes" target="_blank" rel="noopener noreferrer">Hazırlığı aç ↗</a></div>'+extras;
+  if(level==='A1.2'&&lessonKey==='1-2'&&noteUrl)extras='<div class="tracker-quizlet-strip"><div><strong>💬 Konuşma hazırlığı</strong><small>3–4. dersimizin tamamı konuşma atölyesi. 20 tercih çiftini incele ve nedenlerini İspanyolca anlatmaya hazırlan.</small></div><a href="'+escapeHtmlAttr(noteUrl)+'#deberes" target="_blank" rel="noopener noreferrer">Hazırlığı aç ↗</a></div>'+extras;
+  if(level==='A1.2'&&lessonKey==='1-2')extras+='<div class="tracker-quizlet-strip"><div><strong>🚀 3–4. Ders Konuşma Atölyesi</strong><small>Kelime havuzları ve cümle kalıplarıyla önceden hazırlan.</small></div><a href="https://ispanyolcacim.github.io/a1.2-tareas/03-04-ders-ici-ispanyolcacim-a12.html" target="_blank" rel="noopener noreferrer">Atölyeyi aç ↗</a></div>';
   const weekLabel=week?`${week}. Hafta ${level}`:level;
   const lessonLabel=lesson?`${lesson}. Ders`:fallbackTitle||'Diğer çalışmalar';
   return `<article class="tracker-task tracker-lesson-card" data-lesson="${escapeHtmlAttr(lesson)}" aria-label="${escapeHtmlAttr(level+' '+lessonLabel)}">
