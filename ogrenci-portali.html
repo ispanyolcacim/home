@@ -2481,6 +2481,7 @@ const trackerQuizletPreparations = {
     ]
   },
   "B1.1": {
+    "1+2": [{ "title": "B1.1 - 3+4. DERS HAZIRLIK SETİ", "count": 108, "review": false, "url": "" }],
     "3+4": [
       {
         "title": "B1.1 - 5+6. DERS HAZIRLIK SETİ",
@@ -2543,6 +2544,7 @@ function renderTrackerLessonCard(level,lesson,week,rows,extras='',fallbackTitle=
     : '<div class="tracker-note-unavailable"><span class="tracker-note-icon" aria-hidden="true">📖</span><strong>Ders notun</strong><span>Bu dersin notu henüz eklenmedi.</span></div>';
   if(level==='A1.2'&&lessonKey==='1-2'&&noteUrl)extras='<div class="tracker-quizlet-strip"><div><strong>💬 Konuşma hazırlığı</strong><small>3–4. dersimizin tamamı konuşma atölyesi. 20 tercih çiftini incele ve nedenlerini İspanyolca anlatmaya hazırlan.</small></div><a href="'+escapeHtmlAttr(noteUrl)+'#deberes" target="_blank" rel="noopener noreferrer">Hazırlığı aç ↗</a></div>'+extras;
   if(level==='A1.2'&&lessonKey==='1-2')extras+='<div class="tracker-quizlet-strip"><div><strong>🚀 3–4. Ders Konuşma Atölyesi</strong><small>Kelime havuzları ve cümle kalıplarıyla önceden hazırlan.</small></div><a href="https://ispanyolcacim.github.io/a1.2-tareas/03-04-ders-ici-ispanyolcacim-a12.html" target="_blank" rel="noopener noreferrer">Atölyeyi aç ↗</a></div>';
+  if(level==='B1.1'&&lessonKey==='1-2'&&noteUrl)extras='<div class="tracker-quizlet-strip"><div><strong>💙 Dönem hazırlığı</strong><small>Dönem takvimi, dört beceri, çalışma düzeni ve kaynaklar.</small></div><a href="'+escapeHtmlAttr(noteUrl)+'" target="_blank" rel="noopener noreferrer">Etkinliği aç ↗</a></div>'+extras;
   const weekLabel=week?`${week}. Hafta ${level}`:level;
   const lessonLabel=lesson?`${lesson}. Ders`:fallbackTitle||'Diğer çalışmalar';
   return `<article class="tracker-task tracker-lesson-card" data-lesson="${escapeHtmlAttr(lesson)}" aria-label="${escapeHtmlAttr(level+' '+lessonLabel)}">
@@ -2597,6 +2599,12 @@ function renderTrackerTasks(filter){
     rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,notice+rows,quizlet,title)});
   }
   if(filter==='all'){
+    // Keep B1.1 orientation visible even when no first-lesson result is returned by Sheets.
+    if(level==='B1.1'&&!rendered.some(x=>x.lesson==='1+2')){
+      const reading='<div class="tracker-assignment"><div class="tracker-assignment-head"><div class="tracker-task-part">1+2. Ders Ödevi · Frida Kahlo</div></div><a class="tracker-homework-link" href="https://ispanyolcacim.github.io/b11-las-tareas/b11-1-2-ida.html" target="_blank" rel="noopener noreferrer"><span>1+2. Ders Okuma Ödevine Git</span><span class="tracker-homework-arrow" aria-hidden="true">↗</span></a></div>';
+      rendered.push({lesson:'1+2',html:renderTrackerLessonCard(level,'1+2',1,reading,renderQuizletStrip(preparations['1+2']||[]))});
+      shown.add('1+2');
+    }
     if(level==='A1.1'&&!rendered.some(x=>x.lesson==='1+2')){
       rendered.push({lesson:'1+2',html:renderTrackerLessonCard(level,'1+2',1,'<p class="tracker-no-assignment">Hazırlık dersi · Uygulama ve çalışma rehberi. Bu ders için ayrı puanlanan ödev bulunmuyor.</p>')});
     }
