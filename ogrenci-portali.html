@@ -1562,6 +1562,7 @@ const trackerHomeworkRepos = {"A2.1":"a2.1-tareas-ida","A2.2":"tareas-a2.2","B1.
 
 const trackerClassroomFiles = {
   "A1.1": {
+    "1-2": "01-02-ders-ici-ispanyolcacim-a11.html",
     "9-10": "09-10-ders-ici-ispanyolcacim-a11.html",
     "11-12": "11-12-ders-ici-ispanyolcacim-a11.html",
     "13-14": "13-14-ders-ici-ispanyolcacim-a11.html",
@@ -2585,6 +2586,9 @@ function renderTrackerTasks(filter){
     rendered.push({lesson,html:renderTrackerLessonCard(level,lesson,week,notice+rows,quizlet,title)});
   }
   if(filter==='all'){
+    if(level==='A1.1'&&!rendered.some(x=>x.lesson==='1+2')){
+      rendered.push({lesson:'1+2',html:renderTrackerLessonCard(level,'1+2',1,'<p class="tracker-no-assignment">Hazırlık dersi · Uygulama ve çalışma rehberi. Bu ders için ayrı puanlanan ödev bulunmuyor.</p>')});
+    }
     for(const[lesson,sets]of Object.entries(preparations)){
       if(shown.has(lesson))continue;
       const week=Math.ceil(parseInt(lesson,10)/4);
